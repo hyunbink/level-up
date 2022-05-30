@@ -3,10 +3,12 @@ import React from "react";
 class UserPage extends React.Component {
     constructor(props) {
         super(props);
+        console.log("props", props);
+        // this.state = this.props.user;
     }
 
     componentDidMount() {
-        this.props.fetchUsers();
+        this.props.fetchUser(this.props.match.params.id);
     }
 
     render() {
@@ -23,8 +25,10 @@ class UserPage extends React.Component {
                         <div className="user-photo">
                             <div className="user-info">
                                 <div className="user-essential">
-                                    <h1>Username</h1>
-                                    <p>Bio</p>
+                                    <h1>{this.props.user.firstName}</h1>
+                                    {this.props.user.professional ? <p>Super professional</p>: <div></div> }
+                                    <p>Bio: {this.props.user.bio}</p>
+                                    <p>Interests: {this.props.user.interests}</p>
                                 </div>
                                 <br />
                                 <div className="user-details">
