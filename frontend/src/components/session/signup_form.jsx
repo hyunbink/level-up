@@ -13,8 +13,12 @@ class SignUp extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
-        // this.renderErrors = this.renderErrors.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
+
+    componentDidMount() {
+        this.props.clearErrors();
+      }
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
@@ -22,10 +26,36 @@ class SignUp extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.signup(user)
-            .then(()=>this.props.history.push('/'))
-    }
+        let user = {
+          email: this.state.email,
+          password: this.state.password,
+          firstName: this.state.firstName,
+          lastName: this.state.lastName
+        };
+        this.props.signup(user);
+      }
+
+    renderErrors() {
+        console.log("errors email", Object.values(this.props.errors));
+        return(
+          <ul>
+            {Object.values(this.props.errors).map((error, i) => (
+              <li key={`error-${i}`}>
+                {error}
+              </li>
+            ))}
+          </ul>
+        );
+      } 
+
+    // renderErrors() {
+    //     if (this.props.errors.length === 0) {
+    //         return null;
+    //     }
+    //     return <ul className="signup-errors-list">{this.props.errors.map((error, idx)=> (
+    //         <li key={idx}>{error}</li>
+    //     ))}</ul>
+    // }
 
     // renderErrors() {
     //     console.log(this.props.errors);
@@ -92,7 +122,7 @@ class SignUp extends React.Component {
                             onChange={this.update("password")}
                         />
                     </label>
-                    {/* {this.renderErrors()} */}
+                    {this.renderErrors()}
                     <button type="submit">
                         Sign Up
                     </button>

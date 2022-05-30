@@ -94,5 +94,18 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
     });
 });
 
+//api/users/index
+router.get("/", (req, res)=> {
+    User.find()
+        .then(users=> res.json(users))
+        .catch(error => res.status(404).json({nousersfound: "No users found"}))
+});
+
+router.get("/:id", (req, res)=> {
+    User.findById(req.params.id)
+        .then(user=> res.json(user))
+        .catch(error => res.status(404).json({nouserfound: "No user found"}) )
+});
+
 module.exports = router;
 

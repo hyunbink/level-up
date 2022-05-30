@@ -12,6 +12,7 @@ require('./config/passport')(passport);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//route 
 app.use("/api/users", users);
 
 mongoose
