@@ -13,7 +13,7 @@ class SignUp extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
+        // this.renderErrors = this.renderErrors.bind(this);
     }
 
     update(field) {
@@ -27,31 +27,31 @@ class SignUp extends React.Component {
             .then(()=>this.props.history.push('/'))
     }
 
-    renderErrors() {
-        console.log(this.props.errors);
-        const firstName = document.getElementById("firstName");
-        const lastName = document.getElementById("lastName");
-        const email = document.getElementById("email");
-        const password = document.getElementById("password");
+    // renderErrors() {
+    //     console.log(this.props.errors);
+    //     const firstName = document.getElementById("firstName");
+    //     const lastName = document.getElementById("lastName");
+    //     const email = document.getElementById("email");
+    //     const password = document.getElementById("password");
         
-        // if (this.props.errors) {
-        //     firstName.style = "background-color: pink; border-color: red; color: red;"
-        // }
+    //     if (this.props.errors) {
+    //         firstName.style = "background-color: pink; border-color: red; color: red;"
+    //     }
         
-        // if (this.props.errors) {
-        //     lastName.style = "background-color: pink; border-color: red; color: red;"
-        // }
+    //     if (this.props.errors) {
+    //         lastName.style = "background-color: pink; border-color: red; color: red;"
+    //     }
 
-        // if (this.props.errors) {
-        //     email.style = "background-color: pink; border-color: red; color: red;"
-        // }
+    //     if (this.props.errors) {
+    //         email.style = "background-color: pink; border-color: red; color: red;"
+    //     }
         
-        // if (this.props.errors) {
-        //     password.style = "background-color: pink; border-color: red; color: red;"
-        // }
+    //     if (this.props.errors) {
+    //         password.style = "background-color: pink; border-color: red; color: red;"
+    //     }
 
-        // return <p className="error-message">Invalid Credentials</p>
-    }
+    //     return <p className="error-message">Invalid Credentials</p>
+    // }
 
 
     render() {
@@ -92,7 +92,7 @@ class SignUp extends React.Component {
                             onChange={this.update("password")}
                         />
                     </label>
-                    {this.renderErrors()}
+                    {/* {this.renderErrors()} */}
                     <button type="submit">
                         Sign Up
                     </button>
