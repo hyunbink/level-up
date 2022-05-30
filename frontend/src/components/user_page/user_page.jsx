@@ -5,7 +5,16 @@ class UserPage extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.fetchUsers();
+    }
+
     render() {
+        
+        if (!this.props.user) {
+            return null;
+        }
+        console.log("this user", this.props.user);
 
         return (
             <div className="user-page">
