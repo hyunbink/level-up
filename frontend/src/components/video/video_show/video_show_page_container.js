@@ -1,4 +1,4 @@
-import { connect } from "mongoose";
+import { connect } from "react-redux";
 import { fetchVideo, fetchVideosByCategory, fetchVideosByUser } from "../../../actions/video_actions";
 import VideoShow from "./video_show_page"
 

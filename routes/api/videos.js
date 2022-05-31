@@ -32,6 +32,30 @@ router.post("/upload", (req, res) => {
         .catch(err => console.log(err));
 });
 
+router.put("/:videoId", (req, res) => {
+    const { errors, isValid } = validateVideoInput(req.body);
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+
+    Video.updateOne({ _id: req.params.videoId }, req.body)
+        .then(video => res.json(video))
+        .catch(err => res.status(404).json({ failedupdate: "Failed to update" }))
+});
+
+router.delete("/:videoId", (req, res) => {
+    const videoId = req.params.videoId;
+    Video.findByIdAndDelete(videoId)
+        .then((err, video) => {
+            if (err) {
+                return res.json(err);
+            } else {
+                return res.json(video);
+                // Can chain a .then if we want to send a "Deleted x video" message
+            }
+        })
+});
+
 router.get("/", (req, res) => {
     Video.find()
         .then(videos => res.json(videos))
