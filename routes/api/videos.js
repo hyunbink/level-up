@@ -10,7 +10,6 @@ router.post("/upload", (req, res) => {
     if (!isValid) {
         return res.status(400).json(errors);
     }
-
     const newVideo = new Video({
         title: req.body.title,
         description: req.body.description,
@@ -20,15 +19,7 @@ router.post("/upload", (req, res) => {
     });
 
     newVideo.save()
-        .then(video => {
-            const payload = {
-                title: req.body.title,
-                description: req.body.description,
-                category: req.body.category,
-                url: req.body.url,
-                uploaderId: req.body.uploaderId
-            }
-        })
+        .then(video => res.json(video))
         .catch(err => console.log(err));
 });
 

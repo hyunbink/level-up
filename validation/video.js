@@ -23,15 +23,15 @@ module.exports = function validateVideoInput(data) {
     data.description = validText(data.description) ? data.description : "";
     data.category = validText(data.category) ? data.category : "";
 
-    if (!Validator.isEmpty(data.title)) {
+    if (Validator.isEmpty(data.title)) {
         errors.title = "Title cannot be empty";
     }
 
-    if (!Validator.isEmpty(data.description)) {
+    if (Validator.isEmpty(data.description)) {
         errors.description = "Description cannot be empty";
     }
 
-    if (!Validator.isEmpty(data.category)) {
+    if (Validator.isEmpty(data.category)) {
         errors.category = "You must select a category";
     }
 

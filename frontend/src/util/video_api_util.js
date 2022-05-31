@@ -17,13 +17,13 @@ export const fetchVideo = videoId => (
 );
 
 export const createVideo = video => (
-    axios.post(`api/videos/upload`, video)
+    axios.post(`/api/videos/upload`, video)
 );
 
 export const deleteVideo = videoId => (
-    axios.delete(`api/videos/${videoId}`)
+    axios.delete(`/api/videos/${videoId}`)
 );
 
 export const updateVideo = video => (
-    axios.patch(`api/videos/${video.id}`, video)
+    axios.patch(`/api/videos/${video.id}`, video)
 );

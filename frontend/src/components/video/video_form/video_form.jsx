@@ -24,7 +24,6 @@ class VideoForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
         this.props.createVideo(this.state)
             .then(() => this.props.closeModal());
     }
@@ -38,13 +37,13 @@ class VideoForm extends React.Component {
                     <input type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
                 </label>
                 <label className="description">Description
-                    <input type="text" placeholder="description" value={this.state.description} onChange={this.update("description")}/>
+                    <input type="text" placeholder="Description" value={this.state.description} onChange={this.update("description")}/>
                 </label>
                 <label className="category">Category
-                    <input type="text" placeholder="dategory" value={this.state.category} onChange={this.update("category")}/>
+                    <input type="text" placeholder="Category" value={this.state.category} onChange={this.update("category")}/>
                 </label>
                 <label className="url">Youtube Link
-                    <input type="text" placeholder="url" value={this.state.url} onChange={this.update("url")}/>
+                    <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/>
                 </label>
                 <button className="video-upload-button">Upload</button>
             </form>
