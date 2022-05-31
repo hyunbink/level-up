@@ -1,11 +1,7 @@
 import React from "react";
 
 class UserPage extends React.Component {
-    constructor(props) {
-        super(props);
-        console.log("props", props);
-        // this.state = this.props.user;
-    }
+
 
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.id);
