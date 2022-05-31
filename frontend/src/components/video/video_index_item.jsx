@@ -1,8 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class VideoIndexItem extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.state = {
+            user: {}
+        }
+    }
+
+    componentDidMount() {
+        this.props.fetchUser(this.props.video.uploaderId);
+        this.setState({user: this.props.users[this.props.video.uploaderId]});
     }
 
     capitalize(word) {
@@ -10,9 +19,18 @@ class VideoIndexItem extends React.Component {
     }
 
     formatCategoryName() {
-        let category = this.props.category;
-        let words = category.split("-")
-        return words.map(word => (this.capitalize(word))).join(" ");
+        let category = this.props.video.category;
+        let words;
+        if (category.includes("-")){
+            words = category.split("-");
+        } else {
+            words = category;
+        }
+        if (typeof words !== String) {
+            return words.map(word => (this.capitalize(word))).join(" ");
+        } else {
+            return this.capitalize(words);
+        }
     }
 
     linkToCategoryOrUser() {
@@ -26,7 +44,7 @@ class VideoIndexItem extends React.Component {
         } else if (this.props.prevPage === "user") {
             component = 
                 <Link to={`/users/${this.props.video.uploaderId}`}>
-                    {this.capitalize(this.props.user.firstName)} {this.capitalize(this.props.user.lastName)}
+                    {this.capitalize(this.state.user.firstName)} {this.capitalize(this.state.user.lastName)}
                 </Link>
         }
         return component;
@@ -34,11 +52,11 @@ class VideoIndexItem extends React.Component {
 
     render() {
         return (
-            <li className="video-index-item">
+            <Link to={`/video/${this.props.video.id}`}><li className="video-index-item">
                 <video src=""></video>
                 <h1>{this.props.video.title}</h1>
                 <p className="uploader-or-category-name">{this.linkToCategoryOrUser()}</p>
-            </li>
+            </li></Link>
         )
     }
 }

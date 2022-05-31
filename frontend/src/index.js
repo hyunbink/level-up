@@ -16,6 +16,7 @@ import { setAuthToken } from './util/session_api_util';
 // We have not created this action yet, but will do so in the next step
 import { logout } from './actions/session_actions';
 import { fetchUser, fetchUsers, updateUser } from './actions/user_actions';
+import { fetchAllVideos } from './actions/video_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   window.getState = store.getState;
   window.updateUser = updateUser;
+  window.fetchAllVideos = fetchAllVideos;
 
   ReactDOM.render(<Root store={store} />, root);
 });
