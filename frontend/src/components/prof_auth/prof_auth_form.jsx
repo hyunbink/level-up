@@ -25,7 +25,8 @@ class ProfAuthForm extends React.Component {
         let user = this.props.currentUser;
         user.bio = this.state.bio;
         user.categories = this.state.categories;
-        // console.log("user", user);
+        user.professional = true;
+        console.log("user before sub", user);
         // let user = {
         //   email: this.state.email,
         //   password: this.state.password,
@@ -43,8 +44,8 @@ class ProfAuthForm extends React.Component {
         // }, 5000);
 
         this.props.updateUser(user)
-            .then(this.props.history.push(`/user/${this.props.currentUser._id}`))
-            .catch(err=> console.log("err", err));
+            .then(this.props.history.push(`/user/${this.props.currentUser._id}`));
+            // .catch(err=> console.log("err", err));
         //on signup push to create interest form?
       }
 

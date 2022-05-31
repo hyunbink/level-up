@@ -31,8 +31,14 @@ class UserPage extends React.Component {
                                     <p>Interests: {this.props.user.interests}</p>
                                 </div>
                                 <br />
+                                
+
                                 <div className="user-details">
-                                    
+                                    {this.props.user.professional? 
+                                    <ul> this is my expertise
+                                        <li>{this.props.user.categories}</li>
+                                    </ul>
+                                    : <div></div> }
                                 </div>
                             </div>
                         </div>

@@ -9,20 +9,28 @@ class NavBar extends React.Component {
     this.getLinks = this.getLinks.bind(this);
   }
 
+  // componentDidMount() {
+  //   this.props.fetchUser(this.props.match.params.id);
+  // }
+
   logoutUser(e) {
       e.preventDefault();
-      this.props.logout();
+      this.props.logout()
+        .then(()=>this.props.history.push("/login"));
   }
 
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
+    console.log("props", this.props);
       if (this.props.loggedIn) {
         return (
             <div>
+              
                 <Link to={'/tweets'}>All Tweets</Link>
-                <Link to={'/profile'}>Profile</Link>
+                <Link to={`/user/${this.props.currentUserId}`}>Profile</Link>
                 <Link to={'/new_tweet'}>Write a Tweet</Link>
-                <button onClick={this.logoutUser}>Logout</button>
+                <Link to ={"/login"} onClick={this.props.logout}>Logout</Link>
+                {/* <button onClick={this.logoutUser}>Logout</button> */}
             </div>
         );
       } else {
@@ -36,6 +44,9 @@ class NavBar extends React.Component {
   }
 
   render() {
+    // if (!this.props.currentUser) {
+    //   return null;
+    // }
       return (
         <div>
             <h1>Chirper</h1>
