@@ -8,11 +8,14 @@ import LoginFormContainer from './session/login_container';
 import SignupFormContainer from './session/signup_container';
 import UserPageContainer from './user_page/user_page_container';
 
+
 const App = () => (
   <div>
     <NavBarContainer />
     <Switch>
         <Route exact path="/user/:id" component={ UserPageContainer}/>
+        {/* Change this to the categories page later */}
+        <Route exact path="/category/:category" component={ MainPage }/> 
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <AuthRoute exact path="/" component={MainPage} />
