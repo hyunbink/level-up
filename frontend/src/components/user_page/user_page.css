@@ -1,0 +1,19 @@
+.user-page{
+    border: solid red 3px;
+}
+
+.user-container{
+    border: solid blue 3px;
+}
+
+.user-banner{
+    border: solid green;
+}
+
+.user-photo{
+    border: solid purple;
+}
+
+.user-info{
+    border: solid ;
+}
