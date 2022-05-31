@@ -25,7 +25,7 @@ class ProfAuthForm extends React.Component {
         let user = this.props.currentUser;
         user.bio = this.state.bio;
         user.categories = this.state.categories;
-        console.log("user", user);
+        // console.log("user", user);
         // let user = {
         //   email: this.state.email,
         //   password: this.state.password,

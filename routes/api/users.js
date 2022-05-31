@@ -108,12 +108,27 @@ router.get("/:id", (req, res)=> {
 });
 
 // api/users/prof/:id
-router.put("/prof/:id", (req,res)=> {
-    console.log("request", req);
-    User.updateOne({_id:req.params.id}, req.body)
-        .then(user=> res.json(user))
-        .catch(error=>res.status(422).json({failedupdate: "failed to update"}))
-});
+// router.put("/prof/:id", (req,res)=> {
+//     console.log("request", req);
+//     User.updateOne({_id:req.params.id}, req.body)
+//         .then(user=> res.json(user))
+//         .catch(error=>res.status(404).json({failedupdate: "failed to update"}))
+// });
+
+router.route("/prof/:id").put((req, res, next)=> {
+    console.log("request", req); 
+    User.findByIdAndUpdate(req.params.id, {
+        $set: req.body
+    },
+    (err, data)=> {
+        if (err) {
+            return next(err);
+        } else {
+            res.json(data);
+        }
+    }
+    )
+})
 
 
 module.exports = router;
