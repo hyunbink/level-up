@@ -104,8 +104,17 @@ router.get("/", (req, res)=> {
 router.get("/:id", (req, res)=> {
     User.find({_id: req.params.id})
         .then(user=> res.json(user))
-        .catch(error => res.status(404).json({nouserfound: "No user found"}) )
+        .catch(error => res.status(404).json({nouserfound: "No user found"}))
 });
+
+// api/users/prof/:id
+router.put("/prof/:id", (req,res)=> {
+    console.log("request", req);
+    User.updateOne({_id:req.params.id}, req.body)
+        .then(user=> res.json(user))
+        .catch(error=>res.status(422).json({failedupdate: "failed to update"}))
+});
+
 
 module.exports = router;
 

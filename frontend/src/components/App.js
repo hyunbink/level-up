@@ -7,11 +7,13 @@ import MainPage from '../main/main_page';
 import LoginFormContainer from './session/login_container';
 import SignupFormContainer from './session/signup_container';
 import UserPageContainer from './user_page/user_page_container';
+import ProfAuthFormContainer from './prof_auth/prof_auth_container';
 
 const App = () => (
   <div>
     <NavBarContainer />
     <Switch>
+        <Route exact path="/prof/:id" component={ ProfAuthFormContainer } />
         <Route exact path="/user/:id" component={ UserPageContainer}/>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />

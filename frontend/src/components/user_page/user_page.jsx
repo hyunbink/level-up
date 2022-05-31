@@ -16,7 +16,7 @@ class UserPage extends React.Component {
         if (!this.props.user) {
             return null;
         }
-        console.log("this user", this.props.user);
+        // console.log("this user", this.props.user);
 
         return (
             <div className="user-page">
