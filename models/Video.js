@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const VideoSchema = new Schema({
     uploaderId: {
-        type: Number,
+        type: String,
         required: true
     },
     title: {

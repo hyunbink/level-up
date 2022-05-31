@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import CommentForm from '../comments/comment_form';
+import VideoForm from '../video/video_form/video_form_container';
 
 const Modal = ({ modal, closeModal }) => {
     if (!modal) {

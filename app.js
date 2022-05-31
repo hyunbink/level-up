@@ -5,7 +5,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const users = require("./routes/api/users");
+const videos = require("./routes/api/videos");
 const User = require("./models/User");
+
 
 app.use(passport.initialize());
 require('./config/passport')(passport);
@@ -15,6 +17,7 @@ app.use(bodyParser.json());
 
 //route 
 app.use("/api/users", users);
+app.use("/api/videos", videos)
 
 // app.get("/", (req, res)=> {
 //     const user  = new User({
