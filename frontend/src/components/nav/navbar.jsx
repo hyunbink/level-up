@@ -14,6 +14,7 @@ class NavBar extends React.Component {
   //   this.props.fetchUser(this.props.match.params.id);
   // }
 
+
   logoutUser(e) {
       e.preventDefault();
       this.props.logout()
@@ -22,10 +23,8 @@ class NavBar extends React.Component {
 
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
-    console.log("props", this.props);
       if (this.props.loggedIn) {
         return (
-
             <div className="nav-wrapper">
               <div className="nav-left">
                 <Link to={`/user/${this.props.currentUserId}`} className="nav-link" >
@@ -34,6 +33,9 @@ class NavBar extends React.Component {
                 <Link to ={"/login"} onClick={this.logoutUser} className="nav-link">
                   <div className="nav-link-text">Logout</div> 
                 </Link>
+              </div>
+              <div className='nav-mid' >
+                Welcome home
               </div>
               <div className="nav-right">
                 <div className='nav-burger'>
