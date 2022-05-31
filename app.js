@@ -6,7 +6,10 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const users = require("./routes/api/users");
 const videos = require("./routes/api/videos");
+const bookings = require("./routes/api/bookings")
 const User = require("./models/User");
+const Booking = require("./models/Booking");
+
 
 
 app.use(passport.initialize());
@@ -17,7 +20,8 @@ app.use(bodyParser.json());
 
 //route 
 app.use("/api/users", users);
-app.use("/api/videos", videos)
+app.use("/api/videos", videos);
+app.use("/api/bookings", bookings);
 
 // app.get("/", (req, res)=> {
 //     const user  = new User({
