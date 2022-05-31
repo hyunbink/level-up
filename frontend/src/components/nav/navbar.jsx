@@ -39,9 +39,9 @@ class NavBar extends React.Component {
               </div>
               <div className="nav-right">
                 <div className='nav-burger'>
-                  {/* <div>
+                  <div>
                     borger
-                  </div> */}
+                  </div>
                   <div className='nav-drop'>
                       <div>
                         upload a video -coming soon
