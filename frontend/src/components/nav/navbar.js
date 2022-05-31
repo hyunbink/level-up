@@ -26,9 +26,9 @@ class NavBar extends React.Component {
         return (
             <div>
               
-                <Link to={'/tweets'}>All Tweets</Link>
+                {/* <Link to={'/tweets'}>All Tweets</Link> */}
                 <Link to={`/user/${this.props.currentUserId}`}>Profile</Link>
-                <Link to={'/new_tweet'}>Write a Tweet</Link>
+                {/* <Link to={'/new_tweet'}>Write a Tweet</Link> */}
                 <Link to ={"/login"} onClick={this.props.logout}>Logout</Link>
                 {/* <button onClick={this.logoutUser}>Logout</button> */}
             </div>
@@ -49,7 +49,7 @@ class NavBar extends React.Component {
     // }
       return (
         <div>
-            <h1>Chirper</h1>
+            <h1>Level-Up</h1>
             { this.getLinks() }
         </div>
       );

@@ -1,4 +1,5 @@
 import React from "react";
+import './user_page.css'
 
 class UserPage extends React.Component {
 
