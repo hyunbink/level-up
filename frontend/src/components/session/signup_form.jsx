@@ -32,7 +32,10 @@ class SignUp extends React.Component {
           firstName: this.state.firstName,
           lastName: this.state.lastName
         };
-        this.props.signup(user);
+
+        this.props.signup(user)
+            .then(this.props.history.push("/"));
+        //on signup push to create interest form?
       }
 
     renderErrors() {
