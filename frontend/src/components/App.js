@@ -12,7 +12,8 @@ import VideoShow from './video/video_show/video_show_page_container';
 import VideoForm from './video/video_form/video_form_container';
 
 import ProfAuthFormContainer from './prof_auth/prof_auth_container';
-import css from '../App.css'
+import css from "../App.css";
+
 
 const App = () => (
   <div>

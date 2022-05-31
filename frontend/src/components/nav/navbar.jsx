@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-// import './navbar.css'
+import './navbar.css'
+
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -24,20 +25,57 @@ class NavBar extends React.Component {
     console.log("props", this.props);
       if (this.props.loggedIn) {
         return (
-            <div>
-              
-                {/* <Link to={'/tweets'}>All Tweets</Link> */}
-                <Link to={`/user/${this.props.currentUserId}`}>Profile</Link>
-                {/* <Link to={'/new_tweet'}>Write a Tweet</Link> */}
-                <Link to ={"/login"} onClick={this.props.logout}>Logout</Link>
-                {/* <button onClick={this.logoutUser}>Logout</button> */}
+
+            <div className="nav-wrapper">
+              <div className="nav-left">
+                <Link to={`/user/${this.props.currentUserId}`} className="nav-link" >
+                  <div className="nav-link-text">Profile</div> 
+                </Link>
+                <Link to ={"/login"} onClick={this.logoutUser} className="nav-link">
+                  <div className="nav-link-text">Logout</div> 
+                </Link>
+              </div>
+              <div className="nav-right">
+                <div className='nav-burger'>
+                  {/* <div>
+                    borger
+                  </div> */}
+                  <div className='nav-drop'>
+                      <div>
+                        upload a video -coming soon
+                      </div>
+                      <div onClick={()=>this.props.history.push(`/user/${this.props.currentUserId}`)}>
+                        Profile
+                      </div>
+                      <div onClick={this.logoutUser} >
+                        Logout 
+                      </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
         );
       } else {
         return (
-            <div>
-                <Link to={'/signup'}>Signup</Link>
-                <Link to={'/login'}>Login</Link>
+
+            <div className="nav-wrapper">
+              <div className='nav-left'>
+                <Link to={'/signup'} className="nav-link">Signup</Link>
+                <Link to={'/login'} className = "nav-link">Login</Link>
+              </div>
+              <div className='nav-right'>
+                <div className='nav-burger'>
+                    <div className='nav-drop'>
+                        <div onClick={()=> this.props.history.push("/signup")}>
+                          Sign Up 
+                        </div>
+                        <div onClick={()=>this.props.history.push(`/login`)}>
+                          Login
+                        </div>
+                    </div>
+                  </div>
+              </div>
             </div>
         );
       }
@@ -48,8 +86,9 @@ class NavBar extends React.Component {
     //   return null;
     // }
       return (
-        <div>
-            <h1>Level-Up</h1>
+
+        <div className='nav-container'>
+
             { this.getLinks() }
         </div>
       );
