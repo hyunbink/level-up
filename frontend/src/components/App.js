@@ -14,6 +14,7 @@ import VideoForm from './video/video_form/video_form_container';
 import ProfAuthFormContainer from './prof_auth/prof_auth_container';
 import css from "../App.css";
 
+
 const App = () => (
   <div>
     <NavBarContainer />

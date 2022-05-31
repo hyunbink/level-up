@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import './navbar.css'
 
+
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -24,6 +25,7 @@ class NavBar extends React.Component {
     console.log("props", this.props);
       if (this.props.loggedIn) {
         return (
+
             <div className="nav-wrapper">
               <div className="nav-left">
                 <Link to={`/user/${this.props.currentUserId}`} className="nav-link" >
@@ -51,10 +53,12 @@ class NavBar extends React.Component {
                   </div>
                 </div>
               </div>
+
             </div>
         );
       } else {
         return (
+
             <div className="nav-wrapper">
               <div className='nav-left'>
                 <Link to={'/signup'} className="nav-link">Signup</Link>
@@ -82,7 +86,9 @@ class NavBar extends React.Component {
     //   return null;
     // }
       return (
+
         <div className='nav-container'>
+
             { this.getLinks() }
         </div>
       );
