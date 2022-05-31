@@ -23,6 +23,18 @@ const UserSchema = new Schema({
         type: Boolean,
         required: true,
         default: false
+    },
+    categories: {
+        type: String,
+        default: ""
+    },
+    interests: {
+        type: String,
+        default: ""
+    },
+    bio: {
+        type: String,
+        default: "",
     }
 }, {
     timestamps: true
