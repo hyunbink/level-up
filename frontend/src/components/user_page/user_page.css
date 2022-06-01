@@ -1,0 +1,94 @@
+.user-page{
+    border: solid red 3px;
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 75px);
+}
+
+.user-container{
+    border: solid blue 3px;
+    width: 80%;
+    height: 100%;
+}
+
+.user-photo{
+    border: solid purple;
+}
+
+.user-info{
+    border: solid 3px orange;
+}
+
+.user-essential{
+    border: solid 3px yellow;
+}
+
+.user-essential p{
+    font-size: larger;
+}
+
+.user-show-prof-icon{
+    color: blue;
+    font-size: large;
+}
+
+.user-show-full-name{
+    font-size: xx-large;
+}
+
+.user-show-interests-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.user-show-interest{
+    background-color: bisque;
+    padding: .5em;
+    border-radius: 4px;
+    font-size: medium;
+
+}
+
+.user-details{
+    border: solid 3px black;
+    /* width: 100%; */
+}
+
+.user-reviews-container{
+    border: solid 3px green;
+}
+
+.user-show-banner{
+    background-color: green;
+    border: solid 3px green;
+    /* height: ; */
+    /* width: 100%; */
+}
+
+.user-show-banner-img{
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+}
+.user-show-profile-photo{
+    background-color: red;
+}
+
+.user-show-info-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 3px red;
+}
+
+.user-show-info-div-left{
+    width: 40%;
+    border: solid 3px blue;
+}
+
+.user-show-info-div-right{
+    width: 60%;
+    border: solid 3px yellowgreen;
+}

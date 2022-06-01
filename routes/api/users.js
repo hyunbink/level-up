@@ -109,8 +109,6 @@ router.get("/:id", (req, res)=> {
 
 // api/users/prof/:id
 router.put("/prof/:id", (req,res)=> {
-    debugger
-    console.log("request", req);
     User.updateOne({_id:req.params.id}, req.body)
         .then(user=> res.json(user))
         .catch(error=>res.status(404).json({failedupdate: "failed to update"}))
