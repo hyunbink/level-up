@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Review = require("../../models/Review");
 
-
+//create a review
 router.post("/post", (req, res)=> {
     const {errors, isValid } = validateVideoInput(req.body);
 
@@ -22,18 +22,19 @@ router.post("/post", (req, res)=> {
         .catch(err=> res.status(422).json({ failedpost: "Failed to post" }))
 });
 
+//edit a review
 router.put("/:reviewId", (req, res) => {
     Review.updateOne({_id: req.params.id}, req.body)
         .then(review => res.json(review))
         .catch(error=> res.status(404).json({failedupdate: "failed to update"}));
 });
-
+//get all reviews on that users page
 router.get("/:userId", (req, res)=> {
     Review.find({revieweeId: req.params.userId})
         .then(reviews=> res.json(reviews))
         .catch(error=> res.status(404).json({noreviews: "couldn't fetch reviews"}));
 });
-
+//delete this review
 router.delete("/:reviewId", (req, res) => {
     Review.findByIdAndDelete(req.params.reviewId)
         .then((err, video)=> {
