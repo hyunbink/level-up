@@ -14,4 +14,4 @@ export const fetchReviews = userId => (
 
 export const deleteReview = reviewId => (
     axios.delete(`/api/reviews/${reviewId}`)
-)
+); 
