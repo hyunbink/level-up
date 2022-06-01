@@ -74,3 +74,4 @@ class BookingForm extends React.Component{
 }
 
 export default BookingForm;
+
