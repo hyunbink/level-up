@@ -18,22 +18,20 @@ import VideoShowPageContainer from './video/video_show/video_show_page_container
 import IconsBackground from './icons_background/icons_background';
 import css from "../App.css";
 
-
-
 const App = () => (
   <div>
     <NavBarContainer />
     <Switch>
         <Route exact path="/background" component={ IconsBackground } />
         <Route exact path="/auth/:id" component={ ProfAuthFormContainer } />
-        <Route exact path="/user/:id" component={ UserPageContainer}/>
+        <Route exact path="/user/:id" component={ UserPageContainer }/>
         {/* Change this to the categories page later */}
         <Route exact path="/category/:category" component={ CategoryPageContainer }/> 
         <Route exact path="/video/:videoId" component={ VideoShowPageContainer }/>
         <Route exact path="/video/upload" component={ VideoForm }/>
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <AuthRoute exact path="/" component={MainPage} />
+        <AuthRoute exact path="/login" component={ LoginFormContainer } />
+        <AuthRoute exact path="/signup" component={ SignupFormContainer } />
+        <AuthRoute exact path="/" component={ MainPage } />
     </Switch>
   </div>
 );
