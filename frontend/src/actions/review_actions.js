@@ -26,6 +26,12 @@ export const fetchReviews = userId => dispatch => (
 
 export const createReview = review => dispatch => (
     ReviewApiUtil.createReview(review)
+        .then(review => dispatch(receiveReview(review)),
+        err=> console.log("failed"))
+);
+
+export const updateReview = review => dispatch => (
+    ReviewApiUtil.updateReview(review)
         .then(review => dispatch(receiveReview(review)))
 );
 
@@ -34,9 +40,5 @@ export const deleteReview = reviewId => dispatch => (
         .then(()=> dispatch(removeReview(reviewId)))
 );
 
-export const updateReview = review => dispatch => (
-    ReviewApiUtil.updateReview(review._id)
-        .then(review => dispatch(receiveReview(review)))
-);
 
 

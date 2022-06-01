@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const users = require("./routes/api/users");
 const videos = require("./routes/api/videos");
-const User = require("./models/User");
 const reviews = require("./routes/api/reviews");
 
 

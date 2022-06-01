@@ -1,4 +1,5 @@
 import React from "react";
+import "./review.css";
 
 //receives current user and user profile user
 class CreateReviewForm extends React.Component {
@@ -22,11 +23,8 @@ class CreateReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let newReview = this.state;
-        // newReview["reviewerId"] = this.props.reviewerId;
-        // newReview["revieweeId"] = this.props.revieweeId;
         this.props.createReview(newReview)
             .then(()=>this.props.getReviews());
-        // after creating the review we re render or redirect to that user's page
     }
 
     render() {

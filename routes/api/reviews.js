@@ -27,7 +27,12 @@ router.post("/post", (req, res)=> {
 //edit a review
 router.put("/:reviewId", (req, res) => {
     const {errors, isValid } = validateReviewInput(req.body);
-    Review.updateOne({_id: req.params.id}, req.body)
+
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+
+    Review.updateOne({_id: req.params.reviewId}, req.body)
         .then(review => res.json(review))
         .catch(error=> res.status(404).json({failedupdate: "failed to update"}));
 });
@@ -38,7 +43,7 @@ router.get("/:userId", (req, res)=> {
         .catch(error=> res.status(404).json({noreviews: "couldn't fetch reviews"}));
 });
 //delete this review
-router.delete("/:reviewId", (req, res) => {
+router.delete("/delete/:reviewId", (req, res) => {
     Review.findByIdAndDelete(req.params.reviewId)
         .then((err, video)=> {
             if (err) {

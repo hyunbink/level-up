@@ -1,8 +1,8 @@
 import React from "react";
 import './user_page.css';
 import { BsFillCheckCircleFill } from 'react-icons/bs'
-import ReviewItem from "../review/review_item";
 import ReviewFormContainer from "../review/review_form_container";
+import ReviewItemContainer from "../review/review_item_container";
 
 class UserPage extends React.Component {
 
@@ -13,8 +13,10 @@ class UserPage extends React.Component {
 
 
     componentDidMount() {
-        this.props.fetchUser(this.props.match.params.id);
-        this.props.fetchReviews(this.props.match.params.id);
+        this.props.fetchUser(this.props.match.params.id)
+            .then(()=> this.props.fetchReviews(this.props.match.params.id))
+                .then(()=>console.log("done loading"));
+        ;
     }
 
     getUserReviews() {
@@ -27,7 +29,9 @@ class UserPage extends React.Component {
             return null;
         }
         // console.log("this user", this.props.user);
-        console.log("reviews", this.props.reviews);
+        if (this.props.user.professional && !this.props.reviews) {
+            return null;
+        }
         return (
             <div className="user-page">
                 <div className="user-container">
@@ -73,12 +77,11 @@ class UserPage extends React.Component {
                     <div className="user-reviews-container">
                         <h1>Reviews Container</h1>
                         {this.props.reviews.data ? <ul>{this.props.reviews.data.map((review, idx)=> (
-                            <ReviewItem key={idx} review={review}/>
-
+                            <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
                         )
                         )} </ul> : <div></div> }
                     </div>
-                    <div className="create-review form">
+                    <div className="create-review-form">
                         <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
                     </div>
                 </div>
