@@ -1,7 +1,7 @@
 import React from "react";
 
 class BookingsShow extends React.Component{
-
+    
     render(){
         return(
             <div>

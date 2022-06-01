@@ -6,6 +6,13 @@ export const fetchBookings = () => (
 
 export const fetchBooking = bookingId => (
     axios.get(`/api/bookings/${bookingId}`)
+);
 
+export const createBooking = booking => (
+    axios.post(`/api/bookings/create`, booking)
+);
+
+export const deleteBooking = bookingId => (
+    axios.delete(`/api/bookings/${bookingId}`)
 );
 
