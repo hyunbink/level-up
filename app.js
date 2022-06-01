@@ -7,6 +7,7 @@ const passport = require('passport');
 const users = require("./routes/api/users");
 const videos = require("./routes/api/videos");
 const User = require("./models/User");
+const Review = require("./models/Review");
 
 
 app.use(passport.initialize());
@@ -17,7 +18,8 @@ app.use(bodyParser.json());
 
 //route 
 app.use("/api/users", users);
-app.use("/api/videos", videos)
+app.use("/api/videos", videos);
+
 
 // app.get("/", (req, res)=> {
 //     const user  = new User({

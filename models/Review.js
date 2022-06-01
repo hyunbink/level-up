@@ -2,20 +2,24 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ReviewSchema = new Schema({
-    reviewer_id: {
+    title: {
         type: String,
         required: true
     },
-    reviewee_id: {
+    reviewerId: {
         type: String,
         required: true
     },
-    date: {
-        type: Date,
+    revieweeId: {
+        type: String,
         required: true
     },
     score: {
         type: Number,
+        required: true
+    },
+    text: {
+        type: String,
         required: true
     }
 }, {
