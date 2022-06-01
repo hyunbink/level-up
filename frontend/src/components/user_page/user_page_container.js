@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchUser, fetchUsers } from "../../actions/user_actions";
 import { createBooking, fetchBookings } from "../../actions/booking_actions";
 import { deleteBooking } from "../../actions/booking_actions";
+import { withRouter } from 'react-router-dom';
 
 const mSTP = (state, ownProps) => {
     // console.log("user-page-state", state.entities.bookings.data)
@@ -33,4 +34,4 @@ const mDTP = dispatch => ({
     deleteBooking: bookingId => dispatch(deleteBooking(bookingId)),
 });
 
-export default connect(mSTP,mDTP)(UserPage);
+export default withRouter(connect(mSTP,mDTP)(UserPage));
