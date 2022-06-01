@@ -31,7 +31,7 @@ class IconsBackground extends React.Component {
 
     icons() {
         let icons = [];
-        for (let i = 0; i < 40; i++) {
+        for (let i = 0; i < 25; i++) {
             icons.push(
                 <div className="row">
                     <div>

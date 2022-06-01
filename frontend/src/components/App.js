@@ -22,7 +22,7 @@ import css from "../App.css";
 
 const App = () => (
   <div>
-    {/* <NavBarContainer /> */}
+    <NavBarContainer />
     <Switch>
         <Route exact path="/background" component={ IconsBackground } />
         <Route exact path="/auth/:id" component={ ProfAuthFormContainer } />
