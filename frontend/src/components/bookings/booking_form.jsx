@@ -42,6 +42,7 @@ class BookingForm extends React.Component{
         let today = year + month + day;
         return(
             <form onSubmit={this.handleSubmit} className='user-show-bookings-form'>
+                <br/>
                 <h1>Book your session with this professional!</h1>
                 <br/>
                 <label className="booking-create-title">Title:
@@ -53,7 +54,7 @@ class BookingForm extends React.Component{
                 </label>
                 <br/>
                 <label className="booking-create-duration">Select Duration:
-                    <input list="duration-list" type='text' onChange={this.update("duration")} placeholder="duration" value={this.state.duration}/>
+                    <input placeholder='select one' list="duration-list" type='text' onChange={this.update("duration")} value={this.state.duration}/>
                         <datalist className="booking-create-dur-list" id="duration-list">
                             <option className="booking-create-dur-list-item" value="30 minutes" />
                             <option className="booking-create-dur-list-item" value="1 hour" />

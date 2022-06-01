@@ -9,6 +9,7 @@ class UserPage extends React.Component {
     constructor(props){
         super(props);
         this.getUserBookings = this.getUserBookings.bind(this);
+        this.deleteSelectedBooking = this.deleteSelectedBooking.bind(this);
     }
 
 
@@ -17,13 +18,15 @@ class UserPage extends React.Component {
         this.props.fetchBookings();
     }
 
-    componentDidUpdate(){
-        // this.props.fetchBookings();
-        console.log('hello')
-    }
-
     getUserBookings(){
         this.props.fetchBookings();
+    }
+
+    deleteSelectedBooking(bookingId){
+        // console.log("in dSB", bookingId)
+        // console.log("checking this", this)
+        this.props.deleteBooking(bookingId)
+            .then(this.props.fetchBookings)
     }
 
     render() {
@@ -84,7 +87,10 @@ class UserPage extends React.Component {
                                     <div className="user-show-bookings-div">
                                         <ul className="user-show-bookings-ul">
                                             {this.props.bookings ? this.props.bookings.map((ele, i) => (<li 
-                                            key={`bk-list-${i}`}><div>{ele.title}</div>  <div><button>edit</button></div>  <div><button>delete</button></div></li>)  ) : null }
+                                            key={`bk-list-${i}`}><div>{ele.title}</div>
+                                            <div><button>edit</button></div>
+                                            <div><button onClick={()=>this.deleteSelectedBooking(ele._id)} >delete</button></div>
+                                            </li>)  ) : null }
                                         </ul>
                                     </div>
                                 </div>

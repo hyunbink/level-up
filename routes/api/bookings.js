@@ -3,6 +3,7 @@ const router = express.Router();
 const Booking = require("../../models/Booking");
 const User = require("../../models/User");
 const validateBookingInput = require("../../validation/booking");
+const video = require("../../validation/video");
 
 router.post("/create", (req, res) => {
     const { errors, isValid } = validateBookingInput(req.body);
@@ -49,6 +50,18 @@ router.put('/:bookingId', (req, res) => {
         .catch(err => res.status(404).json({ failedupdate: "Failed to update" }))
 
 });
+
+router.delete("/delete/:bookingId", (req, res) => {
+    const bookingId = req.params.bookingId;
+    Booking.findByIdAndDelete(bookingId)
+        .then((err, booking) => {
+            if (err) {
+                return res.json(err)
+            } else {
+                return res.json(booking);
+            }
+        })
+})
 
 // need routes to get via student and prof ?
 
