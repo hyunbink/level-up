@@ -24,6 +24,7 @@ class SignUp extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
+
     handleSubmit(e) {
         e.preventDefault();
         let user = {
@@ -34,7 +35,10 @@ class SignUp extends React.Component {
         };
 
         this.props.signup(user)
-            .then(this.props.history.push("/"));
+            .then(()=>this.props.login({email:user.email, password: user.password}))
+            .then(()=>this.props.history.push("/"))
+            .catch(()=> console.log("failed"));
+            //.then(()=>this.props.login({email:user.email, password: user.password}))
         //on signup push to create interest form?
       }
 
