@@ -1,5 +1,5 @@
 const Validator = require("validator");
-const validText = require("../valid-text");
+const validText = require("./valid-text");
 
 const durationLengths = [
     "30 minutes",

@@ -8,7 +8,7 @@ const users = require("./routes/api/users");
 const videos = require("./routes/api/videos");
 const bookings = require("./routes/api/bookings")
 const User = require("./models/User");
-const Booking = require("./models/Booking");
+// const Booking = require("./models/Booking");
 
 
 

@@ -26,4 +26,18 @@ router.post("/create", (req, res) => {
 });
 
 
-router.get("")
+router.get("/", (req, res)=> {
+    Booking.find()
+        .then(bookings=> res.json(bookings))
+        .catch(error => res.status(404).json({nobookingsfound: "No bookings found"}))
+});
+
+router.get("/:id", (req, res)=> {
+    Booking.find({_id: req.params.id})
+        .then(booking=> res.json(booking))
+        .catch(error => res.status(404).json({nobookingfound: "No booking found"}))
+});
+
+// need routes to get via student and prof ?
+
+module.exports = router;
