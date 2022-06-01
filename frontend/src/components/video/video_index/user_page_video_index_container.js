@@ -6,13 +6,13 @@ import { openModal } from "../../../actions/modal_actions";
 
 const mSTP = (state, ownProps) => ({
     videos: state.entities.videos.data,
+    formType: "user-page"
 });
 
 const mDTP = (dispatch, ownProps) => ({
     fetchUser: userId => dispatch(fetchUser(userId)),
     fetchAllVideos: () => dispatch(fetchAllVideos()),
     fetchVideosByUser: userId => dispatch(fetchVideosByUser(userId)),
-    fetchVideosByCategory: category => dispatch(fetchVideosByCategory(category)),
     openModal: formType => dispatch(openModal(formType)),
 });
 
