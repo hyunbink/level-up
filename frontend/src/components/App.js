@@ -12,6 +12,8 @@ import VideoShow from './video/video_show/video_show_page_container';
 import VideoForm from './video/video_form/video_form_container';
 
 import ProfAuthFormContainer from './prof_auth/prof_auth_container';
+import CategoryPageContainer from './categories/category_page_container';
+import VideoShowPageContainer from './video/video_show/video_show_page_container';
 import css from "../App.css";
 
 
@@ -22,8 +24,8 @@ const App = () => (
         <Route exact path="/auth/:id" component={ ProfAuthFormContainer } />
         <Route exact path="/user/:id" component={ UserPageContainer}/>
         {/* Change this to the categories page later */}
-        <Route exact path="/category/:category" component={ MainPage }/> 
-        <Route exact path="/video/" component={ VideoShow }/>
+        <Route exact path="/category/:category" component={ CategoryPageContainer }/> 
+        <Route exact path="/video/:videoId" component={ VideoShowPageContainer }/>
         <Route exact path="/video/upload" component={ VideoForm }/>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
