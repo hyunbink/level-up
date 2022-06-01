@@ -1,8 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class VideoIndexItem extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.state = {
+            user: {}
+        }
+        this.formatCategoryName = this.formatCategoryName.bind(this);
+        this.linkToCategoryOrUser = this.linkToCategoryOrUser.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.fetchUser(this.props.video.uploaderId)
+            .then(user=>this.setState({user: user}));
     }
 
     capitalize(word) {
@@ -10,9 +21,19 @@ class VideoIndexItem extends React.Component {
     }
 
     formatCategoryName() {
-        let category = this.props.category;
-        let words = category.split("-")
-        return words.map(word => (this.capitalize(word))).join(" ");
+        let category = this.props.video.category;
+        let words;
+        
+        if (category.includes("-")){
+            words = category.split("-");
+        } else {
+            words = category;
+        }
+        if (typeof words !== 'string') {
+            return words.map(word => (this.capitalize(word))).join(" ");
+        } else {
+            return this.capitalize(words);
+        }
     }
 
     linkToCategoryOrUser() {
@@ -26,19 +47,24 @@ class VideoIndexItem extends React.Component {
         } else if (this.props.prevPage === "user") {
             component = 
                 <Link to={`/users/${this.props.video.uploaderId}`}>
-                    {this.capitalize(this.props.user.firstName)} {this.capitalize(this.props.user.lastName)}
+                    {this.capitalize(this.state.user.firstName)} {this.capitalize(this.state.user.lastName)}
                 </Link>
         }
         return component;
     }
 
     render() {
+        
+        // if (!this.props.user) {return null}
+
         return (
-            <li className="video-index-item">
-                <video src=""></video>
-                <h1>{this.props.video.title}</h1>
-                <p className="uploader-or-category-name">{this.linkToCategoryOrUser()}</p>
-            </li>
+            <Link to={`/video/${this.props.video._id}`}>
+                <li className="video-index-item">
+                    <iframe width="560" height="315" src={this.props.video.url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h1>{this.props.video.title}</h1>
+                    <p className="uploader-or-category-name">{this.linkToCategoryOrUser()}</p>
+                </li>
+            </Link>
         )
     }
 }

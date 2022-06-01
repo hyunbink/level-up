@@ -3,13 +3,9 @@ import { fetchUser, updateUser } from "../../actions/user_actions";
 import ProfAuthForm from "./prof_auth_form";
 
 
-const mSTP = (state, ownProps) => {
-    // console.log("state", state);
-    // console.log("ownProps", ownProps);
-    return {
-    //error 
-    currentUser: state.entities.users[ownProps.match.params.id]
-}};
+const mSTP = (state, ownProps) => ({
+    currentUser: state.entities.users.data[ownProps.match.params.id]
+});
 
 const mDTP = dispatch => ({
     fetchUser: userId=> dispatch(fetchUser(userId)),

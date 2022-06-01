@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import VideoForm from '../video/video_form/video_form_container';
+import VideoShow from '../video/video_show/video_show_page';
 
 const Modal = ({ modal, closeModal }) => {
     if (!modal) {
@@ -10,11 +11,12 @@ const Modal = ({ modal, closeModal }) => {
 
     let component;
     switch(modal) {
-        case "comment":
-            component = <CommentForm />;
-            break;
+        case "video-show":
+            component = <VideoShow />
+        case "video-form":
+            component = <VideoForm />
         default:
-            return null;
+            component = null;
     }
 
     return(

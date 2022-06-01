@@ -7,7 +7,13 @@ class VideoIndex extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.fetchAllVideos();
+    }
+
     render() {
+        if (!this.props.videos) {return null}
+        
         let prevPage;
         if (this.props.userId) {
             prevPage = "user"
@@ -17,8 +23,10 @@ class VideoIndex extends React.Component {
         return (
             <ul className="video-list">
                 {
-                    this.props.videos.map((video, idx) => (
+                    Object.values(this.props.videos).map((video, idx) => (
                         <VideoIndexItem
+                            openModal={this.props.openModal}
+                            fetchUser={this.props.fetchUser}
                             prevPage={prevPage}
                             video={video}
                             key={`video-${idx}`}
