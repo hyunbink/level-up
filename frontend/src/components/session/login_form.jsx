@@ -55,7 +55,7 @@ class LoginForm extends React.Component {
     //     ))}</ul>
     // }
     renderErrors() {
-        console.log("errors email", Object.values(this.props.errors));
+        // console.log("errors email", Object.values(this.props.errors));
         return(
           <ul>
             {Object.values(this.props.errors).map((error, i) => (
