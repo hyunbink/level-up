@@ -3,9 +3,8 @@ import { connect } from "react-redux";
 import { fetchUser, fetchUsers } from "../../actions/user_actions";
 
 const mSTP = (state, ownProps) => {
-    // console.log("ownProps", ownProps);
     return {
-    user: state.entities.users[ownProps.match.params.id],
+    user: state.entities.users.data[ownProps.match.params.id],
     currentUser: state.session.user
 }};
 

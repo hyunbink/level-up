@@ -113,33 +113,6 @@ router.put("/prof/:id", (req,res)=> {
         .then(user=> res.json(user))
         .catch(error=>res.status(404).json({failedupdate: "failed to update"}))
 });
-// router.patch('/prof/:id', (req, res) => {
-//     const updates = req.body
- 
-//     if (ObjectId.isValid(req.params.id)) {
-//        db.collection('users')
-//           .updateOne({_id: ObjectId(req.params.id)}, {$set: updates})
-//           .then(result => {res.status(200).json(result)})
-//           .catch(err => {res.status(500).json({error: 'Could not update the document'})})
-//     } else {
-//        res.status(500).json({error: 'Not a valid doc id'})
-//     }
-//  })
-
-// router.route("/prof/:id").put((req, res, next)=> {
-//     // console.log("request", req); 
-//     User.findByIdAndUpdate(req.params.id, {
-//         $set: req.body
-//     },
-//     (err, data)=> {
-//         if (err) {
-//             return next(err);
-//         } else {
-//             res.json(data);
-//         }
-//     }
-//     )
-// })
 
 
 module.exports = router;

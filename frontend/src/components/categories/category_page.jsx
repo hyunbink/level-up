@@ -1,5 +1,6 @@
 import React from "react";
-import VideoIndex from "../video/video_index/video_index";
+import { withRouter } from "react-router-dom";
+import VideoIndexContainer from "../video/video_index/video_index_container";
 
 class CategoryPage extends React.Component {
     constructor(props) {
@@ -14,7 +15,13 @@ class CategoryPage extends React.Component {
 
     formatCategoryName() {
         let category = this.props.category;
-        let words = category.split("-")
+        console.log("typeof category", typeof category);
+        let words;
+        if (category.includes("-")) {
+            words = category.split("-")
+        } else {
+            words = category.split("-")
+        }
         return words.map(word => (this.capitalize(word))).join(" ");
     }
 
@@ -25,7 +32,7 @@ class CategoryPage extends React.Component {
                     <img src=""/>
                     <h1>{this.formatCategoryName()}</h1>
                 </div>
-                <VideoIndex/>
+                <VideoIndexContainer category={this.props.category}/>
             </div>
         )
     }
