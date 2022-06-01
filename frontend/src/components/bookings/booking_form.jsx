@@ -5,7 +5,7 @@ class BookingForm extends React.Component{
         super(props);
         this.state = {
             bookingStudId: this.props.currentUserId,
-            bookingProfId: '',
+            bookingProfId: this.props.userId,
             title: '',
             date: '',
             duration: ''
@@ -15,25 +15,24 @@ class BookingForm extends React.Component{
     }
 
     componentDidMount(){
-        this.props.fetchUsers();
+        this.props.fetchUser(this.props.userId);
     }
 
     update(field) {
-        console.log('update', this.state)
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createBooking(this.state)
+        this.props.createBooking(this.state);
+        // clear inputs after submitting
             // .then(() => this.props.closeModal());
     }
 
 // include categories/topic?
     
     render(){
-        if (!this.props.currentUserId) return null;;
-        if (!this.props.professionals) return <div>Sorry no professionals to book</div>;
+        if (!this.props.userId) return null;;
         let year = new Date().getFullYear() + "-" ;
         let month = new Date().getMonth() + 1 + "-" ;
         if (month.length === 2) month = `0${new Date().getMonth() + 1}-` ;
@@ -41,7 +40,7 @@ class BookingForm extends React.Component{
         if (day.length === 1) day = '0' + new Date().getDate() + "";
         let today = year + month + day;
         return(
-            <form onSubmit={this.handleSubmit} className='booking-create-form'>
+            <form onSubmit={this.handleSubmit} className='user-show-bookings-form'>
                 <h1>Book your session with a professional!</h1>
                 <label className="booking-create-title">Title:
                     <input type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
@@ -59,14 +58,14 @@ class BookingForm extends React.Component{
                             <option className="booking-create-dur-list-item" value="more than 2 hours" />
                         </datalist> 
                 </label>
-                <label className="booking-create-prof">Which Professional?
+                {/* <label className="booking-create-prof">Which Professional?
                     <input list="prof-list" placeholder="professionals" value={this.state.bookingProfId} onChange={this.update("bookingProfId")}/>
                         <datalist className="booking-create-prof-list" id="prof-list">
                             {this.props.professionals.map((prof, i) => (
                                 <option key={i} className="booking-create-prof-list-item" value={prof._id}>{prof.lastName},{prof.firstName}</option>
                             ))}
                         </datalist> 
-                </label>
+                </label> */}
                 <button>Submit</button>
             </form>
         )

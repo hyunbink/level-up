@@ -7,7 +7,7 @@
 
 .user-container{
     border: solid blue 3px;
-    width: 80%;
+    width: 90%;
     height: 100%;
 }
 
@@ -91,4 +91,17 @@
 .user-show-info-div-right{
     width: 60%;
     border: solid 3px yellowgreen;
+}
+
+.user-show-bookings{
+    display: flex;
+    /* align-items: center; */
+    border: solid 3px blue;
+}
+
+.user-show-bookings-form{
+    display: flex;
+    border: solid 3px red;
+    align-items: center;
+    justify-content: center;
 }

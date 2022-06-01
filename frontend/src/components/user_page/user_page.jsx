@@ -2,12 +2,15 @@ import React from "react";
 import './user_page.css';
 import { BsFillCheckCircleFill } from 'react-icons/bs'
 
+import BookingsForm from '../bookings/booking_form_container'
+
 
 class UserPage extends React.Component {
 
 
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.id);
+        this.props.fetchBookings();
     }
 
     render() {
@@ -21,7 +24,7 @@ class UserPage extends React.Component {
             <div className="user-page">
                 <div className="user-container">
                     <div className="user-show-banner">
-                            <img className="user-show-banner-img" src="../../images/demo_banner.png" alt="user-show-banner-img"></img>
+                            {/* <img className="user-show-banner-img" src="../../images/demo_banner.png" alt="user-show-banner-img"></img> */}
                     </div>
 
                     <div className="user-show-info-div">
@@ -37,9 +40,9 @@ class UserPage extends React.Component {
                                         <br/>
                                         <p>About: {this.props.user.bio}</p>
                                         <br/>
-                                        <p>Interests: <ul className="user-show-interests-list">{this.props.user.interests.split(",").map(int=>(
-                                            <li className="user-show-interest">{int}</li>
-                                        ))}</ul></p>
+                                        <h1>Interests: <ul className="user-show-interests-list">{this.props.user.interests.split(",").map((int, i)=>(
+                                            <li key={`interest0${i}`} className="user-show-interest">{int}</li>
+                                        ))}</ul></h1>
                                     </div>
                                     {/* <br /> */}
                                 {/* </div> */}
@@ -50,13 +53,19 @@ class UserPage extends React.Component {
                                         {this.props.user.professional? 
                                         <ul> Prof's categories and videos
                                             <div className="user-show-videos">Placeholder for videos</div>
-                                            {this.props.user.categories.split(",").map(cat=>(
-                                                <li>{cat}</li>
+                                            {this.props.user.categories.split(",").map((cat, i)=>(
+                                                <li key={`cat ${i}`}>{cat}</li>
                                             ))}
                                         </ul>
                                         : <div></div> }
                                     </div>
-                </div>
+                                    <div className="user-show-bookings" >
+                                        {this.props.user.professional ? <BookingsForm className='user-show-bookings-form' userId={this.props.user._id} createBooking={this.props.createBooking}  fetchUser={this.props.fetchUser}/> : null }
+                                        <ul className="user-show-bookings-ul">
+                                            {this.props.bookings ? this.props.bookings.map((ele, i) => (<li>{ele.title}</li>)  ) : null }
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
 <div className="user-reviews-container">
                                     <h1>Reviews Container</h1>

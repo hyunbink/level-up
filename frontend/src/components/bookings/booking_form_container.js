@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import BookingForm from './booking_form';
 import { createBooking } from '../../actions/booking_actions';
 import { closeModal } from '../../actions/modal_actions';
-import { fetchUsers } from '../../actions/user_actions';
+import { fetchUsers, fetchUser } from '../../actions/user_actions';
 
 const mSTP = state => {
     let profs;
@@ -18,7 +18,8 @@ const mSTP = state => {
 const mDTP = dispatch => ({
     createBooking: booking => dispatch(createBooking(booking)),
     closeModal: () => dispatch(closeModal()),
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchUsers: () => dispatch(fetchUsers()),
+    fetchUser: userId => dispatch(fetchUser(userId))
 })
 
 export default connect(mSTP, mDTP)(BookingForm);
