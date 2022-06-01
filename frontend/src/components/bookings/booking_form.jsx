@@ -43,12 +43,15 @@ class BookingForm extends React.Component{
         return(
             <form onSubmit={this.handleSubmit} className='user-show-bookings-form'>
                 <h1>Book your session with this professional!</h1>
+                <br/>
                 <label className="booking-create-title">Title:
                     <input type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
                 </label>
+                <br/>
                 <label className="booking-create-date">When?
                     <input type="date" placeholder="Date" min={today.toLocaleString()} value={this.state.date} onChange={this.update("date")}/>
                 </label>
+                <br/>
                 <label className="booking-create-duration">Select Duration:
                     <input list="duration-list" type='text' onChange={this.update("duration")} placeholder="duration" value={this.state.duration}/>
                         <datalist className="booking-create-dur-list" id="duration-list">
@@ -59,6 +62,7 @@ class BookingForm extends React.Component{
                             <option className="booking-create-dur-list-item" value="more than 2 hours" />
                         </datalist> 
                 </label>
+                <br/>
                 {/* <label className="booking-create-prof">Which Professional?
                     <input list="prof-list" placeholder="professionals" value={this.state.bookingProfId} onChange={this.update("bookingProfId")}/>
                         <datalist className="booking-create-prof-list" id="prof-list">
