@@ -24,7 +24,8 @@ class BookingForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createBooking(this.state);
+        this.props.createBooking(this.state)
+            .then(()=>this.props.getUserBookings());
         // clear inputs after submitting
             // .then(() => this.props.closeModal());
     }
@@ -41,7 +42,7 @@ class BookingForm extends React.Component{
         let today = year + month + day;
         return(
             <form onSubmit={this.handleSubmit} className='user-show-bookings-form'>
-                <h1>Book your session with a professional!</h1>
+                <h1>Book your session with this professional!</h1>
                 <label className="booking-create-title">Title:
                     <input type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
                 </label>

@@ -2,12 +2,13 @@
     border: solid red 3px;
     display: flex;
     justify-content: center;
-    height: calc(100vh - 75px);
+    /* height: calc(100vh - 75px); */
+    top: 75px;
 }
 
 .user-container{
     border: solid blue 3px;
-    width: 90%;
+    width: 95%;
     height: 100%;
 }
 
@@ -79,8 +80,9 @@
 .user-show-info-div{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     border: solid 3px red;
+    /* background-color: red; */
 }
 
 .user-show-info-div-left{
@@ -97,6 +99,8 @@
     display: flex;
     /* align-items: center; */
     border: solid 3px blue;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .user-show-bookings-form{
@@ -104,4 +108,19 @@
     border: solid 3px red;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
+
+.user-show-bookings-div{
+    display: flex;
+    border: solid 3px violet;
+}
+
+.user-show-bookings-ul li{
+    border: solid 3px black;
+    margin-top: .5em;
+    padding: .5em;
+    display: flex;
+    justify-content: space-evenly;
+}
+

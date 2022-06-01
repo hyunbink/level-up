@@ -38,6 +38,18 @@ router.get("/:id", (req, res)=> {
         .catch(error => res.status(404).json({nobookingfound: "No booking found"}))
 });
 
+router.put('/:bookingId', (req, res) => {
+    const { errors, isValid } = validateBookingInput(req.body);
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+
+    Booking.updateOne({ _id: req.params.bookingId }, req.body)
+        .then(booking => res.json(booking))
+        .catch(err => res.status(404).json({ failedupdate: "Failed to update" }))
+
+});
+
 // need routes to get via student and prof ?
 
 module.exports = router;

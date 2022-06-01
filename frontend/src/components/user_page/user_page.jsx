@@ -6,10 +6,23 @@ import BookingsForm from '../bookings/booking_form_container'
 
 
 class UserPage extends React.Component {
+    constructor(props){
+        super(props);
+        this.getUserBookings = this.getUserBookings.bind(this);
+    }
 
 
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.id);
+        this.props.fetchBookings();
+    }
+
+    componentDidUpdate(){
+        // this.props.fetchBookings();
+        console.log('hello')
+    }
+
+    getUserBookings(){
         this.props.fetchBookings();
     }
 
@@ -58,15 +71,27 @@ class UserPage extends React.Component {
                                             ))}
                                         </ul>
                                         : <div></div> }
+                                    
                                     </div>
-                                    <div className="user-show-bookings" >
-                                        {this.props.user.professional ? <BookingsForm className='user-show-bookings-form' userId={this.props.user._id} createBooking={this.props.createBooking}  fetchUser={this.props.fetchUser}/> : null }
+                                </div>
+                                <div className="user-show-bookings" >
+                                    {this.props.user.professional ? <BookingsForm 
+                                    getUserBookings={this.getUserBookings} 
+                                    className='user-show-bookings-form' 
+                                    userId={this.props.user._id} 
+                                    createBooking={this.props.createBooking}  
+                                    fetchUser={this.props.fetchUser}/> : null }
+                                    <div className="user-show-bookings-div">
                                         <ul className="user-show-bookings-ul">
-                                            {this.props.bookings ? this.props.bookings.map((ele, i) => (<li>{ele.title}</li>)  ) : null }
+                                            {this.props.bookings ? this.props.bookings.map((ele, i) => (<li 
+                                            key={`bk-list-${i}`}><div>{ele.title}</div>  <div><button>edit</button></div>  <div><button>delete</button></div></li>)  ) : null }
                                         </ul>
                                     </div>
                                 </div>
+                                
                             </div>
+                            
+                            
 <div className="user-reviews-container">
                                     <h1>Reviews Container</h1>
 </div>
