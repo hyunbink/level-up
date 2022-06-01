@@ -7,7 +7,8 @@ const mSTP = (state, ownProps) => {
     console.log("user-page-ownProps", ownProps)
     return {
     // user: state.entities.users.data[],
-    user: state.entities.users[ownProps.match.params.id]
+    user: state.entities.users[ownProps.match.params.id],
+    // currentUser: 
 }};
 
 const mDTP = dispatch => ({
