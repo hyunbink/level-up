@@ -1,5 +1,5 @@
 import React from 'react';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 
@@ -22,7 +22,7 @@ const App = () => (
     <NavBarContainer />
     <Switch>
         <Route exact path="/auth/:id" component={ ProfAuthFormContainer } />
-        <Route exact path="/user/:id" component={ UserPageContainer}/>
+        <ProtectedRoute exact path="/user/:id" component={ UserPageContainer}/>
         {/* Change this to the categories page later */}
         <Route exact path="/category/:category" component={ CategoryPageContainer }/> 
         <Route exact path="/video/:videoId" component={ VideoShowPageContainer }/>

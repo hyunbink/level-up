@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Review = require("../../models/Review");
 
+const validateReviewInput = require('../../validation/review');
+
 //create a review
 router.post("/post", (req, res)=> {
-    const {errors, isValid } = validateVideoInput(req.body);
+    const {errors, isValid } = validateReviewInput(req.body);
 
     if (!isValid) {
         return res.status(400).json(errors);
@@ -24,11 +26,12 @@ router.post("/post", (req, res)=> {
 
 //edit a review
 router.put("/:reviewId", (req, res) => {
+    const {errors, isValid } = validateReviewInput(req.body);
     Review.updateOne({_id: req.params.id}, req.body)
         .then(review => res.json(review))
         .catch(error=> res.status(404).json({failedupdate: "failed to update"}));
 });
-//get all reviews on that users page
+//get all reviews on that professionals page
 router.get("/:userId", (req, res)=> {
     Review.find({revieweeId: req.params.userId})
         .then(reviews=> res.json(reviews))
