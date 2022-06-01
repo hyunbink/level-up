@@ -1,12 +1,13 @@
 import { connect } from "react-redux";
 import { fetchVideo, fetchVideosByCategory, fetchVideosByUser } from "../../../actions/video_actions";
-import { fetchUser } from "../../../util/user_api_util";
+import { fetchUser } from "../../../actions/user_actions";
 import VideoShow from "./video_show_page"
 
-const mSTP = (state, ownProps) => ({
-    video: state.entities.videos.data[ownProps.match.params.videoId],
-    users: state.entities.users.data,
-});
+const mSTP = (state, ownProps) => {
+    return{
+    video: state.entities.videos,
+    users: state.entities.users,
+}};
 
 const mDTP = (dispatch, ownProps) => ({
     fetchVideo: videoId => dispatch(fetchVideo(videoId)),

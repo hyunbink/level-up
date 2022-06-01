@@ -97,13 +97,13 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 //api/users/index
 router.get("/", (req, res)=> {
     User.find()
-        .then(users=> res.json(users.data))
+        .then(users=> res.json(users))
         .catch(error => res.status(404).json({nousersfound: "No users found"}))
 });
 
 router.get("/:id", (req, res)=> {
     User.find({_id: req.params.id})
-        .then(user=> res.json(user.data))
+        .then(user=> res.json(user))
         .catch(error => res.status(404).json({nouserfound: "No user found"}))
 });
 
@@ -112,7 +112,7 @@ router.put("/prof/:id", (req,res)=> {
     debugger
     console.log("request", req);
     User.updateOne({_id:req.params.id}, req.body)
-        .then(user=> res.json(user.data))
+        .then(user=> res.json(user))
         .catch(error=>res.status(404).json({failedupdate: "failed to update"}))
 });
 
