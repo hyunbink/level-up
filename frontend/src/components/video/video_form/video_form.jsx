@@ -25,7 +25,8 @@ class VideoForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createVideo(this.state)
-            .then(() => this.props.closeModal());
+            // .then(action => console.log(action));
+            .then(action => this.props.history.push(`${action.video.data._id}`));
     }
 
     render () {
