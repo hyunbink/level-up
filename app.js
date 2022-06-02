@@ -6,9 +6,9 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const users = require("./routes/api/users");
 const videos = require("./routes/api/videos");
+
 const bookings = require("./routes/api/bookings")
-const User = require("./models/User");
-// const Booking = require("./models/Booking");
+const reviews = require("./routes/api/reviews");
 
 
 
@@ -22,6 +22,8 @@ app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("/api/videos", videos);
 app.use("/api/bookings", bookings);
+app.use("/api/reviews", reviews);
+
 
 // app.get("/", (req, res)=> {
 //     const user  = new User({
