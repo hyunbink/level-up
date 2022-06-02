@@ -1,19 +1,19 @@
 import React from "react";
-import "../../styles/icons_background.css";
+import "../../styles/icons_background.scss";
 import { MdSportsEsports } from "react-icons/md";
 import { FaRegAddressBook } from "react-icons/fa";
 import { FaBalanceScale } from "react-icons/fa";
 import { BsThermometerHalf } from "react-icons/bs";
 import { FaRegCommentDots } from "react-icons/fa";
 import { FaHourglassEnd } from "react-icons/fa";
-import { FaBolt } from "react-icons/fa";
 import { FaRegBell } from "react-icons/fa";
 import { BsBicycle } from "react-icons/bs";
-import { ImBullhorn } from "react-icons/im";
+import { FaBolt } from "react-icons/fa";
 import { BsEnvelope } from "react-icons/bs";
-import { FiGift } from "react-icons/fi";
+import { ImBullhorn } from "react-icons/im";
 import { FaGlasses } from "react-icons/fa";
 import { FaGlobeAmericas } from "react-icons/fa";
+import { BsGift } from "react-icons/bs";
 import { FaGraduationCap } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { MdComputer } from "react-icons/md";
@@ -43,14 +43,14 @@ class IconsBackground extends React.Component {
                         <p><FaHourglassEnd /></p>
                         <p><FaRegBell /></p>
                         <p><BsBicycle /></p>
-                        <p><FaBolt /></p>
                         <p><ImBullhorn /></p>
                         <p><MdComputer /></p>
-                        <p><GiShrimp /></p>
+                        <p><FaBolt /></p>
                         <p><BsEnvelope /></p>
-                        <p><FiGift /></p>
+                        <p><GiShrimp /></p>
                         <p><FaGlasses /></p>
                         <p><FaGlobeAmericas /></p>
+                        <p><BsGift /></p>
                         <p><FaGraduationCap /></p>
                         <p><FaRegHeart /></p>
                         <p><FaAnchor /></p>
@@ -64,14 +64,14 @@ class IconsBackground extends React.Component {
                         <p><FaHourglassEnd /></p>
                         <p><FaRegBell /></p>
                         <p><BsBicycle /></p>
-                        <p><FaBolt /></p>
                         <p><ImBullhorn /></p>
                         <p><MdComputer /></p>
-                        <p><GiShrimp /></p>
+                        <p><FaBolt /></p>
                         <p><BsEnvelope /></p>
-                        <p><FiGift /></p>
+                        <p><GiShrimp /></p>
                         <p><FaGlasses /></p>
                         <p><FaGlobeAmericas /></p>
+                        <p><BsGift /></p>
                         <p><FaGraduationCap /></p>
                         <p><FaRegHeart /></p>
                         <p><FaAnchor /></p>
@@ -86,14 +86,14 @@ class IconsBackground extends React.Component {
                         <p><FaHourglassEnd /></p>
                         <p><FaRegBell /></p>
                         <p><BsBicycle /></p>
-                        <p><FaBolt /></p>
                         <p><ImBullhorn /></p>
                         <p><MdComputer /></p>
-                        <p><GiShrimp /></p>
+                        <p><FaBolt /></p>
                         <p><BsEnvelope /></p>
-                        <p><FiGift /></p>
+                        <p><GiShrimp /></p>
                         <p><FaGlasses /></p>
                         <p><FaGlobeAmericas /></p>
+                        <p><BsGift /></p>
                         <p><FaGraduationCap /></p>
                         <p><FaRegHeart /></p>
                         <p><FaAnchor /></p>
@@ -107,14 +107,14 @@ class IconsBackground extends React.Component {
                         <p><FaHourglassEnd /></p>
                         <p><FaRegBell /></p>
                         <p><BsBicycle /></p>
-                        <p><FaBolt /></p>
                         <p><ImBullhorn /></p>
                         <p><MdComputer /></p>
-                        <p><GiShrimp /></p>
+                        <p><FaBolt /></p>
                         <p><BsEnvelope /></p>
-                        <p><FiGift /></p>
+                        <p><GiShrimp /></p>
                         <p><FaGlasses /></p>
                         <p><FaGlobeAmericas /></p>
+                        <p><BsGift /></p>
                         <p><FaGraduationCap /></p>
                         <p><FaRegHeart /></p>
                         <p><FaAnchor /></p>
