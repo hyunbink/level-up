@@ -53,36 +53,40 @@ class UserPage extends React.Component {
             <div className="user-page">
                 <div className="user-container">
                     <div className="user-show-banner">
-                            {/* <img className="user-show-banner-img" src="../../images/demo_banner.png" alt="user-show-banner-img"></img> */}
+                            <img className="user-show-banner-img" src="../../images/demo_banner.png" alt="user-show-banner-img"></img>
+                            <div className="user-photo-">
+                                {/* <img className="user-show-profile-photo" alt="user-profile"></img> */}
+                                <div className="user-show-profile-photo"></div>
+                            </div>
                     </div>
                     <div className="user-show-info-div">
                         <div className="user-show-info-div-left">
                                 {/* <div className="user-info"> */}
                                     <div className="user-essential">
-                                        <span className="user-photo-">
-                                            <img className="user-show-profile-photo" alt="user-show-profile"></img>
-                                        </span>
+                                        {/*  */}
+                                        <div className="space-for-photo"></div>
                                         <span className="user-show-full-name"> {this.props.user.firstName} {this.props.user.lastName} </span>
                                         <span>{this.props.user.professional ? <BsFillCheckCircleFill className="user-show-prof-icon" />: <div></div> }</span>
                                         <p></p>
                                         <br/>
                                         <p>About: {this.props.user.bio}</p>
                                         <br/>
-                                        <h1>Interests: <ul className="user-show-interests-list">{this.props.user.interests.split(",").map((int, i)=>(
-                                            <li key={`interest0${i}`} className="user-show-interest">{int}</li>
-                                        ))}</ul></h1>
-
-
+                                        {this.props.user.interests ? <h1 className="user-show-ints">Interests: <ul className="user-show-interests-list">{this.props.user.interests.split(",").map((int, i)=>(
+                                            <li key={`interest-${i}`} className="user-show-interest">{int}</li>
+                                        ))}</ul></h1> : <div></div>}
+                                        {this.props.user.categories ? <h1 className="user-show-ints">Expert in Categories: <ul className="user-show-interests-list">{this.props.user.categories.split(",").map((int, i)=>(
+                                            <li key={`cat-${i}`} className="user-show-interest">{int}</li>
+                                        ))}</ul></h1> : <div></div>}
                         </div>
                             </div>
                                 <div className="user-show-info-div-right">
                                     <div className="user-details">
                                         {this.props.user.professional? 
-                                        <ul> Prof's categories and videos
-                                            <div className="user-show-videos">Placeholder for videos</div>
+                                        <ul> Prof's Videos
+                                            {/* <div className="user-show-videos">Placeholder for videos</div>
                                             {this.props.user.categories.split(",").map((cat, i)=>(
                                                 <li key={`cat ${i}`}>{cat}</li>
-                                            ))}
+                                            ))} */}
                                         </ul>
                                         : <div></div> }
                                     
@@ -100,13 +104,12 @@ class UserPage extends React.Component {
                                             {/* make sure bookings only show if they assoicated with it, user and prof */}
                                             {this.props.bookings.data ? <ul>
                                                 {this.props.bookings.data.map((booking, idx)=> (
-                                                <BookingShow key={idx} booking={booking} getBookings={this.getUserBookings}/>
+                                                <li><BookingShow key={idx} booking={booking} getBookings={this.getUserBookings}/></li>
                                                 )
                                             )} </ul> : <div></div> }
                                         </ul>
                                     </div>
                                 </div>
-                                    
                 </div>
                     <div className="user-reviews-container">
                         <h1>Reviews Container</h1>
@@ -118,10 +121,8 @@ class UserPage extends React.Component {
                     <div className="create-review-form">
                         <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
                     </div>
-
                 </div>
-                </div>
-            // </div>
+            </div>
         )
     }
 }
