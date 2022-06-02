@@ -3,9 +3,13 @@ import VideoForm from "./video_form"
 import { createVideo, updateVideo, deleteVideo, fetchVideo } from "../../../actions/video_actions";
 import { closeModal } from "../../../actions/modal_actions"
 
-const mSTP = (state, ownProps) => ({
-    currentUserId: state.session.user.id,
-});
+const mSTP = (state, ownProps) => {
+    if (state.session.user) {
+        return ({
+            currentUserId: state.session.user.id,
+        });
+    }
+}
 
 const mDTP = (dispatch, ownProps) => ({
     fetchVideo: video => dispatch(fetchVideo(video)),
