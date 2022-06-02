@@ -291,8 +291,7 @@ const seedDB = async() => {
 
     for (let i = 0; i < numUsers; i++) {
         newUser = new User({
-            // Can use faker.image.avatar() for propic. Returns a string.
-            // proPic: faker.image.avatar(),
+            photoUrl: faker.image.avatar(),
             firstName: faker.name.firstName(),
             lastName: faker.name.lastName(),
             email: faker.internet.email(),
@@ -301,7 +300,6 @@ const seedDB = async() => {
             categories: "",
             interests: _.sample(Object.keys(topics)), // Uses underscore package method. Look up docs
             bio: faker.lorem.paragraphs(3),
-            // bio: _.sample(bios)
         });
         await newUser.save();
         users.push(newUser._id);
@@ -312,7 +310,6 @@ const seedDB = async() => {
         let specialty = temp[0];
         let interest = temp[1];
         newProf = new User({
-            // Can use faker.image.avatar() for propic. Returns a string.
             photoUrl: faker.image.avatar(),
             firstName: faker.name.firstName(),
             lastName: faker.name.lastName(),
