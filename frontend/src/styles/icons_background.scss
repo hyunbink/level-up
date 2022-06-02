@@ -13,6 +13,7 @@ section {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    z-index: 0;
 }
 
 section .row {
@@ -27,24 +28,17 @@ section .row {
     transform: rotate(-30deg);
 }
 
-p {
+.background-icon {
     color: rgba(200, 211, 214, 0.1);
     background: transparent;
     transition: 1s;
     padding: 0 5px;
     cursor: default;
 }
-
-i {
-    display: none;
-}
-
-p:hover {
+    
+.background-icon:hover {
     transition: 0s;
-    /* background: transparent; */
     color: #75E6DA;
-    /* filter: drop-shadow(0 0 120px #189AB4);
-    filter: drop-shadow(0 0 60px #189AB4); */
 }
 
 section .row div {

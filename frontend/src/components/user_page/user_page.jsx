@@ -15,10 +15,6 @@ class UserPage extends React.Component {
         super(props);
         this.getUserBookings = this.getUserBookings.bind(this);
         this.deleteSelectedBooking = this.deleteSelectedBooking.bind(this);
-    }
-
-    constructor(props) {
-        super(props);
         this.getUserReviews = this.getUserReviews.bind(this);
     }
 
@@ -94,7 +90,7 @@ class UserPage extends React.Component {
                                     <br/>
                                     <div>Interests: <ul className="user-show-interests-list">{this.props.user.interests.split(",").map((int,idx)=>(
                                         <li key={idx} className="user-show-interest">{int}</li>
-                                    ))}</ul>
+                                        ))}</ul>
 
                                     </div>
                                 </div>
@@ -146,7 +142,7 @@ class UserPage extends React.Component {
                     <div className="create-review-form">
                         <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
                     </div>
-
+                </div>
                 </div>
             </div>
         )

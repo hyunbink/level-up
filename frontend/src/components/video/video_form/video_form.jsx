@@ -1,4 +1,6 @@
 import React from "react";
+import IconsBackground from "../../icons_background/icons_background";
+import "./video_form.scss";
 
 class VideoForm extends React.Component {
     constructor(props) {
@@ -55,11 +57,14 @@ class VideoForm extends React.Component {
 
     render () {
         return(
-            <form onSubmit={
-                    this.props.match.params.videoId 
+
+            <div className="video-form-page">
+                <IconsBackground />
+            <form className="video-form" onSubmit={
+              this.props.match.params.videoId 
                     ? this.handleUpdate 
                     : this.handleSubmit
-                }> 
+            }> 
                 {/* <p className="close-form-button" onClick={() => this.props.closeModal()}>x</p> */}
                 {
                     this.props.match.params.videoId 
@@ -71,7 +76,7 @@ class VideoForm extends React.Component {
                     <input type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
                 </label>
                 <label className="description">Description
-                    <input type="text" placeholder="Description" value={this.state.description} onChange={this.update("description")}/>
+                    <textarea rows="5" placeholder="Description" value={this.state.description} onChange={this.update("description")}/>
                 </label>
                 <label className="category">Category
                     <input type="text" placeholder="Category" value={this.state.category} onChange={this.update("category")}/>
@@ -79,12 +84,18 @@ class VideoForm extends React.Component {
                 <label className="url">Youtube Link
                     <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/>
                 </label>
-                {
-                    this.props.match.params.videoId 
-                        ? <button className="video-update-button">Update</button>
-                        : <button className="video-upload-button">Upload</button>
-                }
+
+                <div className="video-form-buttons">
+                  {
+                      this.props.match.params.videoId 
+                          ? <button className="video-update-button">Update</button>
+                          : <button className="video-upload-button">Upload</button>
+                  }                    
+                      <button onClick={this.props.history.goBack} className="button">Go Back</button>
+                </div>
+
             </form>
+            </div>
         )
     }
 }

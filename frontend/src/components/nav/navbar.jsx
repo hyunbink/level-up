@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import './navbar.scss';
 
@@ -26,16 +26,16 @@ class NavBar extends React.Component {
       if (this.props.loggedIn) {
         return (
             <div className="nav-wrapper">
-              <div className="nav-left">
+              {/* <div className="nav-left">
                 <Link to={`/user/${this.props.currentUserId}`} className="nav-link" >
                   <div className="nav-link-text">Profile</div> 
                 </Link>
                 <Link to ={"/login"} onClick={this.logoutUser} className="nav-link">
                   <div className="nav-link-text">Logout</div> 
                 </Link>
-              </div>
-              <div className='nav-mid' >
-                Welcome home
+              </div> */}
+              <div className='nav-logo' onClick={()=>this.props.history.push("/home")} >
+                Level-Up
               </div>
               <div className="nav-right">
                 <div className='nav-burger'>
@@ -61,9 +61,12 @@ class NavBar extends React.Component {
         return (
 
             <div className="nav-wrapper">
-              <div className='nav-left'>
+              {/* <div className='nav-left'>
                 <Link to={'/signup'} className="nav-link">Signup</Link>
                 <Link to={'/login'} className = "nav-link">Login</Link>
+              </div> */}
+              <div className='nav-logo' onClick={()=>this.props.history.push("/home")} >
+                Level-Up
               </div>
               <div className='nav-right'>
                 <div className='nav-burger'>
@@ -84,17 +87,28 @@ class NavBar extends React.Component {
   }
 
   render() {
-    // if (!this.props.currentUser) {
-    //   return null;
-    // }
-      return (
 
-        <div className='nav-container'>
+    let bannedPages = ['signup', 'login', 'upload'];
 
-            { this.getLinks() }
-        </div>
-      );
+    let display = true;
+
+    bannedPages.forEach(page => {
+        if (this.props.location.pathname.includes(page)) {display = false}
+    })
+
+    if (display === false) {return null}
+
+
+    if (this.props.location.pathname.includes('/signup') || this.props.location.pathname.includes('/login')) {return null}
+
+    return (
+
+      <div className='nav-container'>
+
+          { this.getLinks() }
+      </div>
+    );
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

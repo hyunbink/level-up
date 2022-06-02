@@ -35,90 +35,90 @@ class IconsBackground extends React.Component {
             icons.push(
                 <div className="row">
                     <div>
-                        <p><MdSportsEsports /></p>
-                        <p><FaRegAddressBook /></p>
-                        <p><FaBalanceScale /></p>
-                        <p><BsThermometerHalf /></p>
-                        <p><FaRegCommentDots /></p>
-                        <p><FaHourglassEnd /></p>
-                        <p><FaRegBell /></p>
-                        <p><BsBicycle /></p>
-                        <p><ImBullhorn /></p>
-                        <p><MdComputer /></p>
-                        <p><FaBolt /></p>
-                        <p><BsEnvelope /></p>
-                        <p><GiShrimp /></p>
-                        <p><FaGlasses /></p>
-                        <p><FaGlobeAmericas /></p>
-                        <p><BsGift /></p>
-                        <p><FaGraduationCap /></p>
-                        <p><FaRegHeart /></p>
-                        <p><FaAnchor /></p>
-                        <p><GiConverseShoe /></p>
+                        <p className="background-icon"><MdSportsEsports /></p>
+                        <p className="background-icon"><FaRegAddressBook /></p>
+                        <p className="background-icon"><FaBalanceScale /></p>
+                        <p className="background-icon"><BsThermometerHalf /></p>
+                        <p className="background-icon"><FaRegCommentDots /></p>
+                        <p className="background-icon"><FaHourglassEnd /></p>
+                        <p className="background-icon"><FaRegBell /></p>
+                        <p className="background-icon"><BsBicycle /></p>
+                        <p className="background-icon"><ImBullhorn /></p>
+                        <p className="background-icon"><MdComputer /></p>
+                        <p className="background-icon"><FaBolt /></p>
+                        <p className="background-icon"><BsEnvelope /></p>
+                        <p className="background-icon"><GiShrimp /></p>
+                        <p className="background-icon"><FaGlasses /></p>
+                        <p className="background-icon"><FaGlobeAmericas /></p>
+                        <p className="background-icon"><BsGift /></p>
+                        <p className="background-icon"><FaGraduationCap /></p>
+                        <p className="background-icon"><FaRegHeart /></p>
+                        <p className="background-icon"><FaAnchor /></p>
+                        <p className="background-icon"><GiConverseShoe /></p>
 
-                        <p><MdSportsEsports /></p>
-                        <p><FaRegAddressBook /></p>
-                        <p><FaBalanceScale /></p>
-                        <p><BsThermometerHalf /></p>
-                        <p><FaRegCommentDots /></p>
-                        <p><FaHourglassEnd /></p>
-                        <p><FaRegBell /></p>
-                        <p><BsBicycle /></p>
-                        <p><ImBullhorn /></p>
-                        <p><MdComputer /></p>
-                        <p><FaBolt /></p>
-                        <p><BsEnvelope /></p>
-                        <p><GiShrimp /></p>
-                        <p><FaGlasses /></p>
-                        <p><FaGlobeAmericas /></p>
-                        <p><BsGift /></p>
-                        <p><FaGraduationCap /></p>
-                        <p><FaRegHeart /></p>
-                        <p><FaAnchor /></p>
-                        <p><GiConverseShoe /></p>
+                        <p className="background-icon"><MdSportsEsports /></p>
+                        <p className="background-icon"><FaRegAddressBook /></p>
+                        <p className="background-icon"><FaBalanceScale /></p>
+                        <p className="background-icon"><BsThermometerHalf /></p>
+                        <p className="background-icon"><FaRegCommentDots /></p>
+                        <p className="background-icon"><FaHourglassEnd /></p>
+                        <p className="background-icon"><FaRegBell /></p>
+                        <p className="background-icon"><BsBicycle /></p>
+                        <p className="background-icon"><ImBullhorn /></p>
+                        <p className="background-icon"><MdComputer /></p>
+                        <p className="background-icon"><FaBolt /></p>
+                        <p className="background-icon"><BsEnvelope /></p>
+                        <p className="background-icon"><GiShrimp /></p>
+                        <p className="background-icon"><FaGlasses /></p>
+                        <p className="background-icon"><FaGlobeAmericas /></p>
+                        <p className="background-icon"><BsGift /></p>
+                        <p className="background-icon"><FaGraduationCap /></p>
+                        <p className="background-icon"><FaRegHeart /></p>
+                        <p className="background-icon"><FaAnchor /></p>
+                        <p className="background-icon"><GiConverseShoe /></p>
                     </div>
                     <div>
-                        <p><MdSportsEsports /></p>
-                        <p><FaRegAddressBook /></p>
-                        <p><FaBalanceScale /></p>
-                        <p><BsThermometerHalf /></p>
-                        <p><FaRegCommentDots /></p>
-                        <p><FaHourglassEnd /></p>
-                        <p><FaRegBell /></p>
-                        <p><BsBicycle /></p>
-                        <p><ImBullhorn /></p>
-                        <p><MdComputer /></p>
-                        <p><FaBolt /></p>
-                        <p><BsEnvelope /></p>
-                        <p><GiShrimp /></p>
-                        <p><FaGlasses /></p>
-                        <p><FaGlobeAmericas /></p>
-                        <p><BsGift /></p>
-                        <p><FaGraduationCap /></p>
-                        <p><FaRegHeart /></p>
-                        <p><FaAnchor /></p>
-                        <p><GiConverseShoe /></p>
+                        <p className="background-icon"><MdSportsEsports /></p>
+                        <p className="background-icon"><FaRegAddressBook /></p>
+                        <p className="background-icon"><FaBalanceScale /></p>
+                        <p className="background-icon"><BsThermometerHalf /></p>
+                        <p className="background-icon"><FaRegCommentDots /></p>
+                        <p className="background-icon"><FaHourglassEnd /></p>
+                        <p className="background-icon"><FaRegBell /></p>
+                        <p className="background-icon"><BsBicycle /></p>
+                        <p className="background-icon"><ImBullhorn /></p>
+                        <p className="background-icon"><MdComputer /></p>
+                        <p className="background-icon"><FaBolt /></p>
+                        <p className="background-icon"><BsEnvelope /></p>
+                        <p className="background-icon"><GiShrimp /></p>
+                        <p className="background-icon"><FaGlasses /></p>
+                        <p className="background-icon"><FaGlobeAmericas /></p>
+                        <p className="background-icon"><BsGift /></p>
+                        <p className="background-icon"><FaGraduationCap /></p>
+                        <p className="background-icon"><FaRegHeart /></p>
+                        <p className="background-icon"><FaAnchor /></p>
+                        <p className="background-icon"><GiConverseShoe /></p>
 
-                        <p><MdSportsEsports /></p>
-                        <p><FaRegAddressBook /></p>
-                        <p><FaBalanceScale /></p>
-                        <p><BsThermometerHalf /></p>
-                        <p><FaRegCommentDots /></p>
-                        <p><FaHourglassEnd /></p>
-                        <p><FaRegBell /></p>
-                        <p><BsBicycle /></p>
-                        <p><ImBullhorn /></p>
-                        <p><MdComputer /></p>
-                        <p><FaBolt /></p>
-                        <p><BsEnvelope /></p>
-                        <p><GiShrimp /></p>
-                        <p><FaGlasses /></p>
-                        <p><FaGlobeAmericas /></p>
-                        <p><BsGift /></p>
-                        <p><FaGraduationCap /></p>
-                        <p><FaRegHeart /></p>
-                        <p><FaAnchor /></p>
-                        <p><GiConverseShoe /></p>
+                        <p className="background-icon"><MdSportsEsports /></p>
+                        <p className="background-icon"><FaRegAddressBook /></p>
+                        <p className="background-icon"><FaBalanceScale /></p>
+                        <p className="background-icon"><BsThermometerHalf /></p>
+                        <p className="background-icon"><FaRegCommentDots /></p>
+                        <p className="background-icon"><FaHourglassEnd /></p>
+                        <p className="background-icon"><FaRegBell /></p>
+                        <p className="background-icon"><BsBicycle /></p>
+                        <p className="background-icon"><ImBullhorn /></p>
+                        <p className="background-icon"><MdComputer /></p>
+                        <p className="background-icon"><FaBolt /></p>
+                        <p className="background-icon"><BsEnvelope /></p>
+                        <p className="background-icon"><GiShrimp /></p>
+                        <p className="background-icon"><FaGlasses /></p>
+                        <p className="background-icon"><FaGlobeAmericas /></p>
+                        <p className="background-icon"><BsGift /></p>
+                        <p className="background-icon"><FaGraduationCap /></p>
+                        <p className="background-icon"><FaRegHeart /></p>
+                        <p className="background-icon"><FaAnchor /></p>
+                        <p className="background-icon"><GiConverseShoe /></p>
                     </div>
                 </div>
             )
