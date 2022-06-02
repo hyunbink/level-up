@@ -8,15 +8,7 @@ import { withRouter } from "react-router-dom";
 
 
 const mSTP = (state, ownProps) => {
-    console.log('ownProps', ownProps)
-    console.log('state-fromformcont', state)
-    // let profs;
-    // if (state.entities.users.data) {
-    //     profs = state.entities.users.data.filter(user => user.professional && user._id !== state.session.user.id)
-    // }
     return ({
-        // currentUserId: state.session.user.id,
-        // professionals: 
         bookeeId: ownProps.bookee._id,
         bookerId: ownProps.booker.id
     })

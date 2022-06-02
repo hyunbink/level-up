@@ -14,12 +14,7 @@ class BookingForm extends React.Component{
         this.update = this.update.bind(this);
     }
 
-    // componentDidMount(){
-    //     this.props.fetchUser(this.props.userId);
-    // }
-
     update(field) {
-        console.log('updating', this.state)
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
@@ -28,8 +23,6 @@ class BookingForm extends React.Component{
         let newBooking = this.state;
         this.props.createBooking(newBooking)
             .then(()=>this.props.getUserBookings());
-        // clear inputs after submitting
-            // .then(() => this.props.closeModal());
     }
 
 // include categories/topic?

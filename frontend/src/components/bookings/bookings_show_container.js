@@ -5,8 +5,6 @@ import { fetchBookings, deleteBooking, updateBooking } from '../../actions/booki
 import { withRouter } from 'react-router-dom'
 
 const mSTP = (state, ownProps) => {
-    console.log("current show state", state);
-    console.log("ownprops show", ownProps);
     let loggedUserId;
     if (state.session.user)
     return ({
@@ -15,7 +13,6 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = dispatch => ({
-    // fetchBookings: () => dispatch(fetchBookings()),
     deleteBooking: bookingId => dispatch(deleteBooking(bookingId)),
     updateBooking: booking => dispatch(updateBooking(booking))
     // closeModal: () => dispatch(closeModal())

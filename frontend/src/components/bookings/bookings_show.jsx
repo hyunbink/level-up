@@ -3,7 +3,6 @@ import React from "react";
 class BookingsShow extends React.Component{
     constructor(props){
         super(props);
-        console.log("HEASOIF", this.props)
         this.state = {
             bookingStudId: this.props.booking.bookingStudId,
             bookingProfId: this.props.booking.bookingProfId,
@@ -31,7 +30,6 @@ class BookingsShow extends React.Component{
         newBooking["date"] = this.state.date;
         newBooking["duration"] = this.state.duration;
         this.setState({editing:false});
-        console.log("new bookingggg", newBooking);
         this.props.updateBooking(newBooking)
             .then(()=>this.props.getBookings());
     }
@@ -45,33 +43,35 @@ class BookingsShow extends React.Component{
         let today = year + month + day;
         return(
             <div className="bookings-show-div" >
-                {/* {this.props.currentUserId && this.props.currentUserId === this.props.booking.} */}
                 <div className="bookings-show-edit">
                     <button onClick={this.edit} >Edit this Booking</button>
+                    <br/>
                     <button onClick={()=>this.props.deleteBooking(this.props.booking._id).then(()=>this.props.getBookings())}>Delete this Booking</button>
+                    <br/>
                 </div> 
                 {this.state.editing ? 
-                    <div>
+                    <div className="booking-show-edit-form">
                         <form onSubmit={this.handleSubmit}>
-                        <label className="booking-create-title">Title:
-                    <input type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
-                </label>
-                <br/>
+                            <label className="booking-create-title">Title:
+                                <input type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
+                            </label>
+                        <br/>
                             <label className="booking-create-date">When?
-                    <input type="date" placeholder="Date" min={today.toLocaleString()} value={this.state.date} onChange={this.update("date")}/>
-                </label>
-                <br/>
+                                <input type="date" placeholder="Date" min={today.toLocaleString()} value={this.state.date} onChange={this.update("date")}/>
+                            </label>
+                        <br/>
                             <label className="booking-create-duration">Select Duration:
-                    <input placeholder='select one' list="duration-list" type='text' onChange={this.update("duration")} value={this.state.duration}/>
-                        <datalist className="booking-create-dur-list" id="duration-list">
-                            <option className="booking-create-dur-list-item" value="30 minutes" />
-                            <option className="booking-create-dur-list-item" value="1 hour" />
-                            <option className="booking-create-dur-list-item" value="1 hour 30 minutes" />
-                            <option className="booking-create-dur-list-item" value="2 hours" />
-                            <option className="booking-create-dur-list-item" value="more than 2 hours" />
-                        </datalist> 
-                </label>
-                            <button>Edit Booking</button>
+                                <input placeholder='select one' list="duration-list" type='text' onChange={this.update("duration")} value={this.state.duration}/>
+                                    <datalist className="booking-create-dur-list" id="duration-list">
+                                        <option className="booking-create-dur-list-item" value="30 minutes" />
+                                        <option className="booking-create-dur-list-item" value="1 hour" />
+                                        <option className="booking-create-dur-list-item" value="1 hour 30 minutes" />
+                                        <option className="booking-create-dur-list-item" value="2 hours" />
+                                        <option className="booking-create-dur-list-item" value="more than 2 hours" />
+                                    </datalist> 
+                            </label>
+                        <br/>
+                            <button className="booking-show-submit-edit-button">Edit Booking</button>
                         </form>
                     </div>
                 :

@@ -45,12 +45,10 @@ class UserPage extends React.Component {
         if (!this.props.user) {
             return null;
         }
-        // console.log("this user", this.props.user);
         if (this.props.user.professional && !this.props.reviews) {
             return null;
         }
 
-        console.log('booooooo', this.props.bookings.data)
         return (
             <div className="user-page">
                 <div className="user-container">
@@ -89,24 +87,17 @@ class UserPage extends React.Component {
                                     </div>
                                 </div>
                                 <div className="user-show-bookings" >
-                                    {this.props.user.professional ? <BookingsForm 
+                                    {this.props.user.professional && this.props.currentUserId !== this.props.user._id ? <BookingsForm 
                                     getUserBookings={this.getUserBookings} 
                                     className='user-show-bookings-form' 
                                     bookee={this.props.user} 
                                     booker={this.props.currentUser}
-                                    // createBooking={this.props.createBooking}  
-                                    // fetchUser={this.props.fetchUser}
                                     /> : <div></div> }
                                     <div className="user-show-bookings-div">
                                         <ul className="user-show-bookings-ul">
-                                            {/* {this.props.bookings.data ? this.props.bookings.data.map((ele, i) => (<li 
-                                            key={`bk-list-${i}`}><div>{ele.title}</div>
-                                            <div><button>edit</button></div>
-                                            <div><button onClick={()=>this.deleteSelectedBooking(ele._id)} >delete</button></div>
-                                            </li>)  ) : <div></div> } */}
-                                            {/* <BookingsShow  /> */}
                                             {/* make sure bookings only show if they assoicated with it, user and prof */}
-                                            {this.props.bookings.data ? <ul>{this.props.bookings.data.map((booking, idx)=> (
+                                            {this.props.bookings.data ? <ul>
+                                                {this.props.bookings.data.map((booking, idx)=> (
                                                 <BookingShow key={idx} booking={booking} getBookings={this.getUserBookings}/>
                                                 )
                                             )} </ul> : <div></div> }
