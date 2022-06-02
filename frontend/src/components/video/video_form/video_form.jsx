@@ -10,7 +10,7 @@ class VideoForm extends React.Component {
             title: "",
             description: "",
             category: "",
-            url: "",
+            url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
