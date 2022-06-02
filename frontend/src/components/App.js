@@ -21,6 +21,7 @@ import IconsBackground from './icons_background/icons_background';
 import BookingFormContainer from './bookings/booking_form_container';   // add protected routes for bookings after testing
 import BookingShowContainer from './bookings/bookings_show_container';
 import css from "../App.css";
+import SideBar from './sidebar/sidebar';
 
 
 
@@ -29,7 +30,7 @@ const App = () => (
   <div>
     <NavBarContainer />
     <Switch>
-
+        <Route exact path="/sidebar" component={ SideBar } />
         <Route exact path="/bookings" component={BookingShowContainer} />
         <Route exact path="/bookings/create" component={BookingFormContainer} />
         <Route exact path="/background" component={ IconsBackground } />

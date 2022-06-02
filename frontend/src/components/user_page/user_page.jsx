@@ -78,7 +78,7 @@ class UserPage extends React.Component {
                                         ))}</ul></h1>
 
                             {/* <div className="user-info"> */}
-                                <div className="user-essential">
+                                {/* <div className="user-essential">
                                     <span className="user-photo-">
                                         <img className="user-show-profile-photo" alt="user-show-profile"></img>
                                     </span>
@@ -93,7 +93,7 @@ class UserPage extends React.Component {
                                     ))}</ul>
 
                                     </div>
-                                </div>
+                                </div> */}
                                 {/* <br /> */}
                             {/* </div> */}
                                     
