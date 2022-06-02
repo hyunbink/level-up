@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from 'react-router-dom'
+import IconsBackground from "../icons_background/icons_background";
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -94,6 +95,8 @@ class SignUp extends React.Component {
     render() {
 
         return (
+            <>
+                <IconsBackground />
             <div className="session-page">
                 <form className="session-form" onSubmit={this.handleSubmit}>
                     <div className="session-headline">Sign Up</div>
@@ -135,6 +138,7 @@ class SignUp extends React.Component {
                     </button>
                 </form>
             </div>
+        </>
         )
 
     }

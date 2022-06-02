@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import './navbar.css'
+import { Link } from 'react-router-dom';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import './navbar.scss';
 
 
 class NavBar extends React.Component {
@@ -16,7 +17,6 @@ class NavBar extends React.Component {
 
 
   logoutUser(e) {
-    e.preventDefault();
     this.props.logout();
     this.props.history.push("/home");
   }
@@ -40,11 +40,11 @@ class NavBar extends React.Component {
               <div className="nav-right">
                 <div className='nav-burger'>
                   <div>
-                    borger
+                  <GiHamburgerMenu id="nav-burger" />
                   </div>
                   <div className='nav-drop'>
-                      <div>
-                        upload a video -coming soon
+                      <div onClick={()=>this.props.history.push(`/video/upload`)}>
+                        Upload a video
                       </div>
                       <div onClick={()=>this.props.history.push(`/user/${this.props.currentUserId}`)}>
                         Profile
@@ -55,7 +55,6 @@ class NavBar extends React.Component {
                   </div>
                 </div>
               </div>
-
             </div>
         );
       } else {
@@ -68,6 +67,7 @@ class NavBar extends React.Component {
               </div>
               <div className='nav-right'>
                 <div className='nav-burger'>
+                    <GiHamburgerMenu id="nav-burger" />
                     <div className='nav-drop'>
                         <div onClick={()=> this.props.history.push("/signup")}>
                           Sign Up 

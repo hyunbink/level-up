@@ -17,6 +17,7 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import { fetchUser, fetchUsers, updateUser } from './actions/user_actions';
 import { fetchAllVideos } from './actions/video_actions';
+import { createReview, deleteReview, fetchReviews } from './actions/review_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -57,6 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.updateUser = updateUser;
   window.fetchAllVideos = fetchAllVideos;
+  window.fetchReviews = fetchReviews;
+  window.createReview = createReview;
+  window.deleteReview = deleteReview;
 
   ReactDOM.render(<Root store={store} />, root);
 });
