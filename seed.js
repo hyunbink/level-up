@@ -68,6 +68,8 @@ const seedDB = async() => {
         });
     }
 
+    await User.insertMany(users);
+
     for (let i = 0; i < numProfsPerTopic; i++) {
         let temp = _.sample(Object.keys(topics), 2);
         let specialty = temp[0];
@@ -87,7 +89,7 @@ const seedDB = async() => {
         });
 
         // Using .save instead of .create so we can still access the newProfs info
-        newProf.save()
+        await newProf.save()
             // .then() Retreive the newProfs _id
 
         for (let j = 0; i < numVideosPerProf; j++) {
