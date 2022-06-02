@@ -27,7 +27,7 @@ class NavBar extends React.Component {
         return (
             <div className="nav-wrapper">
               {/* <div className="nav-left">
-                <Link to={`/user/${this.props.currentUserId}`} className="nav-link" >
+                <Link to={`/user/${this.props.currentUser.id}`} className="nav-link" >
                   <div className="nav-link-text">Profile</div> 
                 </Link>
                 <Link to ={"/login"} onClick={this.logoutUser} className="nav-link">
@@ -46,7 +46,7 @@ class NavBar extends React.Component {
                       <div onClick={()=>this.props.history.push(`/video/upload`)}>
                         Upload a video
                       </div>
-                      <div onClick={()=>this.props.history.push(`/user/${this.props.currentUserId}`)}>
+                      <div onClick={()=>this.props.history.push(`/user/${this.props.currentUser.id}`)}>
                         Profile
                       </div>
                       <div onClick={this.logoutUser} >

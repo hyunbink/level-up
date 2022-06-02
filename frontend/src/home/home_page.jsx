@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from '../components/carousel/carousel';
+import UserIndexContainer from '../components/user_grid/user_index/user_index_container';
 
 class HomePage extends React.Component {
 
@@ -7,11 +8,10 @@ class HomePage extends React.Component {
     return (
       <div className='home-page'>
         <div className="home-container">
-          <h1>Amog Us vs Them</h1>
+          <h1>Find your niche</h1>
           <Carousel />
-          <footer>
-            Copyright &copy; 2022 gamErs 
-          </footer>
+          <h1>Connect with experts</h1>
+          <UserIndexContainer />
         </div>
       </div>
     );

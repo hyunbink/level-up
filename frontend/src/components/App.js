@@ -3,7 +3,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 
-import MainPage from '../home/home_page';
 import LoginFormContainer from './session/login_container';
 import SignupFormContainer from './session/signup_container';
 import UserPageContainer from './user_page/user_page_container';
@@ -24,14 +23,15 @@ import css from "../App.css";
 import HomePage from '../home/home_page';
 import SplashPage from './splash/splash_page';
 import SideBar from './sidebar/sidebar';
-
-
+import Footer from './footer/footer';
+import "./static_pages.scss";
 
 
 const App = () => (
-  <div>
+  <div className='page'>
     <NavBarContainer />
     <SideBar />
+    <div className='body'>
     <Switch>
 
         <Route exact path="/bookings" component={BookingShowContainer} />
@@ -43,7 +43,6 @@ const App = () => (
         <Route exact path="/category/:category" component={ CategoryPageContainer }/> 
         <Route exact path="/video/upload" component={ VideoForm }/>
         <Route exact path="/video/:videoId" component={ VideoShowPageContainer }/>
-        {/* <Route exact path="/home" component={ SplashPage }/> */}
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         {/* Rename this to splash page */}
@@ -51,6 +50,8 @@ const App = () => (
         <AuthRoute exact path="/" component={SplashPage} />
 
     </Switch>
+    </div>
+    <Footer />
   </div>
 );
 
