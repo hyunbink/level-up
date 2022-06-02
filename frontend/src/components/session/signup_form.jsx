@@ -21,7 +21,7 @@ class SignUp extends React.Component {
 
     componentDidMount() {
         this.props.clearErrors();
-    }
+      }
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
@@ -35,18 +35,19 @@ class SignUp extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+
+
+        if (this.props.errors.length > 0) {return null}
+
         let user = {
             email: this.state.email,
             password: this.state.password,
             firstName: this.state.firstName,
             lastName: this.state.lastName
         };
+        
         this.props.signup(user)
-            .then(()=>{
-                if (this.props.errors.length === 0) {
-                    this.props.history.push("/home")
-                };
-            })
+            .then(()=>this.props.history.push("/home"))
         // .catch(()=> console.log("failed"));
         // .then(()=>this.props.login({email:user.email, password: user.password}))
             //.then(()=>this.props.login({email:user.email, password: user.password}))
