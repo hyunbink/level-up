@@ -121,7 +121,6 @@ class UserPage extends React.Component {
 
                 </div>
                 </div>
-            </div>
         )
     }
 }
