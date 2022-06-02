@@ -11,7 +11,8 @@
     position: relative;
     top: 0;
     background-color: #fff;
-    box-shadow: 0px 2px 20px lightgray;
+    box-shadow: 0px 2px 12px lightgray;
+    z-index: 500;
 }
 
 .nav-wrapper {
@@ -24,7 +25,6 @@
 }
 
 .nav-left {
-    border: 2px solid blue;
     height: 100%;
     width: 30%;
     display: flex;
@@ -36,7 +36,6 @@
     height: 100%;
     display: flex;
     justify-content: flex-end;
-    border: 2px solid rebeccapurple;
 }
 
 .nav-burger {
@@ -71,7 +70,18 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0px 0px 10px rgba(200, 200, 200, 0.5);
-    border-radius: 0.2em;
+    border-radius: 0.5em;
+    padding-block: 0.5em;
+}
+
+.nav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Helvetica, Arial,  sans-serif;
+    font-size: 1em;
+    width: 10%;
+    cursor: pointer;
 }
 
 .nav-burger:hover {
@@ -88,8 +98,9 @@
 .nav-drop div {
     /* border: 2px solid gray; */
     padding: 1em;
-    font-size: 20px;
-    font-weight: 700;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 400;
     transition: 0.5s;
 }
 

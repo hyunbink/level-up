@@ -71,6 +71,7 @@ class UserPage extends React.Component {
                                         <h1>Interests: <ul className="user-show-interests-list">{this.props.user.interests.split(",").map((int, i)=>(
                                             <li key={`interest0${i}`} className="user-show-interest">{int}</li>
                                         ))}</ul></h1>
+
                         </div>
                             </div>
                                 <div className="user-show-info-div-right">
@@ -116,6 +117,8 @@ class UserPage extends React.Component {
                     <div className="create-review-form">
                         <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
                     </div>
+
+                </div>
                 </div>
             </div>
         )

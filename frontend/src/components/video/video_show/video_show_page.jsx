@@ -1,4 +1,6 @@
 import React from "react";
+import VideoEditForm from "../video_form/video_edit_form_container";
+import { Link } from "react-router-dom";
 
 class VideoShow extends React.Component {
     constructor(props) {
@@ -8,7 +10,6 @@ class VideoShow extends React.Component {
             video: {},
             user: {}
         }
-
         this.deleteThisVideo = this.deleteThisVideo.bind(this);
         this.renderEditPage = this.renderEditPage.bind(this);
     }
@@ -25,12 +26,17 @@ class VideoShow extends React.Component {
             .then(() => this.setState({video: video}))
             .then(() => this.props.fetchUser(video.uploaderId))
             .then(action => this.setState({user: action.user.data[0]}))
-            .then(() => this.renderEditPage())
+            // .then(() => this.renderEditPage())
     }
 
     renderEditPage() {
         if (this.state.video.uploaderId === this.props.currentUserId) {
-            console.log("This is my Page")
+            return (
+                <>
+                    <button onClick={this.deleteThisVideo}>Delete Video</button>
+                    <Link to={`/video/edit/${this.state.video._id}`}><button>Edit Video</button></Link>
+                </>
+            )
         } else {
             console.log("This is not my page")
         }
@@ -39,9 +45,12 @@ class VideoShow extends React.Component {
     render() {
 
         if (!this.state.video) {return null}
+        console.log(this.state);
         return(
             <div className="video-show-page">
-                <button onClick={this.deleteThisVideo}>Delete Video</button>
+                {this.renderEditPage()}
+                {/* <VideoEditForm video={this.state.video}/> */}
+                {/* <button onClick={() => this.redirectToEdit()}>Edit Video</button> */}
                 <iframe
                     width="560"
                     height="315"
