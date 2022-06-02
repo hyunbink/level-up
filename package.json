@@ -27,7 +27,7 @@
     "passport-jwt": "^4.0.0",
     "react-icons": "^4.4.0",
     "sass": "^1.52.1",
-    "underscore": "^1.13.3",
+    "underscore": "^1.13.4",
     "validator": "^13.7.0"
   },
   "devDependencies": {

@@ -7,11 +7,11 @@ import NavBar from './navbar';
 const mapStateToProps = (state, ownProps) => {
   let curUser;
   if (state.session.user) {
-    curUser = state.session.user.id;
+    curUser = state.session.user;
   }
   return {
   loggedIn: state.session.isAuthenticated,
-  currentUserId: curUser
+  currentUser: curUser
 }};
 
 const mDTP = dispatch => ({

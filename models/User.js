@@ -35,6 +35,9 @@ const UserSchema = new Schema({
     bio: {
         type: String,
         default: "",
+    },
+    photoUrl: {
+        type: String
     }
 }, {
     timestamps: true

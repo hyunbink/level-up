@@ -74,7 +74,7 @@ class SignUp extends React.Component {
               <li key={`error-${i}`}>
                 {error}
               </li>
-            
+                ))}
             </ul>
         );
     } 

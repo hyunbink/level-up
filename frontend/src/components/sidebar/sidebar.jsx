@@ -9,7 +9,7 @@ import { GiSewingNeedle } from "react-icons/gi"
 import { BsMusicNoteBeamed } from "react-icons/bs"
 import { FaTheaterMasks } from "react-icons/fa"
 import { MdSportsFootball } from "react-icons/md"
-import { GrTechnology } from "react-icons/gr"
+import { GiTechnoHeart } from "react-icons/gi"
 
 class SideBar extends React.Component {
     constructor(props) {
@@ -40,7 +40,7 @@ class SideBar extends React.Component {
                     <Link to={`/category/music`}><li><span><BsMusicNoteBeamed /></span> Music</li></Link>
                     <Link to={`/category/role-play`}><li><span><FaTheaterMasks /></span> Role Play</li></Link>
                     <Link to={`/category/sports`}><li><span><MdSportsFootball /></span> Sports</li></Link>
-                    <Link to={`/category/technology`}><li><span><GrTechnology /></span> Technology</li></Link>
+                    <Link to={`/category/technology`}><li><span><GiTechnoHeart /></span> Technology</li></Link>
                 </ul>
             </div>
         )
