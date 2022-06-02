@@ -18,7 +18,7 @@ class NavBar extends React.Component {
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
-    this.props.history.push("/owaiuefhjwalogjf;lasijkl");
+    this.props.history.push("/home");
   }
 
   // Selectively render links dependent on whether the user is logged in

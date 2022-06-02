@@ -11,12 +11,25 @@ class VideoForm extends React.Component {
             url: "",
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
         this.update = this.update.bind(this);
     }
 
-    // componentDidMount() {
-    //     // Check if update or create form later
-    // }
+    componentDidMount() {
+        let videoId = this.props.match.params.videoId;
+        let video;
+        if (videoId) {
+            this.props.fetchVideo(this.props.match.params.videoId)
+                .then(action => video = action.video.data[videoId])
+                .then(() => this.setState({updatedVideo: video}))
+                .then(() => this.setState({
+                    title: video.title,
+                    description: video.description,
+                    category: video.category,
+                    url: video.url,
+                }))
+        }
+    }
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value })
@@ -27,13 +40,33 @@ class VideoForm extends React.Component {
         this.props.createVideo(this.state)
             // .then(action => console.log(action));
             .then(action => this.props.history.push(`${action.video.data._id}`));
+        }
+        
+    handleUpdate(e) {
+        e.preventDefault();
+        let updatedVideo = this.state.updatedVideo;
+        updatedVideo["title"] = this.state.title;
+        updatedVideo["description"] = this.state.description;
+        updatedVideo["category"] = this.state.category;
+        updatedVideo["url"] = this.state.url;
+        this.props.updateVideo(updatedVideo)
+            .then(action => this.props.history.push(`/video/${updatedVideo._id}`));
     }
 
     render () {
         return(
-            <form onSubmit={this.handleSubmit}> 
+            <form onSubmit={
+                    this.props.match.params.videoId 
+                    ? this.handleUpdate 
+                    : this.handleSubmit
+                }> 
                 {/* <p className="close-form-button" onClick={() => this.props.closeModal()}>x</p> */}
-                <h1>Upload your video</h1>
+                {
+                    this.props.match.params.videoId 
+                        ? <h1>Update your video</h1> 
+                        : <h1>Upload your video</h1>
+                
+                }
                 <label className="title">Title
                     <input type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
                 </label>
@@ -46,7 +79,11 @@ class VideoForm extends React.Component {
                 <label className="url">Youtube Link
                     <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/>
                 </label>
-                <button className="video-upload-button">Upload</button>
+                {
+                    this.props.match.params.videoId 
+                        ? <button className="video-update-button">Update</button>
+                        : <button className="video-upload-button">Upload</button>
+                }
             </form>
         )
     }
