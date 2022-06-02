@@ -43,6 +43,7 @@ const App = () => (
         <Route exact path="/category/:category" component={ CategoryPageContainer }/> 
         <Route exact path="/video/upload" component={ VideoForm }/>
         <Route exact path="/video/:videoId" component={ VideoShowPageContainer }/>
+        <Route exact path="/video/edit/:videoId" component={ VideoForm }/>
         {/* <Route exact path="/home" component={ SplashPage }/> */}
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />

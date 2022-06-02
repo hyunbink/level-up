@@ -39,12 +39,11 @@ class SignUp extends React.Component {
         if (this.props.errors.length > 0) {return null}
 
         let user = {
-          email: this.state.email,
-          password: this.state.password,
-          firstName: this.state.firstName,
-          lastName: this.state.lastName
+            email: this.state.email,
+            password: this.state.password,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName
         };
-
         const signup = async () => {
             await this.props.signup(user)
         }
@@ -62,28 +61,21 @@ class SignUp extends React.Component {
             }
             login();
 
-            // this.props.login({user});
-            // console.log("errors", this.props.errors);
-            // this.props.push("/home");
         }
 
-        console.log("finished signingup");
-        // .catch(()=> console.log("failed"));
-        // .then(()=>this.props.login({email:user.email, password: user.password}))
-            //.then(()=>this.props.login({email:user.email, password: user.password}))
-        //on signup push to create interest form?
     }
 
     renderErrors() {
         // console.log("errors email", Object.values(this.props.errors));
         return(
+
           <ul className="signup-errors">
             {Object.values(this.props.errors).map((error, i) => (
               <li key={`error-${i}`}>
                 {error}
               </li>
-            ))}
-          </ul>
+            
+            </ul>
         );
     } 
 
