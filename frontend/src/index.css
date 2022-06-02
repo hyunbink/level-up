@@ -1,32 +1,13 @@
-
-
-@font-face {
-	font-family: "Cereal";
-	src: url("./fonts/Cereal_Book.woff2");
-}
-
-@font-face {
-	font-family: "Cereal-Medium";
-	src: url("./fonts/Cereal_Medium.woff2");
-}
-
-@font-face {
-	font-family: "Cereal-Bold";
-	src: url("./fonts/Cereal_Bold.woff2");
-}
-
-
 body {
   margin: 0;
-  font-family: Cereal;
-  /* font-family: Cereal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace; */
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
