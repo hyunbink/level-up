@@ -1,21 +1,24 @@
 import { connect } from 'react-redux';
 import BookingsShow from './bookings_show';
-import { fetchBookings } from '../../actions/booking_actions';
-import { closeModal } from '../../actions/modal_actions';
+import { fetchBookings, deleteBooking, updateBooking } from '../../actions/booking_actions';
+// import { closeModal } from '../../actions/modal_actions';
+import { withRouter } from 'react-router-dom'
 
-const mSTP = state => {
-
+const mSTP = (state, ownProps) => {
+    let loggedUserId;
+    if (state.session.user)
     return ({
-        // bookings: state.entities.bookings
+        currentUserId: loggedUserId
     })
 };
 
 const mDTP = dispatch => ({
-    fetchBookings: () => dispatch(fetchBookings()),
-    closeModal: () => dispatch(closeModal())
+    deleteBooking: bookingId => dispatch(deleteBooking(bookingId)),
+    updateBooking: booking => dispatch(updateBooking(booking))
+    // closeModal: () => dispatch(closeModal())
 })
 
-export default connect(mSTP, mDTP)(BookingsShow);
+export default withRouter(connect(mSTP, mDTP)(BookingsShow));
 
 
 

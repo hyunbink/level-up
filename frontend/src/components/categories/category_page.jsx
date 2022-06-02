@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import NavbarContainer from "../nav/navbar_container";
 import VideoIndexContainer from "../video/video_index/video_index_container";
 
 class CategoryPage extends React.Component {
@@ -27,13 +28,13 @@ class CategoryPage extends React.Component {
 
     render() {
         return(
-            <div className="category-page">
-                <div className="video-index-header">
-                    <img src=""/>
-                    <h1>{this.formatCategoryName()}</h1>
+                <div className="category-page">
+                    <div className="video-index-header">
+                        <img src=""/>
+                        <h1>{this.formatCategoryName()}</h1>
+                    </div>
+                    <VideoIndexContainer category={this.props.category}/>
                 </div>
-                <VideoIndexContainer category={this.props.category}/>
-            </div>
         )
     }
 }
