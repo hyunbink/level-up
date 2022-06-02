@@ -4,7 +4,7 @@ import { BsFillCheckCircleFill } from 'react-icons/bs'
 
 
 import BookingsForm from '../bookings/booking_form_container'
-
+import BookingsShow from "../bookings/bookings_show_container";
 
 import ReviewFormContainer from "../review/review_form_container";
 import ReviewItemContainer from "../review/review_item_container";
@@ -22,12 +22,8 @@ class UserPage extends React.Component {
     componentDidMount() {
 
         this.props.fetchUser(this.props.match.params.id)
-          .then(()=> this.props.fetchReviews(this.props.match.params.id))
-        this.props.fetchBookings();
-    }
-
-    getUserBookings(){
-        this.props.fetchBookings();
+            .then(()=> this.props.fetchReviews(this.props.match.params.id))
+            .then(()=>this.props.fetchBookings(this.props.match.params.id));
     }
 
     deleteSelectedBooking(bookingId){
@@ -38,7 +34,10 @@ class UserPage extends React.Component {
 
     getUserReviews() {
         this.props.fetchReviews(this.props.match.params.id);
+    }
 
+    getUserBookings() {
+        this.props.fetchBookings(this.props.match.params.id);
     }
 
     render() {
@@ -50,6 +49,8 @@ class UserPage extends React.Component {
         if (this.props.user.professional && !this.props.reviews) {
             return null;
         }
+
+        console.log('booooooo', this.props.bookings.data)
         return (
             <div className="user-page">
                 <div className="user-container">
@@ -91,16 +92,19 @@ class UserPage extends React.Component {
                                     {this.props.user.professional ? <BookingsForm 
                                     getUserBookings={this.getUserBookings} 
                                     className='user-show-bookings-form' 
-                                    userId={this.props.user._id} 
-                                    createBooking={this.props.createBooking}  
-                                    fetchUser={this.props.fetchUser}/> : null }
+                                    bookee={this.props.user} 
+                                    booker={this.props.currentUser}
+                                    // createBooking={this.props.createBooking}  
+                                    // fetchUser={this.props.fetchUser}
+                                    /> : <div></div> }
                                     <div className="user-show-bookings-div">
                                         <ul className="user-show-bookings-ul">
-                                            {this.props.bookings ? this.props.bookings.map((ele, i) => (<li 
+                                            {this.props.bookings.data ? this.props.bookings.data.map((ele, i) => (<li 
                                             key={`bk-list-${i}`}><div>{ele.title}</div>
                                             <div><button>edit</button></div>
                                             <div><button onClick={()=>this.deleteSelectedBooking(ele._id)} >delete</button></div>
-                                            </li>)  ) : null }
+                                            </li>)  ) : <div></div> }
+                                            {/* <BookingsShow  /> */}
                                         </ul>
                                     </div>
                                 </div>

@@ -18,8 +18,8 @@ import VideoShowPageContainer from './video/video_show/video_show_page_container
 import IconsBackground from './icons_background/icons_background';
 
 
-import BookingFormContainer from './bookings/booking_form_container';   // add protected routes for bookings after testing
-import BookingShowContainer from './bookings/bookings_show_container';
+// import BookingFormContainer from './bookings/booking_form_container';   // add protected routes for bookings after testing
+// import BookingShowContainer from './bookings/bookings_show_container';
 import css from "../App.css";
 
 
@@ -30,8 +30,8 @@ const App = () => (
     <NavBarContainer />
     <Switch>
 
-        <Route exact path="/bookings" component={BookingShowContainer} />
-        <Route exact path="/bookings/create" component={BookingFormContainer} />
+        {/* <Route exact path="/bookings" component={BookingShowContainer} />
+        <Route exact path="/bookings/create" component={BookingFormContainer} /> */}
         <Route exact path="/background" component={ IconsBackground } />
         <Route exact path="/auth/:id" component={ ProfAuthFormContainer } />
         <ProtectedRoute exact path="/user/:id" component={ UserPageContainer}/>
