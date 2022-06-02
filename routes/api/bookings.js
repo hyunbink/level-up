@@ -22,21 +22,21 @@ router.post("/create", (req, res) => {
 
     newBooking.save()
         .then(booking => res.json(booking))
-        .catch(err => console.log(err));
+        .catch(err => res.status(422).json({ failedbooking: "Failed to post" }));
 
 });
 
 
-router.get("/", (req, res)=> {
-    Booking.find()
+// router.get("/", (req, res)=> {
+//     Booking.find()
+//         .then(bookings=> res.json(bookings))
+//         .catch(error => res.status(404).json({nobookingsfound: "No bookings found"}))
+// });
+
+router.get("/:userId", (req, res)=> {
+    Booking.find({bookingStudId: req.params.userId})
         .then(bookings=> res.json(bookings))
         .catch(error => res.status(404).json({nobookingsfound: "No bookings found"}))
-});
-
-router.get("/:id", (req, res)=> {
-    Booking.find({_id: req.params.id})
-        .then(booking=> res.json(booking))
-        .catch(error => res.status(404).json({nobookingfound: "No booking found"}))
 });
 
 router.put('/:bookingId', (req, res) => {

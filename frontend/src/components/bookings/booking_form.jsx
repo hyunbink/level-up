@@ -5,8 +5,8 @@ class BookingForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            bookingStudId: this.props.currentUserId,
-            bookingProfId: this.props.userId,
+            bookingStudId: this.props.bookerId,
+            bookingProfId: this.props.bookeeId,
             title: '',
             date: '',
             duration: ''
@@ -15,26 +15,21 @@ class BookingForm extends React.Component{
         this.update = this.update.bind(this);
     }
 
-    componentDidMount(){
-        this.props.fetchUser(this.props.userId);
-    }
-
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createBooking(this.state)
+        let newBooking = this.state;
+        this.props.createBooking(newBooking)
             .then(()=>this.props.getUserBookings());
-        // clear inputs after submitting
-            // .then(() => this.props.closeModal());
     }
 
 // include categories/topic?
     
     render(){
-        if (!this.props.userId) return null;;
+        // if (!this.props.userId) return null;
         let year = new Date().getFullYear() + "-" ;
         let month = new Date().getMonth() + 1 + "-" ;
         if (month.length === 2) month = `0${new Date().getMonth() + 1}-` ;

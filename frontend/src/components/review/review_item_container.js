@@ -3,7 +3,6 @@ import { deleteReview, updateReview } from "../../actions/review_actions";
 import ReviewItem from "./review_item";
 
 const mSTP = (state, ownProps) => {
-    console.log("hits here");
     let curUserId;
     if (state.session.user) {
         curUserId = state.session.user.id
