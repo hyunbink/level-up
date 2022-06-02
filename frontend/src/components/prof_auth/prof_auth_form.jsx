@@ -1,9 +1,11 @@
 import React from "react";
+import NavbarContainer from "../nav/navbar_container";
 
 class ProfAuthForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            ...this.props.currentUser,
             bio:"",
             categories:""
         };
@@ -54,33 +56,33 @@ class ProfAuthForm extends React.Component {
 
         // console.log("currentuser", this.props.currentUser);
 
-        if (!this.state ) {
-            return null;
+        if (!this.props.currentUser ) {
+            return <div>no dice</div>;
         }
 
         // console.log("state", this.state);
         return(
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label> Background
-                        <textarea id="prof-bio"
-                            type="text"
-                            value={this.state.bio}
-                            onChange={this.update("bio")} 
-                            cols="30" 
-                            rows="10">
-                        </textarea>
-                    </label>
-                    <label> Categories you are knowledgeable in (if multiple, separate with commas eg "shrimp,keyboard")
-                        <input type="text" 
-                            id="prof-cat"
-                            value={this.state.categories}
-                            onChange={this.update("categories")}
-                        />
-                    </label>
-                    <button>Submit!</button>
-                </form>
-            </div>
+                <div>
+                    <form onSubmit={this.handleSubmit}>
+                        <label> Background
+                            <textarea id="prof-bio"
+                                type="text"
+                                value={this.state.bio}
+                                onChange={this.update("bio")} 
+                                cols="30" 
+                                rows="10">
+                            </textarea>
+                        </label>
+                        <label> Categories you are knowledgeable in (if multiple, separate with commas eg "shrimp,keyboard")
+                            <input type="text" 
+                                id="prof-cat"
+                                value={this.state.categories}
+                                onChange={this.update("categories")}
+                            />
+                        </label>
+                        <button>Submit!</button>
+                    </form>
+                </div>
         );
     }
 }

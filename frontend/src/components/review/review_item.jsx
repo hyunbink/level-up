@@ -1,4 +1,5 @@
 import React from "react";
+import NavbarContainer from "../nav/navbar_container";
 import "./review.css";
 
 class ReviewItem extends React.Component {
@@ -39,6 +40,7 @@ class ReviewItem extends React.Component {
 
     render() {
         return(
+        
             <div>
                 {this.props.currentUserId && this.props.currentUserId === this.props.review.reviewerId ? 
                     <div>

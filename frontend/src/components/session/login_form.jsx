@@ -47,78 +47,62 @@ class LoginForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
-    // renderErrors() {
-    //     if (this.props.errors.length === 0) {
-    //         return null;
-    //     }
-    //     return <ul className="login-errors-list">{Object.values(this.props.errors).map((error, idx)=> (
-    //         <li key={idx}>{error}</li>
-    //     ))}</ul>
-    // }
     renderErrors() {
-        // console.log("errors email", Object.values(this.props.errors));
-        return(
-          <ul>
-            {Object.values(this.props.errors).map((error, i) => (
-              <li key={`error-${i}`}>
-                {error}
-              </li>
-            ))}
-          </ul>
-        );
-      } 
-
-    // renderErrors() {
-    //     console.log(this.props.errors);
-    //     const email = document.getElementById("email");
-    //     const password = document.getElementById("password");
-
-    //     if (this.props.errors) {
-    //         email.style = "background-color: pink; border-color: red; color: red;"
-    //     }
-        
-    //     if (this.props.errors) {
-    //         password.style = "background-color: pink; border-color: red; color: red;"
-    //     }
-
-    //     return <p className="error-message">Invalid Credentials</p>
-    // }
-
+      return(
+        <ul>
+          {Object.values(this.props.errors).map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    } 
 
     render() {
 
-        return (
-            <>
+      return (
+          <div className="session-page">
             <IconsBackground />
-            <div className="session-page">
-                <form className="session-form" onSubmit={this.handleSubmit}>
-                    <div className="session-headline">Log In</div>
-                    <label>Email
-                        <input
-                            id="email"
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.update("email")}
-                        />
-                    </label>
-                    <label>Password
-                        <input
-                            id="password"
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.update("password")}
-                        />
-                    </label>
-                    {this.renderErrors()}
-                    <button type="submit">
+            <div className="session-container animate-pop">
+              <form className="session-form" onSubmit={this.handleSubmit}>
+                  <h1>Welcome Back!</h1>
+                  <label>Email
+                      <input
+                          id="email"
+                          type="text"
+                          value={this.state.email}
+                          onChange={this.update("email")}
+                          placeholder="your@email.com"
+                      />
+                  </label>
+                  <label>Password
+                      <input
+                          id="password"
+                          type="password"
+                          value={this.state.password}
+                          onChange={this.update("password")}
+                          placeholder="*******"
+                      />
+                  </label>
+                  {this.renderErrors()}
+                  <div className="centralize-button">
+                    <button className="button" type="submit">
                         Log In
                     </button>
-                </form>
-                <button onClick={this.demoLogin} >
+                  </div>
+              </form>
+              <div className="buttons-container">
+                <button className="button" onClick={this.demoLogin} >
                   Demo Log in
                 </button>
+                <p>New account?</p>
+                <button className="button" onClick={()=>this.props.history.push("/signup")} >
+                  Sign Up Instead
+                </button>
+              </div>
             </div>
-          </>
+          </div>
         )
     }
 }

@@ -38,7 +38,7 @@ module.exports = function validateBookingInput(data) {
         errors.duration = "How long is this booking for?"
     } 
 
-    if(Validator.isLength(data.date, { min: 10, max:10 })) {
+    if(!Validator.isLength(data.date, { min: 10, max:10 })) {
         errors.date = "Please select from calendar"
     }
 

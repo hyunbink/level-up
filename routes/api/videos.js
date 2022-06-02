@@ -27,10 +27,11 @@ router.post("/upload", (req, res) => {
 
 router.put("/:videoId", (req, res) => {
     const { errors, isValid } = validateVideoInput(req.body);
+    
     if (!isValid) {
         return res.status(400).json(errors);
     }
-
+    console.log("vedoes route", req)
     Video.updateOne({ _id: req.params.videoId }, req.body)
         .then(video => res.json(video))
         .catch(err => res.status(404).json({ failedupdate: "Failed to update" }))

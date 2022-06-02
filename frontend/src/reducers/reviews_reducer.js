@@ -2,8 +2,6 @@ const { RECEIVE_REVIEWS, RECEIVE_REVIEW} = require("../actions/review_actions");
 
 const reviewsReducer = (state ={}, action) => {
     Object.freeze(state);
-
-    console.log("reducer action", action);
     switch(action.type) {
         case RECEIVE_REVIEWS:
             return Object.assign({}, state, action.reviews);
