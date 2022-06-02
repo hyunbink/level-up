@@ -5,6 +5,7 @@ class ProfAuthForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            ...this.props.currentUser,
             bio:"",
             categories:""
         };
@@ -55,8 +56,8 @@ class ProfAuthForm extends React.Component {
 
         // console.log("currentuser", this.props.currentUser);
 
-        if (!this.state ) {
-            return null;
+        if (!this.props.currentUser ) {
+            return <div>no dice</div>;
         }
 
         // console.log("state", this.state);

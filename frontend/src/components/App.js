@@ -27,15 +27,12 @@ import SideBar from './sidebar/sidebar';
 
 
 
-
 const App = () => (
   <div>
     <NavBarContainer />
     <SideBar />
     <Switch>
 
-        {/* <Route exact path="/bookings" component={BookingShowContainer} />
-        <Route exact path="/bookings/create" component={BookingFormContainer} /> */}
         <Route exact path="/background" component={ IconsBackground } />
         <Route exact path="/auth/:id" component={ ProfAuthFormContainer } />
         <ProtectedRoute exact path="/user/:id" component={ UserPageContainer}/>

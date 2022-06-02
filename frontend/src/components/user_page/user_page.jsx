@@ -72,6 +72,7 @@ class UserPage extends React.Component {
                                             <li key={`interest0${i}`} className="user-show-interest">{int}</li>
                                         ))}</ul></h1>
 
+
                         </div>
                             </div>
                                 <div className="user-show-info-div-right">
