@@ -31,6 +31,8 @@ const bookingDurations = [
     "30 mins",
     "1 hour",
     "1.5 hours",
+    '2 hours',
+    "2.5 hours"
 ]
 
 let numUsers = 1;
