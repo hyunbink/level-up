@@ -44,12 +44,7 @@ class BookingsShow extends React.Component{
         let today = year + month + day;
         return(
             <div className="bookings-show-div" >
-                <div className="bookings-show-edit">
-                    <button onClick={this.edit} >Edit this Booking</button>
-                    <br/>
-                    <button onClick={()=>this.props.deleteBooking(this.props.booking._id).then(()=>this.props.getBookings())}>Delete this Booking</button>
-                    <br/>
-                </div> 
+                
                 {this.state.editing ? 
                     <div className="booking-show-edit-form">
                         <form onSubmit={this.handleSubmit}>
@@ -78,13 +73,15 @@ class BookingsShow extends React.Component{
                 :
                     <div className="booking-show-container">
                         <div className="booking-show-title">{this.props.booking.title}</div>
-                        <div>{this.props.booking.date.split("").slice(0,10) }</div>
-                        <div className="booking-show-text">{this.props.booking.duration}</div>
+                        <div className="booking-show-date" >{this.props.booking.date.split("").slice(0,10) }</div>
+                        <div className="booking-show-duration">{this.props.booking.duration}</div>
                     </div>
-
                 }
+                <div className="bookings-show-edit">
+                    <button onClick={this.edit} > Edit </button>
+                    <button onClick={()=>this.props.deleteBooking(this.props.booking._id).then(()=>this.props.getBookings())}> Cancel </button>
+                </div> 
             </div>
-
         )
     }
 }

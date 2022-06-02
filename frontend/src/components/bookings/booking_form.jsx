@@ -39,18 +39,19 @@ class BookingForm extends React.Component{
         return(
                 <form onSubmit={this.handleSubmit} className='user-show-bookings-form'>
                     <br/>
-                    <h1>Book your session with this professional!</h1>
+                    <h1>Book a session with an Expert</h1>
                     <br/>
                     <label className="booking-create-title">Title:
-                        <input type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
                     </label>
+                        <input className="bk-form-input" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
                     <br/>
                     <label className="booking-create-date">When?
-                        <input type="date" placeholder="Date" min={today.toLocaleString()} value={this.state.date} onChange={this.update("date")}/>
                     </label>
+                        <input className="bk-form-input" type="date" placeholder="Date" min={today.toLocaleString()} value={this.state.date} onChange={this.update("date")}/>
                     <br/>
                     <label className="booking-create-duration">Select Duration:
-                        <input placeholder='select one' list="duration-list" type='text' onChange={this.update("duration")} value={this.state.duration}/>
+                    </label>
+                        <input className="bk-form-input"  placeholder='select one' list="duration-list" type='text' onChange={this.update("duration")} value={this.state.duration}/>
                             <datalist className="booking-create-dur-list" id="duration-list">
                                 <option className="booking-create-dur-list-item" value="30 minutes" />
                                 <option className="booking-create-dur-list-item" value="1 hour" />
@@ -58,7 +59,6 @@ class BookingForm extends React.Component{
                                 <option className="booking-create-dur-list-item" value="2 hours" />
                                 <option className="booking-create-dur-list-item" value="more than 2 hours" />
                             </datalist> 
-                    </label>
                     <br/>
                     {/* <label className="booking-create-prof">Which Professional?
                         <input list="prof-list" placeholder="professionals" value={this.state.bookingProfId} onChange={this.update("bookingProfId")}/>
