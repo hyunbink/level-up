@@ -24,6 +24,7 @@ export const deleteVideo = videoId => (
     axios.delete(`/api/videos/${videoId}`)
 );
 
-export const updateVideo = video => (
-    axios.patch(`/api/videos/${video.id}`, video)
-);
+export const updateVideo = video => {
+    console.log(video);
+    return axios.put(`/api/videos/${video._id}`, video)
+}

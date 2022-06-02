@@ -4,15 +4,13 @@ import { createBooking } from '../../actions/booking_actions';
 import { closeModal } from '../../actions/modal_actions';
 import { fetchUsers, fetchUser } from '../../actions/user_actions';
 import { deleteBooking } from '../../actions/booking_actions';
+import { withRouter } from "react-router-dom";
 
-const mSTP = state => {
-    let profs;
-    if (state.entities.users.data) {
-        profs = state.entities.users.data.filter(user => user.professional && user._id !== state.session.user.id)
-    }
+
+const mSTP = (state, ownProps) => {
     return ({
-        currentUserId: state.session.user.id,
-        professionals: profs
+        bookeeId: ownProps.bookee._id,
+        bookerId: ownProps.booker.id
     })
 };
 
@@ -24,4 +22,4 @@ const mDTP = dispatch => ({
     deleteBooking: bookingId => dispatch(deleteBooking(bookingId)),
 })
 
-export default connect(mSTP, mDTP)(BookingForm);
+export default withRouter(connect(mSTP, mDTP)(BookingForm));

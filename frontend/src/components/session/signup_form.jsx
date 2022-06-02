@@ -36,35 +36,46 @@ class SignUp extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        debugger
-
         if (this.props.errors.length > 0) {return null}
 
         let user = {
-          email: this.state.email,
-          password: this.state.password,
-          firstName: this.state.firstName,
-          lastName: this.state.lastName
+            email: this.state.email,
+            password: this.state.password,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName
         };
+        const signup = async () => {
+            await this.props.signup(user)
+        }
+        signup();   
 
-        this.props.signup(user)
-        .then(()=>this.props.history.goBack())
-        // .catch(()=> console.log("failed"));
-        // .then(()=>this.props.login({email:user.email, password: user.password}))
-            //.then(()=>this.props.login({email:user.email, password: user.password}))
-        //on signup push to create interest form?
+        this.props.signup(user);
+        console.log("signin", this.props.signedIn)
+        if (this.props.signedIn) {
+            console.log("signin", this.props.signedIn)
+
+            const login = async () => {
+                await this.props.login(user)
+                this.props.history.push("/home");
+                console.log("done");
+            }
+            login();
+
+        }
+
     }
 
     renderErrors() {
-        console.log("errors email", Object.values(this.props.errors));
+        // console.log("errors email", Object.values(this.props.errors));
         return(
-          <ul>
+
+          <ul className="signup-errors">
             {Object.values(this.props.errors).map((error, i) => (
               <li key={`error-${i}`}>
                 {error}
               </li>
-            ))}
-          </ul>
+                ))}
+            </ul>
         );
     } 
 

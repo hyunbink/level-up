@@ -17,15 +17,14 @@ import VideoShowPageContainer from './video/video_show/video_show_page_container
 import IconsBackground from './icons_background/icons_background';
 
 
-import BookingFormContainer from './bookings/booking_form_container';   // add protected routes for bookings after testing
-import BookingShowContainer from './bookings/bookings_show_container';
+// import BookingFormContainer from './bookings/booking_form_container';   // add protected routes for bookings after testing
+// import BookingShowContainer from './bookings/bookings_show_container';
 import css from "../App.css";
 import HomePage from '../home/home_page';
 import SplashPage from './splash/splash_page';
 import SideBar from './sidebar/sidebar';
 import Footer from './footer/footer';
 import "./static_pages.scss";
-
 
 const App = () => (
   <div className='page'>
@@ -34,8 +33,6 @@ const App = () => (
     <div className='body'>
     <Switch>
 
-        <Route exact path="/bookings" component={BookingShowContainer} />
-        <Route exact path="/bookings/create" component={BookingFormContainer} />
         <Route exact path="/background" component={ IconsBackground } />
         <Route exact path="/auth/:id" component={ ProfAuthFormContainer } />
         <ProtectedRoute exact path="/user/:id" component={ UserPageContainer}/>
@@ -43,9 +40,9 @@ const App = () => (
         <Route exact path="/category/:category" component={ CategoryPageContainer }/> 
         <Route exact path="/video/upload" component={ VideoForm }/>
         <Route exact path="/video/:videoId" component={ VideoShowPageContainer }/>
+        <Route exact path="/video/edit/:videoId" component={ VideoForm }/>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        {/* Rename this to splash page */}
         <ProtectedRoute exact path="/home" component={HomePage} />
         <AuthRoute exact path="/" component={SplashPage} />
 

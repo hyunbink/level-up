@@ -24,10 +24,14 @@ export const fetchBooking = bookingId => dispatch => (
         .then(booking => dispatch(receiveBooking(booking)))
 );
 
-export const fetchBookings = () => dispatch => (
-    bookingAPIUtil.fetchBookings()
+export const fetchBookings = userId => dispatch => (
+    bookingAPIUtil.fetchBookings(userId)
         .then(bookings => dispatch(receiveBookings(bookings)))
 );
+// export const fetchBookings = () => dispatch => (
+//     bookingAPIUtil.fetchBookings()
+//         .then(bookings => dispatch(receiveBookings(bookings)))
+// );
 
 export const createBooking = booking => dispatch => (
     bookingAPIUtil.createBooking(booking)
