@@ -15,10 +15,6 @@ class UserPage extends React.Component {
         super(props);
         this.getUserBookings = this.getUserBookings.bind(this);
         this.deleteSelectedBooking = this.deleteSelectedBooking.bind(this);
-    }
-
-    constructor(props) {
-        super(props);
         this.getUserReviews = this.getUserReviews.bind(this);
     }
 
@@ -147,6 +143,7 @@ class UserPage extends React.Component {
                         <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
                     </div>
 
+                </div>
                 </div>
             </div>
         )
