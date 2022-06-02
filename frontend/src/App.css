@@ -41,3 +41,22 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+@font-face {
+	font-family: "Cereal";
+	src: url("./fonts/Cereal_Book.woff2");
+}
+
+@font-face {
+	font-family: "Cereal-Medium";
+	src: url("./fonts/Cereal_Medium.woff2");
+}
+
+@font-face {
+	font-family: "Cereal-Bold";
+	src: url("./fonts/Cereal_Bold.woff2");
+}
+
+html {
+	font-family: Cereal !important; 
+}
