@@ -20,7 +20,9 @@ const categories = [
 const topics = {
     "shrimp": "animal-husbandry",
     "hedgehogs": "animal-husbandry",
-    "shoe-dying": "arts-and-crafts",
+    ""
+    "shoe-dying" :"arts-and-crafts",
+
 };
 
 const videoURLs = [
