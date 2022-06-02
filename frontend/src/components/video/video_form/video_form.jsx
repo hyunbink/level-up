@@ -88,8 +88,8 @@ class VideoForm extends React.Component {
                 <div className="video-form-buttons">
                   {
                       this.props.match.params.videoId 
-                          ? <button className="video-update-button">Update</button>
-                          : <button className="video-upload-button">Upload</button>
+                          ? <button className="button">Update</button>
+                          : <button className="button">Upload</button>
                   }                    
                       <button onClick={this.props.history.goBack} className="button">Go Back</button>
                 </div>
