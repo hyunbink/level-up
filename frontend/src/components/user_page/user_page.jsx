@@ -4,7 +4,7 @@ import { BsFillCheckCircleFill } from 'react-icons/bs'
 
 
 import BookingsForm from '../bookings/booking_form_container'
-import BookingsShow from "../bookings/bookings_show_container";
+import BookingShow from "../bookings/bookings_show_container";
 
 import ReviewFormContainer from "../review/review_form_container";
 import ReviewItemContainer from "../review/review_item_container";
@@ -28,7 +28,7 @@ class UserPage extends React.Component {
 
     deleteSelectedBooking(bookingId){
         this.props.deleteBooking(bookingId)
-            .then(this.props.fetchBookings)
+            .then(this.props.fetchBookings(this.props))
 
     }
 
@@ -99,12 +99,17 @@ class UserPage extends React.Component {
                                     /> : <div></div> }
                                     <div className="user-show-bookings-div">
                                         <ul className="user-show-bookings-ul">
-                                            {this.props.bookings.data ? this.props.bookings.data.map((ele, i) => (<li 
+                                            {/* {this.props.bookings.data ? this.props.bookings.data.map((ele, i) => (<li 
                                             key={`bk-list-${i}`}><div>{ele.title}</div>
                                             <div><button>edit</button></div>
                                             <div><button onClick={()=>this.deleteSelectedBooking(ele._id)} >delete</button></div>
-                                            </li>)  ) : <div></div> }
+                                            </li>)  ) : <div></div> } */}
                                             {/* <BookingsShow  /> */}
+                                            {/* make sure bookings only show if they assoicated with it, user and prof */}
+                                            {this.props.bookings.data ? <ul>{this.props.bookings.data.map((booking, idx)=> (
+                                                <BookingShow key={idx} booking={booking} getBookings={this.getUserBookings}/>
+                                                )
+                                            )} </ul> : <div></div> }
                                         </ul>
                                     </div>
                                 </div>

@@ -4,7 +4,6 @@ import "./review.css";
 class ReviewItem extends React.Component {
     constructor(props) {
         super(props);
-        console.log("reviewitemprops", this.props)
         this.state = {
             editing: false,
             title: this.props.review.title,
