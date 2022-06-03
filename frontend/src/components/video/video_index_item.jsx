@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaUserAlt } from "react-icons"
 import "./video_index/video_index.scss";
 
 class VideoIndexItem extends React.Component {
@@ -42,8 +43,10 @@ class VideoIndexItem extends React.Component {
         // Check if we are filtering by user or category
         if (this.props.prevPage === "category") {
             component = 
-                <Link to={`/category/${this.props.video.category}`}>
-                    {this.formatCategoryName()}
+                <Link to={`/category/${this.props.video.category}`} style={{ textDecoration: 'none' }}>
+                    <div className="video-category">
+                        {this.formatCategoryName()}
+                    </div>
                 </Link>
         } else if (this.props.prevPage === "user") {
             component = 
@@ -59,13 +62,15 @@ class VideoIndexItem extends React.Component {
         // if (!this.props.user) {return null}
 
         return (
-            <Link to={`/video/${this.props.video._id}`}>
-                <li className="video-index-item">
+                <Link to={`/video/${this.props.video._id}`} className="video-index-link" style={{textDecoration: 'none'}}>
+            <li className="video-index-item">
                     <iframe width="560" height="315" src={this.props.video.url} title="YouTube video player"></iframe>
-                    <h1>{this.props.video.title}</h1>
-                    <p className="uploader-or-category-name">{this.linkToCategoryOrUser()}</p>
-                </li>
-            </Link>
+                    <div className="video-index-label">
+                        <h1 className="vid-index-title">{this.props.video.title}</h1>
+                        <div className="uploader-or-category-name"><div className="tags">Tags:</div>{this.linkToCategoryOrUser()}</div>
+                    </div>
+            </li>
+                </Link>
         )
     }
 }

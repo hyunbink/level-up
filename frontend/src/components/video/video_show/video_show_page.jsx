@@ -1,6 +1,8 @@
 import React from "react";
 import VideoEditForm from "../video_form/video_edit_form_container";
 import { Link } from "react-router-dom";
+import { HiOutlineUserCircle } from "react-icons/hi";
+import "../video_index/video_index.scss";
 
 class VideoShow extends React.Component {
     constructor(props) {
@@ -27,6 +29,10 @@ class VideoShow extends React.Component {
             .then(() => this.props.fetchUser(video.uploaderId))
             .then(action => this.setState({user: action.user.data[0]}))
             // .then(() => this.renderEditPage())
+
+        // const act = async () => {
+        //     await this.props.fetchVideo(this.props.match.params.)
+        // }
     }
 
     renderEditPage() {
@@ -44,30 +50,50 @@ class VideoShow extends React.Component {
 
     render() {
 
-        if (!this.state.video) {return null}
-        console.log(this.state);
+        if (!this.state.video || !this.state.user) {return null}
+        console.log("whats in the state",this.state);
         return(
             <div className="video-show-page">
+                {/* <div className="vid-show">
+                    Other STuff
+                </div> */}
                 {this.renderEditPage()}
                 {/* <VideoEditForm video={this.state.video}/> */}
                 {/* <button onClick={() => this.redirectToEdit()}>Edit Video</button> */}
-                <iframe
-                    width="560"
-                    height="315"
-                    src={this.state.video.url}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                >
-                </iframe>
-                <h1>{this.state.video.title}</h1>
-                <p>{this.state.video.description}</p>
-                <div className="video-uploader">
-                    <img src="" alt="" />
-                    <h3>{this.state.user.firstName} {this.state.user.lastName}</h3>
+                <div className="video-show-wrapper">
+                    <iframe
+                        width="560"
+                        height="315"
+                        src={this.state.video.url}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    >
+                    </iframe>
+                    <div className="vid-show-title">
+                        <div className="vid-show-title-text">
+                            {this.state.video.title}
+                        </div>
+                    </div>
+                    <div className="vid-show-user">
+                        <div className="vid-show-info">  
+                            <Link to={`/user/${this.state.user._id}`} style={{textDecoration: 'none'}}> 
+                            <div>
+                                <span className="vid-info-icon"><HiOutlineUserCircle /></span> {this.state.user.firstName} {this.state.user.lastName}
+                            </div>
+                            </Link>
+                            
+                        </div>
+                    </div>
+
                 </div>
-                    
+                <div className="vid-desc">
+                    <div className="vid-desc-header">
+                        About: 
+                    </div>
+                    {this.state.video.description}
+                </div>
             </div>
         )
     }

@@ -25,6 +25,7 @@ import SplashPage from './splash/splash_page';
 import SideBar from './sidebar/sidebar';
 import Footer from './footer/footer';
 import "./static_pages.scss";
+// import VideoShowPageContainer from './video/video_show/video_show_page_container';
 
 const App = () => (
   <div className='page'>
@@ -32,6 +33,7 @@ const App = () => (
     <div className='body'>
       <SideBar />
       <Switch>
+        {/* <Route exact path="/video/:videoId" component={ VideoShowPageContainer } /> */}
         <Route exact path="/background" component={ IconsBackground } />
         <Route exact path="/auth/:id" component={ ProfAuthFormContainer } />
         <ProtectedRoute exact path="/user/:id" component={ UserPageContainer}/>
