@@ -1,0 +1,435 @@
+$primary: #05445E;
+$secondary: #189AB4;
+$accent1: #75E6DA;
+$accent2: #D4F1F4;
+
+.landing-content{
+    width: 100%;
+    height: fit-content;
+    text-align:center;
+}
+.arrow {
+    position: absolute;
+    top: 70px;
+    right: 18px;
+    text-align: center;
+    margin: 1% 0;
+
+    svg {
+        font-size: 2em;
+    }
+}
+
+.arrow .fa{
+    color: white;
+    text-shadow: 0 0 3px black;
+    text-decoration:none;
+}
+
+.bounce {
+    -webkit-animation: bounce 3s infinite;
+    animation: bounce 3s infinite;
+}
+
+@-webkit-keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(15px);
+    }
+    60% {
+        transform: translateY(30px);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(10px);
+    }
+    60% {
+        transform: translateY(20px);
+    }
+    }
+    
+    @media screen and (max-width: 1020px) {
+        .landing-content h1{
+        font-size:2em;
+    }
+    .landing-content h2{
+        position:relative;
+        top:-10px;
+    }
+}
+
+
+:root{
+    scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
+    scrollbar-width: thin !important;
+    --black:#181818;
+    --dark:#2d2f30;
+    --gray:rgba(1,1,1,0.7);
+    --lite:rgba(255,255,255,0.7);
+    --primaryfont:'IBM Plex Sans Thai Looped', sans-serif;
+    --secondaryfont:'Exo 2', sans-serif;
+    --titleheadersize:2.5em;
+    --subtitleheadersize:1.5em;
+    --respotitleheadersize:1.5em;
+    --resposubtitleheadersize:1.1em;
+    }
+    ::-webkit-scrollbar {
+    height: 12px;
+    width: 8px;
+    background: var(--dark);
+    }
+    ::-webkit-scrollbar-thumb {
+    background: $secondary;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+    }
+    ::-webkit-scrollbar-corner {
+    background: var(--dark);
+    }
+
+
+footer#home {
+    position: relative;
+    height: fit-content;
+}
+// Banner
+
+.sub-title em {
+    color: $accent1;
+}
+
+.body#home {
+    display: flex;
+    height: fit-content;
+    padding-bottom: 50px;
+}
+
+.banner {
+    cursor: default;
+    width:100%;
+    aspect-ratio: 2/1;
+    display: flex;
+    background: linear-gradient(rgba(1,1,1,.3), rgba(255,255,255,.1)), url("https://moneycheck-9fcd.kxcdn.com/wp-content/uploads/2019/12/cheap-fun-hobbies.jpg");
+    background-size: cover;
+    border-bottom:4px solid var(--primary);
+    box-shadow: 0 5px 0 $accent2;
+
+    > div {
+        margin: 6% 0 100px 10%;
+        color: white;
+
+        * {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .sub-title {
+            font-family: Cereal-Bold;
+            font-size: 50px;
+        }
+
+        .title {
+            font-size: 30px;
+            
+            span {
+                color: $primary;
+            }
+
+            .animated-text {
+                color: $primary;
+                font-family: Cereal-Medium;
+            }
+        }
+    }
+}
+
+// SECTION 1
+
+.landing-section-one{
+    width:100%;
+    display:flex;
+    align-items:center;
+    position:relative;
+    top:-5vh;
+    
+    .card {
+        width: 100%;
+        height: 25vh;
+        background-color: white;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        margin: 10px 15px;
+        border-radius: 10px;
+        box-shadow: 0px 6px 16px -6px rgba(1,1,1,0.2);
+        transition: all 0.2s ease-in-out;
+        
+        &:hover {
+            transform: scale(1.03);
+        }
+
+        span {
+            padding: 1rem;
+            
+            .title {
+                font-family: Cereal-Medium;
+                text-align:left;
+                margin-bottom: 10px;
+                font-size: 4vh;
+                font-weight:600;
+            }
+            
+            img {
+                box-sizing: border-box;
+                width: 60px;
+            }
+            
+            P {
+                text-align:left;
+                font-size: 2vh;
+            }
+        }
+    }
+}
+    
+@media (max-width:920px){
+    .landing-section-one{
+        top:0vh;
+        flex-wrap:wrap;
+    }
+}
+
+.section-banner {
+    width: 100%;
+}
+
+h1.title {
+    font-size:2em;
+    color: $primary;
+}
+
+// SECTION 2
+
+
+.landing-section-two {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items:center;
+    
+
+    .about {
+        margin: 2rem 0 2rem 2rem;
+
+        > * {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: $secondary;
+            text-shadow: -1px 2px 0 $accent1;
+            font-family: Cereal-Bold;
+            font-size: 20px;
+        }
+
+        img {
+            width:100%;
+        }
+            
+        em {
+            position:relative;
+            top:20px;
+        }
+
+    }
+}
+    
+@media (max-width:1080px){
+    .landing-section-two .about .title{
+        font-size:1.4em;
+    }
+}
+    
+@media (max-width:920px){
+    .landing-section-two{
+        flex-wrap:wrap;
+    }
+
+    .landing-section-two .about{
+        padding:1rem;
+    }
+    
+    .landing-section-two .about em{
+        top:10px;
+    }
+    
+    .landing-section-two .about img{
+        display:none;
+    }
+}
+
+// SECTION 3
+
+
+.landing-section-three {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+
+    .section-banner {
+        padding: 2rem;
+        width: 40%;
+    }
+
+    .why-us {
+
+        padding: 2rem;
+        
+        > * {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: $secondary;
+            text-shadow: 1px 2px 0 $accent1;
+            font-family: Cereal-Bold;
+            font-size: 20px;
+        }
+
+        .title {
+            font-size: 2em;
+        }
+            
+        img {
+            width: 100%;
+        }
+    }
+}
+    
+    
+@media (max-width: 1080px) {
+    .landing-section-three .why-us .title {
+        font-size: 1.4em;
+    }
+}
+    
+@media (max-width: 920px) {
+    .landing-section-three {
+        flex-wrap: wrap;
+    }
+    .landing-section-three .why-us {
+        padding: 1rem;
+    }
+    .landing-section-three .why-us em {
+    top: 10px;
+    }
+}    
+
+// SECTION 4
+.landing-section-four {
+    background-color: $primary;
+    border-top: 10px solid $secondary;
+    border-bottom: 10px solid $accent1;
+    margin-top: 40px;
+    padding: 30px;
+
+    .section-header {
+        h1 {
+            font-family: Cereal-Bold;
+            font-size: 3.3em;
+            color: $accent1;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-family: Cereal-Medium;
+            font-size: 1.5em;
+            color: $accent2;
+            margin-bottom: 10px;
+        }
+    }
+
+    .card-container {
+        padding:0rem 2rem;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        column-gap: 2em;
+        
+        .card {
+            cursor: pointer;
+            padding:2rem;
+            width: fill;
+            text-align:center;
+            border-radius:5px;
+            margin:15px;
+            transition:0.5s;
+            color:var(--lite);
+            background-color:var(--dark);
+            
+            &:hover {
+                -webkit-box-shadow: inset 1px 1px 10px rgba(255,255,255,0.3);
+                -moz-box-shadow:    inset 1px 1px 10px rgba(255,255,255,0.3);
+                box-shadow:         inset 1px 1px 10px rgba(255,255,255,0.3);
+                // transform: scale(1.02);
+            }
+
+            img {
+                border-radius: 1000px;
+                width: 20vw;
+                aspect-ratio: 1/1;
+                object-fit:cover;
+                margin-bottom: 10px;
+            }
+            
+            .title {
+                margin-top: 10px;
+                font-size:1.2em;
+                color: white;
+            }
+        }
+    }
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+    
+@media (max-width:920px) {
+    .landing-section-four {
+        padding:2rem 0rem;
+    }
+    .card-container {
+        padding:0rem 1rem;
+        grid-template-columns: auto auto !important;
+    }
+    .card-container .card {
+        margin:10px 0;
+    }
+}
+    
+.landing-section-five {
+    margin-top: 50px;
+    
+    .cofounders-header {
+        h1 {
+            font-family: Cereal-bold;
+            font-size: 4vw;
+        }
+    }
+}
