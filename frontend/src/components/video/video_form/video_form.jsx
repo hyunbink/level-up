@@ -1,6 +1,7 @@
 import React from "react";
 import IconsBackground from "../../icons_background/icons_background";
 import "./video_form.scss";
+import { MdClose } from "react-icons/md";
 
 class VideoForm extends React.Component {
     constructor(props) {
@@ -60,7 +61,7 @@ class VideoForm extends React.Component {
 
             <div className="video-form-page">
                 <IconsBackground />
-            <form className="video-form" onSubmit={
+            <form className="video-form animate-pop" onSubmit={
               this.props.match.params.videoId 
                     ? this.handleUpdate 
                     : this.handleSubmit
@@ -88,13 +89,12 @@ class VideoForm extends React.Component {
                 <div className="video-form-buttons">
                   {
                       this.props.match.params.videoId 
-                          ? <button className="video-update-button">Update</button>
-                          : <button className="video-upload-button">Upload</button>
+                          ? <button className="button">Update</button>
+                          : <button className="button">Upload</button>
                   }                    
-                      <button onClick={this.props.history.goBack} className="button">Go Back</button>
                 </div>
-
             </form>
+                <button onClick={this.props.history.goBack} className="close"><MdClose/></button>
             </div>
         )
     }

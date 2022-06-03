@@ -1,11 +1,12 @@
 import React from "react";
 import "./carousel.scss";
 import shoe from "./shoe_dye.png";
-import kendo from "./kendo.jpg";
+import kendo from "./kendo2.jpg";
 import shrimp from "./shrimp2.png";
 import drone from "./drone3.jpg";
 import left from "./left.png";
 import right from "./right.png";
+import { Link } from "react-router-dom";
 
 class Carousel extends React.Component {
     constructor(props) {
@@ -101,16 +102,16 @@ class Carousel extends React.Component {
                 <div className="carousel__track-container">
                     <ul className="carousel__track">
                         <li className="carousel__slide current-slide">
-                            <img className="carousel__image" src={shoe} alt="1" />
+                        <Link to="/category/arts-and-crafts"><img className="carousel__image" src={shoe} alt="1" /></Link>
                         </li>
                         <li className="carousel__slide">
-                            <img className="carousel__image" src={kendo} alt="2" />
+                        <Link to="/category/sports"><img className="carousel__image" src={kendo} alt="2" /></Link>
                         </li>
                         <li className="carousel__slide">
-                            <img className="carousel__image" src={shrimp} alt="3" />
+                        <Link to="/category/animal-husbandry"><img className="carousel__image" src={shrimp} alt="3" /></Link>
                         </li>
                         <li className="carousel__slide">
-                            <img className="carousel__image" src={drone} alt="4" />
+                        <Link to="/category/technology"><img className="carousel__image" src={drone} alt="4" /></Link>
                         </li>
                     </ul>
                 </div>

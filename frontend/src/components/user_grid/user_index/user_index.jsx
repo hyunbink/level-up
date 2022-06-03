@@ -14,14 +14,13 @@ class UserIndex extends React.Component {
 
     render() {
         if (!this.props.users || !this.props.users.data) {return null};
-        // debugger
 
         return (
             <div className="grid-container">
                 <div className="grid">
                     {
                         this.props.users.data.map(user => {
-                            if (user.professional) {
+                            if (user.professional && user.firstName !== "Demo") {
                                 return (
                                     <div className="grid-item">
                                         <UserCard user={user} />

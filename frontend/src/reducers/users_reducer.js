@@ -2,7 +2,7 @@ import { RECEIVE_USER, RECEIVE_USERS } from "../actions/user_actions";
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
-    console.log("action",action);
+    // console.log("action",action);
     switch(action.type) {
         case RECEIVE_USERS:
             return Object.assign({}, action.users);

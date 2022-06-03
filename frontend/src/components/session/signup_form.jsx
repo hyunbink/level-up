@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import IconsBackground from "../icons_background/icons_background";
 import "./signup_form.scss";
 
+
 class SignUp extends React.Component {
     constructor(props) {
         super(props);
@@ -10,7 +11,7 @@ class SignUp extends React.Component {
             email: "",
             firstName: "",
             lastName: "",
-            password: "",
+            password: ""
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
