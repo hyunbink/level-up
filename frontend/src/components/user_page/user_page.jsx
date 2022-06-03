@@ -14,20 +14,24 @@ import kendo from "../carousel/kendo.jpg";
 import shrimp from "../carousel/shrimp2.png";
 import drone from "../carousel/drone3.jpg";
 
+import VideoIndexItem from "../video/video_index_item";
+
 class UserPage extends React.Component {
     constructor(props){
         super(props);
         this.getUserBookings = this.getUserBookings.bind(this);
         this.deleteSelectedBooking = this.deleteSelectedBooking.bind(this);
         this.getUserReviews = this.getUserReviews.bind(this);
+        this.getVids = this.getVids.bind(this);
     }
 
 
     componentDidMount() {
-
+        console.log("vididi", this.props.match.params.id)
         this.props.fetchUser(this.props.match.params.id)
             .then(()=> this.props.fetchReviews(this.props.match.params.id))
-            .then(()=>this.props.fetchBookings(this.props.match.params.id));
+            .then(()=> this.props.fetchBookings(this.props.match.params.id))
+            .then(()=> this.props.fetchVideosByUser(this.props.match.params.id))
     }
 
     deleteSelectedBooking(bookingId){
@@ -44,7 +48,14 @@ class UserPage extends React.Component {
         this.props.fetchBookings(this.props.match.params.id);
     }
 
-
+    getVids(){
+        console.log('getVids', this.props.videos.data)
+        // this.props.videos.data ? this.props.videos.data.map((vid,i)=><VideoIndexItem key={`vid-${i}`} video={vid}/>) : <div></div> 
+        if (this.props.videos.data && this.props.user.professional === true) {
+            return this.props.videos.data.map((vid,i)=><VideoIndexItem 
+            formType="user-show" key={`vid-${i}`} video={vid}/>)
+        }
+    }
 
     render() {
         
@@ -108,11 +119,8 @@ class UserPage extends React.Component {
                                 <div className="user-show-info-div-right">
                                     <div className="user-details">
                                         {this.props.user.professional? 
-                                        <ul> Prof's Videos
-                                            {/* <div className="user-show-videos">Placeholder for videos</div>
-                                            {this.props.user.categories.split(",").map((cat, i)=>(
-                                                <li key={`cat ${i}`}>{cat}</li>
-                                            ))} */}
+                                        <ul> 
+                                            {this.props.videos.data ? this.getVids() : <div></div>}
                                         </ul>
                                         : <div></div> }
                                     

@@ -1,7 +1,7 @@
 import UserPage from "./user_page";
 import { connect } from "react-redux";
 import { fetchUser, fetchUsers } from "../../actions/user_actions";
-
+import { fetchVideosByUser } from "../../actions/video_actions";
 import { createBooking, fetchBookings, fetchBooking } from "../../actions/booking_actions";
 import { deleteBooking } from "../../actions/booking_actions";
 import { withRouter } from 'react-router-dom';
@@ -15,10 +15,10 @@ const mSTP = (state, ownProps) => {
 
     user: state.entities.users[ownProps.match.params.id],
     currentUserId: state.session.user.id,
-    // bookings: bookingsArr,
     bookings: state.entities.bookings,
     reviews: state.entities.reviews,
-    currentUser: state.session.user
+    currentUser: state.session.user,
+    videos: state.entities.videos
 }};
 
 
@@ -29,7 +29,8 @@ const mDTP = dispatch => ({
     fetchUsers: ()=> dispatch(fetchUsers()),
     fetchUser: userId => dispatch(fetchUser(userId)),
     fetchBookings: (userId) => dispatch(fetchBookings(userId)),
-    deleteBooking: bookingId => dispatch(deleteBooking(bookingId))
+    deleteBooking: bookingId => dispatch(deleteBooking(bookingId)),
+    fetchVideosByUser: userId => dispatch(fetchVideosByUser(userId))
 });
 
 export default withRouter(connect(mSTP,mDTP)(UserPage));
