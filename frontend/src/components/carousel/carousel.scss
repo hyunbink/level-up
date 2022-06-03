@@ -1,10 +1,11 @@
 .carousel {
     position: relative;
-    height: 600px;
-    width: 800px;
+    height: 300px;
+    width: 900px;
     margin: 0 auto;
     overflow: hidden;
     justify-self: flex-end;
+    border-radius: 1em;
 }
 
 .carousel__image {
