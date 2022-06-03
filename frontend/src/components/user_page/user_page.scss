@@ -1,3 +1,4 @@
+
 .user-page{
     border: solid red 3px;
     display: flex;
@@ -29,8 +30,17 @@
 }
 
 .user-essential p{
+    font-size: medium;
+    margin-left: .5em;
+}
+
+.user-essential h2{
     font-size: larger;
     margin-left: .5em;
+}
+
+.line-breaks{
+    height: .3em;
 }
 
 .user-show-prof-icon{
@@ -44,7 +54,8 @@
 }
 
 .user-show-ints{
-    margin-left: .8em;
+    margin-left: .5em;
+    font-size: larger;
 }
 
 .user-show-interests-list{
@@ -53,14 +64,20 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: .3em;
+    font-size: large;
 }
 
 .user-show-interest{
-    background-color: bisque;
+    background-color: #189AB4;
     padding: .5em;
     border-radius: 4px;
-    font-size: medium;
-
+    font-size: small;
+    color: white;
+    &:hover{
+        background-color:#73c6d7;
+        transform: scale(1.1);
+        cursor: default;
+    }
 }
 
 .user-details{
@@ -70,9 +87,19 @@
 
 .user-reviews-container{
     border: solid 3px green;
-    width: 25%;
+    width: 28%;
     height: 50em;
     overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    // position: sticky;
+    align-items: center;
+}
+
+.reviews-title{
+    font-size: larger;
+    font-weight: 500;
 }
 
 .user-show-banner{
@@ -89,7 +116,7 @@
 }
 
 .user-show-profile-photo{
-    background-color: red;
+    // background-color: red;
     border: solid 3px white;
     border-radius: 1000px;
     width: 7.5em;
@@ -118,8 +145,7 @@
 }
 
 .user-show-info-div-right{
-    width: 52%;
-    border: solid 3px yellowgreen;
+    width: 100%;
     background-color: violet;
 }
 
@@ -142,11 +168,11 @@
     width: 100%;
 }
 
-.user-show-bookings-form button{
-    background-color: white;
-    border-radius: 3px;
-    padding: .2em;
-}
+// .user-show-bookings-form button{
+//     background-color: white;
+//     border-radius: 3px;
+//     padding: .2em;
+// }
 
 .user-show-bookings-div{
     display: flex;
@@ -191,12 +217,12 @@
     justify-content: space-around;
 }
 
-.bookings-show-edit button{
-    background-color: white;
-    border-radius: 3px;
-    padding: .1em;
-    /* font-style: ; */
-}
+// .bookings-show-edit button{
+//     background-color: white;
+//     border-radius: 3px;
+//     padding: .1em;
+//     /* font-style: ; */
+// }
 
 /* .booking-show-container{
     display: flex;
@@ -275,4 +301,93 @@
 .review-div{
     display: flex;
     flex-direction: column;
+}
+
+.new-rev-container {
+    width: 100%;
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        label{
+            margin-top: .3em;
+            margin-bottom: .3em;
+        }
+        input{
+            margin-top: .3em;
+            margin-bottom: .3em;
+        }
+    }
+}
+
+.create-review-form{
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.review-data-cont{
+    height: 100%;
+}
+
+// .review-item-show{
+//     display: flex;
+//     flex-direction: column;
+// }
+
+.rev-item-container{
+    display: flex;
+    flex-direction: column;
+    div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: .5em;
+    }
+}
+
+.rev-item-text{
+    margin-bottom: .2em;
+}
+
+.rev-item-title{
+    font-size: medium;
+}
+
+.rev-item-text{
+    font-size: smaller;
+}
+
+.rev-show-stars{
+    display: flex;
+    flex-direction: row;
+    color: #FF375D;
+}
+
+.user-show-buttons{
+    margin-block: 0.5em;
+    border-radius: 1.5em;
+    width: 11em;
+    border: none;
+    padding-block: 0.5em;
+    background-color: #189AB4;
+    transition: 0.2s;
+    color: white;
+    &:hover{
+        background-color:#73c6d7;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
+
+.edit-rev-form-div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
 }

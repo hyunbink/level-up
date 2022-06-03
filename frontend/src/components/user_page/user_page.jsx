@@ -67,7 +67,9 @@ class UserPage extends React.Component {
                                         <span>{this.props.user.professional ? <BsFillCheckCircleFill className="user-show-prof-icon" />: <div></div> }</span>
                                         <p></p>
                                         <br/>
-                                        <p>About: {this.props.user.bio}</p>
+                                        <h2>About: </h2>
+                                        <div className="line-breaks"></div>
+                                        <p>{this.props.user.bio}</p>
                                         <br/>
                                         {this.props.user.interests ? <h1 className="user-show-ints">Interests: <ul className="user-show-interests-list">{this.props.user.interests.split(",").map((int, i)=>(
                                             <li key={`interest-${i}`} className="user-show-interest">{int}</li>
@@ -85,8 +87,9 @@ class UserPage extends React.Component {
                                                 <div className="user-show-bookings-div">
                                                     <ul className="user-show-bookings-ul">
                                                         {/* make sure bookings only show if they assoicated with it, user and prof */}
-                                                        {this.props.bookings.data && this.props.currentUserId === this.props.user._id ? <div>Scheduled Bookings</div> : <div></div> }
-                                                        {this.props.bookings.data ? <ul>
+                                                        {/* {this.props.bookings.data  ?  : <div></div> } */}
+                                                        {this.props.bookings.data && this.props.currentUserId === this.props.user._id ? <ul>
+                                                            <div>Scheduled Bookings:</div>
                                                             {this.props.bookings.data.map((booking, idx)=> (
                                                             <li><BookingShow key={idx} booking={booking} getBookings={this.getUserBookings}/></li>
                                                             )
@@ -110,14 +113,17 @@ class UserPage extends React.Component {
                                     </div>
                                 </div>
                     <div className="user-reviews-container">
-                        <h1 >Reviews</h1>
-                    <div className="create-review-form">
-                        <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
-                    </div>
-                        {this.props.reviews.data ? <ul>{this.props.reviews.data.map((review, idx)=> (
-                            <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
-                            )
-                            )} </ul> : <div></div> }
+                            <h1 className="reviews-title" >Reviews</h1>
+                        <div className="create-review-form">
+                            <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
+                        </div>
+                        <div className="review-data-cont">
+                            {this.props.reviews.data ? <ul className="review-item-show">{this.props.reviews.data.map((review, idx)=> (
+                                <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
+                                )
+                                )} </ul> : <div></div> }
+                        </div>
+                                
                     </div>
                 </div>
                 </div>

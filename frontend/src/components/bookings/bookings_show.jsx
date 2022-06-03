@@ -77,8 +77,8 @@ class BookingsShow extends React.Component{
                     </div>
                 }
                 <div className="bookings-show-edit">
-                    <button onClick={this.edit} > Edit </button>
-                    <button onClick={()=>this.props.deleteBooking(this.props.booking._id).then(()=>this.props.getBookings())}> Cancel </button>
+                    <button className="user-show-buttons" onClick={this.edit} > Edit </button>
+                    <button className="user-show-buttons" onClick={()=>this.props.deleteBooking(this.props.booking._id).then(()=>this.props.getBookings())}> Cancel </button>
                 </div> 
             </div>
         )

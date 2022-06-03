@@ -59,7 +59,7 @@ class BookingForm extends React.Component{
                                 <option className="booking-create-dur-list-item" value="more than 2 hours" />
                             </datalist> 
                     <br/>
-                    <button>Submit</button>
+                    <button className="user-show-buttons">Submit</button>
                 </form>
         )
     }
