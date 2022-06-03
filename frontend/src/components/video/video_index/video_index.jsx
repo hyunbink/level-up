@@ -1,10 +1,12 @@
 import React from "react";
 import VideoIndexItem from "../video_index_item";
-import { Link } from "react-router-dom";
+import "./video_index.scss";
+
 
 class VideoIndex extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+
     }
 
     componentDidMount() {
@@ -12,7 +14,55 @@ class VideoIndex extends React.Component {
     }
 
     render() {
+
+        const topics = {
+            "shrimp": "animal-husbandry",
+            "hedgehogs": "animal-husbandry",
+            "raccoons": "animal-husbandry",
+            "sugar-gliders": "animal-husbandry",
+            "shoe-dyeing": "arts-and-crafts",
+            "felting": "arts-and-crafts",
+            "gundam": "arts-and-crafts",
+            "astrophysics": "astronomy",
+            "ufo-sightings": "astronomy",
+            "telescopes": "astronomy",
+            "otamatone": "music",
+            "zither": "music",
+            "recorder": "music",
+            "kazoo": "music",
+            "sock-puppets": "role-play",
+            "dungeons-and-dragons": "role-play",
+            "cosplay": "role-play",
+            "speedrunning": "gaming",
+            "modding": "gaming",
+            "lore": "gaming",
+            "buzkashi": "sports",
+            "speedwalking": "sports",
+            "ostrich-racing": "sports",
+            "smart-mirrors": "technology",
+            "computer-mice": "technology",
+            "macro-pad": "technology",
+        };
+
         if (!this.props.videos) {return null}
+        
+        let categories = Object.keys(topics).filter(key=> topics[key]===this.props.category);
+        // console.log("categories", categories);
+        // console.log("videos", this.props.videos);
+        let vids = Object.values(this.props.videos);
+        // console.log("videos", vids);
+        let catVids = [];
+        for (let i = 0; i < categories.length; i++) {
+            for (let j = 0; j< vids.length; j++) {
+                // console.log("category", categories[i]);
+                // console.log("going through vids", vids[j].category);
+                if (categories[i] === vids[j].category) {
+                    catVids.push(vids[j]);
+                }
+            }
+        }
+
+        console.log(`final vids of ${this.props.category}`, catVids);
         
         let prevPage;
         if (this.props.userId) {
@@ -21,19 +71,22 @@ class VideoIndex extends React.Component {
             prevPage = "category"
         }
         return (
-            <ul className="video-list">
-                {
-                    Object.values(this.props.videos).map((video, idx) => (
-                        <VideoIndexItem
-                            openModal={this.props.openModal}
-                            fetchUser={this.props.fetchUser}
-                            prevPage={prevPage}
-                            video={video}
-                            key={`video-${idx}`}
-                        />
-                    ))
-                }
-            </ul>
+            <div className="vid-list-wrapper">
+                <ul className="video-list">
+                    {
+                        catVids.map((video, idx) => (
+                            <VideoIndexItem
+                                openModal={this.props.openModal}
+                                fetchUser={this.props.fetchUser}
+                                prevPage={prevPage}
+                                video={video}
+                                key={`video-${idx}`}
+                            />
+                        ))
+                    }
+                </ul>
+
+            </div>
         )
     }
 }

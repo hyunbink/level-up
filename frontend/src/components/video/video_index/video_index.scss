@@ -1,0 +1,31 @@
+.category-page {
+    
+}
+
+.video-index-header {
+    left: 250px;
+    border: 2px solid blue;
+    width: calc(100% - 250px);
+    height: 10vh;
+    font-size: 30px;
+    font-weight: 900;
+    position: relative;
+}
+
+.video-list {
+    left: 250px;
+    right:0;
+    border: 2px solid red;
+    width: calc(100% - 250px);
+}
+
+.vid-list-wrapper {
+    border: 2px solid green;
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+.video-index-item {
+    left: 250px;
+    width: calc(100% - 250px);
+}

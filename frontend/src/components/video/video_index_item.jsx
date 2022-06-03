@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./video_index/video_index.scss";
 
 class VideoIndexItem extends React.Component {
     constructor(props) {
@@ -60,7 +61,7 @@ class VideoIndexItem extends React.Component {
         return (
             <Link to={`/video/${this.props.video._id}`}>
                 <li className="video-index-item">
-                    <iframe width="560" height="315" src={this.props.video.url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src={this.props.video.url} title="YouTube video player"></iframe>
                     <h1>{this.props.video.title}</h1>
                     <p className="uploader-or-category-name">{this.linkToCategoryOrUser()}</p>
                 </li>

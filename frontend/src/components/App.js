@@ -29,7 +29,7 @@ import "./static_pages.scss";
 const App = () => (
   <div className='page'>
     <NavBarContainer />
-    <SideBar />
+    {/* <SideBar /> */}
     <div className='body'>
     <Switch>
 
