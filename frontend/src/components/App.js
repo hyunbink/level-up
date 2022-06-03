@@ -29,10 +29,10 @@ import "./static_pages.scss";
 const App = () => (
   <div className='page'>
     <NavBarContainer />
-    {/* <SideBar /> */}
-    <div className='body'>
-    <Switch>
 
+    <div className='body'>
+      <SideBar />
+      <Switch>
         <Route exact path="/background" component={ IconsBackground } />
         <Route exact path="/auth/:id" component={ ProfAuthFormContainer } />
         <ProtectedRoute exact path="/user/:id" component={ UserPageContainer}/>
@@ -45,8 +45,7 @@ const App = () => (
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute exact path="/home" component={HomePage} />
         <AuthRoute exact path="/" component={SplashPage} />
-
-    </Switch>
+      </Switch>
     </div>
     <Footer />
   </div>
