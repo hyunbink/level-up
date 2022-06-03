@@ -49,7 +49,8 @@ class VideoShow extends React.Component {
     }
 
     render() {
-
+        console.log('print out props', this.props)
+        console.log('print out state', this.state)
         if (!this.state.video || !this.state.user) {return null}
         console.log("whats in the state",this.state);
         return(

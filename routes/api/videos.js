@@ -62,7 +62,7 @@ router.get("/", (req, res) => {
     .catch(err => res.status(404).json({ novideosfound: "No videos found :("}))
 });
 
-router.get("/:userId", (req, res) => {
+router.get("/user/:userId", (req, res) => {
     Video.find({ uploaderId: req.params.userId })
         .then(videos => res.json(videos))
             // let newVideos = {}

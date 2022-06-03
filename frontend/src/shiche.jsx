@@ -4,7 +4,7 @@ import configureStore from "./store/store";
 import Root from './components/root'
 import { signup, login, logout } from './actions/session_actions'
 import { postReview } from "./util/reviews_api_util";
-import { fetchAllVideos } from "./actions/video_actions";
+import { fetchAllVideos, fetchVideo } from "./actions/video_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
     // set up Store
@@ -36,4 +36,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch;
     window.postReview = postReview;
     window.fetchAllVideos = fetchAllVideos;
+    window.fetchVideo = fetchVideo;
 });
