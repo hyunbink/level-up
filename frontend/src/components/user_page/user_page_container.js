@@ -11,14 +11,6 @@ import { fetchReviews } from "../../actions/review_actions";
 
 const mSTP = (state, ownProps) => {
 
-    // let bookingsArr;
-    // if (state.entities.bookings.data) {
-    //     bookingsArr = state.entities.bookings.data.filter(booking => 
-    //         booking.bookingProfId === state.session.user.id ||
-    //         booking.bookingStudId === state.session.user.id 
-    //         );
-    // }
-
     return {
 
     user: state.entities.users[ownProps.match.params.id],
