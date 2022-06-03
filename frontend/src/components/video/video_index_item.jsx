@@ -60,11 +60,14 @@ class VideoIndexItem extends React.Component {
     }
 
     userShow(){
-        return <li key={this.props.video._id} className="video-show-item">
-            <h1 className="vid-show-title">{this.props.video.title}</h1>
-            <iframe width="720" height="405" src={this.props.video.url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            {/* <p className="uploader-or-category-name">{this.linkToCategoryOrUser()}</p> */}
-        </li>
+        return <li className="video-index-item">
+        <iframe width="720" height="405" src={this.props.video.url} title="YouTube video player"></iframe>
+        <div className="video-index-label">
+            <h1 className="vid-index-title">{this.props.video.title}</h1>
+            <div className="uploader-or-category-name"><div className="tags">Tags:</div></div>
+            {/* {this.linkToCategoryOrUser()} */}
+        </div>
+            </li>
     }
 
     render() {
@@ -72,18 +75,18 @@ class VideoIndexItem extends React.Component {
         // if (!this.props.user) {return null}
         
         return (
-
-            <> {this.props.formType ? this.userShow() : 
+            <>
+            {this.props.formType ? this.userShow() : 
                 <Link to={`/video/${this.props.video._id}`} className="video-index-link" style={{textDecoration: 'none'}}>
-                      <li className="video-index-item">
+                        <li className="video-index-item">
                     <iframe width="560" height="315" src={this.props.video.url} title="YouTube video player"></iframe>
                     <div className="video-index-label">
                         <h1 className="vid-index-title">{this.props.video.title}</h1>
                         <div className="uploader-or-category-name"><div className="tags">Tags:</div>{this.linkToCategoryOrUser()}</div>
                     </div>
-            </li>
-                </Link>
-             </>   
+                        </li>
+                </Link> }
+            </>
         )
     }
 }
