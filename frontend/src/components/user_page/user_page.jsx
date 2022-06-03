@@ -27,7 +27,7 @@ class UserPage extends React.Component {
 
 
     componentDidMount() {
-        console.log("vididi", this.props.match.params.id)
+        window.scrollTo(0,0);
         this.props.fetchUser(this.props.match.params.id)
             .then(()=> this.props.fetchReviews(this.props.match.params.id))
             .then(()=> this.props.fetchBookings(this.props.match.params.id))

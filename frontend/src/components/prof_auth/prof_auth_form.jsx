@@ -59,14 +59,14 @@ class ProfAuthForm extends React.Component {
 
         // console.log("currentuser", this.props.currentUser);
         if (!this.props.currentUser ) {
-            return <div>no dice</div>;
+            return <IconsBackground />;
         }
 
         // console.log("state", this.state);
         return(
                 <div className="prof-auth-page" >
                     <IconsBackground />
-                    <form className="prof-auth-form" onSubmit={this.handleSubmit}>
+                    <form className="prof-auth-form animate-pop" onSubmit={this.handleSubmit}>
                         <h1>Tell us your experience</h1>
                         <label> Background
                             <textarea id="prof-bio"
@@ -77,7 +77,7 @@ class ProfAuthForm extends React.Component {
                                 rows="10">
                             </textarea>
                         </label>
-                        <label> Categories you are knowledgeable in (if multiple, separate with commas eg "shrimp,keyboard")
+                        <label> Categories you are knowledgeable in (if multiple, separate with commas eg "pottery,music")
                             <input type="text" 
                                 id="prof-cat"
                                 value={this.state.categories}

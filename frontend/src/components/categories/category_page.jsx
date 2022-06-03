@@ -2,6 +2,8 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import NavbarContainer from "../nav/navbar_container";
 import VideoIndexContainer from "../video/video_index/video_index_container";
+import "../video/video_index/video_index.scss";
+
 
 class CategoryPage extends React.Component {
     constructor(props) {
@@ -16,7 +18,7 @@ class CategoryPage extends React.Component {
 
     formatCategoryName() {
         let category = this.props.category;
-        console.log("typeof category", typeof category);
+        // console.log("typeof category", typeof category);
         let words;
         if (category.includes("-")) {
             words = category.split("-")

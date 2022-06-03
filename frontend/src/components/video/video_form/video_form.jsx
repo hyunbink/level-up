@@ -61,7 +61,7 @@ class VideoForm extends React.Component {
 
             <div className="video-form-page">
                 <IconsBackground />
-            <form className="video-form" onSubmit={
+            <form className="video-form animate-pop" onSubmit={
               this.props.match.params.videoId 
                     ? this.handleUpdate 
                     : this.handleSubmit
