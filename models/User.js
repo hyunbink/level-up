@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const { faker } = require('@faker-js/faker');
+
 
 const UserSchema = new Schema({
     firstName: {
@@ -37,7 +39,8 @@ const UserSchema = new Schema({
         default: "",
     },
     photoUrl: {
-        type: String
+        type: String,
+        default: faker.image.avatar()
     }
 }, {
     timestamps: true
