@@ -8,6 +8,7 @@
     // left: 250px;
     // width: calc(100% - 250px);
     height: 100%;
+    overflow-x: scroll;
 }
 
 .user-container{
@@ -85,6 +86,12 @@
 .user-details{
     // border: solid 3px black;
     /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ul{
+        margin-top: 1.5em;
+    }
 }
 
 .user-reviews-container{
@@ -98,6 +105,8 @@
     flex-direction: column;
     // position: sticky;
     align-items: center;
+    min-width: 220px;
+    padding: .3em;
 }
 
 .reviews-title{
@@ -148,7 +157,7 @@
     width: 28%;
     min-width: 220px;
     // border: solid 3px blue;
-    border: dashed 1px #189AB4;
+    // border: dashed 1px #189AB4;
     border-radius: 3px;
     background-color: #73c6d7a5;
     overflow-y: auto;
@@ -157,7 +166,20 @@
 
 .user-show-info-div-right{
     width: 100%;
-    background-color: violet;
+    // background-color: violet;
+}
+
+// .video-show-item{
+//     min-width: 560;
+//     min-height: 315;
+//     width: 80%;
+// }
+
+.vid-show-title{
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: x-large;
+    font-weight: 800;
 }
 
 .user-show-bookings{

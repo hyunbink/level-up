@@ -9,7 +9,7 @@ export const fetchVideosByCategory = category => (
 );
 
 export const fetchVideosByUser = userId => (
-    axios.get(`/api/videos/user/${userId}`)
+    axios.get(`/api/videos/${userId}`)
 );
 
 export const fetchVideo = videoId => (
