@@ -64,8 +64,10 @@ class VideoIndexItem extends React.Component {
         <iframe width="720" height="405" src={this.props.video.url} title="YouTube video player"></iframe>
         <div className="video-index-label">
             <h1 className="vid-index-title">{this.props.video.title}</h1>
-            <div className="uploader-or-category-name"><div className="tags"></div></div>
-            {/* {this.linkToCategoryOrUser()} */}
+            {/* <div className="uploader-or-category-name"><div className="tags"></div></div>
+            {this.linkToCategoryOrUser()} */}
+            <div className="uploader-or-category-name"><div className="tags"></div>{this.linkToCategoryOrUser()}</div>
+
         </div>
             </li>
     }
