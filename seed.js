@@ -29,7 +29,7 @@ const topics = {
     "shrimp": "animal-husbandry",
     "hedgehogs": "animal-husbandry",
     "raccoons": "animal-husbandry",
-	  "sugar-gliders": "animal-husbandry",
+	"sugar-gliders": "animal-husbandry",
     "shoe-dyeing": "arts-and-crafts",
     "felting": "arts-and-crafts",
     "gundam": "arts-and-crafts",
