@@ -21,7 +21,7 @@ import IconsBackground from './icons_background/icons_background';
 // import BookingShowContainer from './bookings/bookings_show_container';
 import css from "../App.css";
 import HomePage from '../home/home_page';
-import SplashPage from './splash/splash_page';
+import LandingPage from './landing_page/landing_page';
 import SideBar from './sidebar/sidebar';
 import Footer from './footer/footer';
 import "./static_pages.scss";
@@ -43,7 +43,7 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute exact path="/home" component={HomePage} />
-        <AuthRoute exact path="/" component={SplashPage} />
+        <AuthRoute exact path="/" component={LandingPage} />
       </Switch>
     </div>
     <Footer />
