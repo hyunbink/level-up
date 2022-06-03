@@ -1,6 +1,6 @@
 
 .user-page{
-    border: solid red 3px;
+    // border: solid red 3px;
     display: flex;
     justify-content: center;
     /* height: calc(100vh - 75px); */
@@ -11,22 +11,22 @@
 }
 
 .user-container{
-    border: solid blue 3px;
+    // border: solid blue 3px;
     width: 100%;
     height: 100%;
     overflow-y: scroll;
 }
 
 .user-photo{
-    border: solid purple;
+    // border: solid purple;
 }
 
 .user-info{
-    border: solid 3px orange;
+    // border: solid 3px orange;
 }
 
 .user-essential{
-    border: solid 3px yellow;
+    // border: solid 3px yellow;
 }
 
 .user-essential p{
@@ -44,7 +44,7 @@
 }
 
 .user-show-prof-icon{
-    color: blue;
+    color: #0046f7;
     font-size: large;
 }
 
@@ -56,6 +56,7 @@
 .user-show-ints{
     margin-left: .5em;
     font-size: larger;
+    margin-top: .5em;
 }
 
 .user-show-interests-list{
@@ -70,6 +71,7 @@
 .user-show-interest{
     background-color: #189AB4;
     padding: .5em;
+    margin-left: .5em;
     border-radius: 4px;
     font-size: small;
     color: white;
@@ -81,12 +83,13 @@
 }
 
 .user-details{
-    border: solid 3px black;
+    // border: solid 3px black;
     /* width: 100%; */
 }
 
 .user-reviews-container{
-    border: solid 3px green;
+    border: dashed 1px #189AB4;
+    border-radius: 3px;
     width: 28%;
     height: 50em;
     overflow-y: scroll;
@@ -100,13 +103,15 @@
 .reviews-title{
     font-size: larger;
     font-weight: 500;
+    margin-top: 1em;
 }
 
 .user-show-banner{
-    background-color: green;
-    border: solid 3px green;
+    // background-color: green;
+    // border: solid 3px green;
     height: 12.3em;
     /* width: 100%; */
+    position: relative;
 }
 
 .user-show-banner-img{
@@ -119,11 +124,12 @@
     // background-color: red;
     border: solid 3px white;
     border-radius: 1000px;
-    width: 7.5em;
-    height: 7.5em;
-    top: 7em;
-    position: relative;
+    width: 8em;
+    height: 8em;
+    top: 7.5em;
+    position: absolute;
     left: 1em;
+    // z-index: 100;
 }
 
 .space-for-photo{
@@ -134,14 +140,18 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    border: solid 3px red;
-    background-color: aqua;
+    // border: solid 3px red;
+    // background-color: aqua;
 }
 
 .user-show-info-div-left{
-    width: 25%;
-    border: solid 3px blue;
-    background-color: wheat;
+    width: 28%;
+    // border: solid 3px blue;
+    border: dashed 1px #189AB4;
+    border-radius: 3px;
+    background-color: #73c6d7a5;
+    overflow-y: auto;
+    max-height: 50em;
 }
 
 .user-show-info-div-right{
@@ -152,7 +162,7 @@
 .user-show-bookings{
     display: flex;
     /* align-items: center; */
-    border: solid 3px green;
+    // border: solid 3px green;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
@@ -161,7 +171,7 @@
 
 .user-show-bookings-form{
     display: flex;
-    border: solid 3px red;
+    // border: solid 3px red;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -175,12 +185,15 @@
 // }
 
 .user-show-bookings-div{
+    // box-sizing: border-box;
     display: flex;
-    border: solid 3px violet;
+    // border: solid 3px violet;
     width: 100%;
-    overflow-y: scroll;
-    height: 10em;
-    padding-top: 3.5em;
+    // overflow-y: scroll;
+    // height: 20em;
+    padding-top: 1.5em;
+    align-items: flex-start;
+    // height: 20em;
 }
 
 .user-show-bookings-ul{
@@ -210,6 +223,9 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    margin-top: .5em;
 }
 .bookings-show-edit{
     display: flex;
@@ -224,15 +240,25 @@
 //     /* font-style: ; */
 // }
 
-/* .booking-show-container{
+.booking-show-edit-form form{
+    input{
+        margin-bottom: .5em;
+    }
+}
+
+.booking-show-container{
     display: flex;
     flex-direction: column;
-} */
+} 
 
 .booking-show-title{
-    font-weight: 700;
+    margin-bottom: .4em;
+}
+
+.booking-show-date{
     margin-bottom: .3em;
 }
+
 .booking-create-date{
     margin-bottom: .4em;
 }
@@ -247,6 +273,10 @@
 
 .bk-form-input{
     width: 70%;
+}
+
+.book-form-title{
+    text-align: center;
 }
 
 
@@ -266,11 +296,11 @@
 }
 
 .star-wrapper label:hover {
-    color: #FF375D;
+    color: #189AB4;
 }
 
 .star:hover ~ label {
-    color: #FF375D;
+    color: #189AB4;
 }
 
 .star-wrapper input{
@@ -278,7 +308,7 @@
 }
 
 .star:checked ~ label {
-    color: #FF375D;
+    color: #189AB4;
 }
 
 .star:checked + label {
@@ -308,9 +338,10 @@
     form{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         height: 100%;
+        margin-top: 1em;
         label{
             margin-top: .3em;
             margin-bottom: .3em;
@@ -342,12 +373,16 @@
 .rev-item-container{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     div{
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         margin-top: .5em;
+        text-align: center;
     }
 }
 
@@ -366,7 +401,7 @@
 .rev-show-stars{
     display: flex;
     flex-direction: row;
-    color: #FF375D;
+    color: #189AB4;
 }
 
 .user-show-buttons{

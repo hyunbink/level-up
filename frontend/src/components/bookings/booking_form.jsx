@@ -38,7 +38,7 @@ class BookingForm extends React.Component{
         return(
                 <form onSubmit={this.handleSubmit} className='user-show-bookings-form'>
                     <br/>
-                    <h1>Book a session with an Expert</h1>
+                    <h1 className="book-form-title">Book a session with an Expert</h1>
                     <br/>
                     <label className="booking-create-title">Title:
                     </label>

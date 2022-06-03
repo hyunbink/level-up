@@ -9,6 +9,10 @@ import BookingShow from "../bookings/bookings_show_container";
 import ReviewFormContainer from "../review/review_form_container";
 import ReviewItemContainer from "../review/review_item_container";
 
+import shoe from "../carousel/shoe_dye.png";
+import kendo from "../carousel/kendo.jpg";
+import shrimp from "../carousel/shrimp2.png";
+import drone from "../carousel/drone3.jpg";
 
 class UserPage extends React.Component {
     constructor(props){
@@ -40,6 +44,8 @@ class UserPage extends React.Component {
         this.props.fetchBookings(this.props.match.params.id);
     }
 
+
+
     render() {
         
         if (!this.props.user) {
@@ -52,16 +58,16 @@ class UserPage extends React.Component {
             <div className="user-page">
                 <div className="user-container">
                     <div className="user-show-banner">
-                            <img className="user-show-banner-img" src="../../images/demo_banner.png" alt="user-show-banner-img"></img>
-                            <div className="user-photo-">
-                                <img className="user-show-profile-photo" alt="user-profile" src={this.props.user.photoUrl}></img>
-                            </div>
+                            <img className="user-show-banner-img" src={shrimp} alt="user-show-banner-img"></img>
+                            
                     </div>
                     <div className="user-show-info-div">
                         <div className="user-show-info-div-left">
                                 {/* <div className="user-info"> */}
                                     <div className="user-essential">
-                                        {/*  */}
+                                        {/*  */}<div className="user-photo-">
+                                <img className="user-show-profile-photo" alt="user-profile" src={this.props.user.photoUrl}></img>
+                            </div>
                                         <div className="space-for-photo"></div>
                                         <span className="user-show-full-name"> {this.props.user.firstName} {this.props.user.lastName} </span>
                                         <span>{this.props.user.professional ? <BsFillCheckCircleFill className="user-show-prof-icon" />: <div></div> }</span>

@@ -48,14 +48,17 @@ class BookingsShow extends React.Component{
                     <div className="booking-show-edit-form">
                         <form onSubmit={this.handleSubmit}>
                             <label className="booking-create-title">Title:
+                            </label>
+                            <br/>
                                 <input type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
-                            </label>
                         <br/>
-                            <label className="booking-create-date">When?
-                                <input type="date" placeholder="Date" min={today.toLocaleString()} value={this.state.date} onChange={this.update("date")}/>
+                            <label className="booking-create-date">Date:
                             </label>
+                            <br/>
+                                <input type="date" placeholder="Date" min={today.toLocaleString()} value={this.state.date} onChange={this.update("date")}/>
                         <br/>
                             <label className="booking-create-duration">Select Duration:
+                            <br/>
                                 <input placeholder='select one' list="duration-list" type='text' onChange={this.update("duration")} value={this.state.duration}/>
                                     <datalist className="booking-create-dur-list" id="duration-list">
                                         <option className="booking-create-dur-list-item" value="30 minutes" />
@@ -66,7 +69,7 @@ class BookingsShow extends React.Component{
                                     </datalist> 
                             </label>
                         <br/>
-                            <button className="booking-show-submit-edit-button">Edit Booking</button>
+                            <button className="user-show-buttons">Edit Booking</button>
                         </form>
                     </div>
                 :
@@ -78,7 +81,7 @@ class BookingsShow extends React.Component{
                 }
                 <div className="bookings-show-edit">
                     <button className="user-show-buttons" onClick={this.edit} > Edit </button>
-                    <button className="user-show-buttons" onClick={()=>this.props.deleteBooking(this.props.booking._id).then(()=>this.props.getBookings())}> Cancel </button>
+                    <button className="user-show-buttons" onClick={()=>this.props.deleteBooking(this.props.booking._id).then(()=>this.props.getBookings())}> Delete </button>
                 </div> 
             </div>
         )
