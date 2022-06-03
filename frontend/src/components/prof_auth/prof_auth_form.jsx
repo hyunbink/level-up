@@ -1,5 +1,8 @@
 import React from "react";
+import IconsBackground from "../icons_background/icons_background";
 import NavbarContainer from "../nav/navbar_container";
+import "./prof_auth_form.scss";
+import { MdClose } from "react-icons/md";
 
 class ProfAuthForm extends React.Component {
     constructor(props) {
@@ -55,15 +58,16 @@ class ProfAuthForm extends React.Component {
         // console.log("state", this.state);
 
         // console.log("currentuser", this.props.currentUser);
-
         if (!this.props.currentUser ) {
             return <div>no dice</div>;
         }
 
         // console.log("state", this.state);
         return(
-                <div>
-                    <form onSubmit={this.handleSubmit}>
+                <div className="prof-auth-page" >
+                    <IconsBackground />
+                    <form className="prof-auth-form" onSubmit={this.handleSubmit}>
+                        <h1>Tell us your experience</h1>
                         <label> Background
                             <textarea id="prof-bio"
                                 type="text"
@@ -80,8 +84,11 @@ class ProfAuthForm extends React.Component {
                                 onChange={this.update("categories")}
                             />
                         </label>
-                        <button>Submit!</button>
+                        <div className="video-form-buttons">
+                            <button className="button">Submit</button>
+                        </div>
                     </form>
+                    <button onClick={this.props.history.goBack} className="close"><MdClose/></button>
                 </div>
         );
     }

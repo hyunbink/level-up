@@ -1,6 +1,7 @@
 import React from "react";
 import IconsBackground from "../../icons_background/icons_background";
 import "./video_form.scss";
+import { MdClose } from "react-icons/md";
 
 class VideoForm extends React.Component {
     constructor(props) {
@@ -91,10 +92,9 @@ class VideoForm extends React.Component {
                           ? <button className="button">Update</button>
                           : <button className="button">Upload</button>
                   }                    
-                      <button onClick={this.props.history.goBack} className="button">Go Back</button>
                 </div>
-
             </form>
+                <button onClick={this.props.history.goBack} className="close"><MdClose/></button>
             </div>
         )
     }
