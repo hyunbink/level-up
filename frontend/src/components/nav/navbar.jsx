@@ -43,7 +43,7 @@ class NavBar extends React.Component {
                   <GiHamburgerMenu id="nav-burger" />
                   </div>
                   <div className='nav-drop'>
-                      <div onClick={()=>this.props.history.push(`/auth/${this.props.currentUserId}`)}>
+                      <div onClick={()=>this.props.history.push(`/auth/${this.props.currentUser.id}`)}>
                         Apply to be a Professional!
                       </div>
                       <div onClick={()=>this.props.history.push(`/video/upload`)}>
@@ -91,7 +91,7 @@ class NavBar extends React.Component {
 
   render() {
 
-    let bannedPages = ['signup', 'login', 'upload'];
+    let bannedPages = ['signup', 'login', 'upload', 'auth'];
 
     let display = true;
 

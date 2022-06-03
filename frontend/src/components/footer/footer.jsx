@@ -10,7 +10,7 @@ class Footer extends React.Component {
 
     render() {
 
-        let bannedPages = ['signup', 'login'];
+        let bannedPages = ['signup', 'login', 'auth', 'upload'];
 
         let display = true;
     

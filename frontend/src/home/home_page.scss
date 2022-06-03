@@ -3,12 +3,29 @@
     position: relative;
     justify-content: flex-end;
     width: 100%;
+    background-color: #eee;
 }
 
 .home-container {
-
+    
+    background-color: #eee;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    justify-content: center;
+    
+    > h1 {
+        align-self: flex-start;
+        margin: 2rem;
+        margin-left: 6rem;
+        font-size: 3rem;
+        font-weight: 700;
+    }
+}
+
+.home-page-top {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
