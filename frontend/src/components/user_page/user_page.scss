@@ -70,6 +70,9 @@
 
 .user-reviews-container{
     border: solid 3px green;
+    width: 25%;
+    height: 50em;
+    overflow-y: scroll;
 }
 
 .user-show-banner{
@@ -87,17 +90,17 @@
 
 .user-show-profile-photo{
     background-color: red;
-    border: solid 3px black;
+    border: solid 3px white;
     border-radius: 1000px;
-    width: 6em;
-    height: 6em;
-    top: 8em;
+    width: 7.5em;
+    height: 7.5em;
+    top: 7em;
     position: relative;
     left: 1em;
 }
 
 .space-for-photo{
-    height: 2.5em;
+    height: 3.6em;
 }
 
 .user-show-info-div{
@@ -109,7 +112,7 @@
 }
 
 .user-show-info-div-left{
-    width: 28%;
+    width: 25%;
     border: solid 3px blue;
     background-color: wheat;
 }
@@ -126,7 +129,8 @@
     border: solid 3px green;
     flex-wrap: wrap;
     justify-content: center;
-    width: 22%;
+    width: 100%;
+    /* flex-direction: column; */
 }
 
 .user-show-bookings-form{
@@ -158,6 +162,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .user-show-bookings-ul li{
@@ -216,4 +221,58 @@
 
 .bk-form-input{
     width: 70%;
+}
+
+
+.star-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    
+    label {
+        cursor: pointer;
+        font-size: 1em;
+        text-decoration: none;
+        transition: all 0.5s;
+        margin: 4px;
+        color: grey;
+    }
+}
+
+.star-wrapper label:hover {
+    color: #FF375D;
+}
+
+.star:hover ~ label {
+    color: #FF375D;
+}
+
+.star-wrapper input{
+    display: none;
+}
+
+.star:checked ~ label {
+    color: #FF375D;
+}
+
+.star:checked + label {
+    animation: starred 0.5s;
+}
+  
+.star:checked + label {
+    animation: scaleup 1s;
+}
+
+@keyframes scaleup {
+    from {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.review-div{
+    display: flex;
+    flex-direction: column;
 }

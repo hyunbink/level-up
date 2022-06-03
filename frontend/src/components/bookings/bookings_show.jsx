@@ -1,5 +1,4 @@
 import React from "react";
-import NavbarContainer from "../nav/navbar_container";
 
 class BookingsShow extends React.Component{
     constructor(props){
