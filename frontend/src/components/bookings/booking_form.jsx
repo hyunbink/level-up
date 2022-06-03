@@ -1,5 +1,4 @@
 import React from "react";
-import NavbarContainer from "../nav/navbar_container";
 
 class BookingForm extends React.Component{
     constructor(props){
@@ -39,7 +38,7 @@ class BookingForm extends React.Component{
         return(
                 <form onSubmit={this.handleSubmit} className='user-show-bookings-form'>
                     <br/>
-                    <h1>Book a session with an Expert</h1>
+                    <h1 className="book-form-title">Book a session with an Expert</h1>
                     <br/>
                     <label className="booking-create-title">Title:
                     </label>
@@ -60,15 +59,7 @@ class BookingForm extends React.Component{
                                 <option className="booking-create-dur-list-item" value="more than 2 hours" />
                             </datalist> 
                     <br/>
-                    {/* <label className="booking-create-prof">Which Professional?
-                        <input list="prof-list" placeholder="professionals" value={this.state.bookingProfId} onChange={this.update("bookingProfId")}/>
-                        <datalist className="booking-create-prof-list" id="prof-list">
-                        {this.props.professionals.map((prof, i) => (
-                            <option key={i} className="booking-create-prof-list-item" value={prof._id}>{prof.lastName},{prof.firstName}</option>
-                            ))}
-                            </datalist> 
-                        </label> */}
-                    <button>Submit</button>
+                    <button className="user-show-buttons">Submit</button>
                 </form>
         )
     }
