@@ -49,14 +49,18 @@ class UserPage extends React.Component {
     }
 
     getVids(){
-        console.log('getVids', this.props.videos.data)
-        // this.props.videos.data ? this.props.videos.data.map((vid,i)=><VideoIndexItem key={`vid-${i}`} video={vid}/>) : <div></div> 
         if (this.props.videos.data && this.props.user.professional === true) {
-            return this.props.videos.data.map((vid,i)=><VideoIndexItem 
-            formType="user-show" key={`vid-${i}`} video={vid}/>)
+            if (typeof this.props.videos.data === 'object') {
+                let arr = Object.values(this.props.videos.data);
+                return arr.map((vid,i)=><VideoIndexItem 
+                formType="user-show" key={`vid-${i}`} video={vid}/>)
+            } else {
+                return this.props.videos.data.map((vid,i)=><VideoIndexItem 
+                formType="user-show" key={`vid-${i}`} video={vid}/>)
+            }
         }
     }
-
+// going from category to video -- does not like this.props.videos.map
     render() {
         
         if (!this.props.user) {
