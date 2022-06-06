@@ -31,10 +31,10 @@
     "react-text-transition": "^2.0.0",
     "sass": "^1.52.1",
     "underscore": "^1.13.4",
-    "validator": "^13.7.0"
+    "validator": "^13.7.0",
+    "@faker-js/faker": "^7.1.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.1.0",
     "nodemon": "^2.0.16"
   }
 }
