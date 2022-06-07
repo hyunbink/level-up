@@ -53,3 +53,8 @@ export const deleteVideo = videoId => dispatch => (
     videoAPIUtil.deleteVideo(videoId)
         .then(videoId => dispatch(removeVideo(videoId)))
 );
+
+export const searchVideos = query => dispatch => (
+    videoAPIUtil.searchVideoByTopic(query)
+        .then(videos => dispatch(receiveVideos(videos)))
+);

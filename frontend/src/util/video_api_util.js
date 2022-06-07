@@ -27,4 +27,8 @@ export const deleteVideo = videoId => (
 export const updateVideo = video => {
     console.log(video);
     return axios.put(`/api/videos/${video._id}`, video)
-}
+};
+
+export const searchVideoByTopic = query => (
+    axios.get(`/search/${query}`)
+);

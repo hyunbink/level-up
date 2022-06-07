@@ -62,6 +62,7 @@ router.get("/", (req, res) => {
     .catch(err => res.status(404).json({ novideosfound: "No videos found :("}))
 });
 
+
 router.get("/user/:userId", (req, res) => {
     Video.find({ uploaderId: req.params.userId })
         .then(videos => res.json(videos))
@@ -85,6 +86,21 @@ router.get("/category/:category", (req, res) => {
         return res.json(newVideos);
     })
     .catch(err => res.status(404).json({ novideosfound: "No videos found :(" }))
+});
+
+router.get(`/search/:topic`, (req, res)=> {
+
+    // Video.find({topics: {'$regex' : req.params.topic, '$options' : 'i'}});
+    // Video.find({topics: new RegExp(req.params.topic, 'i')});
+    Video.find({topics: {$regex: req.params.topic}})
+        .then(videos=> {
+            let newVideos = {}
+            videos.forEach(video => {
+                newVideos[video._id] = video;
+            });
+            return res.json(newVideos);
+        })
+        .catch(err => res.status(404).json({novideosfound: "No videos found"}))
 });
 
 router.get("/:id", (req, res) => {

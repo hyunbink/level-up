@@ -37,6 +37,9 @@ class NavBar extends React.Component {
               <div className='nav-logo' onClick={()=>this.props.history.push("/home")} >
                 Level-Up
               </div>
+              <div className='nav-search'>
+                This is the searchbar placeholder
+              </div>
               <div className="nav-right">
                 <div className='nav-burger'>
                   <div>

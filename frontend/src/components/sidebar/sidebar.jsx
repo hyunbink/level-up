@@ -33,9 +33,9 @@ class SideBar extends React.Component {
                 <h1>Explore Categories</h1>
                 <ul>
                     <Link to={`/category/animal-husbandry`}><li><span><GiShrimp /></span> Animal Husbandry</li></Link>
+                    <Link to={`/category/arts-and-crafts`}><li><span><MdOutlineDraw /></span> Arts and Crafts</li></Link>
                     <Link to={`/category/astronomy`}><li><span><GoTelescope /></span> Astronomy</li></Link>
-                    <Link to={`/category/drawing`}><li><span><MdOutlineDraw /></span> Drawing</li></Link>
-                    <Link to={`/category/games`}><li><span><MdSportsEsports /></span> Games</li></Link>
+                    <Link to={`/category/gaming`}><li><span><MdSportsEsports /></span> Gaming</li></Link>
                     <Link to={`/category/handmade`}><li><span><GiSewingNeedle /></span> Handmade</li></Link>
                     <Link to={`/category/music`}><li><span><BsMusicNoteBeamed /></span> Music</li></Link>
                     <Link to={`/category/role-play`}><li><span><FaTheaterMasks /></span> Role Play</li></Link>
