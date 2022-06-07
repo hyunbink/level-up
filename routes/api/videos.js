@@ -88,11 +88,21 @@ router.get("/category/:category", (req, res) => {
     .catch(err => res.status(404).json({ novideosfound: "No videos found :(" }))
 });
 
-router.get(`/search/:topic`, (req, res)=> {
-
+router.get(`/topic/:topic`, (req, res)=> {
+    let query = req.params.topic;
     // Video.find({topics: {'$regex' : req.params.topic, '$options' : 'i'}});
     // Video.find({topics: new RegExp(req.params.topic, 'i')});
-    Video.find({topics: {$regex: req.params.topic}})
+    // Video.find({$or: [{topics: {$regex: req.params.topic}}, {description: {$regex: req.params.topic}}]})
+    // Video.find({topics: {$regex: req.params.topic}})
+    // Video.find(
+    //     {
+    //         $or: [
+    //             {topics: { $regex: query, "$options":"i" }},
+    //             {description: {$regex: query, "$options": "i"}}
+    //         ]
+    //     }
+    //     )
+    Video.find({topics: new RegExp(query), description: new RegExp(query)})
         .then(videos=> {
             let newVideos = {}
             videos.forEach(video => {
