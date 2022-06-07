@@ -12,7 +12,7 @@ router.post("/upload", (req, res) => {
     const newVideo = new Video({
         title: req.body.title,
         description: req.body.description,
-        category: req.body.category,
+        topic: req.body.topic,
         url: req.body.url,
         uploaderId: req.body.uploaderId
     });
@@ -75,8 +75,8 @@ router.get("/user/:userId", (req, res) => {
         .catch(err => res.status(404).json({ novideosfound: "No videos found :(" }))
 });
 
-router.get("/category/:category", (req, res) => {
-    Video.find({ category: req.params.category })
+router.get("/topic/:topic", (req, res) => {
+    Video.find({ topic: req.params.topic })
     .then(videos => {
         let newVideos = {}
         videos.forEach(video => {

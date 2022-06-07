@@ -9,8 +9,8 @@ class VideoIndexItem extends React.Component {
         this.state = {
             user: {}
         }
-        this.formatCategoryName = this.formatCategoryName.bind(this);
-        this.linkToCategoryOrUser = this.linkToCategoryOrUser.bind(this);
+        this.formatTopicName = this.formatTopicName.bind(this);
+        this.linkToTopicOrUser = this.linkToTopicOrUser.bind(this);
         this.userShow = this.userShow.bind(this);
     }
 
@@ -24,14 +24,14 @@ class VideoIndexItem extends React.Component {
         return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
     }
 
-    formatCategoryName() {
-        let category = this.props.video.category;
+    formatTopicName() {
+        let topic = this.props.video.topic;
         let words;
         
-        if (category.includes("-")){
-            words = category.split("-");
+        if (topic.includes("-")){
+            words = topic.split("-");
         } else {
-            words = category;
+            words = topic;
         }
         if (typeof words !== 'string') {
             return words.map(word => (this.capitalize(word))).join(" ");
@@ -40,14 +40,14 @@ class VideoIndexItem extends React.Component {
         }
     }
 
-    linkToCategoryOrUser() {
+    linkToTopicOrUser() {
         let component;
-        // Check if we are filtering by user or category
-        if (this.props.prevPage === "category") {
+        // Check if we are filtering by user or topic
+        if (this.props.prevPage === "topic") {
             component = 
-                <Link to={`/category/${this.props.video.category}`} style={{ textDecoration: 'none' }}>
-                    <div className="video-category">
-                        {this.formatCategoryName()}
+                <Link to={`/topic/${this.props.video.topic}`} style={{ textDecoration: 'none' }}>
+                    <div className="video-topic">
+                        {this.formatTopicName()}
                     </div>
                 </Link>
         } else if (this.props.prevPage === "user") {
@@ -64,9 +64,9 @@ class VideoIndexItem extends React.Component {
         <iframe width="720" height="405" src={this.props.video.url} title="YouTube video player"></iframe>
         <div className="video-index-label">
             <h1 className="vid-index-title">{this.props.video.title}</h1>
-            {/* <div className="uploader-or-category-name"><div className="tags"></div></div>
-            {this.linkToCategoryOrUser()} */}
-            <div className="uploader-or-category-name"><div className="tags"></div>{this.linkToCategoryOrUser()}</div>
+            {/* <div className="uploader-or-topic-name"><div className="tags"></div></div>
+            {this.linkTotopicOrUser()} */}
+            <div className="uploader-or-topic-name"><div className="tags"></div>{this.linkToTopicOrUser()}</div>
 
         </div>
             </li>
@@ -84,7 +84,7 @@ class VideoIndexItem extends React.Component {
                     <iframe width="560" height="315" src={this.props.video.url} title="YouTube video player"></iframe>
                     <div className="video-index-label">
                         <h1 className="vid-index-title">{this.props.video.title}</h1>
-                        <div className="uploader-or-category-name"><div className="tags">Tags:</div>{this.linkToCategoryOrUser()}</div>
+                        <div className="uploader-or-topic-name"><div className="tags">Tags:</div>{this.linkToTopicOrUser()}</div>
                     </div>
                         </li>
                 </Link> }

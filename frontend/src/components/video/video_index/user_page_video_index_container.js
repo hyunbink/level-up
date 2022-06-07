@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import VideoIndex from "./video_index";
-import { fetchAllVideos, fetchVideosByCategory, fetchVideosByUser } from "../../../actions/video_actions";
+import { fetchAllVideos, fetchVideosByTopic, fetchVideosByUser } from "../../../actions/video_actions";
 import { fetchUser } from "../../../actions/user_actions";
 import { openModal } from "../../../actions/modal_actions";
 

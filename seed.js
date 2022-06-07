@@ -1,7 +1,7 @@
 const { faker } = require('@faker-js/faker');
 const _ = require('underscore')
 const mongoose = require('mongoose');
-const db = require('./config/keys').mongoURI
+const db = require('./config/keys_dev').mongoURI
 const User = require('./models/User')
 const Video = require('./models/Video')
 const Review = require('./models/Review')
@@ -14,7 +14,7 @@ mongoose
     .then(()=> console.log("Connected to MongoDB successfully"))
     .catch(err=> console.log(err));
 
-const categories = [
+const categoryNames = [
     "animal-husbandry",
     "arts-and-crafts",
     "astronomy",
@@ -24,6 +24,17 @@ const categories = [
     "sports",
     "technology",
 ];
+
+const categoriesTopicsObj = {
+    "animal-husbandry": ["shrimp", "hedgehogs", "raccoons", "sugar-gliders"],
+    "arts-and-crafts": ["shoe-dyeing", "felting", "gundam"],
+    "astronomy": ["astrophysics", "ufo-sightings", "telescopes"],
+    "music": ["otamatone", "zither", "recorder", "kazoo"],
+    "role-play": ["sock-puppets", "dungeons-and-dragons", "cosplay"],
+    "gaming": ["speedrunning", "modding", "lore"],
+    "sports": ["buzkashi", "speedwalking", "ostrich-racing"],
+    "technology": ["smart-mirrors", "computer-mice", "macro-pad"],
+};
 
 const topics = {
     "shrimp": "animal-husbandry",
@@ -251,12 +262,12 @@ const bookingDurations = [
     "2+ hours",
 ]
 
+// Change numbers to quickly scale db seeds up or down
 let numUsers = 20;
-let numProfsPerTopic = 8;
-let numVideosPerProf = 1;
+let numProfsPerCategory = 8;
+let numVideosPerProf = 2;
 let numReviewsPerProf = 20;
 let numBookingsPerProf = 20;
-
 
 // Generates date in yyyy-mm-dd
 function randomDate(start, end) {
@@ -297,7 +308,7 @@ const seedDB = async() => {
             email: faker.internet.email(),
             password: '123456',
             professional: false,
-            categories: "",
+            topics: "",
             interests: _.sample(Object.keys(topics)), // Uses underscore package method. Look up docs
             bio: faker.lorem.paragraphs(3),
         });
@@ -305,58 +316,62 @@ const seedDB = async() => {
         users.push(newUser._id);
     }
 
-    for (let i = 0; i < numProfsPerTopic; i++) {
-        let temp = _.sample(Object.keys(topics), 2);
-        let specialty = temp[0];
-        let interest = temp[1];
-        newProf = new User({
-            photoUrl: faker.image.avatar(),
-            firstName: faker.name.firstName(),
-            lastName: faker.name.lastName(),
-            email: faker.internet.email(),
-            password: '123456',
-            professional: true,
-            categories: specialty,
-            interests: interest, // Uses underscore package method. Look up docs
-            bio: faker.lorem.paragraphs(3),
-            // bio: _.sample(bios)
-        });
-
-        // Using .save instead of .create so we can still access the newProfs info
-        await newProf.save()
-            // .then() Retreive the newProfs _id
-
-        for (let j = 0; j < numVideosPerProf; j++) {
-            videos.push({
-                uploaderId: newProf._id,
-                title: faker.vehicle.vehicle(),
-                description: faker.lorem.paragraphs(3),
-                category: specialty,
-                url: _.sample(videoURLS[specialty]),
+    // Object.keys(categoriesTopicsObj).forEach(category => {
+    for (let z = 0; z < categoryNames.length; z++) {
+        for (let i = 0; i < numProfsPerCategory; i++) {
+            let specialty = _.sample(categoriesTopicsObj[categoryNames[z]]);
+            let interest = _.sample(categoryNames);
+            while (specialty === interest) interest = _.sample(Object.keys(categoriesTopicsObj));
+            newProf = new User({
+                photoUrl: faker.image.avatar(),
+                firstName: faker.name.firstName(),
+                lastName: faker.name.lastName(),
+                email: faker.internet.email(),
+                password: '123456',
+                professional: true,
+                topics: specialty,
+                interests: interest, // Uses underscore package method. Look up docs
+                bio: faker.lorem.paragraphs(3),
+                // bio: _.sample(bios)
             });
-        }
 
-        for (let k = 0; k < numReviewsPerProf; k++) {
-            reviews.push({
-                title: faker.lorem.sentence(5),
-                reviewerId: _.sample(users),
-                revieweeId: newProf._id,
-                score: Math.ceil(Math.random() * 5),
-                text: faker.lorem.paragraphs(2)
-            });
-        }
+            // Using .save instead of .create so we can still access the newProfs info
+            await newProf.save()
+                // .then() Retreive the newProfs _id
 
-        for (let l = 0; l < numBookingsPerProf; l++) {
-            let bookingDate = randomDate(startDate, endDate);
-            bookings.push({
-                bookingStudId: _.sample(users),
-                bookingProfId: newProf._id,
-                title: faker.lorem.sentence(4),
-                date: bookingDate,
-                duration: _.sample(bookingDurations)
-            });
+            for (let j = 0; j < numVideosPerProf; j++) {
+                videos.push({
+                    uploaderId: newProf._id,
+                    title: faker.vehicle.vehicle(),
+                    description: faker.lorem.paragraphs(3),
+                    category: topics[specialty],
+                    topic: specialty,
+                    url: _.sample(videoURLS[specialty]),
+                });
+            }
+
+            for (let k = 0; k < numReviewsPerProf; k++) {
+                reviews.push({
+                    title: faker.lorem.sentence(4),
+                    reviewerId: _.sample(users),
+                    revieweeId: newProf._id,
+                    score: Math.ceil(Math.random() * 5),
+                    text: faker.lorem.paragraphs(1)
+                });
+            }
+
+            for (let l = 0; l < numBookingsPerProf; l++) {
+                let bookingDate = randomDate(startDate, endDate);
+                bookings.push({
+                    bookingStudId: _.sample(users),
+                    bookingProfId: newProf._id,
+                    title: faker.lorem.sentence(4),
+                    date: bookingDate,
+                    duration: _.sample(bookingDurations)
+                });
+            }
         }
-    }
+    };
 
     await Video.insertMany(videos);
     await Review.insertMany(reviews);
@@ -370,7 +385,7 @@ const seedDB = async() => {
         email: "demo@mail.com",
         password: "$2a$10$YSmrZ011s3bOorO9SAz61Orm7184ox3FGpmO9NZegMq2ieWXU9Cf.",
         professional: true,
-        categories: "ostrich-racing",
+        topics: "ostrich-racing",
         interests: "buzkashi", // Uses underscore package method. Look up docs
         bio: faker.lorem.paragraphs(3),
     });

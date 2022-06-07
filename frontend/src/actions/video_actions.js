@@ -34,6 +34,11 @@ export const fetchVideosByCategory = category => dispatch => (
         .then(videos => dispatch(receiveVideos(videos)))
 );
 
+export const fetchVideosByTopic = topic => dispatch => (
+    videoAPIUtil.fetchVideosByTopic(topic)
+        .then(videos => dispatch(receiveVideos(videos)))
+);
+
 export const fetchVideosByUser = userId => dispatch => (
     videoAPIUtil.fetchVideosByUser(userId)
         .then(videos => dispatch(receiveVideos(videos)))

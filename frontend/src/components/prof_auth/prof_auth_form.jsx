@@ -10,7 +10,7 @@ class ProfAuthForm extends React.Component {
         this.state = {
             ...this.props.currentUser,
             bio:"",
-            categories:""
+            topics:""
         };
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,7 +29,7 @@ class ProfAuthForm extends React.Component {
         e.preventDefault();
         let user = this.props.currentUser;
         user.bio = this.state.bio;
-        user.categories = this.state.categories;
+        user.topics = this.state.topics;
         user.professional = true;
         console.log("user before sub", user);
         // let user = {
@@ -38,7 +38,7 @@ class ProfAuthForm extends React.Component {
         //   firstName: this.state.firstName,
         //   lastName: this.state.lastName,
         //   bio: this.state.bio,
-        //   categories: this.state.categories,
+        //   topics: this.state.topics,
         //   professional: true
         // };
         // console.log("cur user", this.props.currentUser);
@@ -52,7 +52,7 @@ class ProfAuthForm extends React.Component {
             .then(this.props.history.push(`/user/${this.props.currentUser._id}`));
             // .catch(err=> console.log("err", err));
         //on signup push to create interest form?
-      }
+    }
 
     render() {
         // console.log("state", this.state);
@@ -77,11 +77,11 @@ class ProfAuthForm extends React.Component {
                                 rows="10">
                             </textarea>
                         </label>
-                        <label> Categories you are knowledgeable in (if multiple, separate with commas eg "pottery,music")
+                        <label> Topics you are knowledgeable in (if multiple, separate with commas eg "pottery,music")
                             <input type="text" 
                                 id="prof-cat"
-                                value={this.state.categories}
-                                onChange={this.update("categories")}
+                                value={this.state.topics}
+                                onChange={this.update("topics")}
                             />
                         </label>
                         <div className="video-form-buttons">
