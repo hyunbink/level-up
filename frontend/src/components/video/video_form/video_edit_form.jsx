@@ -30,8 +30,8 @@ class VideoEditForm extends React.Component {
                 <label className="description">Description
                     <input type="text" placeholder="Description" value={this.state.description} onChange={this.update("description")}/>
                 </label>
-                <label className="category">Category
-                    <input type="text" placeholder="Category" value={this.state.category} onChange={this.update("category")}/>
+                <label className="topic">Topic
+                    <input type="text" placeholder="Topic" value={this.state.topic} onChange={this.update("topic")}/>
                 </label>
                 <label className="url">Youtube Link
                     <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/>

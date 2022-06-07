@@ -26,7 +26,7 @@ const UserSchema = new Schema({
         required: true,
         default: false
     },
-    categories: {
+    topics: {
         type: String,
         default: ""
     },

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { deleteVideo, fetchVideo, fetchVideosByCategory, fetchVideosByUser, updateVideo } from "../../../actions/video_actions";
+import { deleteVideo, fetchVideo, fetchVideosByCategory, fetchVideosByTopic, fetchVideosByUser, updateVideo } from "../../../actions/video_actions";
 import { fetchUser } from "../../../actions/user_actions";
 import VideoShow from "./video_show_page"
 
@@ -16,6 +16,7 @@ const mDTP = (dispatch, ownProps) => ({
     fetchUser: userId => dispatch(fetchUser(userId)),
     fetchVideosByUser: userId => dispatch(fetchVideosByUser(userId)),
     fetchVideosByCategory: category => dispatch(fetchVideosByCategory(category)),
+    fetchVideosByTopic: topic => dispatch(fetchVideosByTopic(topic)),
     deleteVideo: videoId => dispatch(deleteVideo(videoId)),
     updateVideo: video => dispatch(updateVideo(video))
 });

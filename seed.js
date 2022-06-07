@@ -25,7 +25,7 @@ const categoryNames = [
     "technology",
 ];
 
-const categories = {
+const categoriesTopicsObj = {
     "animal-husbandry": ["shrimp", "hedgehogs", "raccoons", "sugar-gliders"],
     "arts-and-crafts": ["shoe-dyeing", "felting", "gundam"],
     "astronomy": ["astrophysics", "ufo-sightings", "telescopes"],
@@ -262,8 +262,9 @@ const bookingDurations = [
     "2+ hours",
 ]
 
+// Change numbers to quickly scale db seeds up or down
 let numUsers = 20;
-let numProfsPerTopic = 8;
+let numProfsPerCategory = 8;
 let numVideosPerProf = 2;
 let numReviewsPerProf = 20;
 let numBookingsPerProf = 20;
@@ -307,7 +308,7 @@ const seedDB = async() => {
             email: faker.internet.email(),
             password: '123456',
             professional: false,
-            categories: "",
+            topics: "",
             interests: _.sample(Object.keys(topics)), // Uses underscore package method. Look up docs
             bio: faker.lorem.paragraphs(3),
         });
@@ -315,12 +316,12 @@ const seedDB = async() => {
         users.push(newUser._id);
     }
 
-    // Object.keys(categories).forEach(category => {
+    // Object.keys(categoriesTopicsObj).forEach(category => {
     for (let z = 0; z < categoryNames.length; z++) {
-        for (let i = 0; i < numProfsPerTopic; i++) {
-            let specialty = _.sample(categories[categoryNames[z]]);
+        for (let i = 0; i < numProfsPerCategory; i++) {
+            let specialty = _.sample(categoriesTopicsObj[categoryNames[z]]);
             let interest = _.sample(categoryNames);
-            while (specialty === interest) interest = _.sample(Object.keys(categories));
+            while (specialty === interest) interest = _.sample(Object.keys(categoriesTopicsObj));
             newProf = new User({
                 photoUrl: faker.image.avatar(),
                 firstName: faker.name.firstName(),
@@ -328,7 +329,7 @@ const seedDB = async() => {
                 email: faker.internet.email(),
                 password: '123456',
                 professional: true,
-                categories: specialty,
+                topics: specialty,
                 interests: interest, // Uses underscore package method. Look up docs
                 bio: faker.lorem.paragraphs(3),
                 // bio: _.sample(bios)
@@ -343,7 +344,8 @@ const seedDB = async() => {
                     uploaderId: newProf._id,
                     title: faker.vehicle.vehicle(),
                     description: faker.lorem.paragraphs(3),
-                    category: specialty,
+                    category: topics[specialty],
+                    topic: specialty,
                     url: _.sample(videoURLS[specialty]),
                 });
             }
@@ -383,7 +385,7 @@ const seedDB = async() => {
         email: "demo@mail.com",
         password: "$2a$10$YSmrZ011s3bOorO9SAz61Orm7184ox3FGpmO9NZegMq2ieWXU9Cf.",
         professional: true,
-        categories: "ostrich-racing",
+        topics: "ostrich-racing",
         interests: "buzkashi", // Uses underscore package method. Look up docs
         bio: faker.lorem.paragraphs(3),
     });
