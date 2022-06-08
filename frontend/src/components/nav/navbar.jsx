@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import './navbar.scss';
+import SearchBarContainer from '../searchbar/search_bar_container';
 
 
 class NavBar extends React.Component {
@@ -38,7 +39,7 @@ class NavBar extends React.Component {
                 Level-Up
               </div>
               <div className='nav-search'>
-                This is the searchbar placeholder
+                <SearchBarContainer />
               </div>
               <div className="nav-right">
                 <div className='nav-burger'>

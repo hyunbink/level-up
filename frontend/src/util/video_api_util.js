@@ -33,6 +33,7 @@ export const updateVideo = video => {
     return axios.put(`/api/videos/${video._id}`, video)
 };
 
-export const searchVideoByTopic = query => (
-    axios.get(`/search/${query}`)
-);
+export const searchVideoByTopic = query => {
+    console.log("query", query);
+    return axios.get(`/api/videos/topic/${query}`)
+};

@@ -76,17 +76,17 @@ router.get("/user/:userId", (req, res) => {
         .catch(err => res.status(404).json({ novideosfound: "No videos found :(" }))
 });
 
-router.get("/topic/:topic", (req, res) => {
-    Video.find({ topic: req.params.topic })
-    .then(videos => {
-        let newVideos = {}
-        videos.forEach(video => {
-            newVideos[video._id] = video;
-        });
-        return res.json(newVideos);
-    })
-    .catch(err => res.status(404).json({ novideosfound: "No videos found :(" }))
-});
+// router.get("/topic/:topic", (req, res) => {
+//     Video.find({ topic: req.params.topic })
+//     .then(videos => {
+//         let newVideos = {}
+//         videos.forEach(video => {
+//             newVideos[video._id] = video;
+//         });
+//         return res.json(newVideos);
+//     })
+//     .catch(err => res.status(404).json({ novideosfound: "No videos found :(" }))
+// });
 
 router.get(`/topic/:topic`, (req, res)=> {
     let query = req.params.topic;
@@ -102,7 +102,9 @@ router.get(`/topic/:topic`, (req, res)=> {
     //         ]
     //     } 
     //     )
-    Video.find({topics: new RegExp(query), description: new RegExp(query)})
+    // Video.find({topics: new RegExp(query), description: new RegExp(query)})
+
+    Video.find({$or: [{topic: {$regex: req.params.topic}}, {description: {$regex: req.params.topic}}]})
         .then(videos=> {
             let newVideos = {}
             videos.forEach(video => {
@@ -110,7 +112,7 @@ router.get(`/topic/:topic`, (req, res)=> {
             });
             return res.json(newVideos);
         })
-        .catch(err => res.status(404).json({novideosfound: "No videos found"}))
+        .catch(err => res.status(405).json({novideosfound: "No videos found"}))
 });
 
 router.get("/:id", (req, res) => {

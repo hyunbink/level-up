@@ -11,18 +11,19 @@ class SearchBar extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let query = this.state.query;
+        this.props.clearVideos();
         this.props.search(query);
-        // then push to search results component 
+        this.props.history.push('/search');
     }
 
-    update() {
-        return e => this.setState({[query]: e.currentTarget.value});
+    update(field) {
+        return e => this.setState({[field]: e.currentTarget.value});
     }
 
     render() {
         return(
             <form onSubmit={this.handleSubmit}>
-                <input className='search-bar' type="search" placeholder="Search" value={this.state.query} onChange={this.update()} />
+                <input className='search-bar' type="search" placeholder="Search" value={this.state.query} onChange={this.update("query")} />
             </form>
         );
     }

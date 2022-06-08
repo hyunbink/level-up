@@ -13,7 +13,7 @@ import VideoForm from './video/video_form/video_form_container';
 import ProfAuthFormContainer from './prof_auth/prof_auth_container';
 import TopicPageContainer from './topics/topic_page_container';
 import VideoShowPageContainer from './video/video_show/video_show_page_container';
-
+import SearchResultsContainer from './searchbar/search_results_container';
 import IconsBackground from './icons_background/icons_background';
 
 
@@ -25,6 +25,7 @@ import LandingPage from './landing_page/landing_page';
 import SideBar from './sidebar/sidebar';
 import Footer from './footer/footer';
 import "./static_pages.scss";
+// import VideoIndexContainer from './video/video_index/video_index_container';
 // import VideoShowPageContainer from './video/video_show/video_show_page_container';
 
 const App = () => (
@@ -34,6 +35,7 @@ const App = () => (
       <SideBar />
       <Switch>
         {/* <Route exact path="/video/:videoId" component={ VideoShowPageContainer } /> */}
+        <Route exac path="/search" component={ SearchResultsContainer }/>
         <Route exact path="/background" component={ IconsBackground } />
         <Route exact path="/auth/:id" component={ ProfAuthFormContainer } />
         <ProtectedRoute exact path="/user/:id" component={ UserPageContainer}/>
