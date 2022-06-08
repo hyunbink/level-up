@@ -1,0 +1,50 @@
+
+#live-chat-container {
+    position: absolute;
+    // align-self: center;
+    height: 450px;
+    top: calc(100vh - 450px);
+    margin-right: 2em;
+    justify-self: flex-end;
+    background-color: green;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    #live-chat-container-header {
+        background-color: yellow;
+        width: 100%;
+    }
+    
+    .live-chat {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        font-size: larger;
+    }
+
+    button {
+        font-size: larger;
+    }
+
+    .live-chat-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 100%;
+    }
+    
+    .live-chat-user {
+        justify-self: flex-end;
+        align-self: flex-end;
+    }   
+
+    span {
+
+    }
+}

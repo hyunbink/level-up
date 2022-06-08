@@ -10,7 +10,14 @@ const videos = require("./routes/api/videos");
 const bookings = require("./routes/api/bookings")
 const reviews = require("./routes/api/reviews");
 
+const server = require('http').createServer(app);
+const io = require('socket.io')(server, { cors: { origin: '*' } });
 
+io.on("connection", (socket) => {
+  socket.on("chat", (payload) => {
+    io.emit("chat", payload);
+  });
+});
 
 app.use(passport.initialize());
 require('./config/passport')(passport);
@@ -47,6 +54,8 @@ mongoose
 
 const port = process.env.PORT || 4000;
 app.listen(port, ()=> console.log(`Server is running on port ${port}`));
+
+server.listen(port+1, () => console.log(`Socket.io Server is running on port ${port}`))
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
