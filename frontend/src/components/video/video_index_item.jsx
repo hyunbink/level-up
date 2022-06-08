@@ -55,6 +55,8 @@ class VideoIndexItem extends React.Component {
                 <Link to={`/users/${this.props.video.uploaderId}`}>
                     {this.capitalize(this.state.user.firstName)} {this.capitalize(this.state.user.lastName)}
                 </Link>
+        } else {
+            return null; 
         }
         return component;
     }
