@@ -1,23 +1,51 @@
 
 #live-chat-container {
+    font-family: inherit;
     position: absolute;
-    // align-self: center;
-    height: 450px;
     top: calc(100vh - 200px);
     left: calc(100vw - 250px );
-    margin-right: 2em;
     justify-self: flex-end;
-    background-color: #4f5d73;
+    background-color: #fff;
     z-index: 999;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    align-items: center;
+    box-shadow: 0px, 0px, 8px rgba(0, 0, 0, 1);
+    border-radius: 1em;
+    overflow: hidden;
+    
+    .live-chat-box {
+        height: 450px;
+        width: 300px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px, 0px, 16px rgba(0, 0, 0, 0.5);
+    }
+    
     #live-chat-container-header {
-        background-color: yellow;
-        // border-radius: 10px;
+        background-color: #77b3d4;
         width: 100%;
+        display: flex;
+        padding: 1em;
+
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .client-info {
+            color: #fff;
+            padding: 15px;
+            font-weight: bold;
+            
+            p {
+                font-size: 0.8em;
+                color: rgb(31, 143, 31);
+            }
+        }
     }
     
     .live-chat {
@@ -29,25 +57,47 @@
     input {
         font-size: larger;
     }
-
+    
     button {
         font-size: larger;
     }
 
-    .live-chat-box {
+    .live-chat-field {
+        background-color: #fff;
         display: flex;
+        padding-inline: 1em;
+        position: relative;
+        font-size: 0.9em;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
         height: 100%;
     }
+    
+    .live-chat-other {
+        justify-self: flex-start;
+        align-self: flex-start;
+        width: 60%;
+        word-wrap: break-word;
+        background-color: #4f5d73c7;
+        color: #fff;
+        padding: 7px 10px;
+        border-radius: 10px 10px 10px 0px;
+        margin: 1em;
+    }   
     
     .live-chat-user {
         justify-self: flex-end;
         align-self: flex-end;
+        width: 60%;
+        word-wrap: break-word;
+        background-color: #77b3d4c7;
+        color: #fff;
+        padding: 7px 10px;
+        border-radius: 10px 10px 0px 10px;
+        margin-top: 10px;
     }   
-
+    
     span {
-
+        color: orange;
+        margin-left: 10px;
     }
 }

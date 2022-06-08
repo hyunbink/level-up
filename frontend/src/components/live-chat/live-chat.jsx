@@ -37,33 +37,49 @@ const LiveChat = () => {
                         <p>online</p>
                     </div>
                 </div>
-                <div className='live-chat-box'>
+                <div className='live-chat-field'>
                     {chat.map((payload, index) => {
                         if (payload.userName === userName) {
                             return (
-                                <p className='live-chat-user' key={`chat-${index}`}>{payload.message} <span>id: {payload.userName}</span></p>
+                                <p
+                                    key={`chat-${index}`}
+                                    className='live-chat-user'
+                                >
+                                    {payload.message}
+                                    <span>
+                                        id: {payload.userName}
+                                    </span>
+                                </p>
                             )
-                        }
+                        } else {
                             return (
-                                <p key={`chat-${index}`}>{payload.message} <span>id: {payload.userName}</span></p>
+                                <p
+                                    key={`chat-${index}`}
+                                    className='live-chat-other'
+                                >
+                                    {payload.message}
+                                    <span>
+                                        id: {payload.userName}
+                                    </span>
+                                </p>
                             )
                         }
-                    )}
+                    })}
                 </div>
-            </div>
 
-            <form className='live-chat-text' onSubmit={sendChat}>
-                <input
-                    type='text'
-                    name='chat'
-                    placeholder='send text'
-                    value={message}
-                    onChange={(e) => {
-                    setMessage(e.target.value)
-                    }}
-                />
-                <button type="submit">send</button>
-            </form>
+                <form className='live-chat-text' onSubmit={sendChat}>
+                    <input
+                        type='text'
+                        name='chat'
+                        placeholder='send text'
+                        value={message}
+                        onChange={(e) => {
+                        setMessage(e.target.value)
+                        }}
+                    />
+                    <button type="submit">send</button>
+                </form>
+            </div>
         </div>
     )
 }
