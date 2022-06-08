@@ -39,7 +39,7 @@ export const fetchReviews = userId => dispatch => (
 export const createReview = review => dispatch => (
     ReviewApiUtil.createReview(review)
         .then(review => dispatch(receiveReview(review)),
-        err=> console.log("failed"))
+        err=> dispatch(receiveReviewErrors(err)))
 );
 
 export const updateReview = review => dispatch => (

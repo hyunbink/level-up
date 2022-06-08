@@ -27,7 +27,6 @@ router.post("/post", (req, res)=> {
 //edit a review
 router.put("/:reviewId", (req, res) => {
     const {errors, isValid } = validateReviewInput(req.body);
-
     if (!isValid) {
         return res.status(400).json(errors);
     }

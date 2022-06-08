@@ -16,6 +16,18 @@ class CreateReviewForm extends React.Component {
         }
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleReviewErrors = this.handleReviewErrors.bind(this);
+    }
+    
+    handleReviewErrors() {
+        if (this.props.errors.length === 0) {
+            return null;
+        } else {
+            window.scrollTo(0,0);
+            return <ul>{this.props.errors.map((error,idx) =>(
+                <li key={idx}>{error}</li>
+            ))}</ul>
+        } 
     }
 
     update(field) {
@@ -32,6 +44,7 @@ class CreateReviewForm extends React.Component {
     render() {
         return(
                 <div className="new-rev-container">
+                    {this.handleReviewErrors()}
                     <form onSubmit={this.handleSubmit}>
                         {/* <label> Title
                         </label> */}

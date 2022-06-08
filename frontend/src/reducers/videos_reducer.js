@@ -1,9 +1,9 @@
 import { CLEAR_VIDEOS, RECEIVE_VIDEO, RECEIVE_VIDEOS, REMOVE_VIDEO } from "../actions/video_actions";
 
 const videosReducer = ( state = {}, action ) => {
-    if (action.videos) {
-        console.log("action data", Object.values(action.videos.data).length);
-    }
+    // if (action.videos) {
+    //     console.log("action data", Object.values(action.videos.data).length);
+    // }
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_VIDEOS:

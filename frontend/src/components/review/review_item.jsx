@@ -18,7 +18,7 @@ class ReviewItem extends React.Component {
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.revStars = this.revStars.bind(this);
-        this.handleErrors = this.handleErrors.bind(this);
+        // this.handleErrors = this.handleErrors.bind(this);
     }
 
     componentDidMount() {
@@ -53,23 +53,10 @@ class ReviewItem extends React.Component {
         if (num === 5) return <div className="rev-show-stars"><FaStar/><FaStar/><FaStar/><FaStar/><FaStar/></div>;
     }
 
-    handleErrors() {
-        console.log("errors", this.props.errors);
-        // if (this.props.errors.length === 0) {
-        //     return null;
-        // } else {
-        //     window.scrollTo(0,0);
-        //     return <ul>{this.props.errors.map((error,idx) =>(
-        //         <li key={idx}>{error}</li>
-        //     ))}</ul>
-        // }
-    }
-
     render() {
         return(
         
             <div>
-                {this.handleErrors}
                 {this.props.currentUserId && this.props.currentUserId === this.props.review.reviewerId ? 
                     <div className="edit-rev-form-div">
                         <button className="user-show-buttons" onClick={this.edit} >Edit Review</button>
@@ -79,6 +66,7 @@ class ReviewItem extends React.Component {
                     <div></div>
                 }
                 {this.state.editing ? 
+                        
                         <form onSubmit={this.handleSubmit}>
                             <div className="edit-rev-form-div">
                             <label> Title
@@ -107,6 +95,7 @@ class ReviewItem extends React.Component {
                         </form>
                 :
                     <div className="rev-item-container">
+
                         <div className="rev-item-title">{this.props.review.title}</div>
                         {/* <div>{this.props.review.score}</div> */}
                         {this.revStars(this.props.review.score)}
