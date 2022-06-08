@@ -10,7 +10,7 @@ class VideoForm extends React.Component {
             uploaderId: this.props.currentUserId,
             title: "",
             description: "",
-            category: "",
+            topic: "",
             url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         }
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +28,7 @@ class VideoForm extends React.Component {
                 .then(() => this.setState({
                     title: video.title,
                     description: video.description,
-                    category: video.category,
+                    topic: video.topic,
                     url: video.url,
                 }))
         }
@@ -50,7 +50,7 @@ class VideoForm extends React.Component {
         let updatedVideo = this.state.updatedVideo;
         updatedVideo["title"] = this.state.title;
         updatedVideo["description"] = this.state.description;
-        updatedVideo["category"] = this.state.category;
+        updatedVideo["topic"] = this.state.topic;
         updatedVideo["url"] = this.state.url;
         this.props.updateVideo(updatedVideo)
             .then(action => this.props.history.push(`/video/${updatedVideo._id}`));
@@ -62,9 +62,9 @@ class VideoForm extends React.Component {
             <div className="video-form-page">
                 <IconsBackground />
             <form className="video-form animate-pop" onSubmit={
-              this.props.match.params.videoId 
-                    ? this.handleUpdate 
-                    : this.handleSubmit
+                this.props.match.params.videoId 
+                        ? this.handleUpdate 
+                        : this.handleSubmit
             }> 
                 {/* <p className="close-form-button" onClick={() => this.props.closeModal()}>x</p> */}
                 {
@@ -79,19 +79,19 @@ class VideoForm extends React.Component {
                 <label className="description">Description
                     <textarea rows="5" placeholder="Description" value={this.state.description} onChange={this.update("description")}/>
                 </label>
-                <label className="category">Category
-                    <input type="text" placeholder="Category" value={this.state.category} onChange={this.update("category")}/>
+                <label className="topic">Topic
+                    <input type="text" placeholder="Topic" value={this.state.topic} onChange={this.update("topic")}/>
                 </label>
                 <label className="url">Youtube Link
                     <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/>
                 </label>
 
                 <div className="video-form-buttons">
-                  {
-                      this.props.match.params.videoId 
-                          ? <button className="button">Update</button>
-                          : <button className="button">Upload</button>
-                  }                    
+                {
+                    this.props.match.params.videoId 
+                        ? <button className="button">Update</button>
+                        : <button className="button">Upload</button>
+                }
                 </div>
             </form>
                 <button onClick={this.props.history.goBack} className="close"><MdClose/></button>

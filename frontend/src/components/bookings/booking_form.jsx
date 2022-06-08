@@ -25,8 +25,6 @@ class BookingForm extends React.Component{
             .then(()=>this.props.getUserBookings());
     }
 
-// include categories/topic?
-    
     render(){
         // if (!this.props.userId) return null;
         let year = new Date().getFullYear() + "-" ;

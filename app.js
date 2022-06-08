@@ -24,22 +24,6 @@ app.use("/api/videos", videos);
 app.use("/api/bookings", bookings);
 app.use("/api/reviews", reviews);
 
-
-// app.get("/", (req, res)=> {
-//     const user  = new User({
-//         firstName: "jeff",
-//         lastName: "smith",
-//         email: "jeff@mail.com",
-//         password: '123456',
-//         professional: true,
-//         categories: "shrimp,keyboard",
-//         interests: "spearfishing",
-//         bio: "Hey guys I am very happy to be learning with you guys"
-//     })
-//     user.save();
-//     res.send("saved");
-// })
-
 mongoose
     .connect(db, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
@@ -47,3 +31,10 @@ mongoose
 
 const port = process.env.PORT || 4000;
 app.listen(port, ()=> console.log(`Server is running on port ${port}`));
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('frontend/build'));
+    app.get('/', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    })
+  }

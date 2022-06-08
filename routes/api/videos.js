@@ -12,7 +12,7 @@ router.post("/upload", (req, res) => {
     const newVideo = new Video({
         title: req.body.title,
         description: req.body.description,
-        category: req.body.category,
+        topic: req.body.topic,
         url: req.body.url,
         uploaderId: req.body.uploaderId
     });
@@ -62,6 +62,7 @@ router.get("/", (req, res) => {
     .catch(err => res.status(404).json({ novideosfound: "No videos found :("}))
 });
 
+
 router.get("/user/:userId", (req, res) => {
     Video.find({ uploaderId: req.params.userId })
         .then(videos => res.json(videos))
@@ -75,16 +76,43 @@ router.get("/user/:userId", (req, res) => {
         .catch(err => res.status(404).json({ novideosfound: "No videos found :(" }))
 });
 
-router.get("/category/:category", (req, res) => {
-    Video.find({ category: req.params.category })
-    .then(videos => {
-        let newVideos = {}
-        videos.forEach(video => {
-            newVideos[video._id] = video;
-        });
-        return res.json(newVideos);
-    })
-    .catch(err => res.status(404).json({ novideosfound: "No videos found :(" }))
+// router.get("/topic/:topic", (req, res) => {
+//     Video.find({ topic: req.params.topic })
+//     .then(videos => {
+//         let newVideos = {}
+//         videos.forEach(video => {
+//             newVideos[video._id] = video;
+//         });
+//         return res.json(newVideos);
+//     })
+//     .catch(err => res.status(404).json({ novideosfound: "No videos found :(" }))
+// });
+
+router.get(`/topic/:topic`, (req, res)=> {
+    let query = req.params.topic;
+    // Video.find({topics: {'$regex' : req.params.topic, '$options' : 'i'}});
+    // Video.find({topics: new RegExp(req.params.topic, 'i')});
+    // Video.find({$or: [{topics: {$regex: req.params.topic}}, {description: {$regex: req.params.topic}}]})
+    // Video.find({topics: {$regex: req.params.topic}})
+    // Video.find(
+    //     {
+    //         $or: [
+    //             {topics: { $regex: query, "$options":"i" }},
+    //             {description: {$regex: query, "$options": "i"}}
+    //         ]
+    //     } 
+    //     )
+    // Video.find({topics: new RegExp(query), description: new RegExp(query)})
+
+    Video.find({$or: [{topic: {$regex: req.params.topic}}, {description: {$regex: req.params.topic}}]})
+        .then(videos=> {
+            let newVideos = {}
+            videos.forEach(video => {
+                newVideos[video._id] = video;
+            });
+            return res.json(newVideos);
+        })
+        .catch(err => res.status(405).json({novideosfound: "No videos found"}))
 });
 
 router.get("/:id", (req, res) => {

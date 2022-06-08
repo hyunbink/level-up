@@ -49,14 +49,18 @@ class UserPage extends React.Component {
     }
 
     getVids(){
-        console.log('getVids', this.props.videos.data)
-        // this.props.videos.data ? this.props.videos.data.map((vid,i)=><VideoIndexItem key={`vid-${i}`} video={vid}/>) : <div></div> 
         if (this.props.videos.data && this.props.user.professional === true) {
-            return this.props.videos.data.map((vid,i)=><VideoIndexItem 
-            formType="user-show" key={`vid-${i}`} video={vid}/>)
+            if (typeof this.props.videos.data === 'object') {
+                let arr = Object.values(this.props.videos.data);
+                return arr.map((vid,i)=><VideoIndexItem 
+                formType="user-show" key={`vid-${i}`} video={vid}/>)
+            } else {
+                return this.props.videos.data.map((vid,i)=><VideoIndexItem 
+                formType="user-show" key={`vid-${i}`} video={vid}/>)
+            }
         }
     }
-
+// going from topic to video -- does not like this.props.videos.map
     render() {
         
         if (!this.props.user) {
@@ -69,77 +73,76 @@ class UserPage extends React.Component {
             <div className="user-page">
                 <div className="user-container">
                     <div className="user-show-banner">
-                            <img className="user-show-banner-img" src={shrimp} alt="user-show-banner-img"></img>
-                            
+                        <img className="user-show-banner-img" src={shrimp} alt="user-show-banner-img"></img>        
                     </div>
                     <div className="user-show-info-div">
                         <div className="user-show-info-div-left">
-                                {/* <div className="user-info"> */}
-                                    <div className="user-essential">
-                                        {/*  */}<div className="user-photo-">
-                                <img className="user-show-profile-photo" alt="user-profile" src={this.props.user.photoUrl}></img>
-                            </div>
-                                        <div className="space-for-photo"></div>
-                                        <span className="user-show-full-name"> {this.props.user.firstName} {this.props.user.lastName} </span>
-                                        <span>{this.props.user.professional ? <BsFillCheckCircleFill className="user-show-prof-icon" />: <div></div> }</span>
-                                        <p></p>
-                                        <br/>
-                                        <h2>About: </h2>
-                                        <div className="line-breaks"></div>
-                                        <p>{this.props.user.bio}</p>
-                                        <br/>
-                                        {this.props.user.interests ? <h1 className="user-show-ints">Interests: <ul className="user-show-interests-list">{this.props.user.interests.split(",").map((int, i)=>(
-                                            <li key={`interest-${i}`} className="user-show-interest">{int}</li>
-                                        ))}</ul></h1> : <div></div>}
-                                        {this.props.user.categories ? <h1 className="user-show-ints">Expert in Categories: <ul className="user-show-interests-list">{this.props.user.categories.split(",").map((int, i)=>(
-                                            <li key={`cat-${i}`} className="user-show-interest">{int}</li>
-                                        ))}</ul></h1> : <div></div>}
-                                            <div className="user-show-bookings" >
-                                                {this.props.user.professional && this.props.currentUserId !== this.props.user._id ? <BookingsForm 
-                                                getUserBookings={this.getUserBookings} 
-                                                className='user-show-bookings-form' 
-                                                bookee={this.props.user} 
-                                                booker={this.props.currentUser}
-                                                /> : <div></div> }
-                                                <div className="user-show-bookings-div">
-                                                    <ul className="user-show-bookings-ul">
-                                                        {/* make sure bookings only show if they assoicated with it, user and prof */}
-                                                        {/* {this.props.bookings.data  ?  : <div></div> } */}
-                                                        {this.props.bookings.data && this.props.currentUserId === this.props.user._id ? <ul>
-                                                            <div>Scheduled Bookings:</div>
-                                                            {this.props.bookings.data.map((booking, idx)=> (
-                                                            <li><BookingShow key={idx} booking={booking} getBookings={this.getUserBookings}/></li>
-                                                            )
-                                                        )} </ul> : <div></div> }
-                                                    </ul>
-                                                </div>
-                                            </div>
-                        </div>
-                            </div>
-                                <div className="user-show-info-div-right">
-                                    <div className="user-details">
-                                        {this.props.user.professional? 
-                                        <ul> 
-                                            {this.props.videos.data ? this.getVids() : <div></div>}
+                            {/* <div className="user-info"> */}
+                            <div className="user-essential">
+                                {/*  */}
+                                <div className="user-photo-">
+                                    <img className="user-show-profile-photo" alt="user-profile" src={this.props.user.photoUrl}></img>
+                                </div>
+
+                                <div className="space-for-photo"></div>
+                                <span className="user-show-full-name"> {this.props.user.firstName} {this.props.user.lastName} </span>
+                                <span>{this.props.user.professional ? <BsFillCheckCircleFill className="user-show-prof-icon" />: <div></div> }</span>
+                                <p></p>
+                                <br/>
+                                <h2>About: </h2>
+                                <div className="line-breaks"></div>
+                                <p>{this.props.user.bio}</p>
+                                <br/>
+                                {this.props.user.interests ? <h1 className="user-show-ints">Interests: <ul className="user-show-interests-list">{this.props.user.interests.split(",").map((int, i)=>(
+                                    <li key={`interest-${i}`} className="user-show-interest">{int}</li>
+                                ))}</ul></h1> : <div></div>}
+
+                                {this.props.user.topics ? <h1 className="user-show-ints">Expert in Topics: <ul className="user-show-interests-list">{this.props.user.topics.split(",").map((int, i)=>(
+                                    <li key={`cat-${i}`} className="user-show-interest">{int}</li>
+                                ))}</ul></h1> : <div></div>}
+                                <div className="user-show-bookings" >
+                                    {this.props.user.professional && this.props.currentUserId !== this.props.user._id ? <BookingsForm 
+                                        getUserBookings={this.getUserBookings} 
+                                        className='user-show-bookings-form' 
+                                        bookee={this.props.user} 
+                                        booker={this.props.currentUser}
+                                    /> : <div></div> }
+                                    <div className="user-show-bookings-div">
+                                        <ul className="user-show-bookings-ul">
+                                            {/* make sure bookings only show if they assoicated with it, user and prof */}
+                                            {/* {this.props.bookings.data  ?  : <div></div> } */}
+                                            {this.props.bookings.data && this.props.currentUserId === this.props.user._id ? <ul>
+                                                <div>Scheduled Bookings:</div>
+                                                {this.props.bookings.data.map((booking, idx)=> (
+                                                <li><BookingShow key={idx} booking={booking} getBookings={this.getUserBookings}/></li>
+                                                )
+                                            )} </ul> : <div></div> }
                                         </ul>
-                                        : <div></div> }
-                                    
                                     </div>
                                 </div>
-                    <div className="user-reviews-container">
+                            </div>
+                        </div>
+                        <div className="user-show-info-div-right">
+                            <div className="user-details">
+                                {this.props.user.professional? 
+                                <ul> 
+                                    {this.props.videos.data ? this.getVids() : <div></div>}
+                                </ul>
+                                : <div></div> }
+                            </div>
+                        </div>
+                        <div className="user-reviews-container">
                             <h1 className="reviews-title" >Reviews</h1>
-                        <div className="create-review-form">
-                            <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
+                            <div className="create-review-form">
+                                <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
+                            </div>
+                            <div className="review-data-cont">
+                                {this.props.reviews.data ? <ul className="review-item-show">{this.props.reviews.data.map((review, idx)=> (
+                                    <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
+                                ))} </ul> : <div></div> }
+                            </div>
                         </div>
-                        <div className="review-data-cont">
-                            {this.props.reviews.data ? <ul className="review-item-show">{this.props.reviews.data.map((review, idx)=> (
-                                <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
-                                )
-                                )} </ul> : <div></div> }
-                        </div>
-                                
                     </div>
-                </div>
                 </div>
             </div>
         )

@@ -8,6 +8,10 @@ export const fetchVideosByCategory = category => (
     axios.get(`/api/videos/category/${category}`)
 );
 
+export const fetchVideosByTopic = topic => (
+    axios.get(`/api/videos/topic/${topic}`)
+);
+
 export const fetchVideosByUser = userId => (
     axios.get(`/api/videos/user/${userId}`)
 );
@@ -27,4 +31,9 @@ export const deleteVideo = videoId => (
 export const updateVideo = video => {
     console.log(video);
     return axios.put(`/api/videos/${video._id}`, video)
-}
+};
+
+export const searchVideoByTopic = query => {
+    console.log("query", query);
+    return axios.get(`/api/videos/topic/${query}`)
+};
