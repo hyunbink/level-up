@@ -76,9 +76,9 @@ class VideoIndex extends React.Component {
                     {
                         catVids.map((video, idx) => (
                             <VideoIndexItem
-                                openModal={this.props.openModal}
+                                // openModal={this.props.openModal}
                                 fetchUser={this.props.fetchUser}
-                                prevPage={prevPage}
+                                // prevPage={prevPage}
                                 video={video}
                                 key={`video-${idx}`}
                             />
