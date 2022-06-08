@@ -15,6 +15,8 @@ class VideoForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleFormData = this.handleFormData.bind(this);
+        this.handleFile = this.handleFile.bind(this);
         this.update = this.update.bind(this);
     }
 
@@ -31,6 +33,27 @@ class VideoForm extends React.Component {
                     topic: video.topic,
                     url: video.url,
                 }))
+        }
+    }
+
+    handleFormData() {
+        let form = new FormData();
+        form.append('video[uploaderId]', this.state.uploaderId)
+        form.append('video[title]', this.state.title)
+        form.append('video[description]', this.state.description)
+        form.append('video[topic]', this.state.topic)
+        form.append('video[url]', this.state.url)
+        return form;
+    }
+
+    handleFile(e){
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = function(){
+            this.setState({imageFile: file, photoUrls: fileReader.result})
+        }.bind(this)
+        if (file){
+            fileReader.readAsDataURL(file);
         }
     }
 
@@ -83,7 +106,12 @@ class VideoForm extends React.Component {
                     <input type="text" placeholder="Topic" value={this.state.topic} onChange={this.update("topic")}/>
                 </label>
                 <label className="url">Youtube Link
-                    <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/>
+                    {/* <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/> */}
+                    <input
+                        type="file"
+                        onChange={this.handleFile}
+                        className="file-input-field"
+                    />
                 </label>
 
                 <div className="video-form-buttons">
