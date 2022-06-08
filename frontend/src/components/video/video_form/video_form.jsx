@@ -62,9 +62,9 @@ class VideoForm extends React.Component {
             <div className="video-form-page">
                 <IconsBackground />
             <form className="video-form animate-pop" onSubmit={
-              this.props.match.params.videoId 
-                    ? this.handleUpdate 
-                    : this.handleSubmit
+                this.props.match.params.videoId 
+                        ? this.handleUpdate 
+                        : this.handleSubmit
             }> 
                 {/* <p className="close-form-button" onClick={() => this.props.closeModal()}>x</p> */}
                 {
@@ -87,11 +87,11 @@ class VideoForm extends React.Component {
                 </label>
 
                 <div className="video-form-buttons">
-                  {
-                      this.props.match.params.videoId 
-                          ? <button className="button">Update</button>
-                          : <button className="button">Upload</button>
-                  }                    
+                {
+                    this.props.match.params.videoId 
+                        ? <button className="button">Update</button>
+                        : <button className="button">Upload</button>
+                }
                 </div>
             </form>
                 <button onClick={this.props.history.goBack} className="close"><MdClose/></button>

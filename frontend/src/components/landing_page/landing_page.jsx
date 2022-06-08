@@ -19,8 +19,8 @@ class LandingPage extends Component {
         setInterval(() => {
             this.setState({
                 textIndex: this.state.textIndex + 1,
-                });
-            }, 2000);
+            });
+        }, 2000);
     }
     
     componentWillUnmount() {
