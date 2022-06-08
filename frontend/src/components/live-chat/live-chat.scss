@@ -3,17 +3,20 @@
     position: absolute;
     // align-self: center;
     height: 450px;
-    top: calc(100vh - 450px);
+    top: calc(100vh - 200px);
+    left: calc(100vw - 250px );
     margin-right: 2em;
     justify-self: flex-end;
-    background-color: green;
+    background-color: #4f5d73;
     z-index: 999;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     #live-chat-container-header {
         background-color: yellow;
+        // border-radius: 10px;
         width: 100%;
     }
     
