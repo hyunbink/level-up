@@ -23,8 +23,7 @@ const VideoSchema = new Schema({
     },
     url: {
         type: String,
-        required: true,
-        default: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        required: true
     }
 }, {
     timestamps: true

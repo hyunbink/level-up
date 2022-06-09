@@ -49,10 +49,11 @@ export const fetchVideosByUser = userId => dispatch => (
         .then(videos => dispatch(receiveVideos(videos)))
 );
 
-export const createVideo = video => dispatch => (
-    videoAPIUtil.createVideo(video)
+export const createVideo = video => dispatch => {
+    // console.log("VIDEO ACTIONS", video);
+    return videoAPIUtil.createVideo(video)
         .then(video => dispatch(receiveVideo(video)))
-);
+};
 
 export const updateVideo = video => dispatch => (
     videoAPIUtil.updateVideo(video)

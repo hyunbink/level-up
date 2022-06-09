@@ -10,6 +10,7 @@ class VideoForm extends React.Component {
             uploaderId: this.props.currentUserId,
             title: "",
             description: "",
+            category: "",
             topic: "",
             url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         }
@@ -37,20 +38,22 @@ class VideoForm extends React.Component {
     }
 
     handleFormData() {
-        let form = new FormData();
-        form.append('video[uploaderId]', this.state.uploaderId)
-        form.append('video[title]', this.state.title)
-        form.append('video[description]', this.state.description)
-        form.append('video[topic]', this.state.topic)
-        form.append('video[url]', this.state.url)
-        return form;
+        let formData = new FormData();
+        formData.append('video[uploaderId]', this.state.uploaderId);
+        formData.append('video[title]', this.state.title);
+        formData.append('video[description]', this.state.description);
+        formData.append('video[topic]', this.state.topic);
+        formData.append('video[category]', this.state.category);
+        formData.append('video[url]', this.state.url);
+        formData.append('video[video]', this.state.videoFile);
+        return formData;
     }
 
-    handleFile(e){
+    handleFile(e) {
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = function(){
-            this.setState({imageFile: file, photoUrls: fileReader.result})
+            this.setState({videoFile: file, url: fileReader.result})
         }.bind(this)
         if (file){
             fileReader.readAsDataURL(file);
@@ -63,10 +66,15 @@ class VideoForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createVideo(this.state)
-            // .then(action => console.log(action));
+        let formData = this.handleFormData();
+        // console.log("FORM FILE: ", form)
+        // for (var key of formData.entries()) {
+        //     console.log("FORM DATA ENTRY: ", key[0] + ', ' + key[1])
+        // }
+        this.props.createVideo(this.handleFormData())
+            // .then(action => console.log(action))
             .then(action => this.props.history.push(`${action.video.data._id}`));
-        }
+    }
         
     handleUpdate(e) {
         e.preventDefault();
@@ -101,6 +109,9 @@ class VideoForm extends React.Component {
                 </label>
                 <label className="description">Description
                     <textarea rows="5" placeholder="Description" value={this.state.description} onChange={this.update("description")}/>
+                </label>
+                <label className="category">Category
+                    <input type="text" placeholder="category" value={this.state.category} onChange={this.update("category")}/>
                 </label>
                 <label className="topic">Topic
                     <input type="text" placeholder="Topic" value={this.state.topic} onChange={this.update("topic")}/>
