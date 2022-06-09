@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import { nanoid } from 'nanoid';
 import "./live-chat.scss";
+import send from "./send.png";
 
 const socket = io.connect("http://localhost:4001");
 const userName = nanoid(4);
@@ -14,7 +15,9 @@ const LiveChat = () => {
 
     const sendChat = (e) => {
         e.preventDefault();
-        socket.emit("chat", { message, userName });
+        if (message !== '') {
+            socket.emit("chat", { message, userName });
+        }
         setMessage('');
     };
 
@@ -24,63 +27,94 @@ const LiveChat = () => {
         })
     })
 
-    return (
-        <div id='live-chat-container'>
-            <div className='live-chat-box'>
-                <div
-                    id='live-chat-container-header'
-                    onMouseEnter={()=>dragElement(document.getElementById("live-chat-container"))}
-                >
-                    <img src="" alt="profile-picture" />
-                    <div className='client-info'>
-                        <h2>Username</h2>
-                        <p>online</p>
-                    </div>
-                </div>
-                <div className='live-chat-field'>
-                    {chat.map((payload, index) => {
-                        if (payload.userName === userName) {
-                            return (
-                                <p
-                                    key={`chat-${index}`}
-                                    className='live-chat-user'
-                                >
-                                    {payload.message}
-                                    <span>
-                                        id: {payload.userName}
-                                    </span>
-                                </p>
-                            )
-                        } else {
-                            return (
-                                <p
-                                    key={`chat-${index}`}
-                                    className='live-chat-other'
-                                >
-                                    {payload.message}
-                                    <span>
-                                        id: {payload.userName}
-                                    </span>
-                                </p>
-                            )
-                        }
-                    })}
-                </div>
+    const fadeOut = () => {
+        const container = document.getElementById('live-chat-container');
+        container.classList.add('fade-out');
+        setTimeout(() => {
+            container.style.display = 'none';
+            fadeInBubble();
+        }, 1000);
+    }
 
-                <form className='live-chat-text' onSubmit={sendChat}>
-                    <input
-                        type='text'
-                        name='chat'
-                        placeholder='send text'
-                        value={message}
-                        onChange={(e) => {
-                        setMessage(e.target.value)
-                        }}
-                    />
-                    <button type="submit">send</button>
-                </form>
+    const fadeIn = () => {
+        const container = document.getElementById('live-chat-container');
+        container.classList.add('fade-in');
+        setTimeout(() => {
+            container.style.display = 'none';
+        }, 1000);
+    }
+    const fadeInBubble = () => {
+        const container = document.getElementById('chat-bubble');
+        container.classList.add('fade-in-bubble');
+        setTimeout(() => {
+            container.style.display = 'none';
+        }, 1000);
+    }
+    const fadeOutBubble = () => {
+        const container = document.getElementById('chat-bubble');
+        container.classList.add('fade-in-bubble');
+        setTimeout(() => {
+            container.style.display = 'none';
+        }, 1000);
+    }
+
+    return (
+        <>
+            <div id='live-chat-container'>
+                <div className='live-chat-box'>
+                    <div
+                        id='live-chat-container-header'
+                        onMouseEnter={()=>dragElement(document.getElementById("live-chat-container"))}
+                        onClick={fadeOut}
+                    >
+                        <img src="" alt="profile-picture" />
+                        <div className='client-info'>
+                            <h2>Username</h2>
+                            <p>online</p>
+                        </div>
+                    </div>
+                    <div className='live-chat-field'>
+                        {chat.map((payload, index) => {
+                            if (payload.userName === userName) {
+                                return (
+                                    <p
+                                        key={`chat-${index}`}
+                                        className='live-chat-user'
+                                    >
+                                        {payload.message}
+                                    </p>
+                                )
+                            } else {
+                                return (
+                                    <p
+                                        key={`chat-${index}`}
+                                        className='live-chat-other'
+                                    >
+                                        {payload.message}
+                                    </p>
+                                )
+                            }
+                        })}
+                    </div>
+
+                    <form className='live-chat-text' autocomplete='off' onSubmit={sendChat}>
+                        <input
+                            type='text'
+                            name='chat'
+                            placeholder='send text'
+                            value={message}
+                            onChange={(e) => {
+                            setMessage(e.target.value)
+                            }}
+                        />
+                        <button type="submit"><img src={send} /></button>
+                    </form>
+                </div>
             </div>
-        </div>
+            <div className='chat-bubble'>
+
+            </div>
+        </>
     )
 }
 

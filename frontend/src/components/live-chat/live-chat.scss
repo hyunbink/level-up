@@ -2,19 +2,18 @@
 #live-chat-container {
     font-family: inherit;
     position: absolute;
-    top: calc(100vh - 200px);
-    left: calc(100vw - 250px );
-    justify-self: flex-end;
+    top: calc(100vh - 470px);
+    left: calc(100vw - 320px );
     background-color: #fff;
     z-index: 999;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px, 0px, 8px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
     border-radius: 1em;
     overflow: hidden;
-    
+
     .live-chat-box {
         height: 450px;
         width: 300px;
@@ -29,6 +28,7 @@
         width: 100%;
         display: flex;
         padding: 1em;
+        box-sizing: border-box;
 
         img {
             width: 50px;
@@ -47,12 +47,6 @@
             }
         }
     }
-    
-    .live-chat {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
 
     input {
         font-size: larger;
@@ -63,6 +57,7 @@
     }
 
     .live-chat-field {
+        box-sizing: border-box;
         background-color: #fff;
         display: flex;
         padding-inline: 1em;
@@ -70,12 +65,14 @@
         font-size: 0.9em;
         flex-direction: column;
         height: 100%;
+        width: 100%;
     }
     
     .live-chat-other {
         justify-self: flex-start;
         align-self: flex-start;
-        width: 60%;
+        // width: 60%;
+        text-align: end;
         word-wrap: break-word;
         background-color: #4f5d73c7;
         color: #fff;
@@ -87,7 +84,7 @@
     .live-chat-user {
         justify-self: flex-end;
         align-self: flex-end;
-        width: 60%;
+        max-width: 60%;
         word-wrap: break-word;
         background-color: #77b3d4c7;
         color: #fff;
@@ -99,5 +96,84 @@
     span {
         color: orange;
         margin-left: 10px;
+    }
+
+    .live-chat-text {
+        box-sizing: border-box;
+        background-color: #fff;
+        display: flex;
+        height: 60px;
+        padding: 10px;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        input {
+            width: calc(100% - 40px);
+            height: 100%;
+            background-color: #4f5d7321;
+            border-radius: 50px;
+            color: #000;
+            font-size: 1em;
+            padding: 0 15px;
+            border: 0;
+            resize: none;
+            vertical-align: middle;
+            outline: none;
+        }
+        
+        button {
+            border: 0;
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            overflow: hidden;
+            position: relative;
+            margin-left: 5px;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+
+            &:hover {
+                transform: scale(0.85);
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.fade-in {
+    animation: fadein 1s;
+}
+
+.fade-out {
+    animation: fadeout 1s;
+}
+
+@keyframes fadein {
+    
+    0% {
+        height: 0px;
+    }
+    
+    100%{
+        height: 450px;
+    }
+}
+
+@keyframes fadeout {
+    
+    0% {
+        height: 450px;
+    }
+    
+    100%{
+        height: 0px;
+        top: 100vh;
     }
 }
