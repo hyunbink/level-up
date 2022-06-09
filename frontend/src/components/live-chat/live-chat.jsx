@@ -30,6 +30,7 @@ const LiveChat = () => {
 
     const fadeOut = () => {
         const container = document.getElementById('live-chat-container');
+        container.classList.remove('fade-in');
         container.classList.add('fade-out');
         setTimeout(() => {
             container.style.display = 'none';
@@ -40,26 +41,29 @@ const LiveChat = () => {
     const fadeIn = () => {
         fadeOutBubble();
         const container = document.getElementById('live-chat-container');
+        container.style.display = 'block';
+        container.classList.remove('fade-out');
         container.classList.add('fade-in');
         setTimeout(() => {
-            container.style.display = 'none';
+            container.classList.remove('live-chat-container');
+            container.classList.add('live-chat-container');
         }, 1000);
     }
 
     const fadeOutBubble = () => {
-        const container = document.getElementById('chat-bubble');
-        container.classList.add('fade-out-bubble');
+        const bubble = document.getElementById('chat-bubble');
+        bubble.classList.remove('fade-in-bubble');
+        bubble.classList.add('fade-out-bubble');
         setTimeout(() => {
-            container.style.display = 'none';
+            bubble.style.display = 'none';
         }, 1000);
     }
-
+    
     const fadeInBubble = () => {
-        const container = document.getElementById('chat-bubble');
-        container.classList.add('fade-in-bubble');
-        setTimeout(() => {
-            container.style.display = 'none';
-        }, 1000);
+        const bubble = document.getElementById('chat-bubble');
+        bubble.style.display = 'block';
+        bubble.classList.remove('fade-out-bubble');
+        bubble.classList.add('fade-in-bubble');
     }
 
     return (
@@ -68,7 +72,7 @@ const LiveChat = () => {
                 <div className='live-chat-box'>
                     <div
                         id='live-chat-container-header'
-                        onMouseEnter={()=>dragElement(document.getElementById("live-chat-container"))}
+                        // onMouseEnter={()=>dragElement(document.getElementById("live-chat-container"))}
                         onClick={fadeOut}
                     >
                         <img src="" alt="profile-picture" />
@@ -77,6 +81,7 @@ const LiveChat = () => {
                             <p>online</p>
                         </div>
                     </div>
+
                     <div className='live-chat-field'>
                         {chat.map((payload, index) => {
                             if (payload.userName === userName) {
@@ -115,8 +120,8 @@ const LiveChat = () => {
                     </form>
                 </div>
             </div>
-            <button type='submit' className='chat-bubble' onClick={fadeIn}>
-                <img src={chatBubble} alt="" onClick={fadeIn} />
+            <button type='submit' id='chat-bubble' onClick={fadeIn}>
+                <img src={chatBubble} alt="" />
             </button>
         </>
     )
