@@ -18,10 +18,14 @@ class ReviewItem extends React.Component {
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.revStars = this.revStars.bind(this);
-        // this.handleErrors = this.handleErrors.bind(this);
+        this.handleReviewErrors = this.handleReviewErrors.bind(this);
     }
 
     componentDidMount() {
+        this.props.clearReviewErrors();
+    }
+
+    componentWillUnmount() {
         this.props.clearReviewErrors();
     }
 
@@ -45,6 +49,17 @@ class ReviewItem extends React.Component {
             .then(()=>this.props.getReviews());
     }
 
+    handleReviewErrors() {
+        if (this.props.errors.length === 0) {
+            return null;
+        } else {
+            window.scrollTo(0,0);
+            return <ul>{this.props.errors.map((error,idx) =>(
+                <li key={idx}>{error}</li>
+            ))}</ul>
+        } 
+    }
+
     revStars(num){
         if (num === 1) return <div className="rev-show-stars"><FaStar/></div>;
         if (num === 2) return <div className="rev-show-stars"><FaStar/><FaStar/></div>;
@@ -65,6 +80,7 @@ class ReviewItem extends React.Component {
                     :
                     <div></div>
                 }
+                {this.handleReviewErrors()}
                 {this.state.editing ? 
                         
                         <form onSubmit={this.handleSubmit}>

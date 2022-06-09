@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { createReview } from "../../actions/review_actions";
+import { clearReviewErrors, createReview } from "../../actions/review_actions";
 import CreateReviewForm from "./review_form";
 
 const mSTP = (state, ownProps) => {
@@ -15,6 +15,7 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = dispatch => ({
+    clearReviewErrors: ()=> dispatch(clearReviewErrors()),
     createReview: review => dispatch(createReview(review))
 })
 
