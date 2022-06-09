@@ -3,6 +3,7 @@ import io from 'socket.io-client';
 import { nanoid } from 'nanoid';
 import "./live-chat.scss";
 import send from "./send.png";
+import chatBubble from "./chat.png";
 
 const socket = io.connect("http://localhost:4001");
 const userName = nanoid(4);
@@ -37,20 +38,23 @@ const LiveChat = () => {
     }
 
     const fadeIn = () => {
+        fadeOutBubble();
         const container = document.getElementById('live-chat-container');
         container.classList.add('fade-in');
         setTimeout(() => {
             container.style.display = 'none';
         }, 1000);
     }
-    const fadeInBubble = () => {
+
+    const fadeOutBubble = () => {
         const container = document.getElementById('chat-bubble');
-        container.classList.add('fade-in-bubble');
+        container.classList.add('fade-out-bubble');
         setTimeout(() => {
             container.style.display = 'none';
         }, 1000);
     }
-    const fadeOutBubble = () => {
+
+    const fadeInBubble = () => {
         const container = document.getElementById('chat-bubble');
         container.classList.add('fade-in-bubble');
         setTimeout(() => {
@@ -111,9 +115,9 @@ const LiveChat = () => {
                     </form>
                 </div>
             </div>
-            <div className='chat-bubble'>
-
-            </div>
+            <button type='submit' className='chat-bubble' onClick={fadeIn}>
+                <img src={chatBubble} alt="" onClick={fadeIn} />
+            </button>
         </>
     )
 }
