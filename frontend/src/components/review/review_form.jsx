@@ -16,6 +16,27 @@ class CreateReviewForm extends React.Component {
         }
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleReviewErrors = this.handleReviewErrors.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.clearReviewErrors();
+    }
+
+    componentWillUnmount() {
+        this.props.clearReviewErrors();
+    }
+
+    
+    handleReviewErrors() {
+        // if (this.props.errors.length === 0) {
+        //     return null;
+        // } else {
+            // window.scrollTo(0,0);
+            return <ul id="review-form-errors" className="hidden">{this.props.errors.map((error,idx) =>(
+                <li key={idx}>{error}</li>
+            ))}</ul>
+        // } 
     }
 
     update(field) {
@@ -24,6 +45,14 @@ class CreateReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        let reviewFormErrors = document.getElementById("review-form-errors") ;
+        console.log("reviewform", reviewFormErrors);
+        reviewFormErrors.classList.remove("hidden");
+        document.addEventListener("click", ()=> {
+            reviewFormErrors.classList.add("hidden");
+            document.removeEventListener("click", ()=> {});
+        });
+
         let newReview = this.state;
         this.props.createReview(newReview)
             .then(()=>this.props.getReviews());
@@ -32,6 +61,7 @@ class CreateReviewForm extends React.Component {
     render() {
         return(
                 <div className="new-rev-container">
+                    {this.handleReviewErrors()} 
                     <form onSubmit={this.handleSubmit}>
                         {/* <label> Title
                         </label> */}
