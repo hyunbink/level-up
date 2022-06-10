@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
@@ -15,7 +16,7 @@ import TopicPageContainer from './topics/topic_page_container';
 import VideoShowPageContainer from './video/video_show/video_show_page_container';
 import SearchResultsContainer from './searchbar/search_results_container';
 import IconsBackground from './icons_background/icons_background';
-
+import LiveChat from '../components/live-chat/live-chat';
 
 // import BookingFormContainer from './bookings/booking_form_container';   // add protected routes for bookings after testing
 // import BookingShowContainer from './bookings/bookings_show_container';
@@ -29,28 +30,29 @@ import "./static_pages.scss";
 // import VideoShowPageContainer from './video/video_show/video_show_page_container';
 
 const App = () => (
-  <div className='page'>
-    <NavBarContainer />
-    <div className='body'>
-      <SideBar />
-      <Switch>
-        {/* <Route exact path="/video/:videoId" component={ VideoShowPageContainer } /> */}
-        <Route exac path="/search" component={ SearchResultsContainer }/>
-        <Route exact path="/background" component={ IconsBackground } />
-        <Route exact path="/auth/:id" component={ ProfAuthFormContainer } />
-        <ProtectedRoute exact path="/user/:id" component={ UserPageContainer}/>
-        <Route exact path="/topic/:topic" component={ TopicPageContainer }/> 
-        <Route exact path="/video/upload" component={ VideoForm }/>
-        <Route exact path="/video/:videoId" component={ VideoShowPageContainer }/>
-        <Route exact path="/video/edit/:videoId" component={ VideoForm }/>
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <ProtectedRoute exact path="/home" component={HomePage} />
-        <AuthRoute exact path="/" component={LandingPage} />
-      </Switch>
+    <div className='page'>
+      <NavBarContainer />
+      <div className='body'>
+        <SideBar />
+        <Switch>
+          <Route exac path="/search" component={ SearchResultsContainer }/>
+          <Route exact path="/background" component={ IconsBackground } />
+          <Route exact path="/auth/:id" component={ ProfAuthFormContainer } />
+          <ProtectedRoute exact path="/user/:id" component={ UserPageContainer}/>
+          <Route exact path="/topic/:topic" component={ TopicPageContainer }/> 
+          {/* <Route exact path="/category/:category" component={ CategoryPageContainer }/>  */}
+          <Route exact path="/video/upload" component={ VideoForm }/>
+          <Route exact path="/video/:videoId" component={ VideoShowPageContainer }/>
+          <Route exact path="/video/edit/:videoId" component={ VideoForm }/>
+          <AuthRoute exact path="/login" component={LoginFormContainer} />
+          <AuthRoute exact path="/signup" component={SignupFormContainer} />
+          <ProtectedRoute exact path="/home" component={HomePage} />
+          <AuthRoute exact path="/" component={LandingPage} />
+        </Switch>
+        <LiveChat />
+      </div>
+      <Footer />
     </div>
-    <Footer />
-  </div>
 );
 
 export default App;

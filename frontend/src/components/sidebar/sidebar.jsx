@@ -18,12 +18,18 @@ class SideBar extends React.Component {
 
     render() {
 
-        let allowedPages = ['home', 'user', 'topic', 'video', 'search'];
+        let allowedPages = ['home', 'user', 'category', 'video', 'search'];
+        let bannedPages = ['upload'];
+
 
         let display = false;
 
         allowedPages.forEach(page => {
             if (this.props.location.pathname.includes(page)) {display = true}
+        })
+
+        bannedPages.forEach(page => {
+            if (this.props.location.pathname.includes(page)) {display = false}
         })
 
         if (display === false) {return null}
