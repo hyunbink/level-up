@@ -1,28 +1,88 @@
 const express = require("express");
 const router = express.Router();
 const Video = require("../../models/Video");
+const multer = require('multer');
+const AWS = require('aws-sdk')
+require('dotenv').config();
 
 const validateVideoInput = require("../../validation/video");
+const video = require("../../validation/video");
 
-router.post("/upload", (req, res) => {
-    const { errors, isValid } = validateVideoInput(req.body);
+const storage = multer.memoryStorage({
+    destination: function (req, file, cb) {
+        cb(null, '')
+    }
+})
+
+const filefilter = (req, file, cb) => {
+    if (file.mimetype === 'video/mp4'
+    // || file.mimetype === 'video/mov'
+    ) {
+        cb(null, true)
+    } else {
+        cb(null, false)
+    }
+}
+
+const upload = multer({ storage: storage, fileFilter: filefilter });
+const bucketRegion = process.env.AWS_BUCKET_REGION
+const bucketName = process.env.AWS_BUCKET_NAME
+const accessKeyId = process.env.AWS_ACCESS_KEY
+const secretKey = process.env.AWS_SECRET_KEY
+
+const s3 = new AWS.S3({
+    accessKeyId: accessKeyId,
+    secretAccessKey: secretKey
+})
+
+router.post("/upload", upload.single("video[video]") , (req, res) => {
+    const { errors, isValid } = validateVideoInput(req.body.video);
+    let video = req.body.video;
     if (!isValid) {
         return res.status(400).json(errors);
     }
-    const newVideo = new Video({
-        title: req.body.title,
-        description: req.body.description,
-        topic: req.body.topic,
-        url: req.body.url,
-        uploaderId: req.body.uploaderId
-    });
 
-    newVideo.save()
-        .then(video => {
-            console.log("video", video)
-            res.json(video)
-        })
-        .catch(err => console.log(err));
+    const newVideo = new Video({
+        title: video.title,
+        description: video.description,
+        category: video.category,
+        topic: video.topic,
+        // url: video.url,
+        uploaderId: video.uploaderId
+    });
+    
+    if (video.url.startsWith("data:video/mp4;base64")) {
+        const params = {
+            Bucket: bucketName,
+            Key: req.file.originalname,
+            Body: req.file.buffer,
+            ACL:"public-read-write",
+            ContentType:"video/mp4",
+        };
+        console.log("VIDEO PARAMS: ", params)
+        s3.upload(params, (err, data) => {
+            if (err) {
+                res.status(500).send({"Error": err})
+                return
+            }
+            newVideo.url = data.Location;
+            newVideo.save()
+                .then(video => {
+                    res.json(
+                        video
+                    )
+                })
+                .catch(err => res.status(400).json({ failedUpload: "Failed to upload video"}))
+            }
+        )
+    } else {
+        newVideo.url = video.url;
+            newVideo.save()
+                .then(video => {
+                    res.json(video)
+                })
+                .catch(err => res.status(400).json({ failedUpload: "Failed to upload video"}))
+    }
 });
 
 router.put("/:videoId", (req, res) => {

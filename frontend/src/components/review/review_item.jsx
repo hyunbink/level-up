@@ -18,18 +18,41 @@ class ReviewItem extends React.Component {
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.revStars = this.revStars.bind(this);
+        this.handleReviewErrors = this.handleReviewErrors.bind(this);
     }
 
     update(field) {
         return e => this.setState({[field]: e.currentTarget.value});
     }
 
+        
+    handleReviewErrors() {
+        // if (this.props.errors.length === 0) {
+        //     return null;
+        // } else {
+            // window.scrollTo(0,0);
+            return <ul id="review-edit-errors" className="hidden">{this.props.errors.map((error,idx) =>(
+                <li key={idx}>{error}</li>
+            ))}</ul>
+        // } 
+    }
+
     edit() {
         this.setState({editing: !this.state.editing})
     }
 
+
     handleSubmit(e) {
         e.preventDefault();
+
+        let reviewFormErrors = document.getElementById("review-edit-errors") ;
+        console.log("reviewform", reviewFormErrors);
+        reviewFormErrors.classList.remove("hidden");
+        document.addEventListener("click", ()=> {
+            reviewFormErrors.classList.add("hidden");
+            document.removeEventListener("click", ()=> {});
+        });
+
         let newReview = this.props.review;
         newReview["title"] = this.state.title;
         newReview["score"] = this.state.score;
@@ -48,9 +71,13 @@ class ReviewItem extends React.Component {
     }
 
     render() {
+
+
         return(
-        
+
             <div>
+                {/* {this.props.errors ? this.edit() : null} */}
+                {this.handleReviewErrors()}
                 {this.props.currentUserId && this.props.currentUserId === this.props.review.reviewerId ? 
                     <div className="edit-rev-form-div">
                         <button className="user-show-buttons" onClick={this.edit} >Edit Review</button>
@@ -60,8 +87,8 @@ class ReviewItem extends React.Component {
                     <div></div>
                 }
                 {this.state.editing ? 
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="edit-rev-form-div">
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="edit-rev-form-div">
                             <label> Title
                                 <input type="text" value={this.state.title} onChange={this.update("title")}/>
                             </label>
@@ -84,8 +111,8 @@ class ReviewItem extends React.Component {
                                 <label htmlFor="fiveLocation" className="fas fa-star s5"><FaStar/></label>
                             </div> */}
                             <button className="user-show-buttons">Edit Review</button>
-                    </div>
-                        </form>
+                        </div>
+                    </form>
                 :
                     <div className="rev-item-container">
                         <div className="rev-item-title">{this.props.review.title}</div>
