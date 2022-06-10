@@ -5,7 +5,7 @@ import "./live-chat.scss";
 import send from "./send.png";
 import chatBubble from "./chat.png";
 
-const socket = io.connect("http://localhost:4001");
+const socket = io.connect(`http://syche.herokuapp.com`);
 const userName = nanoid(4);
 
 
