@@ -453,3 +453,29 @@
 .hidden {
     display: none;
 }
+
+#review-form-errors {
+    // border: 2px solid green;
+    font-size: 12px;
+    color: red;
+    padding-top: 6%;
+    padding-bottom: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    li {
+        padding: 2px;
+    }
+}
+
+#booking-form-errors {
+    font-size: 12px;
+    color: red;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    li {
+        padding: 2px;
+    }
+}
