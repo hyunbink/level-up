@@ -1,4 +1,6 @@
 import React from 'react';
+import { BiSearchAlt } from "react-icons/bi"
+import "./search_bar.scss";
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -23,7 +25,21 @@ class SearchBar extends React.Component {
     render() {
         return(
             <form onSubmit={this.handleSubmit}>
-                <input className='search-bar' type="search" placeholder="Search" value={this.state.query} onChange={this.update("query")} />
+                <label>
+                    <input
+                        className='search-bar'
+                        type="search"
+                        placeholder="Search for a topic"
+                        value={this.state.query}
+                        onChange={this.update("query")}
+                    />
+                    <span>
+                        <BiSearchAlt
+                            className='search-button'
+                            onClick={this.handleSubmit}
+                        />
+                    </span>
+                </label>
             </form>
         );
     }

@@ -16,7 +16,6 @@
 }
 
 .nav-wrapper {
-    border: 2px solid orange;
     width: 100%;
     height: 100%;
     display: flex;
@@ -32,7 +31,6 @@
 }
 
 .nav-search {
-    border: 2px solid green;
     width: 30%;
     height: 100%;
     text-align: center;
@@ -40,7 +38,6 @@
 }
 
 .nav-right {
-    border: 2px solid orange;
     width: 10%;
     height: 100%;
     display: flex;
@@ -48,7 +45,6 @@
 }
 
 .nav-burger {
-    border: 2px solid red; 
     width: 50%;
     display: flex;
     justify-content: center;
@@ -84,7 +80,6 @@
 }
 
 .nav-logo {
-    border: 2px solid purple;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,6 +122,6 @@
     align-items: center;
 }
 
-.nav-link-text {
-    color: orange;
-}
+// .nav-link-text {
+//     color: orange;
+// }
