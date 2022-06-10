@@ -18,7 +18,7 @@ class SideBar extends React.Component {
 
     render() {
 
-        let allowedPages = ['home', 'user', 'category', 'video', 'search'];
+        let allowedPages = ['home', 'user', 'category', 'video', 'search', 'topic'];
         let bannedPages = ['upload'];
 
 
