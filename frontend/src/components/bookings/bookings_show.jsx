@@ -42,7 +42,8 @@ class BookingsShow extends React.Component{
         console.log("errors", this.props.errors);
         return <ul id="booking-form-errors">{this.props.errors.map((error,idx) =>(
             <li key={idx}>{error}</li>
-        ))}</ul>
+        ))}
+        </ul>
     }
     
     render(){
