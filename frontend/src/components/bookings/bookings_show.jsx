@@ -92,7 +92,7 @@ class BookingsShow extends React.Component{
                     </div>
                 }
                 <div className="bookings-show-edit">
-                    <button className="user-show-buttons" onClick={this.edit} > Edit </button>
+                    <button className="user-show-buttons" onClick={this.edit} >Confirm Edit</button>
                     <button className="user-show-buttons" onClick={()=>this.props.deleteBooking(this.props.booking._id).then(()=>this.props.getBookings())}> Delete </button>
                 </div> 
             </div>

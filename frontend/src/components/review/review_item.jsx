@@ -110,7 +110,7 @@ class ReviewItem extends React.Component {
                                 <input onChange={this.update("score")} type="checkbox" className="star" id="fiveLocation" value={1}/>
                                 <label htmlFor="fiveLocation" className="fas fa-star s5"><FaStar/></label>
                             </div> */}
-                            <button className="user-show-buttons">Edit Review</button>
+                            <button className="user-show-buttons">Confirm Edit</button>
                         </div>
                     </form>
                 :
