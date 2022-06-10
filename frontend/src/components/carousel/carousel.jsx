@@ -102,16 +102,16 @@ class Carousel extends React.Component {
                 <div className="carousel__track-container">
                     <ul className="carousel__track">
                         <li className="carousel__slide current-slide">
-                        <Link to="/category/arts-and-crafts"><img className="carousel__image" src={shoe} alt="1" /></Link>
+                        <Link to="/topic/arts-and-crafts"><img className="carousel__image" src={shoe} alt="1" /></Link>
                         </li>
                         <li className="carousel__slide">
-                        <Link to="/category/sports"><img className="carousel__image" src={kendo} alt="2" /></Link>
+                        <Link to="/topic/sports"><img className="carousel__image" src={kendo} alt="2" /></Link>
                         </li>
                         <li className="carousel__slide">
-                        <Link to="/category/animal-husbandry"><img className="carousel__image" src={shrimp} alt="3" /></Link>
+                        <Link to="/topic/animal-husbandry"><img className="carousel__image" src={shrimp} alt="3" /></Link>
                         </li>
                         <li className="carousel__slide">
-                        <Link to="/category/technology"><img className="carousel__image" src={drone} alt="4" /></Link>
+                        <Link to="/topic/technology"><img className="carousel__image" src={drone} alt="4" /></Link>
                         </li>
                     </ul>
                 </div>

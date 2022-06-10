@@ -23,29 +23,13 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: 52428800}));
 
 //route 
 app.use("/api/users", users);
 app.use("/api/videos", videos);
 app.use("/api/bookings", bookings);
 app.use("/api/reviews", reviews);
-
-
-// app.get("/", (req, res)=> {
-//     const user  = new User({
-//         firstName: "jeff",
-//         lastName: "smith",
-//         email: "jeff@mail.com",
-//         password: '123456',
-//         professional: true,
-//         categories: "shrimp,keyboard",
-//         interests: "spearfishing",
-//         bio: "Hey guys I am very happy to be learning with you guys"
-//     })
-//     user.save();
-//     res.send("saved");
-// })
 
 mongoose
     .connect(db, { useNewUrlParser: true })

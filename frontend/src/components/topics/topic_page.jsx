@@ -5,40 +5,40 @@ import VideoIndexContainer from "../video/video_index/video_index_container";
 import "../video/video_index/video_index.scss";
 
 
-class CategoryPage extends React.Component {
+class TopicPage extends React.Component {
     constructor(props) {
         super(props);
 
-        this.formatCategoryName = this.formatCategoryName.bind(this);
+        this.formatTopicName = this.formatTopicName.bind(this);
     }
 
     capitalize(word) {
         return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
     }
 
-    formatCategoryName() {
-        let category = this.props.category;
-        // console.log("typeof category", typeof category);
+    formatTopicName() {
+        let topic = this.props.topic;
+        // console.log("typeof topic", typeof topic);
         let words;
-        if (category.includes("-")) {
-            words = category.split("-")
+        if (topic.includes("-")) {
+            words = topic.split("-")
         } else {
-            words = category.split("-")
+            words = topic.split("-")
         }
         return words.map(word => (this.capitalize(word))).join(" ");
     }
 
     render() {
         return(
-                <div className="category-page">
+                <div className="topic-page">
                     <div className="video-index-header">
                         <img src=""/>
-                        <h1>{this.formatCategoryName()}</h1>
+                        <h1>{this.formatTopicName()}</h1>
                     </div>
-                    <VideoIndexContainer category={this.props.category}/>
+                    <VideoIndexContainer topic={this.props.topic}/>
                 </div>
         )
     }
 }
 
-export default CategoryPage;
+export default TopicPage;

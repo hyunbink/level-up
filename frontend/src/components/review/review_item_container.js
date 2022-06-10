@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { deleteReview, updateReview } from "../../actions/review_actions";
+import { clearReviewErrors, deleteReview, updateReview } from "../../actions/review_actions";
 import ReviewItem from "./review_item";
 
 const mSTP = (state, ownProps) => {
@@ -8,10 +8,12 @@ const mSTP = (state, ownProps) => {
         curUserId = state.session.user.id
     }
     return {
-    currentUserId: curUserId
+        errors: state.errors.reviews,
+        currentUserId: curUserId
 }};
 
 const mDTP = dispatch => ({
+    clearReviewErrors: ()=> dispatch(clearReviewErrors()),
     deleteReview: reviewId => dispatch(deleteReview(reviewId)),
     updateReview: review => dispatch(updateReview(review))
 });

@@ -19,9 +19,9 @@ class UserCard extends React.Component {
                     <p className="card-text">
                         {user.bio}
                     </p>
-                    <button className="card-btn"  onClick={()=>this.props.history.push(`/category/${user.categories}`)}>
+                    <button className="card-btn"  onClick={()=>this.props.history.push(`/topic/${user.topics}`)}>
                         <p>Learn more about</p>
-                        <span>{user.categories}</span>
+                        <span>{user.topics}</span>
                     </button>
                 </div>
             </div>

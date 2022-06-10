@@ -12,6 +12,11 @@ class BookingForm extends React.Component{
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
+        this.handleErrors = this.handleErrors.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.clearBookingsErrors();
     }
 
     update(field) {
@@ -25,8 +30,12 @@ class BookingForm extends React.Component{
             .then(()=>this.props.getUserBookings());
     }
 
-// include categories/topic?
-    
+    handleErrors() {
+        return <ul id="booking-form-errors">{this.props.errors.map((error,idx) =>(
+            <li key={idx}>{error}</li>
+        ))}</ul>
+    }
+
     render(){
         // if (!this.props.userId) return null;
         let year = new Date().getFullYear() + "-" ;
@@ -38,6 +47,7 @@ class BookingForm extends React.Component{
         return(
                 <form onSubmit={this.handleSubmit} className='user-show-bookings-form'>
                     <br/>
+                    {this.handleErrors()}
                     <h1 className="book-form-title">Book a session with an Expert</h1>
                     <br/>
                     <label className="booking-create-title">Title:

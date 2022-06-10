@@ -18,10 +18,12 @@ const VideoSchema = new Schema({
         type: String,
         required: true
     },
+    topic: {
+        type: String,
+    },
     url: {
         type: String,
-        required: true,
-        default: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        required: true
     }
 }, {
     timestamps: true

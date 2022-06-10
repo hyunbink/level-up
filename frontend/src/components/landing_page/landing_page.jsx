@@ -19,8 +19,8 @@ class LandingPage extends Component {
         setInterval(() => {
             this.setState({
                 textIndex: this.state.textIndex + 1,
-                });
-            }, 2000);
+            });
+        }, 2000);
     }
     
     componentWillUnmount() {
@@ -121,32 +121,32 @@ class LandingPage extends Component {
 
                         <div className="card">
                             <img src="https://cdn.shopify.com/s/files/1/0050/7091/3651/products/Red-Fishbone-Pinto-Caridina-Shrimp_1200x.png?v=1613190445" alt="flaticon.com" loading="lazy"/>
-                            <h1 class="title">Shrimp breeding and caretaking</h1>
+                            <h1 className="title">Shrimp breeding and caretaking</h1>
                         </div>
 
                         <div className="card">
                             <img src="https://i.nextmedia.com.au/frankie/shoes3.jpg" alt="flaticon.com" loading="lazy"/>
-                            <h1 class="title">Shoe dyeing</h1>
+                            <h1 className="title">Shoe dyeing</h1>
                         </div>
 
                         <div className="card">
                             <img src="https://cdn.shopify.com/s/files/1/0741/2319/articles/OT_deluxe_black_07_800x.jpg?v=1577995882" alt="flaticon.com" loading="lazy"/>
-                            <h1 class="title">The art of the Otamatone</h1>
+                            <h1 className="title">The art of the Otamatone</h1>
                         </div>
 
                         <div className="card">
                             <img src="https://i.pinimg.com/550x/91/5f/be/915fbe23181642b625c194e25b53f214.jpg" alt="flaticon.com" loading="lazy"/>
-                            <h1 class="title">Hardware and software modding</h1>
+                            <h1 className="title">Hardware and software modding</h1>
                         </div>
 
                         <div className="card">
                             <img src="https://paulickreport.com/wp-content/uploads/2021/05/Ostrich-races-LAD.jpg" alt="flaticon.com" loading="lazy"/>
-                            <h1 class="title">Ostrich racing</h1>
+                            <h1 className="title">Ostrich racing</h1>
                         </div>
 
                         <div className="card">
                             <img src="https://3.bp.blogspot.com/-9D7NM8YGne0/Wr-g7cEHU-I/AAAAAAAADJ8/5l0VzKRncgcZda1WZ_jMoUyNA6eBJwJZgCLcBGAs/s1600/detailed-rg-unicorn-gundam%25252B%252525282%25252529%2B%2528Copy%2529.jpg" alt="flaticon.com" loading="lazy"/>
-                            <h1 class="title">Gundam Plastic Models</h1>
+                            <h1 className="title">Gundam Plastic Models</h1>
                         </div>
                     </div>
                 </div>

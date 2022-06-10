@@ -11,10 +11,13 @@ class VideoForm extends React.Component {
             title: "",
             description: "",
             category: "",
+            topic: "",
             url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleFormData = this.handleFormData.bind(this);
+        this.handleFile = this.handleFile.bind(this);
         this.update = this.update.bind(this);
     }
 
@@ -28,9 +31,32 @@ class VideoForm extends React.Component {
                 .then(() => this.setState({
                     title: video.title,
                     description: video.description,
-                    category: video.category,
+                    topic: video.topic,
                     url: video.url,
                 }))
+        }
+    }
+
+    handleFormData() {
+        let formData = new FormData();
+        formData.append('video[uploaderId]', this.state.uploaderId);
+        formData.append('video[title]', this.state.title);
+        formData.append('video[description]', this.state.description);
+        formData.append('video[topic]', this.state.topic);
+        formData.append('video[category]', this.state.category);
+        formData.append('video[url]', this.state.url);
+        formData.append('video[video]', this.state.videoFile);
+        return formData;
+    }
+
+    handleFile(e) {
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = function(){
+            this.setState({videoFile: file, url: fileReader.result})
+        }.bind(this)
+        if (file){
+            fileReader.readAsDataURL(file);
         }
     }
 
@@ -40,17 +66,17 @@ class VideoForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createVideo(this.state)
-            // .then(action => console.log(action));
+        let formData = this.handleFormData();
+        this.props.createVideo(this.handleFormData())
             .then(action => this.props.history.push(`${action.video.data._id}`));
-        }
+    }
         
     handleUpdate(e) {
         e.preventDefault();
         let updatedVideo = this.state.updatedVideo;
         updatedVideo["title"] = this.state.title;
         updatedVideo["description"] = this.state.description;
-        updatedVideo["category"] = this.state.category;
+        updatedVideo["topic"] = this.state.topic;
         updatedVideo["url"] = this.state.url;
         this.props.updateVideo(updatedVideo)
             .then(action => this.props.history.push(`/video/${updatedVideo._id}`));
@@ -62,9 +88,9 @@ class VideoForm extends React.Component {
             <div className="video-form-page">
                 <IconsBackground />
             <form className="video-form animate-pop" onSubmit={
-              this.props.match.params.videoId 
-                    ? this.handleUpdate 
-                    : this.handleSubmit
+                this.props.match.params.videoId 
+                        ? this.handleUpdate 
+                        : this.handleSubmit
             }> 
                 {/* <p className="close-form-button" onClick={() => this.props.closeModal()}>x</p> */}
                 {
@@ -80,18 +106,26 @@ class VideoForm extends React.Component {
                     <textarea rows="5" placeholder="Description" value={this.state.description} onChange={this.update("description")}/>
                 </label>
                 <label className="category">Category
-                    <input type="text" placeholder="Category" value={this.state.category} onChange={this.update("category")}/>
+                    <input type="text" placeholder="category" value={this.state.category} onChange={this.update("category")}/>
+                </label>
+                <label className="topic">Topic
+                    <input type="text" placeholder="Topic" value={this.state.topic} onChange={this.update("topic")}/>
                 </label>
                 <label className="url">Youtube Link
-                    <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/>
+                    {/* <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/> */}
+                    <input
+                        type="file"
+                        onChange={this.handleFile}
+                        className="file-input-field"
+                    />
                 </label>
 
                 <div className="video-form-buttons">
-                  {
-                      this.props.match.params.videoId 
-                          ? <button className="button">Update</button>
-                          : <button className="button">Upload</button>
-                  }                    
+                {
+                    this.props.match.params.videoId 
+                        ? <button className="button">Update</button>
+                        : <button className="button">Upload</button>
+                }
                 </div>
             </form>
                 <button onClick={this.props.history.goBack} className="close"><MdClose/></button>

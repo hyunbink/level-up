@@ -1,6 +1,9 @@
-import { RECEIVE_VIDEO, RECEIVE_VIDEOS, REMOVE_VIDEO } from "../actions/video_actions";
+import { CLEAR_VIDEOS, RECEIVE_VIDEO, RECEIVE_VIDEOS, REMOVE_VIDEO } from "../actions/video_actions";
 
 const videosReducer = ( state = {}, action ) => {
+    // if (action.videos) {
+    //     console.log("action data", Object.values(action.videos.data).length);
+    // }
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_VIDEOS:
@@ -14,6 +17,8 @@ const videosReducer = ( state = {}, action ) => {
             let newState = Object.assign({}, state);
             delete newState[action.videoId];
             return newState;
+        case CLEAR_VIDEOS:
+            return {}
         default:
             return state;
     }

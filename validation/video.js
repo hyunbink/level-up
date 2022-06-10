@@ -1,7 +1,7 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
 
-const categories = [
+const topics = [
     "piano",
     "photography",
     "turtles",
@@ -21,6 +21,7 @@ module.exports = function validateVideoInput(data) {
     data.uploaderId = validText(data.uploaderId) ? data.uploaderId : "";
     data.title = validText(data.title) ? data.title : "";
     data.description = validText(data.description) ? data.description : "";
+    data.topic = validText(data.topic) ? data.topic : "";
     data.category = validText(data.category) ? data.category : "";
 
     if (Validator.isEmpty(data.title)) {
@@ -29,6 +30,10 @@ module.exports = function validateVideoInput(data) {
 
     if (Validator.isEmpty(data.description)) {
         errors.description = "Description cannot be empty";
+    }
+
+    if (Validator.isEmpty(data.topic)) {
+        errors.topic = "You must select a topic";
     }
 
     if (Validator.isEmpty(data.category)) {
