@@ -15,6 +15,10 @@ class BookingsShow extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // componentDidMount() {
+    //     this.props.clearBookingsErrors();
+    // }
+
     update(field) {
         return e => this.setState({[field]: e.currentTarget.value});
     }
@@ -33,6 +37,13 @@ class BookingsShow extends React.Component{
         this.props.updateBooking(newBooking)
             .then(()=>this.props.getBookings());
     }
+
+    handleErrors() {
+        console.log("errors", this.props.errors);
+        return <ul id="booking-form-errors">{this.props.errors.map((error,idx) =>(
+            <li key={idx}>{error}</li>
+        ))}</ul>
+    }
     
     render(){
         let year = new Date().getFullYear() + "-" ;
@@ -43,7 +54,7 @@ class BookingsShow extends React.Component{
         let today = year + month + day;
         return(
             <div className="bookings-show-div" >
-                
+                {this.handleErrors()}
                 {this.state.editing ? 
                     <div className="booking-show-edit-form">
                         <form onSubmit={this.handleSubmit}>
