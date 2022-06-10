@@ -15,8 +15,9 @@ const storage = multer.memoryStorage({
 })
 
 const filefilter = (req, file, cb) => {
-    if (file.mimetype === 'video/mp4') {
-        // || file.mimetype === 'video/mov'
+    if (file.mimetype === 'video/mp4'
+    // || file.mimetype === 'video/mov'
+    ) {
         cb(null, true)
     } else {
         cb(null, false)
@@ -37,10 +38,6 @@ const s3 = new AWS.S3({
 router.post("/upload", upload.single("video[video]") , (req, res) => {
     const { errors, isValid } = validateVideoInput(req.body.video);
     let video = req.body.video;
-    // for (var key of video.entries()) {
-    //     console.log("API UTIL VIDEO FORM DATA: ", key[0] + ', ' + key[1])
-    // }
-    console.log("IN THE UPLOAD ROUTE", req);
     if (!isValid) {
         return res.status(400).json(errors);
     }
@@ -54,13 +51,12 @@ router.post("/upload", upload.single("video[video]") , (req, res) => {
         uploaderId: video.uploaderId
     });
     
-    // console.log("Video File: ", req.body);
     if (video.url.startsWith("data:video/mp4;base64")) {
         const params = {
             Bucket: bucketName,
             Key: req.file.originalname,
             Body: req.file.buffer,
-            // ACL:"public-read-write",
+            ACL:"public-read-write",
             ContentType:"video/mp4",
         };
         console.log("VIDEO PARAMS: ", params)
@@ -87,13 +83,6 @@ router.post("/upload", upload.single("video[video]") , (req, res) => {
                 })
                 .catch(err => res.status(400).json({ failedUpload: "Failed to upload video"}))
     }
-
-    // newVideo.save()
-    //     .then(video => {
-    //         console.log("video", video)
-    //         res.json(video)
-    //     })
-    //     .catch(err => console.log(err));
 });
 
 router.put("/:videoId", (req, res) => {

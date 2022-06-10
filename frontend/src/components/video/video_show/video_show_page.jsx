@@ -28,11 +28,6 @@ class VideoShow extends React.Component {
             .then(() => this.setState({video: video}))
             .then(() => this.props.fetchUser(video.uploaderId))
             .then(action => this.setState({user: action.user.data[0]}))
-            // .then(() => this.renderEditPage())
-
-        // const act = async () => {
-        //     await this.props.fetchVideo(this.props.match.params.)
-        // }
     }
 
     renderEditPage() {
@@ -43,16 +38,11 @@ class VideoShow extends React.Component {
                     <Link to={`/video/edit/${this.state.video._id}`}><button>Edit Video</button></Link>
                 </>
             )
-        } else {
-            console.log("This is not my page")
         }
     }
 
     render() {
-        console.log('print out props', this.props)
-        console.log('print out state', this.state)
         if (!this.state.video || !this.state.user) {return null}
-        console.log("whats in the state",this.state);
         return(
             <div className="video-show-page">
                 {/* <div className="vid-show">
@@ -63,14 +53,20 @@ class VideoShow extends React.Component {
                 {/* <button onClick={() => this.redirectToEdit()}>Edit Video</button> */}
                 <div className="video-show-wrapper">
                     <iframe
+                        controls
+                        autoPlay
                         width="560"
                         height="315"
                         src={this.state.video.url}
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        // title="Video player"
+                        // frameBorder="0"
+                        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                     >
+                        {/* <source 
+                            // src="movie.mp4" 
+                            type="video/mp4"
+                        /> */}
                     </iframe>
                     <div className="vid-show-title">
                         <div className="vid-show-title-text">

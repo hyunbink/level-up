@@ -67,12 +67,7 @@ class VideoForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let formData = this.handleFormData();
-        // console.log("FORM FILE: ", form)
-        // for (var key of formData.entries()) {
-        //     console.log("FORM DATA ENTRY: ", key[0] + ', ' + key[1])
-        // }
         this.props.createVideo(this.handleFormData())
-            // .then(action => console.log(action))
             .then(action => this.props.history.push(`${action.video.data._id}`));
     }
         
