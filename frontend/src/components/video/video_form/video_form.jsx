@@ -10,11 +10,14 @@ class VideoForm extends React.Component {
             uploaderId: this.props.currentUserId,
             title: "",
             description: "",
+            category: "",
             topic: "",
             url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleFormData = this.handleFormData.bind(this);
+        this.handleFile = this.handleFile.bind(this);
         this.update = this.update.bind(this);
     }
 
@@ -34,16 +37,39 @@ class VideoForm extends React.Component {
         }
     }
 
+    handleFormData() {
+        let formData = new FormData();
+        formData.append('video[uploaderId]', this.state.uploaderId);
+        formData.append('video[title]', this.state.title);
+        formData.append('video[description]', this.state.description);
+        formData.append('video[topic]', this.state.topic);
+        formData.append('video[category]', this.state.category);
+        formData.append('video[url]', this.state.url);
+        formData.append('video[video]', this.state.videoFile);
+        return formData;
+    }
+
+    handleFile(e) {
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = function(){
+            this.setState({videoFile: file, url: fileReader.result})
+        }.bind(this)
+        if (file){
+            fileReader.readAsDataURL(file);
+        }
+    }
+
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value })
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createVideo(this.state)
-            // .then(action => console.log(action));
+        let formData = this.handleFormData();
+        this.props.createVideo(this.handleFormData())
             .then(action => this.props.history.push(`${action.video.data._id}`));
-        }
+    }
         
     handleUpdate(e) {
         e.preventDefault();
@@ -79,11 +105,19 @@ class VideoForm extends React.Component {
                 <label className="description">Description
                     <textarea rows="5" placeholder="Description" value={this.state.description} onChange={this.update("description")}/>
                 </label>
+                <label className="category">Category
+                    <input type="text" placeholder="category" value={this.state.category} onChange={this.update("category")}/>
+                </label>
                 <label className="topic">Topic
                     <input type="text" placeholder="Topic" value={this.state.topic} onChange={this.update("topic")}/>
                 </label>
                 <label className="url">Youtube Link
-                    <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/>
+                    {/* <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/> */}
+                    <input
+                        type="file"
+                        onChange={this.handleFile}
+                        className="file-input-field"
+                    />
                 </label>
 
                 <div className="video-form-buttons">

@@ -9,8 +9,6 @@ const texts = [
     "kendo",
     "shrimp breeding",
     "droning",
-    // "ostrich runs",
-    // "gundams",
 ]
 
 class WordSpin extends Component {
@@ -33,7 +31,7 @@ class WordSpin extends Component {
                     Have you ever heard of 
                     <ReactTextTransition
                         className="spinner-text"
-                        text={texts[this.state.textIndex % (texts.length + 1)]}
+                        text={texts[this.state.textIndex % (texts.length)]}
                         springConfig={{tension: 300, friction: 100}}
                         style={{ margin: "0 0px 0 10px" }}
                         inline
