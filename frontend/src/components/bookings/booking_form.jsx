@@ -33,7 +33,9 @@ class BookingForm extends React.Component{
     handleErrors() {
         return <ul id="booking-form-errors">{this.props.errors.map((error,idx) =>(
             <li key={idx}>{error}</li>
-        ))}</ul>
+        ))}
+
+        </ul>
     }
 
     render(){
