@@ -35,7 +35,7 @@ const LiveChat = () => {
         setTimeout(() => {
             container.style.display = 'none';
             fadeInBubble();
-        }, 1000);
+        }, 500);
     }
 
     const fadeIn = () => {
@@ -47,7 +47,7 @@ const LiveChat = () => {
         setTimeout(() => {
             container.classList.remove('live-chat-container');
             container.classList.add('live-chat-container');
-        }, 1000);
+        }, 500);
     }
 
     const fadeOutBubble = () => {
@@ -56,7 +56,7 @@ const LiveChat = () => {
         bubble.classList.add('fade-out-bubble');
         setTimeout(() => {
             bubble.style.display = 'none';
-        }, 1000);
+        }, 500);
     }
     
     const fadeInBubble = () => {

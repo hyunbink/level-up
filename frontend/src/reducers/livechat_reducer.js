@@ -13,3 +13,16 @@ const liveChatReducer = (state ={}, action) => {
 }
 
 export default liveChatReducer;
+
+
+// state: {
+//     liveChat: {
+//         chatUsers: {
+//             user_id: {
+//                 firstName:
+//                 lastName:
+//                 photoUrl:
+//             }
+//         }
+//     }
+// }
