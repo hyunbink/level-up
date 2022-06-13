@@ -10,15 +10,13 @@ import { fetchReviews } from "../../actions/review_actions";
 
 
 const mSTP = (state, ownProps) => {
-
     return {
-
-    user: state.entities.users[ownProps.match.params.id],
-    currentUserId: state.session.user.id,
-    bookings: state.entities.bookings,
-    reviews: state.entities.reviews,
-    currentUser: state.session.user,
-    videos: state.entities.videos
+        user: state.entities.users[ownProps.match.params.id],
+        currentUserId: state.session.user.id,
+        bookings: state.entities.bookings,
+        reviews: state.entities.reviews,
+        currentUser: state.session.user,
+        videos: state.entities.videos
 }};
 
 

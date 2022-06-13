@@ -9,10 +9,11 @@ import BookingShow from "../bookings/bookings_show_container";
 import ReviewFormContainer from "../review/review_form_container";
 import ReviewItemContainer from "../review/review_item_container";
 
-import shoe from "../carousel/shoe_dye.png";
-import kendo from "../carousel/kendo.jpg";
-import shrimp from "../carousel/shrimp2.png";
-import drone from "../carousel/drone3.jpg";
+import colorsmoke from "./cover_photos/colorsmoke.png";
+import cooltextures from "./cover_photos/cooltextures.png";
+import deepblues from "./cover_photos/deepblues.png";
+import sky from "./cover_photos/sky.png";
+import spraycans from "./cover_photos/spraycans.png";
 
 import VideoIndexItem from "../video/video_index_item";
 
@@ -23,8 +24,20 @@ class UserPage extends React.Component {
         this.deleteSelectedBooking = this.deleteSelectedBooking.bind(this);
         this.getUserReviews = this.getUserReviews.bind(this);
         this.getVids = this.getVids.bind(this);
+        this.randomCoverImg = this.randomCoverImg.bind(this);
     }
 
+    randomCoverImg(){
+        let coverPhotos = [colorsmoke, cooltextures, deepblues, sky, spraycans];
+        let rando = this.props.match.params.id.split('').reverse();
+        console.log("parse act num", rando)
+        for (let i = 0; i < rando.length; i++) {
+            if ("0123456789".includes(rando[i])) {
+                let num = parseInt(rando[i]);
+                return coverPhotos[num % 5];
+            }
+        }
+    }
 
     componentDidMount() {
         window.scrollTo(0,0);
@@ -34,10 +47,19 @@ class UserPage extends React.Component {
             .then(()=> this.props.fetchVideosByUser(this.props.match.params.id))
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.id !== this.props.match.params.id) {
+            window.scrollTo(0,0);
+            this.props.fetchUser(this.props.match.params.id)
+                .then(()=> this.props.fetchReviews(this.props.match.params.id))
+                .then(()=> this.props.fetchBookings(this.props.match.params.id))
+                .then(()=> this.props.fetchVideosByUser(this.props.match.params.id))
+        }
+    }
+
     deleteSelectedBooking(bookingId){
         this.props.deleteBooking(bookingId)
             .then(this.props.fetchBookings(this.props))
-
     }
 
     getUserReviews() {
@@ -60,9 +82,9 @@ class UserPage extends React.Component {
             }
         }
     }
-// going from topic to video -- does not like this.props.videos.map
+// going from other profile to current user's profile, comp is not mounting
     render() {
-        
+        console.log("tackle re-render", this.props)
         if (!this.props.user) {
             return null;
         }
@@ -73,7 +95,7 @@ class UserPage extends React.Component {
             <div className="user-page">
                 <div className="user-container">
                     <div className="user-show-banner">
-                        <img className="user-show-banner-img" src={shrimp} alt="user-show-banner-img"></img>        
+                        <img className="user-show-banner-img" src={this.randomCoverImg()} alt="user-show-banner-img"></img>        
                     </div>
                     <div className="user-show-info-div">
                         <div className="user-show-info-div-left">
@@ -131,17 +153,17 @@ class UserPage extends React.Component {
                                 : <div></div> }
                             </div>
                         </div>
-                        <div className="user-reviews-container">
-                            <h1 className="reviews-title" >Reviews</h1>
-                            <div className="create-review-form">
-                                <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
+                            <div className="user-reviews-container">
+                                <h1 className="reviews-title" >Reviews</h1>
+                                <div className="create-review-form">
+                                    <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
+                                </div>
+                                <div className="review-data-cont">
+                                    {this.props.reviews.data ? <ul className="review-item-show">{this.props.reviews.data.reverse().map((review, idx)=> (
+                                        <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
+                                    ))} </ul> : <div></div> }
+                                </div>
                             </div>
-                            <div className="review-data-cont">
-                                {this.props.reviews.data ? <ul className="review-item-show">{this.props.reviews.data.map((review, idx)=> (
-                                    <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
-                                ))} </ul> : <div></div> }
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
