@@ -141,18 +141,18 @@ class UserPage extends React.Component {
                                 </ul>
                                 : <div></div> }
                             </div>
-                        <div className="user-reviews-container">
-                            <h1 className="reviews-title" >Reviews</h1>
-                            <div className="create-review-form">
-                                <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
-                            </div>
-                            <div className="review-data-cont">
-                                {this.props.reviews.data ? <ul className="review-item-show">{this.props.reviews.data.reverse().map((review, idx)=> (
-                                    <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
-                                ))} </ul> : <div></div> }
-                            </div>
-                                    </div>
                         </div>
+                            <div className="user-reviews-container">
+                                <h1 className="reviews-title" >Reviews</h1>
+                                <div className="create-review-form">
+                                    <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
+                                </div>
+                                <div className="review-data-cont">
+                                    {this.props.reviews.data ? <ul className="review-item-show">{this.props.reviews.data.reverse().map((review, idx)=> (
+                                        <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
+                                    ))} </ul> : <div></div> }
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
