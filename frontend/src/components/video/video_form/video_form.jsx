@@ -19,9 +19,12 @@ class VideoForm extends React.Component {
         this.handleFormData = this.handleFormData.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.update = this.update.bind(this);
+        this.handleErrors = this.handleErrors.bind(this);
     }
 
     componentDidMount() {
+        this.props.clearVideosErrors();
+
         let videoId = this.props.match.params.videoId;
         let video;
         if (videoId) {
@@ -58,6 +61,14 @@ class VideoForm extends React.Component {
         if (file){
             fileReader.readAsDataURL(file);
         }
+    }
+
+    handleErrors() {
+        console.log("hits here", this.props.errors);
+        return <ul id="video-form-errors">{this.props.errors.map((error,idx) =>(
+            <li key={idx}>{error}</li>
+        ))}
+        </ul>
     }
 
     update(field) {
@@ -119,7 +130,7 @@ class VideoForm extends React.Component {
                         className="file-input-field"
                     />
                 </label>
-
+                {this.handleErrors()}
                 <div className="video-form-buttons">
                 {
                     this.props.match.params.videoId 
