@@ -9,10 +9,15 @@ import BookingShow from "../bookings/bookings_show_container";
 import ReviewFormContainer from "../review/review_form_container";
 import ReviewItemContainer from "../review/review_item_container";
 
-import shoe from "../carousel/shoe_dye.png";
-import kendo from "../carousel/kendo.jpg";
-import shrimp from "../carousel/shrimp2.png";
-import drone from "../carousel/drone3.jpg";
+// import shoe from "../carousel/shoe_dye.png";
+// import kendo from "../carousel/kendo.jpg";
+// import shrimp from "../carousel/shrimp2.png";
+// import drone from "../carousel/drone3.jpg";
+import colorsmoke from "./cover_photos/colorsmoke.png";
+import cooltextures from "./cover_photos/cooltextures.png";
+import deepblues from "./cover_photos/deepblues.png";
+import sky from "./cover_photos/sky.png";
+import spraycans from "./cover_photos/spraycans.png";
 
 import VideoIndexItem from "../video/video_index_item";
 
@@ -23,8 +28,14 @@ class UserPage extends React.Component {
         this.deleteSelectedBooking = this.deleteSelectedBooking.bind(this);
         this.getUserReviews = this.getUserReviews.bind(this);
         this.getVids = this.getVids.bind(this);
+        this.randomCoverImg = this.randomCoverImg.bind(this);
     }
 
+    randomCoverImg(){
+        let coverPhotos = [colorsmoke, cooltextures, deepblues, sky, spraycans];
+        let num = Math.floor(Math.random() * 5);
+        return coverPhotos[num];
+    }
 
     componentDidMount() {
         window.scrollTo(0,0);
@@ -73,7 +84,7 @@ class UserPage extends React.Component {
             <div className="user-page">
                 <div className="user-container">
                     <div className="user-show-banner">
-                        <img className="user-show-banner-img" src={shrimp} alt="user-show-banner-img"></img>        
+                        <img className="user-show-banner-img" src={this.randomCoverImg()} alt="user-show-banner-img"></img>        
                     </div>
                     <div className="user-show-info-div">
                         <div className="user-show-info-div-left">
@@ -136,7 +147,7 @@ class UserPage extends React.Component {
                                 <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
                             </div>
                             <div className="review-data-cont">
-                                {this.props.reviews.data ? <ul className="review-item-show">{this.props.reviews.data.map((review, idx)=> (
+                                {this.props.reviews.data ? <ul className="review-item-show">{this.props.reviews.data.reverse().map((review, idx)=> (
                                     <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
                                 ))} </ul> : <div></div> }
                             </div>
