@@ -9,10 +9,6 @@ import BookingShow from "../bookings/bookings_show_container";
 import ReviewFormContainer from "../review/review_form_container";
 import ReviewItemContainer from "../review/review_item_container";
 
-// import shoe from "../carousel/shoe_dye.png";
-// import kendo from "../carousel/kendo.jpg";
-// import shrimp from "../carousel/shrimp2.png";
-// import drone from "../carousel/drone3.jpg";
 import colorsmoke from "./cover_photos/colorsmoke.png";
 import cooltextures from "./cover_photos/cooltextures.png";
 import deepblues from "./cover_photos/deepblues.png";
@@ -33,8 +29,14 @@ class UserPage extends React.Component {
 
     randomCoverImg(){
         let coverPhotos = [colorsmoke, cooltextures, deepblues, sky, spraycans];
-        let num = Math.floor(Math.random() * 5);
-        return coverPhotos[num];
+        let rando = this.props.match.params.id.split('').reverse();
+        console.log("parse act num", rando)
+        for (let i = 0; i < rando.length; i++) {
+            if ("0123456789".includes(rando[i])) {
+                let num = parseInt(rando[i]);
+                return coverPhotos[num % 5];
+            }
+        }
     }
 
     componentDidMount() {
@@ -45,10 +47,19 @@ class UserPage extends React.Component {
             .then(()=> this.props.fetchVideosByUser(this.props.match.params.id))
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.id !== this.props.match.params.id) {
+            window.scrollTo(0,0);
+            this.props.fetchUser(this.props.match.params.id)
+                .then(()=> this.props.fetchReviews(this.props.match.params.id))
+                .then(()=> this.props.fetchBookings(this.props.match.params.id))
+                .then(()=> this.props.fetchVideosByUser(this.props.match.params.id))
+        }
+    }
+
     deleteSelectedBooking(bookingId){
         this.props.deleteBooking(bookingId)
             .then(this.props.fetchBookings(this.props))
-
     }
 
     getUserReviews() {
@@ -71,9 +82,9 @@ class UserPage extends React.Component {
             }
         }
     }
-// going from topic to video -- does not like this.props.videos.map
+// going from other profile to current user's profile, comp is not mounting
     render() {
-        
+        console.log("tackle re-render", this.props)
         if (!this.props.user) {
             return null;
         }
