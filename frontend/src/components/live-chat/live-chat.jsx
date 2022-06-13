@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import { nanoid } from 'nanoid';
 import "./live-chat.scss";
@@ -26,7 +26,16 @@ const LiveChat = props => {
         socket.on("chat", (payload) => {
             setChat([...chat, payload]);
         })
+        return () => socket.off("chat");
     })
+
+    const messagesEndRef = useRef(null);
+
+    const scrollToBottom = () => {
+      messagesEndRef.current.scrollIntoView()
+    }
+  
+    useEffect(scrollToBottom, [chat]);
 
     const fadeOut = () => {
         const container = document.getElementById('live-chat-container');
@@ -117,29 +126,30 @@ const LiveChat = props => {
                     </div>
 
                     <div className='live-chat-field'>
-                        <ul>
+                        <div>
                             {chat.map((payload, index) => {
                                 if (payload.userName === userName) {
                                     return (
-                                        <li
+                                        <p
                                             key={`chat-${index}`}
                                             className='live-chat-user'
                                         >
                                             {payload.message}
-                                        </li>
+                                        </p>
                                     )
                                 } else {
                                     return (
-                                        <li
+                                        <p
                                             key={`chat-${index}`}
                                             className='live-chat-other'
                                         >
                                             {payload.message}
-                                        </li>
+                                        </p>
                                     )
                                 }
                             })}
-                        </ul>
+                            <div ref={messagesEndRef} />
+                        </div>
                     </div>
 
                     <form className='live-chat-text' autocomplete='off' onSubmit={sendChat}>
