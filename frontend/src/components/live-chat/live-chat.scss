@@ -66,6 +66,20 @@
         flex-direction: column;
         height: 100%;
         width: 100%;
+        overflow: auto;
+        
+        div {
+            box-sizing: border-box;
+            background-color: #fff;
+            display: flex;
+            padding-inline: 1em;
+            position: relative;
+            font-size: 0.9em;
+            flex-direction: column;
+            height: 80%;
+            width: 100%;
+            overflow: auto;
+        }
     }
     
     .live-chat-other {
@@ -193,6 +207,7 @@
     transition: 0.5s;
     top: calc(100vh - 70px);
     left: calc(100% - 70px);
+    z-index: 998;
 
     &:hover {
         transform: rotate(30deg);

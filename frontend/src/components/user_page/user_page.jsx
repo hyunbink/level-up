@@ -42,9 +42,19 @@ class UserPage extends React.Component {
     componentDidMount() {
         window.scrollTo(0,0);
         this.props.fetchUser(this.props.match.params.id)
+        .then(()=> this.props.fetchReviews(this.props.match.params.id))
+        .then(()=> this.props.fetchBookings(this.props.match.params.id))
+        .then(()=> this.props.fetchVideosByUser(this.props.match.params.id))
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.id !== this.props.match.params.id) {
+            window.scrollTo(0,0);
+            this.props.fetchUser(this.props.match.params.id)
             .then(()=> this.props.fetchReviews(this.props.match.params.id))
             .then(()=> this.props.fetchBookings(this.props.match.params.id))
             .then(()=> this.props.fetchVideosByUser(this.props.match.params.id))
+        }
     }
 
     componentDidUpdate(prevProps) {

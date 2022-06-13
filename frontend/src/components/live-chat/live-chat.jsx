@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import { nanoid } from 'nanoid';
 import "./live-chat.scss";
@@ -9,7 +9,7 @@ const socket = io.connect(`http://shyche.herokuapp.com`);
 const userName = nanoid(4);
 
 
-const LiveChat = () => {
+const LiveChat = props => {
     
     const [message, setMessage] = useState('');
     const [chat, setChat] = useState([]);
@@ -26,7 +26,16 @@ const LiveChat = () => {
         socket.on("chat", (payload) => {
             setChat([...chat, payload]);
         })
+        return () => socket.off("chat");
     })
+
+    const messagesEndRef = useRef(null);
+
+    const scrollToBottom = () => {
+      messagesEndRef.current.scrollIntoView()
+    }
+  
+    useEffect(scrollToBottom, [chat]);
 
     const fadeOut = () => {
         const container = document.getElementById('live-chat-container');
@@ -39,6 +48,11 @@ const LiveChat = () => {
     }
 
     const fadeIn = () => {
+        if (props.user !== undefined) {
+            props.sendChatUser(props.user);
+            setChat([]);
+        }
+
         fadeOutBubble();
         const container = document.getElementById('live-chat-container');
         container.style.display = 'block';
@@ -61,9 +75,38 @@ const LiveChat = () => {
     
     const fadeInBubble = () => {
         const bubble = document.getElementById('chat-bubble');
-        bubble.style.display = 'block';
-        bubble.classList.remove('fade-out-bubble');
-        bubble.classList.add('fade-in-bubble');
+        if (bubble.style.display === 'none') {
+            bubble.style.display = 'block';
+            bubble.classList.remove('fade-out-bubble');
+            bubble.classList.add('fade-in-bubble');
+        } 
+    }
+
+    const userInfo = (data) => {
+        if (props.chatUser === undefined) {
+            return "";
+        }
+
+        switch (data) {
+            case "photoUrl":
+                return props.chatUser.photoUrl;
+            case "name":
+                return `${props.chatUser.firstName} ${props.chatUser.lastName}`;
+            default:
+                return "";
+        }
+    }
+
+    const bubble = () => {
+        if (props.location.pathname.includes("user")) {
+            return (
+                <button type='submit' id='chat-bubble' onClick={fadeIn}>
+                    <img src={chatBubble} alt="" />
+                </button>
+            );
+        } else if (props.chatUser === undefined) {
+            return null;
+        }
     }
 
     return (
@@ -75,35 +118,38 @@ const LiveChat = () => {
                         // onMouseEnter={()=>dragElement(document.getElementById("live-chat-container"))}
                         onClick={fadeOut}
                     >
-                        <img src="" alt="profile-picture" />
+                        <img src={userInfo("photoUrl")} alt="profile-picture" />
                         <div className='client-info'>
-                            <h2>Username</h2>
+                            <h2>{userInfo("name")}</h2>
                             <p>online</p>
                         </div>
                     </div>
 
                     <div className='live-chat-field'>
-                        {chat.map((payload, index) => {
-                            if (payload.userName === userName) {
-                                return (
-                                    <p
-                                        key={`chat-${index}`}
-                                        className='live-chat-user'
-                                    >
-                                        {payload.message}
-                                    </p>
-                                )
-                            } else {
-                                return (
-                                    <p
-                                        key={`chat-${index}`}
-                                        className='live-chat-other'
-                                    >
-                                        {payload.message}
-                                    </p>
-                                )
-                            }
-                        })}
+                        <div>
+                            {chat.map((payload, index) => {
+                                if (payload.userName === userName) {
+                                    return (
+                                        <p
+                                            key={`chat-${index}`}
+                                            className='live-chat-user'
+                                        >
+                                            {payload.message}
+                                        </p>
+                                    )
+                                } else {
+                                    return (
+                                        <p
+                                            key={`chat-${index}`}
+                                            className='live-chat-other'
+                                        >
+                                            {payload.message}
+                                        </p>
+                                    )
+                                }
+                            })}
+                            <div ref={messagesEndRef} />
+                        </div>
                     </div>
 
                     <form className='live-chat-text' autocomplete='off' onSubmit={sendChat}>
@@ -120,9 +166,7 @@ const LiveChat = () => {
                     </form>
                 </div>
             </div>
-            <button type='submit' id='chat-bubble' onClick={fadeIn}>
-                <img src={chatBubble} alt="" />
-            </button>
+            {bubble()}
         </>
     )
 }
