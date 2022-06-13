@@ -66,6 +66,20 @@
         flex-direction: column;
         height: 100%;
         width: 100%;
+        overflow: auto;
+        
+        ul {
+            box-sizing: border-box;
+            background-color: #fff;
+            display: flex;
+            padding-inline: 1em;
+            position: relative;
+            font-size: 0.9em;
+            flex-direction: column;
+            height: 80%;
+            width: 100%;
+            overflow: auto;
+        }
     }
     
     .live-chat-other {

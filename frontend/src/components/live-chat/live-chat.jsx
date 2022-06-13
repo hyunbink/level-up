@@ -66,9 +66,11 @@ const LiveChat = props => {
     
     const fadeInBubble = () => {
         const bubble = document.getElementById('chat-bubble');
-        bubble.style.display = 'block';
-        bubble.classList.remove('fade-out-bubble');
-        bubble.classList.add('fade-in-bubble');
+        if (bubble.style.display === 'none') {
+            bubble.style.display = 'block';
+            bubble.classList.remove('fade-out-bubble');
+            bubble.classList.add('fade-in-bubble');
+        } 
     }
 
     const userInfo = (data) => {
@@ -115,27 +117,29 @@ const LiveChat = props => {
                     </div>
 
                     <div className='live-chat-field'>
-                        {chat.map((payload, index) => {
-                            if (payload.userName === userName) {
-                                return (
-                                    <p
-                                        key={`chat-${index}`}
-                                        className='live-chat-user'
-                                    >
-                                        {payload.message}
-                                    </p>
-                                )
-                            } else {
-                                return (
-                                    <p
-                                        key={`chat-${index}`}
-                                        className='live-chat-other'
-                                    >
-                                        {payload.message}
-                                    </p>
-                                )
-                            }
-                        })}
+                        <ul>
+                            {chat.map((payload, index) => {
+                                if (payload.userName === userName) {
+                                    return (
+                                        <li
+                                            key={`chat-${index}`}
+                                            className='live-chat-user'
+                                        >
+                                            {payload.message}
+                                        </li>
+                                    )
+                                } else {
+                                    return (
+                                        <li
+                                            key={`chat-${index}`}
+                                            className='live-chat-other'
+                                        >
+                                            {payload.message}
+                                        </li>
+                                    )
+                                }
+                            })}
+                        </ul>
                     </div>
 
                     <form className='live-chat-text' autocomplete='off' onSubmit={sendChat}>
