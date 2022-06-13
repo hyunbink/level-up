@@ -17,6 +17,15 @@ class CreateReviewForm extends React.Component {
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleReviewErrors = this.handleReviewErrors.bind(this);
+        this.successfulReview = this.successfulReview.bind(this);
+    }
+
+    successfulReview(){
+        if (this.props.errors.length > 0) {
+            return
+        } else {
+            this.setState({title: '', text: '', score: -1})
+        }
     }
 
     componentDidMount() {
@@ -55,7 +64,8 @@ class CreateReviewForm extends React.Component {
 
         let newReview = this.state;
         this.props.createReview(newReview)
-            .then(()=>this.props.getReviews());
+            .then(()=>this.props.getReviews())
+            .then(()=> this.successfulReview());
     }
 
     render() {

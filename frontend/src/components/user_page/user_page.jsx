@@ -130,7 +130,6 @@ class UserPage extends React.Component {
                                 </ul>
                                 : <div></div> }
                             </div>
-                        </div>
                         <div className="user-reviews-container">
                             <h1 className="reviews-title" >Reviews</h1>
                             <div className="create-review-form">
@@ -141,6 +140,7 @@ class UserPage extends React.Component {
                                     <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
                                 ))} </ul> : <div></div> }
                             </div>
+                                    </div>
                         </div>
                     </div>
                 </div>
