@@ -1,15 +1,23 @@
 import { connect } from "react-redux"
-import { sendChat, sendChatUser } from "../../actions/livechat_actions";
+import { withRouter } from "react-router-dom";
+import { sendChatUser } from "../../actions/livechat_actions";
 import LiveChat from "./live-chat"
 
-const mSTP = state => ({
-    livechat: state.livechat,
-    user: state.entities.users.data[0]
-})
+const mSTP = (state, ownProps) => {
+    let path;
+    let userId;
+    if (ownProps.location.pathname.includes("user")) {
+        path = ownProps.location.pathname;
+        userId = path.split("/")[2];
+    }
+    return ({
+        chatUser: state.liveChat.chatUser,
+        user: state.entities.users[userId]
+    })
+}
 
 const mDTP = dispatch => ({
-    sendChat: chat => dispatch(sendChat(chat)),
     sendChatUser: user => dispatch(sendChatUser(user))
 })
 
-export default connect(mSTP, mDTP)(LiveChat); 
+export default withRouter(connect(mSTP, mDTP)(LiveChat)); 

@@ -193,6 +193,7 @@
     transition: 0.5s;
     top: calc(100vh - 70px);
     left: calc(100% - 70px);
+    z-index: 998;
 
     &:hover {
         transform: rotate(30deg);
