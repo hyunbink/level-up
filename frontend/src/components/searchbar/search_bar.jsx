@@ -30,7 +30,6 @@ class SearchBar extends React.Component {
                         placeholder="Search by Title or Description"
                         className='search-bar'
                         type="search"
-                        placeholder="Search for a topic"
                         value={this.state.query}
                         onChange={this.update("query")}
                     />
