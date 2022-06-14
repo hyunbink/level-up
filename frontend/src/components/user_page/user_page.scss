@@ -441,6 +441,10 @@
 
 .rev-item-title{
     font-size: medium;
+    font-weight: bolder;
+    width: 100%;
+    border-top: 1px dashed #189AB4;
+    padding-top: .8em;
 }
 
 .rev-item-text{
@@ -456,7 +460,23 @@
 .user-show-buttons{
     margin-block: 0.5em;
     border-radius: 1.5em;
-    width: 11em;
+    width: 4.5em;
+    border: none;
+    padding-block: 0.5em;
+    background-color: #189AB4;
+    transition: 0.2s;
+    color: white;
+    &:hover{
+        background-color:#73c6d7;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
+
+.user-show-post-review-button{
+    margin-block: 0.5em;
+    border-radius: 1.5em;
+    width: 9em;
     border: none;
     padding-block: 0.5em;
     background-color: #189AB4;
@@ -471,9 +491,14 @@
 
 .edit-rev-form-div{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: center;
+}
+
+.rev-container-div{
+    width: 1.5em;
 }
 
 .hidden {

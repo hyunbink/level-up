@@ -57,16 +57,6 @@ class UserPage extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.match.params.id !== this.props.match.params.id) {
-            window.scrollTo(0,0);
-            this.props.fetchUser(this.props.match.params.id)
-                .then(()=> this.props.fetchReviews(this.props.match.params.id))
-                .then(()=> this.props.fetchBookings(this.props.match.params.id))
-                .then(()=> this.props.fetchVideosByUser(this.props.match.params.id))
-        }
-    }
-
     deleteSelectedBooking(bookingId){
         this.props.deleteBooking(bookingId)
             .then(this.props.fetchBookings(this.props))
@@ -92,9 +82,9 @@ class UserPage extends React.Component {
             }
         }
     }
-// going from other profile to current user's profile, comp is not mounting
     render() {
-        console.log("tackle re-render", this.props)
+        console.log("tackle reviews reverse", this.props.reviews.data)
+        // console.log("tackle reversed reviews", this.props.reviews.data.reverse())
         if (!this.props.user) {
             return null;
         }
