@@ -4,6 +4,8 @@ export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const RECEIVE_VIDEOS = "RECEIVE_VIDEOS";
 export const REMOVE_VIDEO = "REMOVE_VIDEO";
 export const CLEAR_VIDEOS = 'CLEAR_VIDEOS';
+export const RECEIVE_VIDEO_ERRORS = 'RECEIVE_VIDEO_ERRORS';
+export const REMOVE_VIDEO_ERRORS = 'REMOVE_VIDEO_ERRORS';
 
 const receiveVideo = video => ({
     type: RECEIVE_VIDEO,
@@ -22,6 +24,15 @@ const removeVideo = videoId => ({
 
 export const clearVideos = () => ({
     type: CLEAR_VIDEOS
+});
+
+export const receiveVideosErrors = errors => ({
+    type: RECEIVE_VIDEO_ERRORS,
+    errors
+});
+
+export const clearVideosErrors = () => ({
+    type: REMOVE_VIDEO_ERRORS
 })
 
 export const fetchVideo = videoId => dispatch => (
@@ -51,12 +62,14 @@ export const fetchVideosByUser = userId => dispatch => (
 
 export const createVideo = video => dispatch => (
     videoAPIUtil.createVideo(video)
-        .then(video => dispatch(receiveVideo(video)))
+        .then(video => dispatch(receiveVideo(video)),
+        err => dispatch(receiveVideosErrors(err)))
 );
 
 export const updateVideo = video => dispatch => (
     videoAPIUtil.updateVideo(video)
-        .then(video => dispatch(receiveVideo(video)))
+        .then(video => dispatch(receiveVideo(video)),
+        err => dispatch(receiveVideosErrors(err)))
 );
 
 export const deleteVideo = videoId => dispatch => (
