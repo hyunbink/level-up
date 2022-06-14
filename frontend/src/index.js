@@ -19,6 +19,7 @@ import { fetchUser, fetchUsers, updateUser } from './actions/user_actions';
 import { fetchAllVideos } from './actions/video_actions';
 import { createReview, deleteReview, fetchReviews } from './actions/review_actions';
 
+import "./index.css"
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

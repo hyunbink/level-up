@@ -1,7 +1,8 @@
 .carousel {
     position: relative;
     height: 300px;
-    width: 900px;
+    width: 45vw;
+    max-width: 900px;
     margin: 0 auto;
     overflow: hidden;
     justify-self: flex-end;
@@ -13,9 +14,17 @@
     bottom:0;
     width: 100%;
     height: 100%;
-    object-fit:fill;
+    object-fit: fill;
 }
+@media (max-width: 800px) {
+    .body {
+        display: block !important;
+    }
 
+    .sidebar-container {
+        display: none !important;
+    }
+}
 .carousel__track-container {
     height: 100%;
     position: relative;
@@ -33,7 +42,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 100%;
+    width: 45vw;
     height: 600px;
 }
 

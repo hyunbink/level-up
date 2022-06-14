@@ -45,12 +45,7 @@ class VideoShow extends React.Component {
         if (!this.state.video || !this.state.user) {return null}
         return(
             <div className="video-show-page">
-                {/* <div className="vid-show">
-                    Other STuff
-                </div> */}
                 {this.renderEditPage()}
-                {/* <VideoEditForm video={this.state.video}/> */}
-                {/* <button onClick={() => this.redirectToEdit()}>Edit Video</button> */}
                 <div className="video-show-wrapper">
                     <iframe
                         controls
@@ -58,15 +53,8 @@ class VideoShow extends React.Component {
                         width="560"
                         height="315"
                         src={this.state.video.url}
-                        // title="Video player"
-                        // frameBorder="0"
-                        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                     >
-                        {/* <source 
-                            // src="movie.mp4" 
-                            type="video/mp4"
-                        /> */}
                     </iframe>
                     <div className="vid-show-title">
                         <div className="vid-show-title-text">
