@@ -23,7 +23,9 @@ module.exports = function validateVideoInput(data) {
     data.description = validText(data.description) ? data.description : "";
     data.topic = validText(data.topic) ? data.topic : "";
     data.category = validText(data.category) ? data.category : "";
-    data.video = data.video=== "undefined" ? "" : data.video;
+    data.video = data.video === "undefined" ? "" : data.video;
+
+    console.log("this is the data", data);
 
     if (Validator.isEmpty(data.title)) {
         errors.title = "Title cannot be empty";
@@ -41,9 +43,10 @@ module.exports = function validateVideoInput(data) {
         errors.category = "You must select a category";
     }
 
-    if (Validator.isEmpty(data.video)) {
-        errors.video = "Please enter a valid video file";
-    }
+    
+    // if (Validator.isEmpty(data.video)) {
+    //     errors.video = "Please enter a valid video file";
+    // }
 
     return {
         errors,
