@@ -18,18 +18,25 @@ class ReviewIndex extends React.Component{
 
     render(){
 
-        if (!this.props.reviews) {
+        if (this.props.reviews.length===0) {
             return null
         }
+
+        // debugger;
         console.log("in the review index", this.props.reviews)
         return(    
             <div>
                 <div className="create-review-form">
-                <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
+                    <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
                 </div>
-                {this.props.reviews.data ? <ul className="review-item-show">{this.props.reviews.data.reverse().map((review, idx)=> (
-                    <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
-                ))} </ul> : <div></div> }
+
+                <ul className="review-item-show">
+                    {
+                        Object.values(this.props.reviews).map((review, idx)=> (
+                            <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
+                        ))
+                    } 
+                </ul>
             </div>
         )
     }
