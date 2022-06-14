@@ -59,6 +59,12 @@ class VideoForm extends React.Component {
 
     handleFile(e) {
         const file = e.currentTarget.files[0];
+        console.log(file.size);
+        if (file && file.size > 1000000) {
+            alert("Please reupload file. Max size 1 MB");
+            this.setState({videoFile: "", url: ""});
+            return;
+        }
         const fileReader = new FileReader();
         fileReader.onloadend = function(){
             this.setState({videoFile: file, url: fileReader.result})
