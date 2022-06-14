@@ -46,7 +46,6 @@ class ReviewItem extends React.Component {
         e.preventDefault();
 
         let reviewFormErrors = document.getElementById("review-edit-errors") ;
-        console.log("reviewform", reviewFormErrors);
         reviewFormErrors.classList.remove("hidden");
         document.addEventListener("click", ()=> {
             reviewFormErrors.classList.add("hidden");
@@ -78,14 +77,6 @@ class ReviewItem extends React.Component {
             <div>
                 {/* {this.props.errors ? this.edit() : null} */}
                 {this.handleReviewErrors()}
-                {this.props.currentUserId && this.props.currentUserId === this.props.review.reviewerId ? 
-                    <div className="edit-rev-form-div">
-                        <button className="user-show-buttons" onClick={this.edit} >Edit Review</button>
-                        <button className="user-show-buttons" onClick={()=>this.props.deleteReview(this.props.review._id).then(()=>this.props.getReviews())}>Delete Review</button>
-                    </div> 
-                    :
-                    <div></div>
-                }
                 {this.state.editing ? 
                     <form onSubmit={this.handleSubmit}>
                         <div className="edit-rev-form-div">
@@ -114,12 +105,21 @@ class ReviewItem extends React.Component {
                         </div>
                     </form>
                 :
-                    <div className="rev-item-container">
+                <div className="rev-item-container">
                         <div className="rev-item-title">{this.props.review.title}</div>
                         {/* <div>{this.props.review.score}</div> */}
                         {this.revStars(this.props.review.score)}
                         <div className="rev-item-text">{this.props.review.text}</div>
                     </div>
+                }
+                {this.props.currentUserId && this.props.currentUserId === this.props.review.reviewerId ? 
+                    <div className="edit-rev-form-div">
+                        <button className="user-show-buttons" onClick={this.edit} >Edit</button>
+                        <div className="rev-container-div"></div>
+                        <button className="user-show-buttons" onClick={()=>this.props.deleteReview(this.props.review._id).then(()=>this.props.getReviews())}>Delete</button>
+                    </div> 
+                    :
+                    <div></div>
                 }
             </div>
         );

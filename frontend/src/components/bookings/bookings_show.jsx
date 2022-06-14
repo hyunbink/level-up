@@ -29,6 +29,7 @@ class BookingsShow extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
+        
         let newBooking = this.props.booking;
         newBooking["title"] = this.state.title;
         newBooking["date"] = this.state.date;
@@ -81,7 +82,7 @@ class BookingsShow extends React.Component{
                                     </datalist> 
                             </label>
                         <br/>
-                            <button className="user-show-buttons">Edit Booking</button>
+                            <button className="user-show-buttons">Confirm Edit</button>
                         </form>
                     </div>
                 :
@@ -92,8 +93,8 @@ class BookingsShow extends React.Component{
                     </div>
                 }
                 <div className="bookings-show-edit">
-                    <button className="user-show-buttons" onClick={this.edit} >Confirm Edit</button>
-                    <button className="user-show-buttons" onClick={()=>this.props.deleteBooking(this.props.booking._id).then(()=>this.props.getBookings())}> Delete </button>
+                    <button className="user-show-buttons" onClick={this.edit} >Edit Booking</button>
+                    <button className="user-show-buttons" onClick={()=>this.props.deleteBooking(this.props.booking._id).then(()=>this.props.getBookings())}>Delete Booking</button>
                 </div> 
             </div>
         )

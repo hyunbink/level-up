@@ -82,9 +82,9 @@ class UserPage extends React.Component {
             }
         }
     }
-// going from other profile to current user's profile, comp is not mounting
     render() {
-        console.log("tackle re-render", this.props)
+        console.log("tackle reviews reverse", this.props.reviews.data)
+        // console.log("tackle reversed reviews", this.props.reviews.data.reverse())
         if (!this.props.user) {
             return null;
         }
