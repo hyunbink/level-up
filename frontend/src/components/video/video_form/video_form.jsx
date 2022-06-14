@@ -166,8 +166,9 @@ class VideoForm extends React.Component {
                     />
                 </label>
                 }
-                
-                {this.handleErrors()}
+                <div>
+                    {this.handleErrors()}
+                </div>
                 <div className="video-form-buttons">
                 {
                     this.props.match.params.videoId 

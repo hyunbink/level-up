@@ -24,6 +24,8 @@ module.exports = function validateVideoInput(data) {
     data.topic = validText(data.topic) ? data.topic : "";
     data.category = validText(data.category) ? data.category : "";
     data.video = data.video === "undefined" ? "" : data.video;
+    data.url = data.url.startsWith('https://www.youtube.com') ? "" : data.url;
+
 
     console.log("this is the data", data);
 
@@ -43,6 +45,9 @@ module.exports = function validateVideoInput(data) {
         errors.category = "You must select a category";
     }
 
+    if (Validator.isEmpty(data.url)) {
+        errors.url = "Please enter a valid video file";
+    }
     
     // if (Validator.isEmpty(data.video)) {
     //     errors.video = "Please enter a valid video file";
