@@ -7,7 +7,8 @@ import BookingsForm from '../bookings/booking_form_container'
 import BookingShow from "../bookings/bookings_show_container";
 
 import ReviewFormContainer from "../review/review_form_container";
-import ReviewItemContainer from "../review/review_item_container";
+// import ReviewItemContainer from "../review/review_item_container";
+import ReviewIndexContainer from "../review/review_index_container";
 
 import colorsmoke from "./cover_photos/colorsmoke.png";
 import cooltextures from "./cover_photos/cooltextures.png";
@@ -155,13 +156,8 @@ class UserPage extends React.Component {
                         </div>
                             <div className="user-reviews-container">
                                 <h1 className="reviews-title" >Reviews</h1>
-                                <div className="create-review-form">
-                                    <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
-                                </div>
                                 <div className="review-data-cont">
-                                    {this.props.reviews.data ? <ul className="review-item-show">{this.props.reviews.data.reverse().map((review, idx)=> (
-                                        <ReviewItemContainer key={idx} review={review} getReviews={this.getUserReviews}/>
-                                    ))} </ul> : <div></div> }
+                                    <ReviewIndexContainer userId={this.props.match.params.id} />
                                 </div>
                             </div>
                     </div>

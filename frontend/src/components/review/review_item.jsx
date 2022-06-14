@@ -51,7 +51,7 @@ class ReviewItem extends React.Component {
             reviewFormErrors.classList.add("hidden");
             document.removeEventListener("click", ()=> {});
         });
-
+        // debugger;
         let newReview = this.props.review;
         newReview["title"] = this.state.title;
         newReview["score"] = this.state.score;
