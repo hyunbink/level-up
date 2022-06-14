@@ -85,7 +85,7 @@ router.post("/upload", upload.single("video[video]") , (req, res) => {
     }
 });
 
-router.put("/:videoId",upload.single("video[video]"), (req, res) => {
+router.put("/:videoId", upload.single("video[video]"), (req, res) => {
     const { errors, isValid } = validateVideoInput(req.body);
     
     console.log("errors", errors);
