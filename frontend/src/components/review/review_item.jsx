@@ -61,9 +61,28 @@ class ReviewItem extends React.Component {
         newReview["title"] = this.state.title;
         newReview["score"] = this.state.score;
         newReview["text"] = this.state.text;
-        this.setState({editing:false});
-        this.props.updateReview(newReview)
-            .then(()=>this.props.getReviews());
+        // if (!newReview["title"] || !newReview["text"]) {
+        //     return;
+        // }
+        // this.setState({editing:false});
+        // this.props.updateReview(newReview);
+
+        const submit = async ()=> {
+            await this.props.updateReview(newReview);
+            if (this.props.errors.length > 0) {
+                this.setState({editing: true});
+            } else {
+                // this.setState({editing:false});
+                this.props.getReviews();
+                this.setState({editing:false});
+            }
+
+        }
+
+        submit();
+
+        // this.props.updateReview(newReview)
+        // .then(()=>this.props.getReviews());
     }
 
     revStars(num){
