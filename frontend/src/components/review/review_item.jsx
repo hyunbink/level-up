@@ -38,8 +38,13 @@ class ReviewItem extends React.Component {
     }
 
     edit() {
-        this.setState({editing: !this.state.editing})
-    }
+        this.setState({editing: !this.state.editing, 
+            title: this.props.review.title,
+            reviewerId: this.props.review.reviewerId,
+            revieweeId: this.props.review.revieweeId,
+            score: this.props.review.score,
+            text: this.props.review.text});
+    }   
 
 
     handleSubmit(e) {
@@ -51,7 +56,7 @@ class ReviewItem extends React.Component {
             reviewFormErrors.classList.add("hidden");
             document.removeEventListener("click", ()=> {});
         });
-
+        
         let newReview = this.props.review;
         newReview["title"] = this.state.title;
         newReview["score"] = this.state.score;
