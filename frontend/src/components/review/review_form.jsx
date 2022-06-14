@@ -24,7 +24,8 @@ class CreateReviewForm extends React.Component {
         if (this.props.errors.length > 0) {
             return
         } else {
-            this.setState({title: '', text: '', score: -1})
+            this.setState({title: '', text: '', score: -1},  ()=> this.props.fetchReviews(this.props.revieweeId))
+            
         }
     }
 
@@ -55,7 +56,6 @@ class CreateReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let reviewFormErrors = document.getElementById("review-form-errors") ;
-        console.log("reviewform", reviewFormErrors);
         reviewFormErrors.classList.remove("hidden");
         document.addEventListener("click", ()=> {
             reviewFormErrors.classList.add("hidden");
