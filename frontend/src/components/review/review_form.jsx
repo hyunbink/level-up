@@ -55,7 +55,7 @@ class CreateReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let reviewFormErrors = document.getElementById("review-form-errors") ;
+        let reviewFormErrors = document.getElementById("review-form-errors");
         reviewFormErrors.classList.remove("hidden");
         document.addEventListener("click", ()=> {
             reviewFormErrors.classList.add("hidden");

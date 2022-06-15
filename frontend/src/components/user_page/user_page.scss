@@ -501,9 +501,6 @@
     width: 1.5em;
 }
 
-.hidden {
-    display: none;
-}
 
 #review-form-errors {
     // border: 2px solid green;
@@ -515,10 +512,28 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
+    
     li {
         padding: 2px;
+        
     }
+}
+
+#review-edit-errors {
+        // border: 2px solid green;
+        font-size: 12px;
+        color: red;
+        padding-top: 6%;
+        padding-bottom: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    
+        li {
+                padding: 2px;
+        
+            }
 }
 
 #booking-form-errors {
@@ -529,4 +544,8 @@
     li {
         padding: 2px;
     }
+}
+
+.hidden {
+    opacity: 0;
 }
