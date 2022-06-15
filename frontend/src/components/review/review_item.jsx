@@ -121,8 +121,8 @@ class ReviewItem extends React.Component {
                                 <textarea className="edit-rev-text" type="text" value={this.state.text} onChange={this.update("text")} />
                             <label> Stars: 
                             </label>
-                                <input className="edit-rev-stars" type="number" min="1" max="5" value={this.state.score} onChange={this.update("score")}/>
-                            {/* <div className="star-wrapper">
+                                {/* <input className="edit-rev-stars" type="number" min="1" max="5" value={this.state.score} onChange={this.update("score")}/> */}
+                            <div className="star-wrapper">
                                 <input onChange={this.update("score")} type="checkbox" className="star" id="oneLocation" value={5}/>
                                 <label htmlFor="oneLocation" className="fas fa-star s1"><FaStar/></label>
                                 <input onChange={this.update("score")} type="checkbox" className="star" id="twoLocation" value={4}/>
@@ -133,7 +133,7 @@ class ReviewItem extends React.Component {
                                 <label htmlFor="fourLocation" className="fas fa-star s4"><FaStar/></label>
                                 <input onChange={this.update("score")} type="checkbox" className="star" id="fiveLocation" value={1}/>
                                 <label htmlFor="fiveLocation" className="fas fa-star s5"><FaStar/></label>
-                            </div> */}
+                            </div>
                             <button className="user-show-large-buttons">Confirm Edit</button>
                         </div>
                     </form>
