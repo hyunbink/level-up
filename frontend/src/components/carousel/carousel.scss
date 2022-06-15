@@ -1,7 +1,7 @@
 .carousel {
     position: relative;
     height: 300px;
-    width: 45vw;
+    width: 65vw;
     max-width: 900px;
     margin: 0 auto;
     overflow: hidden;
@@ -33,9 +33,7 @@
 .carousel__slide {
     position: absolute;
     top: 0;
-    bottom: 0;
-    width: 45vw;
-    height: 600px;
+    width: 65vw;
 }
 
 .carousel__button img {
