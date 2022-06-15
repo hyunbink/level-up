@@ -27,7 +27,7 @@ class SearchBar extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <label>
                     <input
-                        placeholder="Search by Title or Description"
+                        placeholder="Search by video Title or Description"
                         className='search-bar'
                         type="search"
                         value={this.state.query}
