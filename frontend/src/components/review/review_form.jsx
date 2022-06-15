@@ -65,7 +65,10 @@ class CreateReviewForm extends React.Component {
         let newReview = this.state;
         this.props.createReview(newReview)
             .then(()=>this.props.getReviews())
-            .then(()=> this.successfulReview());
+            .then(()=> this.successfulReview())
+            // .then(()=> document.querySelector(".star").forEach(ele => {
+            //     ele.checked = false;
+            // }));
     }
 
     render() {
