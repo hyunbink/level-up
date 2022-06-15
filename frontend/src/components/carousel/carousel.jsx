@@ -29,7 +29,9 @@ class Carousel extends React.Component {
         this.prevButton = document.querySelector('.carousel__button.left');
 
         // sets width and position
-        this.slideWidth = this.slides[0].getBoundingClientRect().width;
+        let viewWidth = window.innerWidth;
+        // this.slideWidth = this.slides[0].getBoundingClientRect().width;
+        this.slideWidth = viewWidth * 0.65;
         
         this.setSlidePosition = (slide, index) => {
             slide.style.left = this.slideWidth * index + 'px';
@@ -102,16 +104,16 @@ class Carousel extends React.Component {
                 <div className="carousel__track-container">
                     <ul className="carousel__track">
                         <li className="carousel__slide current-slide">
-                        <Link to="/topic/arts-and-crafts"><img className="carousel__image" src={shoe} alt="1" /></Link>
+                            <Link to="/topic/arts-and-crafts"><img className="carousel__image" src={shoe} alt="1" /></Link>
                         </li>
                         <li className="carousel__slide">
-                        <Link to="/topic/sports"><img className="carousel__image" src={kendo} alt="2" /></Link>
+                            <Link to="/topic/sports"><img className="carousel__image" src={kendo} alt="2" /></Link>
                         </li>
                         <li className="carousel__slide">
-                        <Link to="/topic/animal-husbandry"><img className="carousel__image" src={shrimp} alt="3" /></Link>
+                            <Link to="/topic/animal-husbandry"><img className="carousel__image" src={shrimp} alt="3" /></Link>
                         </li>
                         <li className="carousel__slide">
-                        <Link to="/topic/technology"><img className="carousel__image" src={drone} alt="4" /></Link>
+                            <Link to="/topic/technology"><img className="carousel__image" src={drone} alt="4" /></Link>
                         </li>
                     </ul>
                 </div>

@@ -1,3 +1,8 @@
+$primary: #05445E;
+$secondary: #189AB4;
+$accent1: #75E6DA;
+$accent2: #D4F1F4;
+
 .topic-page {
     // border: 2px solid red;
 
@@ -88,52 +93,81 @@
 
 .video-show-page {
     // border: 2px solid pink;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 94%;
+    margin: 3%;
+    // padding: 3%;
+    display: grid;
+    grid-template-columns: 60% 35%;
+    gap: 5%;
+
+    > div {
+        height: 93%;
+    }
+
 }
 
 .video-show-wrapper {
-    // border: 2px solid purple;
-    width: 70%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 70%;
-    padding: 2%;
-    min-width: 600px;
     box-shadow: 0px 2px 12px lightgray;
-
-    * {
-        // width: 100%;
+    iframe {
         height: 100%;
     }
-    // > video {
 
-    //     source {
-    //         width: 100%;
-    //         height: 100%;
-    //     }
-    // }
+    > * {
+        padding: 0 2rem 0 2rem;
+        margin: 2rem 0 2rem 0;
+    }
+    
+    > .video-buttons {
+        bottom: 0;
+        justify-content: end;
+    }
+}
+video:-webkit-full-page-media  {
+    width: 100%;
 }
 
 .vid-desc {
-    // border: 2px solid green;
-    margin: 3%;
-    padding: 3%;
-    width: 40%;
+    position: relative;
+    width: 100%;
     height: 70%;
     min-width: 275px;
     box-shadow: 0px 2px 12px lightgray;
+    
+    > * {
+        padding: 2rem;
+    }
+
+    > p {
+        overflow: auto;
+        max-height: 70%;
+        padding-top: 0;
+    }
+
+    .video-buttons {
+        position: absolute;
+        bottom: 0%;
+        right: 0%;
+
+        button {
+            margin-left: 10px;
+            border-radius: 3px;
+            width: 8em;
+            height: 2em;
+            border: none;
+            background-color: $secondary;
+            transition: 0.2s;
+            color: white;
+        }
+    }
 }
 
 .vid-desc-header {
-    width: 10%;
     font-size: 20px;
     font-weight: 700;
-    margin: 3% 0%;
+    margin: 3% 0% 0 0;
 }
 
 .vid-show-title {
@@ -141,9 +175,8 @@
     display: flex;
     align-items: center;
     justify-content: start;
-    width: 90%;
-    height: 10%;
-    padding-left: 6%;
+    margin: 0;
+    padding-bottom: 0;
 }
 
 .vid-show-title-text {
@@ -153,25 +186,14 @@
 }
 
 .vid-show-user {
-    // border: 2px solid orangered;
-    padding-left: 4%;
-    width: 88%;
-    margin: 5% 0%;
-    height: 25%;
     display: flex;
     align-items: center;
     justify-content: start;
-}
-
-.vid-show-info {
-    // border: 2px solid green;
     font-size: 20px;
-    font-weight: 600;
-    height: 30%;
-    width: 100%;
-    color: black;
-    div {
-        color: black;
+    font-family: Cereal-Medium;
+
+    a {
+        color: inherit;
     }
 }
 

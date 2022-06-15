@@ -27,16 +27,12 @@ class NavBar extends React.Component {
       if (this.props.loggedIn) {
         return (
             <div className="nav-wrapper">
-              {/* <div className="nav-left">
-                <Link to={`/user/${this.props.currentUser.id}`} className="nav-link" >
-                  <div className="nav-link-text">Profile</div> 
-                </Link>
-                <Link to ={"/login"} onClick={this.logoutUser} className="nav-link">
-                  <div className="nav-link-text">Logout</div> 
-                </Link>
-              </div> */}
               <div className='nav-logo' onClick={()=>this.props.history.push("/home")} >
-                Level-Up
+                <img
+                  src="shyche_logo.png" 
+                  className='logo-image'
+                />
+                Shyche
               </div>
               <div className='nav-search'>
                 <SearchBarContainer />
@@ -68,12 +64,12 @@ class NavBar extends React.Component {
         return (
 
             <div className="nav-wrapper">
-              {/* <div className='nav-left'>
-                <Link to={'/signup'} className="nav-link">Signup</Link>
-                <Link to={'/login'} className = "nav-link">Login</Link>
-              </div> */}
               <div className='nav-logo' onClick={()=>this.props.history.push("/home")} >
-                Level-Up
+                <img
+                  src="shyche_logo.png" 
+                  className='nav-logo'
+                />
+                Shyche
               </div>
               <div className='nav-right'>
                 <div className='nav-burger'>

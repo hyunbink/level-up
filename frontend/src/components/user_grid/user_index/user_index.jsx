@@ -14,13 +14,18 @@ class UserIndex extends React.Component {
 
     render() {
         if (!this.props.users || !this.props.users.data) {return null};
+        let counter = 0;
 
         return (
             <div className="grid-container">
                 <div className="grid">
                     {
+                        // This is only usable once we can grab only the profs from the backend
+                        // Future optimization
+                        // this.props.users.data.slice(0, 12).map(user => {
                         this.props.users.data.map(user => {
-                            if (user.professional && user.firstName !== "Demo") {
+                            if (counter < 12 && user.professional && user.firstName !== "Demo") {
+                                counter += 1;
                                 return (
                                     <div className="grid-item">
                                         <UserCard user={user} />

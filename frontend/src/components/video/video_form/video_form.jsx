@@ -22,13 +22,12 @@ class VideoForm extends React.Component {
         this.handleErrors = this.handleErrors.bind(this);
     }
 
-    // componentWillUnmount() {
-    //     this.props.clearVideosErrors();
-    // }
+    componentWillUnmount() {
+        document.querySelector(".sidebar-container").classList.remove("hidden")
+    }
 
     componentDidMount() {
-        // this.props.clearVideosErrors();
-
+        document.querySelector(".sidebar-container").classList.add("hidden")
         let videoId = this.props.match.params.videoId;
         let video;
         if (videoId) {

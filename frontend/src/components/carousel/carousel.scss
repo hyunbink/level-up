@@ -1,7 +1,8 @@
 .carousel {
     position: relative;
-    height: 300px;
-    width: 900px;
+    width: 65vw;
+    max-width: 900px;
+    aspect-ratio: 5/2;
     margin: 0 auto;
     overflow: hidden;
     justify-self: flex-end;
@@ -11,9 +12,8 @@
 .carousel__image {
     top:0;
     bottom:0;
-    width: 100%;
     height: 100%;
-    object-fit:fill;
+    object-fit: fill;
 }
 
 .carousel__track-container {
@@ -27,14 +27,15 @@
     margin: 0;
     list-style: none;
     transition: all 1s;
+    width: 100%;
 }
 
 .carousel__slide {
     position: absolute;
     top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 600px;
+    img {
+        width: 65vw;
+    }
 }
 
 .carousel__button img {
