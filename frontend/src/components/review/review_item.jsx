@@ -50,12 +50,9 @@ class ReviewItem extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        let reviewFormErrors = document.getElementById("review-edit-errors") ;
-        reviewFormErrors.classList.remove("hidden");
-        document.addEventListener("click", ()=> {
-            reviewFormErrors.classList.add("hidden");
-            document.removeEventListener("click", ()=> {});
-        });
+        let reviewFormErrors = document.getElementById("review-form-errors");
+        reviewFormErrors.classList.add("hidden");
+        
         
         let newReview = this.props.review;
         newReview["title"] = this.state.title;
@@ -71,6 +68,13 @@ class ReviewItem extends React.Component {
             await this.props.updateReview(newReview);
             if (this.props.errors.length > 0) {
                 this.setState({editing: true});
+                let reviewEditErrors = document.getElementById("review-edit-errors") ;
+        reviewEditErrors.classList.remove("hidden");
+        
+        document.addEventListener("click", ()=> {
+            reviewEditErrors.classList.add("hidden");
+            document.removeEventListener("click", ()=> {});
+        });
             } else {
                 this.props.getReviews();
                 this.setState({editing:false});
@@ -78,6 +82,14 @@ class ReviewItem extends React.Component {
         }
 
         submit();
+
+        // let reviewEditErrors = document.getElementById("review-edit-errors") ;
+        // reviewEditErrors.classList.remove("hidden");
+        
+        // document.addEventListener("click", ()=> {
+        //     reviewEditErrors.classList.add("hidden");
+        //     document.removeEventListener("click", ()=> {});
+        // });
 
         // this.props.updateReview(newReview)
         // .then(()=>this.props.getReviews());
