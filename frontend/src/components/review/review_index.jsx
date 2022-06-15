@@ -22,13 +22,13 @@ class ReviewIndex extends React.Component{
             return null
         }
 
-        // debugger;
-        console.log("in the review index", this.props.reviews)
         return(    
             <div>
+                {this.props.currentUserId !== this.props.user._id ?
                 <div className="create-review-form">
                     <ReviewFormContainer reviewer={this.props.currentUser} reviewee={this.props.user} getReviews={this.getUserReviews}/>
-                </div>
+                </div> : <div></div>
+                }
 
                 <ul className="review-item-show">
                     {

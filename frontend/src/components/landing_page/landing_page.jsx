@@ -55,7 +55,7 @@ class LandingPage extends Component {
                 <div className="landing-section-one">
                     <div className="card">
                         <span><img src="https://i.ibb.co/D1fcvSS/01.png" alt="flaticon.com" loading="lazy"/></span>
-                        <span>
+                        <span className="section-one-info">
                             <h1 className="title">Share your niche</h1>
                             <p>
                                 Ever have that one hobby you really want to get into but can't find anyone to share it with?
@@ -66,7 +66,7 @@ class LandingPage extends Component {
 
                     <div className="card">
                         <span><img src="https://cdn1.iconfinder.com/data/icons/professional-avatars-5/64/programmer-programming-developer-designer-avatar-512.png" alt="flaticon.com" loading="lazy"/></span>
-                        <span>
+                        <span className="section-one-info">
                             <h1 className="title">Meet real experts</h1>
                             <p>
                                 Veterans of the field would love to share more about their specialties with you!
@@ -77,7 +77,7 @@ class LandingPage extends Component {
 
                     <div className="card">
                         <span><img src="https://static.cdnlogo.com/logos/h/10/horizon.svg" alt="flaticon.com" loading="lazy"/></span>
-                        <span>
+                        <span className="section-one-info">
                             <h1 className="title">Expand your horizons</h1>
                             <p>
                                 Bored and not sure where to start? Peruse our continually growing list of hobbies and niches.

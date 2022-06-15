@@ -44,7 +44,7 @@ class VideoEditForm extends React.Component {
                 <label className="topic">Topic
                     <input type="text" placeholder="Topic" value={this.state.topic} onChange={this.update("topic")}/>
                 </label>
-                <label className="url">Youtube Link
+                <label className="url">Video File
                     <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/>
                 </label>
                 {this.handleErrors()}

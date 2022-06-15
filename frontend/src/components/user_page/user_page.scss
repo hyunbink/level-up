@@ -273,7 +273,9 @@
 .bookings-show-edit{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
 
 // .bookings-show-edit button{
@@ -296,10 +298,18 @@
 
 .booking-show-title{
     margin-bottom: .4em;
+    font-size: larger;
+    font-weight: bolder;
 }
 
 .booking-show-date{
     margin-bottom: .3em;
+    font-size: medium;
+}
+
+.booking-show-duration{
+    margin-bottom: .3em;
+    font-size: medium;
 }
 
 .booking-create-date{
@@ -473,10 +483,26 @@
     }
 }
 
-.user-show-post-review-button{
+.user-show-large-buttons{
     margin-block: 0.5em;
     border-radius: 1.5em;
-    width: 9em;
+    width: 8em;
+    border: none;
+    padding-block: 0.5em;
+    background-color: #189AB4;
+    transition: 0.2s;
+    color: white;
+    &:hover{
+        background-color:#73c6d7;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
+
+.user-show-larger-buttons{
+    margin-block: 0.5em;
+    border-radius: 1.5em;
+    width: 10em;
     border: none;
     padding-block: 0.5em;
     background-color: #189AB4;
@@ -492,9 +518,22 @@
 .edit-rev-form-div{
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+}
+
+.edit-rev-label{
+    margin-top: .8em;
+}
+
+.edit-rev-text{
+    width: 80%;
+    margin-bottom: 1em;
+}
+
+.edit-rev-stars{
+    // min-width: 20px;
+    margin-bottom: 1em;
 }
 
 .rev-container-div{

@@ -66,8 +66,10 @@ class CreateReviewForm extends React.Component {
         let newReview = this.state;
         this.props.createReview(newReview)
             .then(()=>this.props.getReviews())
-            .then(()=> this.successfulReview());
-
+            .then(()=> this.successfulReview())
+            // .then(()=> document.querySelector(".star").forEach(ele => {
+            //     ele.checked = false;
+            // }));
     }
 
 
@@ -97,7 +99,7 @@ class CreateReviewForm extends React.Component {
                             <input onChange={this.update("score")} type="checkbox" className="star" id="fiveLocation" value={1}/>
                             <label htmlFor="fiveLocation" className="fas fa-star s5"><FaStar/></label>
                         </div>
-                        <button className="user-show-post-review-button">Post Review</button>
+                        <button className="user-show-large-buttons">Post Review</button>
                     </form>
                 </div>
         );

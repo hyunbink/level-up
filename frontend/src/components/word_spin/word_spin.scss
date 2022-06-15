@@ -19,40 +19,14 @@
     display: flex;
     justify-content: center;
     white-space: nowrap;
-    p {
-        color: rgb(206, 203, 203);
+    
+    div {
+        font-family: Cereal-Medium;
     }
+
+
 }
 
 .spinner-text {
     color: $secondary;
 }
-
-// .spinner-words {
-//     position: relative;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: flex-end;
-//     right: 16.5rem;
-//     overflow: hidden;
-    
-//     span {
-//         display: block;
-//         height: 100%;
-//         line-height: 2rem;
-//         color: $secondary;
-//         animation: spin_words 20s infinite;
-//         padding-block: 0.1em;
-//     }
-// }
-
-// @keyframes spin_words {
-//     10% { transform: translateY(-120%); }
-//     25% { transform: translateY(-118%); }
-//     35% { transform: translateY(-220%); }
-//     50% { transform: translateY(-218%); }
-//     60% { transform: translateY(-320%); }
-//     75% { transform: translateY(-318%); }
-//     85% { transform: translateY(-420%); }
-//     100% { transform: translateY(-418%); }
-// }

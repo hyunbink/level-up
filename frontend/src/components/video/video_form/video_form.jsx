@@ -23,12 +23,11 @@ class VideoForm extends React.Component {
     }
 
     // componentWillUnmount() {
-    //     this.props.clearVideosErrors();
+    //     document.querySelector(".sidebar-container").classList.remove("hidden")
     // }
 
     componentDidMount() {
-        // this.props.clearVideosErrors();
-
+        // document.querySelector(".sidebar-container").classList.add("hidden")
         let videoId = this.props.match.params.videoId;
         let video;
         if (videoId) {
@@ -163,7 +162,7 @@ class VideoForm extends React.Component {
                     this.props.match.params.videoId ?
                         null
                     :
-                    <label className="url">Youtube Link
+                    <label className="url">Video File
                     {/* <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/> */}
                     <input
                         type="file"

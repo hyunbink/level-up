@@ -1,5 +1,4 @@
 import React from "react";
-import VideoEditForm from "../video_form/video_edit_form_container";
 import { Link } from "react-router-dom";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import "../video_index/video_index.scss";
@@ -33,10 +32,10 @@ class VideoShow extends React.Component {
     renderEditPage() {
         if (this.state.video.uploaderId === this.props.currentUserId) {
             return (
-                <>
+                <div className="video-buttons">
                     <button onClick={this.deleteThisVideo}>Delete Video</button>
                     <Link to={`/video/edit/${this.state.video._id}`}><button>Edit Video</button></Link>
-                </>
+                </div>
             )
         }
     }
@@ -45,51 +44,48 @@ class VideoShow extends React.Component {
         if (!this.state.video || !this.state.user) {return null}
         return(
             <div className="video-show-page">
-                {/* <div className="vid-show">
-                    Other STuff
-                </div> */}
-                {this.renderEditPage()}
-                {/* <VideoEditForm video={this.state.video}/> */}
-                {/* <button onClick={() => this.redirectToEdit()}>Edit Video</button> */}
                 <div className="video-show-wrapper">
-                    <iframe
+                    {/* <iframe
                         controls
                         autoPlay
                         width="560"
                         height="315"
                         src={this.state.video.url}
-                        // title="Video player"
-                        // frameBorder="0"
-                        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                     >
-                        {/* <source 
-                            // src="movie.mp4" 
-                            type="video/mp4"
-                        /> */}
-                    </iframe>
+                    </iframe> */}
+                    <video 
+                        // width="400" 
+                        controls
+                        src={this.state.video.url}
+                        // <source src="mov_bbb.mp4" type="video/mp4">
+                        // <source src="mov_bbb.ogg" type="video/ogg">
+                        // Your browser does not support HTML video.
+                    />
                     <div className="vid-show-title">
                         <div className="vid-show-title-text">
                             {this.state.video.title}
                         </div>
                     </div>
                     <div className="vid-show-user">
-                        <div className="vid-show-info">  
+                        {/* <div className="vid-show-info">   */}
                             <Link to={`/user/${this.state.user._id}`} style={{textDecoration: 'none'}}> 
-                            <div>
-                                <span className="vid-info-icon"><HiOutlineUserCircle /></span> {this.state.user.firstName} {this.state.user.lastName}
-                            </div>
+                                <div>
+                                    <span className="vid-info-icon"><HiOutlineUserCircle /></span> {this.state.user.firstName} {this.state.user.lastName}
+                                </div>
                             </Link>
                             
-                        </div>
+                        {/* </div> */}
                     </div>
-
                 </div>
                 <div className="vid-desc">
                     <div className="vid-desc-header">
                         About: 
                     </div>
-                    {this.state.video.description}
+                    <p>
+                        {this.state.video.description}
+                    </p>
+                    {this.renderEditPage()}
                 </div>
             </div>
         )
