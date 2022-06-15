@@ -129,17 +129,7 @@ class UserPage extends React.Component {
                                         bookee={this.props.user} 
                                         booker={this.props.currentUser}
                                     /> : <div></div> }
-                                    {/* <div className="user-show-bookings-div">
-                                        <ul className="user-show-bookings-ul">
-                                            {this.props.bookings.data && this.props.currentUserId === this.props.user._id ? <ul>
-                                                <div>Scheduled Bookings:</div>
-                                                {this.props.bookings.data.map((booking, idx)=> (
-                                                <li><BookingShow key={idx} booking={booking} getBookings={this.getUserBookings}/></li>
-                                                )
-                                            )} </ul> : <div></div> }
-                                        </ul>
-                                    </div> */}
-
+                                    
                                     <div>
                                         <BookingsIndexContainer userId={this.props.match.params.id} />
                                     </div>

@@ -273,7 +273,9 @@
 .bookings-show-edit{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
 
 // .bookings-show-edit button{
@@ -473,10 +475,26 @@
     }
 }
 
-.user-show-post-review-button{
+.user-show-large-buttons{
     margin-block: 0.5em;
     border-radius: 1.5em;
-    width: 9em;
+    width: 8em;
+    border: none;
+    padding-block: 0.5em;
+    background-color: #189AB4;
+    transition: 0.2s;
+    color: white;
+    &:hover{
+        background-color:#73c6d7;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
+
+.user-show-larger-buttons{
+    margin-block: 0.5em;
+    border-radius: 1.5em;
+    width: 10em;
     border: none;
     padding-block: 0.5em;
     background-color: #189AB4;
