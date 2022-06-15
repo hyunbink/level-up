@@ -69,11 +69,10 @@ class ReviewItem extends React.Component {
             if (this.props.errors.length > 0) {
                 this.setState({editing: true});
                 let reviewEditErrors = document.getElementById("review-edit-errors") ;
-        reviewEditErrors.classList.remove("hidden");
-        
-        document.addEventListener("click", ()=> {
-            reviewEditErrors.classList.add("hidden");
-            document.removeEventListener("click", ()=> {});
+                reviewEditErrors.classList.remove("hidden");
+                document.addEventListener("click", ()=> {
+                reviewEditErrors.classList.add("hidden");
+                document.removeEventListener("click", ()=> {});
         });
             } else {
                 this.props.getReviews();

@@ -55,13 +55,14 @@ class CreateReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        
+        this.props.clearReviewErrors();
         let reviewFormErrors = document.getElementById("review-form-errors");
         reviewFormErrors.classList.remove("hidden");
         document.addEventListener("click", ()=> {
             reviewFormErrors.classList.add("hidden");
             document.removeEventListener("click", ()=> {});
         });
-
         let newReview = this.state;
         this.props.createReview(newReview)
             .then(()=>this.props.getReviews())
@@ -70,6 +71,7 @@ class CreateReviewForm extends React.Component {
             //     ele.checked = false;
             // }));
     }
+
 
     render() {
         return(
