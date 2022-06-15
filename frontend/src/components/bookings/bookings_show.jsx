@@ -120,11 +120,13 @@ class BookingsShow extends React.Component{
                         <div className="booking-show-duration">{this.props.booking.duration}</div>
                     </div>
                 }
+                {this.state.editing ? <div></div> : 
                 <div className="bookings-show-edit">
                     <button className="user-show-buttons" onClick={this.edit} >Edit</button>
                     <div className="rev-container-div"></div>
                     <button className="user-show-buttons" onClick={()=>this.props.deleteBooking(this.props.booking._id).then(()=>this.props.getBookings())}>Delete</button>
                 </div> 
+                }
             </div>
         )
     }

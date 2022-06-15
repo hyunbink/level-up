@@ -135,7 +135,9 @@ class ReviewItem extends React.Component {
                     </div>
                 }
                 {this.props.currentUserId && this.props.currentUserId === this.props.review.reviewerId ? 
-                    <div className="edit-rev-form-div">
+                    this.state.editing ? 
+                        <div></div> : 
+                        <div className="edit-rev-form-div">
                         <button className="user-show-buttons" onClick={this.edit} >Edit</button>
                         <div className="rev-container-div"></div>
                         <button className="user-show-buttons" onClick={()=>this.props.deleteReview(this.props.review._id).then(()=>this.props.getReviews())}>Delete</button>
