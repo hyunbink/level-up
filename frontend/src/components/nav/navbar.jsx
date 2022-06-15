@@ -28,7 +28,11 @@ class NavBar extends React.Component {
         return (
             <div className="nav-wrapper">
               <div className='nav-logo' onClick={()=>this.props.history.push("/home")} >
-                Level-Up
+                <img
+                  src="shyche_logo.png" 
+                  className='logo-image'
+                />
+                Shyche
               </div>
               <div className='nav-search'>
                 <SearchBarContainer />
@@ -61,7 +65,11 @@ class NavBar extends React.Component {
 
             <div className="nav-wrapper">
               <div className='nav-logo' onClick={()=>this.props.history.push("/home")} >
-                Level-Up
+                <img
+                  src="shyche_logo.png" 
+                  className='nav-logo'
+                />
+                Shyche
               </div>
               <div className='nav-right'>
                 <div className='nav-burger'>

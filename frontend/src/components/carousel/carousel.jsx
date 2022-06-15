@@ -29,7 +29,9 @@ class Carousel extends React.Component {
         this.prevButton = document.querySelector('.carousel__button.left');
 
         // sets width and position
-        this.slideWidth = this.slides[0].getBoundingClientRect().width;
+        let viewWidth = window.innerWidth;
+        // this.slideWidth = this.slides[0].getBoundingClientRect().width;
+        this.slideWidth = viewWidth * 0.65;
         
         this.setSlidePosition = (slide, index) => {
             slide.style.left = this.slideWidth * index + 'px';

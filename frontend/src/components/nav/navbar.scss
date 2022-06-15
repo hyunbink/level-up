@@ -83,6 +83,7 @@
 }
 
 .nav-logo {
+    height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,6 +91,11 @@
     font-family: Cereal-Medium;
     width: fit-content;
     cursor: pointer;
+    img {
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        margin-right: 4px;
+    }
 }
 
 .nav-burger:hover {
