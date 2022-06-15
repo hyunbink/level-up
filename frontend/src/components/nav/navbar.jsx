@@ -91,7 +91,7 @@ class NavBar extends React.Component {
 
   render() {
 
-    let bannedPages = ['signup', 'login', 'upload', 'auth'];
+    let bannedPages = ['signup', 'login', 'upload', 'auth', 'edit'];
 
     let display = true;
 
