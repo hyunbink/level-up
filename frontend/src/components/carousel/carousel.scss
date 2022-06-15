@@ -16,15 +16,7 @@
     height: 100%;
     object-fit: fill;
 }
-@media (max-width: 800px) {
-    .body {
-        display: block !important;
-    }
 
-    .sidebar-container {
-        display: none !important;
-    }
-}
 .carousel__track-container {
     height: 100%;
     position: relative;

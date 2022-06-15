@@ -47,3 +47,23 @@ $accent2: #D4F1F4;
         }
     }
 }
+
+.sidebar-container {
+    transition: all linear .4s;
+}
+
+.body {
+    transition: all linear .4s;
+}
+
+@media (max-width: 800px) {
+    .body {
+        display: block !important;
+        
+    }
+    
+    .sidebar-container {
+        display: none !important;
+        // transform: translateX(-300px);
+    }
+}
