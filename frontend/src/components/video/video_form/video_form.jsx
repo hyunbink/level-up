@@ -162,7 +162,7 @@ class VideoForm extends React.Component {
                     this.props.match.params.videoId ?
                         null
                     :
-                    <label className="url">Youtube Link
+                    <label className="url">Video File
                     {/* <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/> */}
                     <input
                         type="file"
