@@ -15,7 +15,7 @@ class SearchResults extends React.Component {
         if (!this.props.videos) {
             return null;
         }
-        console.log("length", Object.values(this.props.videos).length );
+        
         return(
             <div className="vid-list-wrapper">
                 <ul className="video-list">

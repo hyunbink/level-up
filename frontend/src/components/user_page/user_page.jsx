@@ -32,7 +32,6 @@ class UserPage extends React.Component {
     randomCoverImg(){
         let coverPhotos = [colorsmoke, cooltextures, deepblues, sky, spraycans];
         let rando = this.props.match.params.id.split('').reverse();
-        // console.log("parse act num", rando)
         for (let i = 0; i < rando.length; i++) {
             if ("0123456789".includes(rando[i])) {
                 let num = parseInt(rando[i]);
@@ -42,12 +41,16 @@ class UserPage extends React.Component {
     }
 
     componentDidMount() {
-        
+        document.querySelector(".body").style.display = "flex"
         window.scrollTo(0,0);
         this.props.fetchUser(this.props.match.params.id)
-            .then(()=> this.props.fetchReviews(this.props.match.params.id))
-            .then(()=> this.props.fetchBookings(this.props.match.params.id))
-            .then(()=> this.props.fetchVideosByUser(this.props.match.params.id))
+        .then(()=> this.props.fetchReviews(this.props.match.params.id))
+        .then(()=> this.props.fetchBookings(this.props.match.params.id))
+        .then(()=> this.props.fetchVideosByUser(this.props.match.params.id))
+    }
+    
+    componentWillUnmount() {
+        document.querySelector(".body").style.display = "grid"
     }
 
     componentDidUpdate(prevProps) {

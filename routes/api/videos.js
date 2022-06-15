@@ -59,7 +59,7 @@ router.post("/upload", upload.single("video[video]") , (req, res) => {
             ACL:"public-read-write",
             ContentType:"video/mp4",
         };
-        console.log("VIDEO PARAMS: ", params)
+
         s3.upload(params, (err, data) => {
             if (err) {
                 res.status(500).send({"Error": err})
@@ -88,12 +88,10 @@ router.post("/upload", upload.single("video[video]") , (req, res) => {
 router.put("/:videoId", upload.single("video[video]"), (req, res) => {
     const { errors, isValid } = validateVideoInput(req.body);
     
-    console.log("errors", errors);
-    // console.log("the req data", req);
     if (!isValid) {
         return res.status(400).json(errors);
     }
-    // console.log("vedoes route", req)
+    
     Video.updateOne({ _id: req.params.videoId }, req.body)
         .then(video => res.json(video))
         .catch(err => res.status(404).json({ failedupdate: "Failed to update" }))

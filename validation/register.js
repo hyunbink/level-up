@@ -3,7 +3,6 @@ const validText = require('./valid-text');
 
 module.exports = function validateRegisterInput(data) {
     let errors = {};
-    console.log('logging-data', data);
     data.email = validText(data.email) ? data.email : "";
     data.firstName = validText(data.firstName) ? data.firstName : "";
     data.lastName = validText(data.lastName) ? data.lastName : "";

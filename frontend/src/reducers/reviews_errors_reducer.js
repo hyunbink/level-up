@@ -1,7 +1,6 @@
 import { RECEIVE_REVIEW, RECEIVE_REVIEW_ERRORS, REMOVE_REVIEW_ERRORS } from "../actions/review_actions";
 
 const reviewsErrorsReducer = (state = [], action) => {
-    // console.log("action", action);
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_REVIEW_ERRORS:

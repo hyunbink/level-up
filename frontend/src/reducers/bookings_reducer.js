@@ -1,7 +1,6 @@
 import { RECEIVE_BOOKING, RECEIVE_BOOKINGS, REMOVE_BOOKING } from "../actions/booking_actions";
 
 const bookingsReducer = (state = {}, action) => {
-    console.log("bookings reducer", action);
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_BOOKINGS:
