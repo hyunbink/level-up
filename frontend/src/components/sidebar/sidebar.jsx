@@ -12,14 +12,11 @@ import { MdSportsFootball } from "react-icons/md"
 import { GiTechnoHeart } from "react-icons/gi"
 
 class SideBar extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
 
-        let allowedPages = ['home', 'user', 'category', 'video', 'search', 'topic'];
-        let bannedPages = ['upload'];
+        let allowedPages = ['home', 'category', 'video', 'search', 'topic'];
+        let bannedPages = ['upload', 'user'];
 
 
         let display = false;

@@ -26,6 +26,7 @@ import LandingPage from './landing_page/landing_page';
 import SideBar from './sidebar/sidebar';
 import Footer from './footer/footer';
 import "./static_pages.scss";
+import LiveChatContainer from './live-chat/live_chat_container';
 // import VideoIndexContainer from './video/video_index/video_index_container';
 // import VideoShowPageContainer from './video/video_show/video_show_page_container';
 
@@ -49,7 +50,7 @@ const App = () => (
           <ProtectedRoute exact path="/home" component={HomePage} />
           <AuthRoute exact path="/" component={LandingPage} />
         </Switch>
-        <LiveChat />
+        <LiveChatContainer />
       </div>
       <Footer />
     </div>

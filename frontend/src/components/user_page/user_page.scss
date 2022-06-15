@@ -2,18 +2,19 @@
 .user-page{
     // border: solid red 3px;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     /* height: calc(100vh - 75px); */
     position: relative;
     // left: 250px;
     // width: calc(100% - 250px);
     height: 100%;
     overflow-x: scroll;
+    width: 100vw
 }
 
 .user-container{
     // border: solid blue 3px;
-    width: 100%;
+    // width: inherit;
     height: 100%;
     // overflow-y: scroll;
 }
@@ -118,15 +119,22 @@
 .user-show-banner{
     // background-color: green;
     // border: solid 3px green;
-    height: 12.3em;
-    /* width: 100%; */
+    // width: 100%;
     position: relative;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12.3em;
+    overflow: hidden;
+    width: fit-content;
 }
 
 .user-show-banner-img{
-    background-color: blue;
-    height: 100%;
-    width: 100%;
+    // background-color: blue;
+    // height: 100%;
+    max-width: 100%;
+    // z-index: -1;
 }
 
 .user-show-profile-photo{
@@ -138,6 +146,8 @@
     top: 7.5em;
     position: absolute;
     left: 1em;
+    object-fit: cover;
+    overflow: hidden;
     // z-index: 100;
 }
 
@@ -149,6 +159,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    box-sizing: border-box;
     // border: solid 3px red;
     // background-color: aqua;
 }
@@ -162,10 +173,19 @@
     background-color: #73c6d7a5;
     overflow-y: auto;
     max-height: 50em;
+    padding-inline: .5em;
+    box-sizing: border-box;
+
 }
 
 .user-show-info-div-right{
     width: 100%;
+    margin-right: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
     // background-color: violet;
 }
 
@@ -253,7 +273,9 @@
 .bookings-show-edit{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
 
 // .bookings-show-edit button{
@@ -276,10 +298,18 @@
 
 .booking-show-title{
     margin-bottom: .4em;
+    font-size: larger;
+    font-weight: bolder;
 }
 
 .booking-show-date{
     margin-bottom: .3em;
+    font-size: medium;
+}
+
+.booking-show-duration{
+    margin-bottom: .3em;
+    font-size: medium;
 }
 
 .booking-create-date{
@@ -372,6 +402,12 @@
         input{
             margin-top: .3em;
             margin-bottom: .3em;
+            width: 80%;
+        }
+        textarea{
+            margin-top: .3em;
+            margin-bottom: .3em;
+            width: 80%;
         }
     }
 }
@@ -415,6 +451,10 @@
 
 .rev-item-title{
     font-size: medium;
+    font-weight: bolder;
+    width: 100%;
+    border-top: 1px dashed #189AB4;
+    padding-top: .8em;
 }
 
 .rev-item-text{
@@ -430,7 +470,39 @@
 .user-show-buttons{
     margin-block: 0.5em;
     border-radius: 1.5em;
-    width: 11em;
+    width: 4.5em;
+    border: none;
+    padding-block: 0.5em;
+    background-color: #189AB4;
+    transition: 0.2s;
+    color: white;
+    &:hover{
+        background-color:#73c6d7;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
+
+.user-show-large-buttons{
+    margin-block: 0.5em;
+    border-radius: 1.5em;
+    width: 8em;
+    border: none;
+    padding-block: 0.5em;
+    background-color: #189AB4;
+    transition: 0.2s;
+    color: white;
+    &:hover{
+        background-color:#73c6d7;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
+
+.user-show-larger-buttons{
+    margin-block: 0.5em;
+    border-radius: 1.5em;
+    width: 10em;
     border: none;
     padding-block: 0.5em;
     background-color: #189AB4;
@@ -446,13 +518,28 @@
 .edit-rev-form-div{
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     align-items: center;
+    justify-content: center;
 }
 
-.hidden {
-    display: none;
+.edit-rev-label{
+    margin-top: .8em;
 }
+
+.edit-rev-text{
+    width: 80%;
+    margin-bottom: 1em;
+}
+
+.edit-rev-stars{
+    // min-width: 20px;
+    margin-bottom: 1em;
+}
+
+.rev-container-div{
+    width: 1.5em;
+}
+
 
 #review-form-errors {
     // border: 2px solid green;
@@ -464,10 +551,28 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
+    
     li {
         padding: 2px;
+        
     }
+}
+
+#review-edit-errors {
+        // border: 2px solid green;
+        font-size: 12px;
+        color: red;
+        padding-top: 6%;
+        padding-bottom: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    
+        li {
+                padding: 2px;
+        
+            }
 }
 
 #booking-form-errors {
@@ -478,4 +583,8 @@
     li {
         padding: 2px;
     }
+}
+
+.hidden {
+    opacity: 0;
 }

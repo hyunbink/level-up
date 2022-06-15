@@ -17,12 +17,17 @@ const topics = [
 
 module.exports = function validateVideoInput(data) {
     let errors = {};
-
+    console.log("data", data);
     data.uploaderId = validText(data.uploaderId) ? data.uploaderId : "";
     data.title = validText(data.title) ? data.title : "";
     data.description = validText(data.description) ? data.description : "";
     data.topic = validText(data.topic) ? data.topic : "";
     data.category = validText(data.category) ? data.category : "";
+    data.video = data.video === "undefined" ? "" : data.video;
+    data.url = data.url.startsWith('https://www.youtube.com') ? "" : data.url;
+
+
+    console.log("this is the data", data);
 
     if (Validator.isEmpty(data.title)) {
         errors.title = "Title cannot be empty";
@@ -39,6 +44,14 @@ module.exports = function validateVideoInput(data) {
     if (Validator.isEmpty(data.category)) {
         errors.category = "You must select a category";
     }
+
+    if (Validator.isEmpty(data.url)) {
+        errors.url = "Please enter a valid video file";
+    }
+    
+    // if (Validator.isEmpty(data.video)) {
+    //     errors.video = "Please enter a valid video file";
+    // }
 
     return {
         errors,

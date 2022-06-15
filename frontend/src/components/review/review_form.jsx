@@ -17,6 +17,16 @@ class CreateReviewForm extends React.Component {
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleReviewErrors = this.handleReviewErrors.bind(this);
+        this.successfulReview = this.successfulReview.bind(this);
+    }
+
+    successfulReview(){
+        if (this.props.errors.length > 0) {
+            return
+        } else {
+            this.setState({title: '', text: '', score: -1},  ()=> this.props.fetchReviews(this.props.revieweeId))
+            
+        }
     }
 
     componentDidMount() {
@@ -45,8 +55,7 @@ class CreateReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let reviewFormErrors = document.getElementById("review-form-errors") ;
-        console.log("reviewform", reviewFormErrors);
+        let reviewFormErrors = document.getElementById("review-form-errors");
         reviewFormErrors.classList.remove("hidden");
         document.addEventListener("click", ()=> {
             reviewFormErrors.classList.add("hidden");
@@ -55,7 +64,11 @@ class CreateReviewForm extends React.Component {
 
         let newReview = this.state;
         this.props.createReview(newReview)
-            .then(()=>this.props.getReviews());
+            .then(()=>this.props.getReviews())
+            .then(()=> this.successfulReview())
+            // .then(()=> document.querySelector(".star").forEach(ele => {
+            //     ele.checked = false;
+            // }));
     }
 
     render() {
@@ -84,7 +97,7 @@ class CreateReviewForm extends React.Component {
                             <input onChange={this.update("score")} type="checkbox" className="star" id="fiveLocation" value={1}/>
                             <label htmlFor="fiveLocation" className="fas fa-star s5"><FaStar/></label>
                         </div>
-                        <button className="user-show-buttons">Post Review</button>
+                        <button className="user-show-large-buttons">Post Review</button>
                     </form>
                 </div>
         );

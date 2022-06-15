@@ -13,6 +13,7 @@ class BookingForm extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
         this.handleErrors = this.handleErrors.bind(this);
+        this.sussessfulBooking = this.sussessfulBooking.bind(this);
     }
 
     componentDidMount() {
@@ -23,11 +24,21 @@ class BookingForm extends React.Component{
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
+    sussessfulBooking() {
+        if (this.props.errors.length > 0) {
+            return
+        } else {
+            this.setState({title: '', date: '', duration: ''})
+            alert("Check your profile to see your bookings!")
+        }
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         let newBooking = this.state;
         this.props.createBooking(newBooking)
-            .then(()=>this.props.getUserBookings());
+            .then(()=> this.props.getUserBookings())
+            .then(()=> this.sussessfulBooking())
     }
 
     handleErrors() {
@@ -71,7 +82,7 @@ class BookingForm extends React.Component{
                                 <option className="booking-create-dur-list-item" value="more than 2 hours" />
                             </datalist> 
                     <br/>
-                    <button className="user-show-buttons">Submit</button>
+                    <button className="user-show-larger-buttons">Schedule Booking</button>
                 </form>
         )
     }

@@ -4,6 +4,7 @@ class BookingsShow extends React.Component{
     constructor(props){
         super(props);
         this.state = {
+            editing: false,
             bookingStudId: this.props.booking.bookingStudId,
             bookingProfId: this.props.booking.bookingProfId,
             title: this.props.booking.title,
@@ -24,23 +25,51 @@ class BookingsShow extends React.Component{
     }
 
     edit() {
-        this.setState({editing: !this.state.editing})
+        this.setState({editing: !this.state.editing, 
+            bookingStudId: this.props.booking.bookingStudId,
+            bookingProfId: this.props.booking.bookingProfId,
+            title: this.props.booking.title,
+            date: this.props.booking.date,
+            duration: this.props.booking.duration})
     }
 
     handleSubmit(e) {
         e.preventDefault();
+
+        let bookingErrors = document.getElementById("booking-form-errors") ;
+        bookingErrors.classList.remove("hidden");
+        document.addEventListener("click", ()=> {
+            bookingErrors.classList.add("hidden");
+            document.removeEventListener("click", ()=> {});
+        });
+        
         let newBooking = this.props.booking;
         newBooking["title"] = this.state.title;
         newBooking["date"] = this.state.date;
         newBooking["duration"] = this.state.duration;
-        this.setState({editing:false});
-        this.props.updateBooking(newBooking)
-            .then(()=>this.props.getBookings());
+        // this.setState({editing:false});
+
+        this.props.clearBookingsErrors();
+        const submit = async ()=> {
+            await this.props.updateBooking(newBooking);
+            if (this.props.errors.length > 0) {
+                this.setState({editing: true});
+            } else {
+                this.setState({editing:false});
+                this.props.getBookings();
+
+            }
+        }
+
+        submit();
+
+        // this.props.updateBooking(newBooking)
+        //     .then(()=>this.props.getBookings());
     }
 
     handleErrors() {
-        console.log("errors", this.props.errors);
-        return <ul id="booking-form-errors">{this.props.errors.map((error,idx) =>(
+        // console.log("errors", this.props.errors);
+        return <ul id="booking-form-errors" className="hidden">{this.props.errors.map((error,idx) =>(
             <li key={idx}>{error}</li>
         ))}
         </ul>
@@ -81,7 +110,7 @@ class BookingsShow extends React.Component{
                                     </datalist> 
                             </label>
                         <br/>
-                            <button className="user-show-buttons">Edit Booking</button>
+                            <button className="user-show-large-buttons">Confirm Edit</button>
                         </form>
                     </div>
                 :
@@ -91,10 +120,13 @@ class BookingsShow extends React.Component{
                         <div className="booking-show-duration">{this.props.booking.duration}</div>
                     </div>
                 }
+                {this.state.editing ? <div></div> : 
                 <div className="bookings-show-edit">
-                    <button className="user-show-buttons" onClick={this.edit} >Confirm Edit</button>
-                    <button className="user-show-buttons" onClick={()=>this.props.deleteBooking(this.props.booking._id).then(()=>this.props.getBookings())}> Delete </button>
+                    <button className="user-show-buttons" onClick={this.edit} >Edit</button>
+                    <div className="rev-container-div"></div>
+                    <button className="user-show-buttons" onClick={()=>this.props.deleteBooking(this.props.booking._id).then(()=>this.props.getBookings())}>Delete</button>
                 </div> 
+                }
             </div>
         )
     }

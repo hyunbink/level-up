@@ -19,6 +19,7 @@ class VideoForm extends React.Component {
         this.handleFormData = this.handleFormData.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.update = this.update.bind(this);
+        this.handleErrors = this.handleErrors.bind(this);
     }
 
     componentWillUnmount() {
@@ -27,7 +28,6 @@ class VideoForm extends React.Component {
 
     componentDidMount() {
         document.querySelector(".sidebar-container").classList.add("hidden")
-
         let videoId = this.props.match.params.videoId;
         let video;
         if (videoId) {
@@ -39,6 +39,7 @@ class VideoForm extends React.Component {
                     description: video.description,
                     topic: video.topic,
                     url: video.url,
+                    category: video.category
                 }))
         }
     }
@@ -57,6 +58,12 @@ class VideoForm extends React.Component {
 
     handleFile(e) {
         const file = e.currentTarget.files[0];
+        console.log(file.size);
+        if (file && file.size > 1000000) {
+            alert("Please reupload file. Max size 1 MB");
+            this.setState({videoFile: "", url: ""});
+            return;
+        }
         const fileReader = new FileReader();
         fileReader.onloadend = function(){
             this.setState({videoFile: file, url: fileReader.result})
@@ -64,6 +71,14 @@ class VideoForm extends React.Component {
         if (file){
             fileReader.readAsDataURL(file);
         }
+    }
+
+    handleErrors() {
+        // console.log("hits here", this.props.errors);
+        return <ul id="video-form-errors">{this.props.errors.map((error,idx) =>(
+            <li key={idx}>{error}</li>
+        ))}
+        </ul>
     }
 
     update(field) {
@@ -78,14 +93,39 @@ class VideoForm extends React.Component {
     }
         
     handleUpdate(e) {
+        //ternary to check if props.errors.length
         e.preventDefault();
         let updatedVideo = this.state.updatedVideo;
         updatedVideo["title"] = this.state.title;
         updatedVideo["description"] = this.state.description;
         updatedVideo["topic"] = this.state.topic;
         updatedVideo["url"] = this.state.url;
-        this.props.updateVideo(updatedVideo)
-            .then(action => this.props.history.push(`/video/${updatedVideo._id}`));
+        updatedVideo["category"] = this.state.category;
+
+        const submit = async ()=> {
+            await this.props.updateVideo(updatedVideo);
+            if (this.props.errors.length !==0) {
+                console.log("there are some errors");
+            } else {
+                console.log("no errors then redirect");
+                this.props.history.push(`/video/${updatedVideo._id}`);
+            }
+        }
+
+        submit();
+        // this.props.updateVideo(updatedVideo)
+        // console.log("finishes updating");
+        // console.log("errors", this.props);
+        // if (this.props.errors.length !==0) {
+        //     console.log("there are some errors");
+        // } else {
+        //     console.log("no errors then redirect");
+        //     this.props.history.push(`/video/${updatedVideo._id}`);
+        // }
+        
+
+        // .then((action) => this.props.history.push(`${updatedVideo._id}`));
+
     }
 
     render () {
@@ -117,7 +157,12 @@ class VideoForm extends React.Component {
                 <label className="topic">Topic
                     <input type="text" placeholder="Topic" value={this.state.topic} onChange={this.update("topic")}/>
                 </label>
-                <label className="url">Youtube Link
+
+                {
+                    this.props.match.params.videoId ?
+                        null
+                    :
+                    <label className="url">Youtube Link
                     {/* <input type="text" placeholder="URL" value={this.state.url} onChange={this.update("url")}/> */}
                     <input
                         type="file"
@@ -125,7 +170,10 @@ class VideoForm extends React.Component {
                         className="file-input-field"
                     />
                 </label>
-
+                }
+                <div>
+                    {this.handleErrors()}
+                </div>
                 <div className="video-form-buttons">
                 {
                     this.props.match.params.videoId 
