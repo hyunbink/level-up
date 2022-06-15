@@ -102,15 +102,15 @@ class ReviewItem extends React.Component {
                 {this.state.editing ? 
                     <form onSubmit={this.handleSubmit}>
                         <div className="edit-rev-form-div">
-                            <label> Title
-                                <input type="text" value={this.state.title} onChange={this.update("title")}/>
+                            <label className="edit-rev-label"> Title:
                             </label>
-                            <label> Body 
-                                <input type="text" value={this.state.text} onChange={this.update("text")} />
+                                <input className="edit-rev-text" type="text" value={this.state.title} onChange={this.update("title")}/>
+                            <label> Body: 
                             </label>
-                            <label> Stars 
-                                <input type="number" min="1" max="5" value={this.state.score} onChange={this.update("score")}/>
+                                <textarea className="edit-rev-text" type="text" value={this.state.text} onChange={this.update("text")} />
+                            <label> Stars: 
                             </label>
+                                <input className="edit-rev-stars" type="number" min="1" max="5" value={this.state.score} onChange={this.update("score")}/>
                             {/* <div className="star-wrapper">
                                 <input onChange={this.update("score")} type="checkbox" className="star" id="oneLocation" value={5}/>
                                 <label htmlFor="oneLocation" className="fas fa-star s1"><FaStar/></label>

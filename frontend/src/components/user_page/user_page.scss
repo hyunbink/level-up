@@ -518,9 +518,22 @@
 .edit-rev-form-div{
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+}
+
+.edit-rev-label{
+    margin-top: .8em;
+}
+
+.edit-rev-text{
+    width: 80%;
+    margin-bottom: 1em;
+}
+
+.edit-rev-stars{
+    // min-width: 20px;
+    margin-bottom: 1em;
 }
 
 .rev-container-div{
