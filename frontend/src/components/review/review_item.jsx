@@ -72,11 +72,9 @@ class ReviewItem extends React.Component {
             if (this.props.errors.length > 0) {
                 this.setState({editing: true});
             } else {
-                // this.setState({editing:false});
                 this.props.getReviews();
                 this.setState({editing:false});
             }
-
         }
 
         submit();

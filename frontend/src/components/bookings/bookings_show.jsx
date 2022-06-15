@@ -4,6 +4,7 @@ class BookingsShow extends React.Component{
     constructor(props){
         super(props);
         this.state = {
+            editing: false,
             bookingStudId: this.props.booking.bookingStudId,
             bookingProfId: this.props.booking.bookingProfId,
             title: this.props.booking.title,
@@ -24,7 +25,12 @@ class BookingsShow extends React.Component{
     }
 
     edit() {
-        this.setState({editing: !this.state.editing})
+        this.setState({editing: !this.state.editing, 
+            bookingStudId: this.props.booking.bookingStudId,
+            bookingProfId: this.props.booking.bookingProfId,
+            title: this.props.booking.title,
+            date: this.props.booking.date,
+            duration: this.props.booking.duration})
     }
 
     handleSubmit(e) {
@@ -34,13 +40,28 @@ class BookingsShow extends React.Component{
         newBooking["title"] = this.state.title;
         newBooking["date"] = this.state.date;
         newBooking["duration"] = this.state.duration;
-        this.setState({editing:false});
-        this.props.updateBooking(newBooking)
-            .then(()=>this.props.getBookings());
+        // this.setState({editing:false});
+
+        this.props.clearBookingsErrors();
+        const submit = async ()=> {
+            await this.props.updateBooking(newBooking);
+            if (this.props.errors.length > 0) {
+                this.setState({editing: true});
+            } else {
+                this.setState({editing:false});
+                this.props.getBookings();
+
+            }
+        }
+
+        submit();
+
+        // this.props.updateBooking(newBooking)
+        //     .then(()=>this.props.getBookings());
     }
 
     handleErrors() {
-        console.log("errors", this.props.errors);
+        // console.log("errors", this.props.errors);
         return <ul id="booking-form-errors">{this.props.errors.map((error,idx) =>(
             <li key={idx}>{error}</li>
         ))}
