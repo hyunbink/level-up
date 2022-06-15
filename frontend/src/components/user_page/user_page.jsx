@@ -42,11 +42,12 @@ class UserPage extends React.Component {
     }
 
     componentDidMount() {
+        
         window.scrollTo(0,0);
         this.props.fetchUser(this.props.match.params.id)
-        .then(()=> this.props.fetchReviews(this.props.match.params.id))
-        .then(()=> this.props.fetchBookings(this.props.match.params.id))
-        .then(()=> this.props.fetchVideosByUser(this.props.match.params.id))
+            .then(()=> this.props.fetchReviews(this.props.match.params.id))
+            .then(()=> this.props.fetchBookings(this.props.match.params.id))
+            .then(()=> this.props.fetchVideosByUser(this.props.match.params.id))
     }
 
     componentDidUpdate(prevProps) {
@@ -99,9 +100,7 @@ class UserPage extends React.Component {
                     </div>
                     <div className="user-show-info-div">
                         <div className="user-show-info-div-left">
-                            {/* <div className="user-info"> */}
                             <div className="user-essential">
-                                {/*  */}
                                 <div className="user-photo-">
                                     <img className="user-show-profile-photo" alt="user-profile" src={this.props.user.photoUrl}></img>
                                 </div>

@@ -104,7 +104,7 @@ class LandingPage extends Component {
                     <img className="section-banner" src="https://yggdrasille.files.wordpress.com/2018/08/dark-souls-3-template.jpg?w=768" alt="freepik.com" loading="lazy"/>
                     <div className="why-us">
                         <h2>Why Us</h2>
-                        <h1 className="title">Just as your platform content targets humans, it is just practical to leave the job to a human</h1>
+                        <h1 className="title">Copypasta is a term for a block of text that has been copied and pasted multiple times. It is often jumbled, disjointed or ridiculous in some way. Copypasta makes its way across a social media platform, forum or email chain to reach multiple users</h1>
                         <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</h3>
                         <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </h3>
                     </div>
