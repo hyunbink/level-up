@@ -35,6 +35,13 @@ class BookingsShow extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
+
+        let bookingErrors = document.getElementById("booking-form-errors") ;
+        bookingErrors.classList.remove("hidden");
+        document.addEventListener("click", ()=> {
+            bookingErrors.classList.add("hidden");
+            document.removeEventListener("click", ()=> {});
+        });
         
         let newBooking = this.props.booking;
         newBooking["title"] = this.state.title;
@@ -62,7 +69,7 @@ class BookingsShow extends React.Component{
 
     handleErrors() {
         // console.log("errors", this.props.errors);
-        return <ul id="booking-form-errors">{this.props.errors.map((error,idx) =>(
+        return <ul id="booking-form-errors" className="hidden">{this.props.errors.map((error,idx) =>(
             <li key={idx}>{error}</li>
         ))}
         </ul>
