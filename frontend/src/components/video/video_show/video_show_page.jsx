@@ -77,13 +77,15 @@ class VideoShow extends React.Component {
                             
                         {/* </div> */}
                     </div>
-                    {this.renderEditPage()}
                 </div>
                 <div className="vid-desc">
                     <div className="vid-desc-header">
                         About: 
                     </div>
-                    {this.state.video.description}
+                    <p>
+                        {this.state.video.description}
+                    </p>
+                    {this.renderEditPage()}
                 </div>
             </div>
         )

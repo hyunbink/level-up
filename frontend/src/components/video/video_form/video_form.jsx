@@ -21,7 +21,13 @@ class VideoForm extends React.Component {
         this.update = this.update.bind(this);
     }
 
+    componentWillUnmount() {
+        document.querySelector(".sidebar-container").classList.remove("hidden")
+    }
+
     componentDidMount() {
+        document.querySelector(".sidebar-container").classList.add("hidden")
+
         let videoId = this.props.match.params.videoId;
         let video;
         if (videoId) {
