@@ -11,7 +11,6 @@ class SearchResults extends React.Component {
     
     renderSearch() {
         if (this.props.videos.length < 1) {
-            console.log("hit the no videos ", this.props.videos)
             return (
                 <div className="empty-search-container">
                     <Link to="/home">
