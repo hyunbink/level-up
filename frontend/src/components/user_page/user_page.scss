@@ -86,12 +86,24 @@
 
 .user-details{
     // border: solid 3px black;
-    /* width: 100%; */
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     ul{
+        width: 100%;
         margin-top: 1.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        li {
+            width: 90%;
+
+            iframe {
+                width: 100%;
+            }
+        }
     }
 }
 
