@@ -1,5 +1,5 @@
 
-const videoDescriptions = {
+export const videoDescriptions = {
     "shrimp": [
         "Neocaridina davidi is a freshwater shrimp originating from eastern China and introduced in Taiwan, Japan, and Hawaii. In the wild, they are typically a greeish-brown color, but in captivity...",
         "Neos and Sulawesi are two radically different shrimps with wildly different sets of tank parameters. Keeping them together is typically a death sentence for on or both of the shrimps, but today I'm going to show you how I make it work.",
@@ -89,7 +89,7 @@ const videoDescriptions = {
 };
 
 
-const videoTitles = {
+export const videoTitles = {
     "shrimp": [
         "Beginner's Guide to Neocaridina",
         "Neo and Sulawesi Tank Parameters",
@@ -169,9 +169,7 @@ const videoTitles = {
     ],
 };
 
-
-
-const videoURLS = {
+export const videoURLS = {
     "shrimp": [
         "https://shyche-pro.s3.us-west-1.amazonaws.com/Shrimp_1.mp4",
         "https://shyche-pro.s3.us-west-1.amazonaws.com/Shrimp_2.mp4",
@@ -300,3 +298,226 @@ const videoURLS = {
         "https://shyche-pro.s3.us-west-1.amazonaws.com/macro3.mp4",
     ],
 };
+
+export const profBios = {
+    "shrimp": [
+        "Shrimp breeder and aerospace engineer. Raise both freshwater and saltwater shrimps in my spare time. Typically available on weekdays after 7PM PST to chat!"
+    ],
+    "hedgehogs": [
+    ],
+    "raccoons": [
+    ],
+	"sugar-gliders": [
+    ],
+    "shoe-dyeing": [
+    ],
+    "felting": [
+    ],
+    "gundam": [
+    ],
+    "astrophysics": [
+    ],
+    "ufo-sightings": [
+    ],
+    "telescopes": [
+    ],
+    "otamatone": [
+    ],
+    "zither": [
+    ],
+    "recorder": [
+    ],
+    "kazoo": [
+    ],
+    "sock-puppets": [
+    ],
+    "dungeons-and-dragons": [
+    ],
+    "cosplay": [
+    ],
+    "speedrunning": [
+    ],
+    "modding": [
+    ],
+    "lore": [
+    ],
+    "buzkashi": [
+    ],
+    "speedwalking": [
+    ],
+    "ostrich-racing": [
+    ],
+    "smart-mirrors": [
+    ],
+    "computer-mice": [
+    ],
+    "macro-pad": [
+    ],
+};
+
+
+export const userBios = {
+    "shrimp": [
+    ],
+    "hedgehogs": [
+    ],
+    "raccoons": [
+    ],
+	"sugar-gliders": [
+    ],
+    "shoe-dyeing": [
+    ],
+    "felting": [
+    ],
+    "gundam": [
+    ],
+    "astrophysics": [
+    ],
+    "ufo-sightings": [
+    ],
+    "telescopes": [
+    ],
+    "otamatone": [
+    ],
+    "zither": [
+    ],
+    "recorder": [
+    ],
+    "kazoo": [
+    ],
+    "sock-puppets": [
+    ],
+    "dungeons-and-dragons": [
+    ],
+    "cosplay": [
+    ],
+    "speedrunning": [
+    ],
+    "modding": [
+    ],
+    "lore": [
+    ],
+    "buzkashi": [
+    ],
+    "speedwalking": [
+    ],
+    "ostrich-racing": [
+    ],
+    "smart-mirrors": [
+    ],
+    "computer-mice": [
+    ],
+    "macro-pad": [
+    ],
+};
+
+
+export const reviewDescriptions = [
+    "I saw one of these in Finland and I bought one.",
+    "this video is standard.",
+    "The box this comes in is 4 kilometer by 5 mile and weights 17 gram.",
+    "I tried to maul it but got onion all over it.",
+    "I saw one of these in Finland and I bought one.",
+    "My co-worker Matthew has one of these. He says it looks gigantic.",
+    "It only works when I'm Bolivia.",
+    "My co-worker Archer has one of these. He says it looks crooked.",
+    "talk about interest!!",
+    "I tried to attack it but got meatball all over it.",
+    "My co-worker Mohamed has one of these. He says it looks brown.",
+    "heard about this on Kansas City jazz radio, decided to give it a try.",
+    "The box this comes in is 3 centimeter by 5 kilometer and weights 13 ounce!!",
+    "This video works outstandingly well. It beautifully improves my basketball by a lot.",
+    "The box this comes in is 4 light-year by 5 inch and weights 11 megaton!!",
+    "i use it never when i'm in my hotel.",
+    "My baboon loves to play with it.",
+    "heard about this on timba radio, decided to give it a try.",
+    "The box this comes in is 3 meter by 6 yard and weights 12 pound.",
+    "one of my hobbies is cooking. and when i'm cooking this works great.",
+    "This video works excessively well. It mortally improves my golf by a lot.",
+    "I saw one of these in Algeria and I bought one.",
+    "My neighbor Allean has one of these. She works as a sky diver and she says it looks weedy.",
+    "The box this comes in is 4 yard by 5 inch and weights 12 pound!",
+    "This video works certainly well. It perfectly improves my tennis by a lot.",
+    "i use it never when i'm in my hotel.",
+    "this video is perplexed.",
+    "This video works certainly well. It energetically improves my golf by a lot.",
+    "My neighbor Albertina has one of these. She works as a gardener and she says it looks humongous.",
+    "This video works outstandingly well. It grudgingly improves my baseball by a lot.",
+    "heard about this on melodic death metal radio, decided to give it a try.",
+    "heard about this on timba radio, decided to give it a try.",
+    "talk about lust!!",
+    "I tried to shatter it but got potato all over it.",
+    "talk about hatred!!!",
+    "one of my hobbies is poetry. and when i'm writing poems this works great.",
+    "I saw one of these in Grenada and I bought one.",
+    "heard about this on jump-up radio, decided to give it a try.",
+    "one of my hobbies is mushroom cultivation. and when i'm cultivating mushrooms this works great.",
+    "This video works certainly well. It excitedly improves my football by a lot.",
+    "I tried to decapitate it but got coconut all over it.",
+    "this video is hyper.",
+    "heard about this on gypsy jazz radio, decided to give it a try.",
+    "It only works when I'm New Caledonia.",
+    "My goldfinch loves to play with it.",
+    "My neighbor Albertina has one of these. She works as a gardener and she says it looks humongous.",
+    "this video is standard.",
+    "My goldfinch loves to play with it.",
+    "My co-worker Merwin has one of these. He says it looks bubbly.",
+    "talk about pleasure.",
+]
+
+
+
+// export const  = {
+//     "shrimp": [
+//     ],
+//     "hedgehogs": [
+//     ],
+//     "raccoons": [
+//     ],
+// 	"sugar-gliders": [
+//     ],
+//     "shoe-dyeing": [
+//     ],
+//     "felting": [
+//     ],
+//     "gundam": [
+//     ],
+//     "astrophysics": [
+//     ],
+//     "ufo-sightings": [
+//     ],
+//     "telescopes": [
+//     ],
+//     "otamatone": [
+//     ],
+//     "zither": [
+//     ],
+//     "recorder": [
+//     ],
+//     "kazoo": [
+//     ],
+//     "sock-puppets": [
+//     ],
+//     "dungeons-and-dragons": [
+//     ],
+//     "cosplay": [
+//     ],
+//     "speedrunning": [
+//     ],
+//     "modding": [
+//     ],
+//     "lore": [
+//     ],
+//     "buzkashi": [
+//     ],
+//     "speedwalking": [
+//     ],
+//     "ostrich-racing": [
+//     ],
+//     "smart-mirrors": [
+//     ],
+//     "computer-mice": [
+//     ],
+//     "macro-pad": [
+//     ],
+// };
