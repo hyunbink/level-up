@@ -59,7 +59,7 @@ router.post("/upload", upload.single("video[video]") , (req, res) => {
             ACL:"public-read-write",
             ContentType:"video/mp4",
         };
-        console.log("VIDEO PARAMS: ", params)
+
         s3.upload(params, (err, data) => {
             if (err) {
                 res.status(500).send({"Error": err})
@@ -88,12 +88,10 @@ router.post("/upload", upload.single("video[video]") , (req, res) => {
 router.put("/:videoId", upload.single("video[video]"), (req, res) => {
     const { errors, isValid } = validateVideoInput(req.body);
     
-    console.log("errors", errors);
-    // console.log("the req data", req);
     if (!isValid) {
         return res.status(400).json(errors);
     }
-    // console.log("vedoes route", req)
+    
     Video.updateOne({ _id: req.params.videoId }, req.body)
         .then(video => res.json(video))
         .catch(err => res.status(404).json({ failedupdate: "Failed to update" }))
@@ -150,8 +148,8 @@ router.get("/user/:userId", (req, res) => {
 //     .catch(err => res.status(404).json({ novideosfound: "No videos found :(" }))
 // });
 
-router.get(`/topic/:topic`, (req, res)=> {
-    let query = req.params.topic;
+router.get(`/topic/:query`, (req, res)=> {
+    let query = req.params.query;
     // Video.find({topics: {'$regex' : req.params.topic, '$options' : 'i'}});
     // Video.find({topics: new RegExp(req.params.topic, 'i')});
     // Video.find({$or: [{topics: {$regex: req.params.topic}}, {description: {$regex: req.params.topic}}]})
@@ -166,7 +164,13 @@ router.get(`/topic/:topic`, (req, res)=> {
     //     )
     // Video.find({topics: new RegExp(query), description: new RegExp(query)})
 
-    Video.find({$or: [{topic: {$regex: req.params.topic}}, {description: {$regex: req.params.topic}}]})
+    Video.find({
+        $or: [
+            {topic: {$regex: req.params.query}},
+            {title: {$regex: req.params.query}},
+            {description: {$regex: req.params.query}}
+        ]
+    })
         .then(videos=> {
             let newVideos = {}
             videos.forEach(video => {

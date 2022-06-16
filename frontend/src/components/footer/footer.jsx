@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import "./footer.scss";
+import {FaGithubSquare, FaLinkedin} from "react-icons/fa";
 
 class Footer extends React.Component {
 
@@ -8,14 +9,15 @@ class Footer extends React.Component {
         window.scrollTo(0,0);
     }
 
-    render() {
-
-        let bannedPages = ['signup', 'login', 'auth', 'upload'];
-
+    render() {  
+        let bannedPages = ['signup', 'login', 'auth', 'upload', 'edit'];
+        
         let display = true;
-    
+        
         bannedPages.forEach(page => {
-            if (this.props.location.pathname.includes(page)) {display = false}
+            if (this.props.location.pathname.includes(page)) {
+                display = false;
+            }
         })
     
         if (display === false) {return null}
@@ -26,10 +28,43 @@ class Footer extends React.Component {
                     <p>Back to top</p>
                 </nav>
                 <nav id="blue-footer">
-                    <Link to="/" onClick={this.topOfPage}>Level-Up</Link>
+                    <Link className="blue-footer-link-to-top" to="/" onClick={this.topOfPage}>Shyche</Link>
+                    {/* <Link className="blue-footer-link-to-top" to="/" onClick={this.topOfPage}><img
+                        alt='shyche-logo'
+                        src="shyche_logo.png" 
+                        className='footer-logo'
+                        />Shyche
+                    </Link> */}
+                    <div className="dev-header">Developers</div>
+                    <div className="blue-footer-dev-info">
+                        <div className="dev-info">
+                            <div className="dev-info-name">Andrew Yin</div>
+                            <a href="https://github.com/yin-andrew" className="dev-links"><FaGithubSquare/></a>
+                            <a href="https://www.linkedin.com/in/andrewyin16407/" className="dev-links"><FaLinkedin/></a>
+                        </div>
+                        
+                        <div className="dev-info">
+                            <div className="dev-info-name">Edgar Chin</div>
+                            <a href="https://github.com/echin522" className="dev-links"><FaGithubSquare/></a>
+                            <a href="https://www.linkedin.com/in/edgarchin/" className="dev-links"><FaLinkedin/></a>
+                        </div>
+                        
+                        <div className="dev-info">
+                            <div className="dev-info-name">Matia Kim</div>
+                            <a href="https://github.com/hyunbink" className="dev-links"><FaGithubSquare/></a>
+                            <a href="https://www.linkedin.com/in/matia-kim/" className="dev-links"><FaLinkedin/></a>
+                        </div>
+                        
+                        <div className="dev-info">
+                            <div className="dev-info-name">Sam Martins</div>
+                            <a href="https://github.com/Samuel1337" className="dev-links"><FaGithubSquare/></a>
+                            <a href="https://www.linkedin.com/in/samuel-m-b3b9baa2/" className="dev-links"><FaLinkedin/></a>
+                        </div>
+                        
+                    </div>
                 </nav>
                 <nav id="black-footer">
-                    <p>levelup.com is a MERN stack project created by Andrew Yin, Edgar Chin, Matia Kim, and Sam Martins in June, 2022.</p>
+                    <p>SHYCHE (shee-sh) is a MERN stack project created by Andrew Yin, Edgar Chin, Matia Kim, and Sam Martins</p>
                 </nav>
             </footer>
         )

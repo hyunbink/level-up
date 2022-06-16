@@ -6,7 +6,6 @@ export const createReview = review => (
 
 export const updateReview = review => {
 
-    console.log("this is the review in the api", review);
     return axios.put(`/api/reviews/${review._id}`, review);
 
 };

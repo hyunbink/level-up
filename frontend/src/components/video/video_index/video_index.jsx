@@ -47,22 +47,16 @@ class VideoIndex extends React.Component {
         if (!this.props.videos) {return null}
         
         let topics = Object.keys(categories).filter(key=> categories[key]===this.props.topic);
-        // console.log("topics", topics);
-        // console.log("videos", this.props.videos);
         let vids = Object.values(this.props.videos);
-        // console.log("videos", vids);
         let catVids = [];
         for (let i = 0; i < topics.length; i++) {
             for (let j = 0; j< vids.length; j++) {
-                // console.log("topic", topics[i]);
-                // console.log("going through vids", vids[j].topic);
                 if (topics[i] === vids[j].topic) {
                     catVids.push(vids[j]);
                 }
             }
         }
 
-        console.log(`final vids of ${this.props.topic}`, catVids);
         
         let prevPage;
         if (this.props.userId) {

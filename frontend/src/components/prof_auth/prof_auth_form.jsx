@@ -17,7 +17,6 @@ class ProfAuthForm extends React.Component {
     }
 
     componentDidMount() {
-        // console.log("props", this.props);
         this.props.fetchUser(this.props.match.params.id);
     }
 
@@ -31,7 +30,6 @@ class ProfAuthForm extends React.Component {
         user.bio = this.state.bio;
         user.topics = this.state.topics;
         user.professional = true;
-        console.log("user before sub", user);
         // let user = {
         //   email: this.state.email,
         //   password: this.state.password,
@@ -41,7 +39,6 @@ class ProfAuthForm extends React.Component {
         //   topics: this.state.topics,
         //   professional: true
         // };
-        // console.log("cur user", this.props.currentUser);
         //way to have a placeholder 
         // setTimeout(()=> {
         //     this.props.updateUser(user)
@@ -50,19 +47,15 @@ class ProfAuthForm extends React.Component {
 
         this.props.updateUser(user)
             .then(this.props.history.push(`/user/${this.props.currentUser._id}`));
-            // .catch(err=> console.log("err", err));
         //on signup push to create interest form?
     }
 
     render() {
-        // console.log("state", this.state);
 
-        // console.log("currentuser", this.props.currentUser);
         if (!this.props.currentUser ) {
             return <IconsBackground />;
         }
 
-        // console.log("state", this.state);
         return(
                 <div className="prof-auth-page" >
                     <IconsBackground />

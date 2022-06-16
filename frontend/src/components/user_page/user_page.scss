@@ -1,15 +1,14 @@
 
 .user-page{
-    // border: solid red 3px;
     display: flex;
-    // justify-content: center;
-    /* height: calc(100vh - 75px); */
     position: relative;
+    // justify-content: center;
+    // height: calc(100vh - 75px);
     // left: 250px;
     // width: calc(100% - 250px);
     height: 100%;
     overflow-x: scroll;
-    width: 100vw
+    width: 100%
 }
 
 .user-container{
@@ -19,17 +18,17 @@
     // overflow-y: scroll;
 }
 
-.user-photo{
-    // border: solid purple;
-}
+// .user-photo{
+//     border: solid purple;
+// }
 
-.user-info{
-    // border: solid 3px orange;
-}
+// .user-info{
+//     border: solid 3px orange;
+// }
 
-.user-essential{
-    // border: solid 3px yellow;
-}
+// .user-essential{
+//     border: solid 3px yellow;
+// }
 
 .user-essential p{
     font-size: medium;
@@ -85,13 +84,24 @@
 }
 
 .user-details{
-    // border: solid 3px black;
-    /* width: 100%; */
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     ul{
+        width: 100%;
         margin-top: 1.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        li {
+            width: 90%;
+
+            iframe {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -273,7 +283,9 @@
 .bookings-show-edit{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
 
 // .bookings-show-edit button{
@@ -296,10 +308,18 @@
 
 .booking-show-title{
     margin-bottom: .4em;
+    font-size: larger;
+    font-weight: bolder;
 }
 
 .booking-show-date{
     margin-bottom: .3em;
+    font-size: medium;
+}
+
+.booking-show-duration{
+    margin-bottom: .3em;
+    font-size: medium;
 }
 
 .booking-create-date{
@@ -361,6 +381,47 @@
 .star:checked + label {
     animation: scaleup 1s;
 }
+
+// 
+.edit-star-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    
+    label {
+        cursor: pointer;
+        font-size: 1em;
+        text-decoration: none;
+        transition: all 0.5s;
+        margin: 4px;
+        color: grey;
+    }
+}
+
+.edit-star-wrapper label:hover {
+    color: #189AB4;
+}
+
+.edit-star:hover ~ label {
+    color: #189AB4;
+}
+
+.edit-star-wrapper input{
+    display: none;
+}
+
+.edit-star:checked ~ label {
+    color: #189AB4;
+}
+
+.edit-star:checked + label {
+    animation: starred 0.5s;
+}
+
+.edit-star:checked + label {
+    animation: scaleup 1s;
+}
+//
 
 @keyframes scaleup {
     from {
@@ -473,10 +534,26 @@
     }
 }
 
-.user-show-post-review-button{
+.user-show-large-buttons{
     margin-block: 0.5em;
     border-radius: 1.5em;
-    width: 9em;
+    width: 8em;
+    border: none;
+    padding-block: 0.5em;
+    background-color: #189AB4;
+    transition: 0.2s;
+    color: white;
+    &:hover{
+        background-color:#73c6d7;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
+
+.user-show-larger-buttons{
+    margin-block: 0.5em;
+    border-radius: 1.5em;
+    width: 10em;
     border: none;
     padding-block: 0.5em;
     background-color: #189AB4;
@@ -492,18 +569,28 @@
 .edit-rev-form-div{
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+}
+
+.edit-rev-label{
+    margin-top: .8em;
+}
+
+.edit-rev-text{
+    width: 80%;
+    margin-bottom: 1em;
+}
+
+.edit-rev-stars{
+    // min-width: 20px;
+    margin-bottom: 1em;
 }
 
 .rev-container-div{
     width: 1.5em;
 }
 
-.hidden {
-    display: none;
-}
 
 #review-form-errors {
     // border: 2px solid green;
@@ -515,10 +602,28 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
+    
     li {
         padding: 2px;
+        
     }
+}
+
+#review-edit-errors {
+        // border: 2px solid green;
+        font-size: 12px;
+        color: red;
+        padding-top: 6%;
+        padding-bottom: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    
+        li {
+                padding: 2px;
+        
+            }
 }
 
 #booking-form-errors {
@@ -529,4 +634,9 @@
     li {
         padding: 2px;
     }
+}
+
+.hidden {
+    display: none !important;
+    // opacity: 0;
 }

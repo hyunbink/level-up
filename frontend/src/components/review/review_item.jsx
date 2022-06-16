@@ -50,12 +50,9 @@ class ReviewItem extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        let reviewFormErrors = document.getElementById("review-edit-errors") ;
-        reviewFormErrors.classList.remove("hidden");
-        document.addEventListener("click", ()=> {
-            reviewFormErrors.classList.add("hidden");
-            document.removeEventListener("click", ()=> {});
-        });
+        let reviewFormErrors = document.getElementById("review-form-errors");
+        reviewFormErrors.classList.add("hidden");
+        
         
         let newReview = this.props.review;
         newReview["title"] = this.state.title;
@@ -71,15 +68,27 @@ class ReviewItem extends React.Component {
             await this.props.updateReview(newReview);
             if (this.props.errors.length > 0) {
                 this.setState({editing: true});
+                let reviewEditErrors = document.getElementById("review-edit-errors") ;
+                reviewEditErrors.classList.remove("hidden");
+                document.addEventListener("click", ()=> {
+                reviewEditErrors.classList.add("hidden");
+                document.removeEventListener("click", ()=> {});
+        });
             } else {
-                // this.setState({editing:false});
                 this.props.getReviews();
                 this.setState({editing:false});
             }
-
         }
 
         submit();
+
+        // let reviewEditErrors = document.getElementById("review-edit-errors") ;
+        // reviewEditErrors.classList.remove("hidden");
+        
+        // document.addEventListener("click", ()=> {
+        //     reviewEditErrors.classList.add("hidden");
+        //     document.removeEventListener("click", ()=> {});
+        // });
 
         // this.props.updateReview(newReview)
         // .then(()=>this.props.getReviews());
@@ -104,28 +113,27 @@ class ReviewItem extends React.Component {
                 {this.state.editing ? 
                     <form onSubmit={this.handleSubmit}>
                         <div className="edit-rev-form-div">
-                            <label> Title
-                                <input type="text" value={this.state.title} onChange={this.update("title")}/>
+                            <label className="edit-rev-label"> Title:
                             </label>
-                            <label> Body 
-                                <input type="text" value={this.state.text} onChange={this.update("text")} />
+                                <input className="edit-rev-text" type="text" value={this.state.title} onChange={this.update("title")}/>
+                            <label> Body: 
                             </label>
-                            <label> Stars 
-                                <input type="number" min="1" max="5" value={this.state.score} onChange={this.update("score")}/>
+                                <textarea className="edit-rev-text" type="text" value={this.state.text} onChange={this.update("text")} />
+                            <label> Stars: 
                             </label>
-                            {/* <div className="star-wrapper">
-                                <input onChange={this.update("score")} type="checkbox" className="star" id="oneLocation" value={5}/>
-                                <label htmlFor="oneLocation" className="fas fa-star s1"><FaStar/></label>
-                                <input onChange={this.update("score")} type="checkbox" className="star" id="twoLocation" value={4}/>
-                                <label htmlFor="twoLocation" className="fas fa-star s2"><FaStar/></label>
-                                <input onChange={this.update("score")} type="checkbox" className="star" id="threeLocation" value={3}/>
-                                <label htmlFor="threeLocation" className="fas fa-star s3"><FaStar/></label>
-                                <input onChange={this.update("score")} type="checkbox" className="star" id="fourLocation" value={2}/>
-                                <label htmlFor="fourLocation" className="fas fa-star s4"><FaStar/></label>
-                                <input onChange={this.update("score")} type="checkbox" className="star" id="fiveLocation" value={1}/>
-                                <label htmlFor="fiveLocation" className="fas fa-star s5"><FaStar/></label>
-                            </div> */}
-                            <button className="user-show-buttons">Confirm Edit</button>
+                            <div className="edit-star-wrapper">
+                                <input onChange={this.update("score")} type="checkbox" className="edit-star" id="oneLocation1" value={5}/>
+                                <label htmlFor="oneLocation1" className="fas fa-star s1"><FaStar/></label>
+                                <input onChange={this.update("score")} type="checkbox" className="edit-star" id="twoLocation2" value={4}/>
+                                <label htmlFor="twoLocation2" className="fas fa-star s2"><FaStar/></label>
+                                <input onChange={this.update("score")} type="checkbox" className="edit-star" id="threeLocation3" value={3}/>
+                                <label htmlFor="threeLocation3" className="fas fa-star s3"><FaStar/></label>
+                                <input onChange={this.update("score")} type="checkbox" className="edit-star" id="fourLocation4" value={2}/>
+                                <label htmlFor="fourLocation4" className="fas fa-star s4"><FaStar/></label>
+                                <input onChange={this.update("score")} type="checkbox" className="edit-star" id="fiveLocation5" value={1}/>
+                                <label htmlFor="fiveLocation5" className="fas fa-star s5"><FaStar/></label>
+                            </div>
+                            <button className="user-show-large-buttons">Confirm Edit</button>
                         </div>
                     </form>
                 :
@@ -137,7 +145,9 @@ class ReviewItem extends React.Component {
                     </div>
                 }
                 {this.props.currentUserId && this.props.currentUserId === this.props.review.reviewerId ? 
-                    <div className="edit-rev-form-div">
+                    this.state.editing ? 
+                        <div></div> : 
+                        <div className="edit-rev-form-div">
                         <button className="user-show-buttons" onClick={this.edit} >Edit</button>
                         <div className="rev-container-div"></div>
                         <button className="user-show-buttons" onClick={()=>this.props.deleteReview(this.props.review._id).then(()=>this.props.getReviews())}>Delete</button>

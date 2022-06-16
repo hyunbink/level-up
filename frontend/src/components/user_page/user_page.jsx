@@ -17,6 +17,7 @@ import sky from "./cover_photos/sky.png";
 import spraycans from "./cover_photos/spraycans.png";
 
 import VideoIndexItem from "../video/video_index_item";
+import BookingsIndexContainer from "../bookings/bookings_index_container";
 
 class UserPage extends React.Component {
     constructor(props){
@@ -31,7 +32,6 @@ class UserPage extends React.Component {
     randomCoverImg(){
         let coverPhotos = [colorsmoke, cooltextures, deepblues, sky, spraycans];
         let rando = this.props.match.params.id.split('').reverse();
-        console.log("parse act num", rando)
         for (let i = 0; i < rando.length; i++) {
             if ("0123456789".includes(rando[i])) {
                 let num = parseInt(rando[i]);
@@ -41,11 +41,16 @@ class UserPage extends React.Component {
     }
 
     componentDidMount() {
+        document.querySelector(".body").style.display = "flex"
         window.scrollTo(0,0);
         this.props.fetchUser(this.props.match.params.id)
         .then(()=> this.props.fetchReviews(this.props.match.params.id))
         .then(()=> this.props.fetchBookings(this.props.match.params.id))
         .then(()=> this.props.fetchVideosByUser(this.props.match.params.id))
+    }
+    
+    componentWillUnmount() {
+        document.querySelector(".body").style.display = "grid"
     }
 
     componentDidUpdate(prevProps) {
@@ -84,8 +89,6 @@ class UserPage extends React.Component {
         }
     }
     render() {
-        console.log("tackle reviews reverse", this.props.reviews.data)
-        // console.log("tackle reversed reviews", this.props.reviews.data.reverse())
         if (!this.props.user) {
             return null;
         }
@@ -100,9 +103,7 @@ class UserPage extends React.Component {
                     </div>
                     <div className="user-show-info-div">
                         <div className="user-show-info-div-left">
-                            {/* <div className="user-info"> */}
                             <div className="user-essential">
-                                {/*  */}
                                 <div className="user-photo-">
                                     <img className="user-show-profile-photo" alt="user-profile" src={this.props.user.photoUrl}></img>
                                 </div>
@@ -130,17 +131,9 @@ class UserPage extends React.Component {
                                         bookee={this.props.user} 
                                         booker={this.props.currentUser}
                                     /> : <div></div> }
-                                    <div className="user-show-bookings-div">
-                                        <ul className="user-show-bookings-ul">
-                                            {/* make sure bookings only show if they assoicated with it, user and prof */}
-                                            {/* {this.props.bookings.data  ?  : <div></div> } */}
-                                            {this.props.bookings.data && this.props.currentUserId === this.props.user._id ? <ul>
-                                                <div>Scheduled Bookings:</div>
-                                                {this.props.bookings.data.map((booking, idx)=> (
-                                                <li><BookingShow key={idx} booking={booking} getBookings={this.getUserBookings}/></li>
-                                                )
-                                            )} </ul> : <div></div> }
-                                        </ul>
+                                    
+                                    <div>
+                                        <BookingsIndexContainer userId={this.props.match.params.id} />
                                     </div>
                                 </div>
                             </div>

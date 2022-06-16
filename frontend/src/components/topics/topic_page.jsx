@@ -18,7 +18,6 @@ class TopicPage extends React.Component {
 
     formatTopicName() {
         let topic = this.props.topic;
-        // console.log("typeof topic", typeof topic);
         let words;
         if (topic.includes("-")) {
             words = topic.split("-")

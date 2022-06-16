@@ -2,7 +2,6 @@ import { RECEIVE_VIDEO, RECEIVE_VIDEO_ERRORS, REMOVE_VIDEO_ERRORS } from "../act
 
 
 const videosErrorsReducer = (state= [], action) => {
-    console.log("action", action);
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_VIDEO_ERRORS:

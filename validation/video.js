@@ -17,7 +17,6 @@ const topics = [
 
 module.exports = function validateVideoInput(data) {
     let errors = {};
-    console.log("data", data);
     data.uploaderId = validText(data.uploaderId) ? data.uploaderId : "";
     data.title = validText(data.title) ? data.title : "";
     data.description = validText(data.description) ? data.description : "";
@@ -25,9 +24,6 @@ module.exports = function validateVideoInput(data) {
     data.category = validText(data.category) ? data.category : "";
     data.video = data.video === "undefined" ? "" : data.video;
     data.url = data.url.startsWith('https://www.youtube.com') ? "" : data.url;
-
-
-    console.log("this is the data", data);
 
     if (Validator.isEmpty(data.title)) {
         errors.title = "Title cannot be empty";

@@ -55,18 +55,23 @@ class CreateReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let reviewFormErrors = document.getElementById("review-form-errors") ;
+        
+        this.props.clearReviewErrors();
+        let reviewFormErrors = document.getElementById("review-form-errors");
         reviewFormErrors.classList.remove("hidden");
         document.addEventListener("click", ()=> {
             reviewFormErrors.classList.add("hidden");
             document.removeEventListener("click", ()=> {});
         });
-
         let newReview = this.state;
         this.props.createReview(newReview)
             .then(()=>this.props.getReviews())
-            .then(()=> this.successfulReview());
+            .then(()=> this.successfulReview())
+            .then(()=> document.querySelectorAll(".star").forEach(ele => {
+                ele.checked = false;
+            }));
     }
+
 
     render() {
         return(
@@ -94,7 +99,7 @@ class CreateReviewForm extends React.Component {
                             <input onChange={this.update("score")} type="checkbox" className="star" id="fiveLocation" value={1}/>
                             <label htmlFor="fiveLocation" className="fas fa-star s5"><FaStar/></label>
                         </div>
-                        <button className="user-show-post-review-button">Post Review</button>
+                        <button className="user-show-large-buttons">Post Review</button>
                     </form>
                 </div>
         );

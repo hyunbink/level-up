@@ -19,6 +19,7 @@ import { fetchUser, fetchUsers, updateUser } from './actions/user_actions';
 import { fetchAllVideos } from './actions/video_actions';
 import { createReview, deleteReview, fetchReviews } from './actions/review_actions';
 
+import "./index.css"
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -52,38 +53,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render our root component and pass in the store as a prop
   const root = document.getElementById('root');
 
-  window.fetchUsers = fetchUsers;
-  window.fetchUser = fetchUser;
-  window.dispatch = store.dispatch;
-  window.getState = store.getState;
-  window.updateUser = updateUser;
-  window.fetchAllVideos = fetchAllVideos;
-  window.fetchReviews = fetchReviews;
-  window.createReview = createReview;
-  window.deleteReview = deleteReview;
-
   ReactDOM.render(<Root store={store} />, root);
 });
-
-// import React from 'react';
-// import ReactDOM from 'react-dom/client';
-// import './index.css';
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
-
-// export default root;
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
-
-
-// index.js : 

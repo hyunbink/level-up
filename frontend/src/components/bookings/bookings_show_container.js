@@ -6,10 +6,11 @@ import { withRouter } from 'react-router-dom'
 
 const mSTP = (state, ownProps) => {
     let loggedUserId;
-    if (state.session.user)
+    if (state.session.user) {
+        loggedUserId = state.session.user.id
+    }
     return ({
-        errors: state.errors.bookings,
-        currentUserId: loggedUserId
+        errors: state.errors.bookings
     })
 };
 
@@ -17,8 +18,7 @@ const mDTP = dispatch => ({
     clearBookingsErrors: ()=> dispatch(clearBookingsErrors()),
     deleteBooking: bookingId => dispatch(deleteBooking(bookingId)),
     updateBooking: booking => dispatch(updateBooking(booking))
-    // closeModal: () => dispatch(closeModal())
-})
+});
 
 export default withRouter(connect(mSTP, mDTP)(BookingsShow));
 

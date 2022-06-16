@@ -11,7 +11,7 @@ $accent2: #D4F1F4;
 .arrow {
     position: absolute;
     top: 70px;
-    right: 18px;
+    right: 22px;
     text-align: center;
     margin: 1% 0;
 
@@ -181,15 +181,21 @@ footer#home {
         &:hover {
             transform: scale(1.03);
         }
+        
+        .section-one-info {
+            max-height: -webkit-fill-available;
+            overflow: auto;
+        }
 
         span {
             padding: 1rem;
-            
+
+
             .title {
                 font-family: Cereal-Medium;
                 text-align:left;
                 margin-bottom: 10px;
-                font-size: 4vh;
+                font-size: 2em;
                 font-weight:600;
             }
             
@@ -206,7 +212,7 @@ footer#home {
     }
 }
     
-@media (max-width:920px){
+@media (max-width: 1200px){
     .landing-section-one{
         top:0vh;
         flex-wrap:wrap;
@@ -259,13 +265,13 @@ h1.title {
     }
 }
     
-@media (max-width:1080px){
+@media (max-width: 1400px){
     .landing-section-two .about .title{
         font-size:1.4em;
     }
 }
     
-@media (max-width:920px){
+@media (max-width:1200px){
     .landing-section-two{
         flex-wrap:wrap;
     }
@@ -324,13 +330,13 @@ h1.title {
 }
     
     
-@media (max-width: 1080px) {
+@media (max-width: 1400px) {
     .landing-section-three .why-us .title {
         font-size: 1.4em;
     }
 }
     
-@media (max-width: 920px) {
+@media (max-width: 1200px) {
     .landing-section-three {
         flex-wrap: wrap;
     }
@@ -410,7 +416,7 @@ h1.title {
     transform: scale(1.1);
 }
     
-@media (max-width:920px) {
+@media (max-width: 1200px) {
     .landing-section-four {
         padding:2rem 0rem;
     }

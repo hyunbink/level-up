@@ -51,14 +51,12 @@ class SignUp extends React.Component {
         signup();   
 
         this.props.signup(user);
-        console.log("signin", this.props.signedIn)
         if (this.props.signedIn) {
-            console.log("signin", this.props.signedIn)
 
             const login = async () => {
                 await this.props.login(user)
                 this.props.history.push("/home");
-                console.log("done");
+
             }
             login();
 
@@ -67,15 +65,14 @@ class SignUp extends React.Component {
     }
 
     renderErrors() {
-        // console.log("errors email", Object.values(this.props.errors));
         return(
 
-          <ul className="signup-errors">
+        <ul className="signup-errors">
             {Object.values(this.props.errors).map((error, i) => (
-              <li key={`error-${i}`}>
-                {error}
-              </li>
-                ))}
+                <li key={`error-${i}`}>
+                    {error}
+                </li>
+            ))}
             </ul>
         );
     } 
