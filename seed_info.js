@@ -42,8 +42,10 @@ export const videoDescriptions = {
     "astrophysics": [
     ],
     "ufo-sightings": [
+        "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!"
     ],
     "telescopes": [
+        "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!"
     ],
     "otamatone": [
     ],
@@ -52,10 +54,15 @@ export const videoDescriptions = {
     "recorder": [
     ],
     "kazoo": [
+        "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!",
+        "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! This is a particularly difficult track to follow, so if you need some help don't be afraid to book a session. I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!",
+        "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!"
     ],
     "sock-puppets": [
     ],
     "dungeons-and-dragons": [
+        "We hope you've enjoyed getting to know LARP and why we love our hobby! We have been documenting our experiences doing what we call 'Chapter Hopping' in the LARP network since the project's re-opening in 2021. It's been a wonderful year being able to travel and showcase chapters across the nation, and we hope to continue and show you more chapters, and what it's like to NPC and PC at each one! Any extra help thrown in this direction for this purpose is greatly appreciated!",
+        "I'm very excited to start sharing stories in person again. With this digital RPG table we will take role playing to the next level. Get your d20's ready, the adventure is about to begin!"
     ],
     "cosplay": [
     ],
@@ -93,7 +100,7 @@ export const videoTitles = {
         "Differences between a hedgehog and a porcupine",
         "Please do NOT paint your hedgehog blue",
         "Are Hedgehogs the Right Pet for You?",
-        "How you can (possibly) raise a hedgehog in California",
+        "How you can (possibly) raise a hedgehog in California"
     ],
     "raccoons": [
         "Aren't raccoons pests?",
@@ -118,13 +125,15 @@ export const videoTitles = {
         "No. For the last time, these are NOT Transformers",
         "How to panel line your first Gunpla",
         "Which grade is right for you",
-        "What to do if you break a piece of your kit",
+        "What to do if you break a piece of your kit"
     ],
     "astrophysics": [
     ],
     "ufo-sightings": [
+        "UFO spotted by the Pentagon!"
     ],
     "telescopes": [
+        "How to set up a telescope"
     ],
     "otamatone": [
     ],
@@ -133,10 +142,15 @@ export const videoTitles = {
     "recorder": [
     ],
     "kazoo": [
+        "Passacaglia - Handel/Halvorsen (Piano Solo)",
+        "A. Piazzolla - Libertango (Piano Solo)",
+        "V. Monti - Czardas (Csárdás) (Arr. Kassia)"
     ],
     "sock-puppets": [
     ],
     "dungeons-and-dragons": [
+        "LARP session with spears!",
+        "Check out this new RPG table"
     ],
     "cosplay": [
     ],
@@ -217,7 +231,6 @@ export const videoURLS = {
         "https://shyche-pro.s3.us-west-1.amazonaws.com/astrophysics3.mp4",
     ],
     "ufo-sightings": [
-        "https://shyche-pro.s3.us-west-1.amazonaws.com/astronomy-alien.mp4",
         "https://shyche-pro.s3.us-west-1.amazonaws.com/astronomy-ufo.mp4"
     ],
     "telescopes": [
