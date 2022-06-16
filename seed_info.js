@@ -142,9 +142,9 @@ export const videoTitles = {
     "recorder": [
     ],
     "kazoo": [
-        "Passacaglia – Handel/Halvorsen (Piano Solo)",
-        "A. Piazzolla – Libertango (Piano Solo)",
-        "V. Monti – Czardas (Csárdás) (Arr. Kassia)"
+        "Passacaglia - Handel/Halvorsen (Piano Solo)",
+        "A. Piazzolla - Libertango (Piano Solo)",
+        "V. Monti - Czardas (Csárdás) (Arr. Kassia)"
     ],
     "sock-puppets": [
     ],
