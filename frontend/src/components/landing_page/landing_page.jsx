@@ -157,11 +157,11 @@ class LandingPage extends Component {
                     </div>
                 </div>
 
-                <div className="landing-section-five">
+                {/* <div className="landing-section-five">
                     <div className="cofounders-header">
                         <h1>Project Members</h1>
                     </div>
-                </div>
+                </div> */}
             </div>
         )
     }
