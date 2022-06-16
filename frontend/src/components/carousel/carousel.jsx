@@ -30,8 +30,8 @@ class Carousel extends React.Component {
 
         // sets width and position
         let viewWidth = window.innerWidth;
-        // this.slideWidth = this.slides[0].getBoundingClientRect().width;
         this.slideWidth = viewWidth * 0.65;
+        // this.slideWidth = this.slides[0].getBoundingClientRect().width;
         
         this.setSlidePosition = (slide, index) => {
             slide.style.left = this.slideWidth * index + 'px';

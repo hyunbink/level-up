@@ -18,7 +18,6 @@ class BookingsIndex extends React.Component {
     render () {
 
         if (!this.props.bookings) {
-            console.log("no bookings", this.props.bookings);
             return null;
         }
 

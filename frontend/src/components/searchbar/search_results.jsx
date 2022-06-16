@@ -23,7 +23,6 @@ class SearchResults extends React.Component {
     }
     
     render() {
-        
         return(
             <div className="vid-list-wrapper">
                     { this.renderSearch() }

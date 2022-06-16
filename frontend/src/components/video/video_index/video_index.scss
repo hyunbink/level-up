@@ -3,16 +3,12 @@ $secondary: #189AB4;
 $accent1: #75E6DA;
 $accent2: #D4F1F4;
 
-.topic-page {
-    // border: 2px solid red;
-
-}
+// .topic-page {
+//     border: 2px solid red;
+// }
 
 .video-index-header {
-    // left: 250px;
     padding-left: 5%;
-    // border: 2px solid blue;
-    // width: calc(100% - 250px);
     height: 10vh;
     font-size: 30px;
     font-weight: 900;
@@ -20,33 +16,36 @@ $accent2: #D4F1F4;
 }
 
 .video-list {
-    // left: 250px;
-    // border: 2px solid red;
-    // width: calc(100% - 250px);
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    padding-left: 15%;
 }
 
-.vid-list-wrapper {
+// .vid-list-wrapper {
     // border: 2px solid green;
     // left: 250px;
     // width: calc(100% - 250px);
-}
+// }
 
 .video-index-item {
     padding: 2%;
-    // border: 1px solid orange;
     width: fit-content;
+
+    > iframe {
+        aspect-ratio: 16 / 9;
+    }
+
+    .video-index-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 5%;
+        padding-right: 5%;
+        box-shadow: 0px 2px 12px lightgray;
+    }
 }
 
-.video-index-label {
-    // border: 2px solid purple;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 5%;
-    padding-right: 5%;
-    box-shadow: 0px 2px 12px lightgray;
-
-}
 
 .video-topic {
     margin-block: 0.5em;
@@ -62,14 +61,14 @@ $accent2: #D4F1F4;
     font-size: 12px;
 }   
 
-.video-index-link {
-    width: 80%;
-    // border: 1px solid black;
-    padding: 2%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+// .video-index-user-link {
+//     width: 80%;
+//     border: 1px solid black;
+//     padding: 2%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
 
 .tags {
     display: flex;
@@ -171,7 +170,6 @@ video:-webkit-full-page-media  {
 }
 
 .vid-show-title {
-    // border: 2px solid rebeccapurple;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -180,7 +178,6 @@ video:-webkit-full-page-media  {
 }
 
 .vid-show-title-text {
-    // border: 2px solid yellowgreen;
     font-size: 28px;
     font-weight: 900;
 }

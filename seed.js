@@ -254,6 +254,8 @@ const videoURLS = {
     ],
 };
 
+
+
 const bookingDurations = [
     "30 minutes",
     "1 hour",

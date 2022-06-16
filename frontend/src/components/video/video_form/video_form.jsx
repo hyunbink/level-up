@@ -58,7 +58,6 @@ class VideoForm extends React.Component {
 
     handleFile(e) {
         const file = e.currentTarget.files[0];
-        console.log(file.size);
         if (file && file.size > 1000000) {
             alert("Please reupload file. Max size 1 MB");
             this.setState({videoFile: "", url: ""});
@@ -74,7 +73,6 @@ class VideoForm extends React.Component {
     }
 
     handleErrors() {
-        // console.log("hits here", this.props.errors);
         return <ul id="video-form-errors">{this.props.errors.map((error,idx) =>(
             <li key={idx}>{error}</li>
         ))}
@@ -105,21 +103,15 @@ class VideoForm extends React.Component {
         const submit = async ()=> {
             await this.props.updateVideo(updatedVideo);
             if (this.props.errors.length !==0) {
-                console.log("there are some errors");
             } else {
-                console.log("no errors then redirect");
                 this.props.history.push(`/video/${updatedVideo._id}`);
             }
         }
 
         submit();
         // this.props.updateVideo(updatedVideo)
-        // console.log("finishes updating");
-        // console.log("errors", this.props);
         // if (this.props.errors.length !==0) {
-        //     console.log("there are some errors");
         // } else {
-        //     console.log("no errors then redirect");
         //     this.props.history.push(`/video/${updatedVideo._id}`);
         // }
         

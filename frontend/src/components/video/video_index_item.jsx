@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaUserAlt } from "react-icons"
 import "./video_index/video_index.scss";
 
 class VideoIndexItem extends React.Component {
@@ -61,34 +60,30 @@ class VideoIndexItem extends React.Component {
         return component;
     }
 
-    userShow(){
-        return <li className="video-index-item">
-        <iframe width="720" height="405" src={this.props.video.url} title="YouTube video player"></iframe>
-        <div className="video-index-label">
-            <h1 className="vid-index-title">{this.props.video.title}</h1>
-            {/* <div className="uploader-or-topic-name"><div className="tags"></div></div>
-            {this.linkTotopicOrUser()} */}
-            <div className="uploader-or-topic-name"><div className="tags"></div>{this.linkToTopicOrUser()}</div>
-
-        </div>
-            </li>
+    userShow() {
+        return (
+            <li className="video-index-item">
+                    <iframe  src={this.props.video.url} title="YouTube video player"></iframe>
+                    <Link to={`/video/${this.props.video._id}`} className="video-index-link" style={{textDecoration: 'none'}}>
+                        <h1 className="vid-index-title">{this.props.video.title}</h1>
+                        <div className="uploader-or-topic-name"><div className="tags"></div>{this.linkToTopicOrUser()}</div>
+                    </Link> 
+                </li>
+        ) 
     }
 
     render() {
-        
-        // if (!this.props.user) {return null}
         return (
             <>
-            {this.props.formType ? this.userShow() : 
-                <Link to={`/video/${this.props.video._id}`} className="video-index-link" style={{textDecoration: 'none'}}>
-                        <li key={`video-item-${this.props.video._id}`} className="video-index-item">
-                    <iframe width="560" height="315" src={this.props.video.url} title="YouTube video player"></iframe>
-                    <div className="video-index-label">
-                        <h1 className="vid-index-title">{this.props.video.title}</h1>
-                        <div className="uploader-or-topic-name"><div className="tags">Tags:</div>{this.linkToTopicOrUser()}</div>
-                    </div>
-                        </li>
-                </Link> }
+                {this.props.formType ? this.userShow() : 
+                    <li className="video-index-item">
+                        <iframe width="560" height="315" src={this.props.video.url} title="YouTube video player"></iframe>
+                        <Link to={`/video/${this.props.video._id}`} className="video-index-link" style={{textDecoration: 'none'}}>
+                            <h1 className="vid-index-title">{this.props.video.title}</h1>
+                            <div className="uploader-or-topic-name"><div className="tags">Tags:</div>{this.linkToTopicOrUser()}</div>
+                        </Link> 
+                    </li>
+                }
             </>
         )
     }

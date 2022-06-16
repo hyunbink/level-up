@@ -12,11 +12,6 @@ class NavBar extends React.Component {
     this.getLinks = this.getLinks.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchUser(this.props.match.params.id);
-  // }
-
-
   logoutUser(e) {
     this.props.logout();
     this.props.history.push("/");
