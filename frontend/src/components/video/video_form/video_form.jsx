@@ -144,7 +144,7 @@ class VideoForm extends React.Component {
                     <textarea rows="5" placeholder="Description" value={this.state.description} onChange={this.update("description")}/>
                 </label>
                 <label className="category">Category
-                    <input type="text" placeholder="category" value={this.state.category} onChange={this.update("category")}/>
+                    <input type="text" placeholder="Category" value={this.state.category} onChange={this.update("category")}/>
                 </label>
                 <label className="topic">Topic
                     <input type="text" placeholder="Topic" value={this.state.topic} onChange={this.update("topic")}/>

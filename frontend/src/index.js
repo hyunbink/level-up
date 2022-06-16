@@ -15,10 +15,6 @@ import { setAuthToken } from './util/session_api_util';
 
 // We have not created this action yet, but will do so in the next step
 import { logout } from './actions/session_actions';
-import { fetchUser, fetchUsers, updateUser } from './actions/user_actions';
-import { fetchAllVideos } from './actions/video_actions';
-import { createReview, deleteReview, fetchReviews } from './actions/review_actions';
-
 import "./index.css"
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -44,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (decodedUser.exp < currentTime) {
       // Logout the user and redirect to the login page
       store.dispatch(logout());
-      window.location.href = '/login';
+      window.location.href = '/';
     }
   } else {
     // If this is a first time user, start with an empty store
