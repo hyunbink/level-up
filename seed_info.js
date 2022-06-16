@@ -48,6 +48,9 @@ const videoDescriptions = {
     "otamatone": [
     ],
     "zither": [
+        "The zither can have anywhere from 1 to 50 strings. The zither's body serves as a resonating chamber for the sound but unlike traditional string instruments, lacks a neck assembly. ",
+        "The Hornbostel-Sachs system, an academic instrument classification method, also uses the term zither to classify all stringed instruments in which the strings do not extend beyond the sounding box.",
+        "Since the zither requires advanced technique to play anything more than simple tunes, the vast majority of the concert zithers sold never attained more than amateur or mostly ornamental use."
     ],
     "recorder": [
     ],
@@ -66,12 +69,18 @@ const videoDescriptions = {
     "lore": [
     ],
     "buzkashi": [
+        "What is buzkashi? A deep dive into the traditional sport of Central Asia and role in developing the region's culture.",
+        "Buzkashi is a physical sport involving horses and a dead goat carcass. The carcass can weight up to 100 pounds and requires extreme strength and skill to handle.",
+        "Tudabarai is considered the simpler form of buzkashi; the goal is simply to grab the goat and move in any direction until clear of other players. In Qarajai, players must carry the carcass around a flag marker and then throw it into the scoring circle. The riders also carry whips to fend off other horses and riders."
     ],
     "speedwalking": [
     ],
     "ostrich-racing": [
     ],
     "smart-mirrors": [
+        "What is a smart mirror? A smart mirror is a mirror that is also capable of displaying additional information like the weather or top news. ", 
+        "You to build smart mirror, you will need to get your hands on a Raspberry Pi which is currently at an inflated price. Reach out to me if you are unable to find one and I may have some resources. ",
+        ""
     ],
     "computer-mice": [
     ],
