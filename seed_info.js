@@ -44,6 +44,9 @@ export const videoDescriptions = {
     "ufo-sightings": [
     ],
     "telescopes": [
+        "How do you even get started in telescopes? The great thing is that you don't need a whole lot. People think it is expensive when in actuality it is not! I'm here to help you find a telescope within your budget!",
+        "Telescopes are great for understanding the cosmos. Too often we are focused on the ground and don't realize how large the universe is. I'm glad you got into telescopes and I'll be with you every step of the way!",
+        "Telescopes are super advanced but also a diy project at home. I have guides as well to show how you can do that with mirror and cardboard."
     ],
     "otamatone": [
     ],
@@ -79,12 +82,15 @@ export const videoDescriptions = {
     ],
     "smart-mirrors": [
         "What is a smart mirror? A smart mirror is a mirror that is also capable of displaying additional information like the weather or top news. ", 
-        "You to build smart mirror, you will need to get your hands on a Raspberry Pi which is currently at an inflated price. Reach out to me if you are unable to find one and I may have some resources. ",
-        ""
+        "To build smart mirror, you will need to get your hands on a Raspberry Pi which is currently at an inflated price. Reach out to me if you are unable to find one and I'll see what I can do. ",
+        "The customizability of a smart mirror is nearly endless. As long as you load the correct programs, you can choose to display almost anything. If you want to have custom widgets, coding knowledge is required but refer to the open library first, there's a lot there!"
     ],
     "computer-mice": [
     ],
     "macro-pad": [
+        "What is a macro-pad? A macro pad is a set of keys separate from your main keyboard that can contain a variety of functions that you can customize. ",
+        "A macro pad is much like a mini keyboard whose functions extend beyond letters. For example, you can customize your macro pad to open a video and play it with one key-press. The possibilities are endless.",
+        "You can change how your macro pad feels through custom switches and keycaps that you can find online. Popular website include mechanicalkeyboards.com and jellykeys.com"
     ],
 };
 
