@@ -3,16 +3,12 @@ $secondary: #189AB4;
 $accent1: #75E6DA;
 $accent2: #D4F1F4;
 
-.topic-page {
-    // border: 2px solid red;
-
-}
+// .topic-page {
+//     border: 2px solid red;
+// }
 
 .video-index-header {
-    // left: 250px;
     padding-left: 5%;
-    // border: 2px solid blue;
-    // width: calc(100% - 250px);
     height: 10vh;
     font-size: 30px;
     font-weight: 900;
@@ -26,11 +22,11 @@ $accent2: #D4F1F4;
     padding-left: 15%;
 }
 
-.vid-list-wrapper {
+// .vid-list-wrapper {
     // border: 2px solid green;
     // left: 250px;
     // width: calc(100% - 250px);
-}
+// }
 
 .video-index-item {
     padding: 2%;
@@ -174,7 +170,6 @@ video:-webkit-full-page-media  {
 }
 
 .vid-show-title {
-    // border: 2px solid rebeccapurple;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -183,7 +178,6 @@ video:-webkit-full-page-media  {
 }
 
 .vid-show-title-text {
-    // border: 2px solid yellowgreen;
     font-size: 28px;
     font-weight: 900;
 }

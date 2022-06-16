@@ -1,10 +1,9 @@
 
 .user-page{
-    // border: solid red 3px;
     display: flex;
-    // justify-content: center;
-    /* height: calc(100vh - 75px); */
     position: relative;
+    // justify-content: center;
+    // height: calc(100vh - 75px);
     // left: 250px;
     // width: calc(100% - 250px);
     height: 100%;
@@ -19,17 +18,17 @@
     // overflow-y: scroll;
 }
 
-.user-photo{
-    // border: solid purple;
-}
+// .user-photo{
+//     border: solid purple;
+// }
 
-.user-info{
-    // border: solid 3px orange;
-}
+// .user-info{
+//     border: solid 3px orange;
+// }
 
-.user-essential{
-    // border: solid 3px yellow;
-}
+// .user-essential{
+//     border: solid 3px yellow;
+// }
 
 .user-essential p{
     font-size: medium;
@@ -85,7 +84,6 @@
 }
 
 .user-details{
-    // border: solid 3px black;
     width: 100%;
     display: flex;
     align-items: center;
