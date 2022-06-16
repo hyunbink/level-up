@@ -10,6 +10,7 @@ import {    videoDescriptions,
             videoTitles,
             videoURLS,
             reviewDescriptions,
+            profBios,
         } from "./seed_info";
 
 
@@ -304,24 +305,24 @@ const seedDB = async() => {
     let reviews = [];
     let bookings = [];
 
-    let newUser;
     let newProf;
-
-    for (let i = 0; i < numUsers; i++) {
-        newUser = new User({
-            photoUrl: faker.image.avatar(),
-            firstName: faker.name.firstName(),
-            lastName: faker.name.lastName(),
-            email: faker.internet.email(),
-            password: '123456',
-            professional: false,
-            topics: "",
-            interests: _.sample(Object.keys(topics)), // Uses underscore package method. Look up docs
-            bio: faker.lorem.paragraphs(3),
-        });
-        await newUser.save();
-        users.push(newUser._id);
-    }
+    
+    // let newUser;
+    // for (let i = 0; i < numUsers; i++) {
+    //     newUser = new User({
+    //         photoUrl: faker.image.avatar(),
+    //         firstName: faker.name.firstName(),
+    //         lastName: faker.name.lastName(),
+    //         email: faker.internet.email(),
+    //         password: '123456',
+    //         professional: false,
+    //         topics: "",
+    //         interests: _.sample(Object.keys(topics)), // Uses underscore package method. Look up docs
+    //         bio: faker.lorem.paragraphs(3),
+    //     });
+    //     await newUser.save();
+    //     users.push(newUser._id);
+    // }
 
     // Object.keys(categoriesTopicsObj).forEach(category => {
     for (let z = 0; z < categoryNames.length; z++) {
@@ -367,16 +368,16 @@ const seedDB = async() => {
                 });
             }
 
-            for (let l = 0; l < numBookingsPerProf; l++) {
-                let bookingDate = randomDate(startDate, endDate);
-                bookings.push({
-                    bookingStudId: _.sample(users),
-                    bookingProfId: newProf._id,
-                    title: faker.lorem.sentence(4),
-                    date: bookingDate,
-                    duration: _.sample(bookingDurations)
-                });
-            }
+            // for (let l = 0; l < numBookingsPerProf; l++) {
+            //     let bookingDate = randomDate(startDate, endDate);
+            //     bookings.push({
+            //         bookingStudId: _.sample(users),
+            //         bookingProfId: newProf._id,
+            //         title: faker.lorem.sentence(4),
+            //         date: bookingDate,
+            //         duration: _.sample(bookingDurations)
+            //     });
+            // }
         }
     };
 

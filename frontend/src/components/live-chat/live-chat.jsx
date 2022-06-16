@@ -152,7 +152,7 @@ const LiveChat = props => {
                         </div>
                     </div>
 
-                    <form className='live-chat-text' autocomplete='off' onSubmit={sendChat}>
+                    <form className='live-chat-text' autoComplete='off' onSubmit={sendChat}>
                         <input
                             type='text'
                             name='chat'
