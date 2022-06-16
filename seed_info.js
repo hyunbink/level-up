@@ -15,8 +15,8 @@ export const videoDescriptions = {
         "Don't call the feds on me. I promise you everything I say in this video is legal. At most, they are a light shade of morally grey."
     ],
     "raccoons": [
-        "",
-        "",
+        "You probably see raccoons digging through your trash all the time. But that doesn't necessarily mean that they're pests. I'm going to share a few facts about raccoons that will hopefully change your perspective on them!",
+        "Aside from being absolutely adorable, raccoons make excellent pets! ",
         "",
         "",
         "",

@@ -15,8 +15,9 @@ const storage = multer.memoryStorage({
 })
 
 const filefilter = (req, file, cb) => {
-    if (file.mimetype === 'video/mp4'
-    // || file.mimetype === 'video/mov'
+    if (
+        file.mimetype === 'video/mp4'
+        // || file.mimetype === 'video/mov'
     ) {
         cb(null, true)
     } else {
@@ -24,7 +25,16 @@ const filefilter = (req, file, cb) => {
     }
 }
 
-const upload = multer({ storage: storage, fileFilter: filefilter });
+multer({
+    
+})
+
+const upload = multer({
+    storage: storage,
+    fileFilter: filefilter,
+    limits: { fieldSize: 25 * 1024 * 1024 },
+});
+
 const bucketRegion = process.env.AWS_BUCKET_REGION
 const bucketName = process.env.AWS_BUCKET_NAME
 const accessKeyId = process.env.AWS_ACCESS_KEY
