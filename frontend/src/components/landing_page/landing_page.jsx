@@ -91,8 +91,11 @@ class LandingPage extends Component {
                     <div className="about">
                         <h2>About Us</h2>
                         <h1 className="title">Providing an all-in-one platform for hobbyists to connect with long-time veterans</h1>
-                        <p>If Morbius has a trillion fans I am one of them. If Morbius has 10 fans I am one of them. If Morbius has no fans, that I means I am no longer on Earth. If the Universe is against Morbius, I am against the Universe. I love Morbius until my last breath.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Have you ever wanted to learn a new skill or find a new hobby but wasn't sure where to start?</p>
+                        <p>Our website has thousands of verified experts and enthusiasts in a diversity of niches from shrimp breeding to ostrich-racing to guide you in whatever you choose to discover. </p>
+                        <p>Didn't find what you wanted? Start your own community by becoming a verified expert and share your hobby with others!</p>
+                        {/* <p>If Morbius has a trillion fans I am one of them. If Morbius has 10 fans I am one of them. If Morbius has no fans, that I means I am no longer on Earth. If the Universe is against Morbius, I am against the Universe. I love Morbius until my last breath.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> */}
                     </div>
                     <div>
                         <img className="section-banner" src="https://img.freepik.com/free-vector/man-studying-galaxy-through-telescope-women-holding-planets-models-watching-meteors-constellation-stars-flat-vector-illustration-horoscope-astronomy-discovery-astrology-concepts_74855-10106.jpg?w=2000" alt="freepik.com" loading="lazy"/>
@@ -104,9 +107,12 @@ class LandingPage extends Component {
                     <img className="section-banner" src="https://yggdrasille.files.wordpress.com/2018/08/dark-souls-3-template.jpg?w=768" alt="freepik.com" loading="lazy"/>
                     <div className="why-us">
                         <h2>Why Us</h2>
-                        <h1 className="title">Copypasta is a term for a block of text that has been copied and pasted multiple times. It is often jumbled, disjointed or ridiculous in some way. Copypasta makes its way across a social media platform, forum or email chain to reach multiple users</h1>
+                        <h1 className="title">Explore a new world from the comfort of your home and engage closely with highly curated experts</h1>
+                        <h3>No other website boasts the breadth of niches that can be discovered. We have hundreds of experienced hobbyists that you can learn from directly, schedule a meeting, and even chat with free of charge!</h3>
+                        <h3>If you prefer to learn by doing, experts will have videos you can work through and go at your own pace. </h3>
+                        {/* <h1 className="title">Just as your platform content targets humans, it is just practical to leave the job to a human</h1>
                         <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</h3>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </h3>
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </h3> */}
                     </div>
                 </div>
 
