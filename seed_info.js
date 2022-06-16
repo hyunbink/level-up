@@ -292,7 +292,7 @@ export const videoURLS = {
 
 export const profBios = {
     "shrimp": [
-        "Shrimp breeder and aerospace engineer. Raise both freshwater and saltwater shrimps in my spare time. Typically available on weekdays after 7PM PST to chat!"
+        "Shrimp breeder and aerospace engineer. Raise both freshwater and saltwater shrimps in my spare time. Typically available on weekdays after 7PM PST to chat!",
     ],
     "hedgehogs": [
     ],
