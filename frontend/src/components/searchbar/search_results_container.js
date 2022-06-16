@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 
 const mSTP = (state, ownProps) => ({
-    videos: state.entities.videos.data
+    videos: Object.values(state.entities.videos.data) || []
 });
 
 const mDTP = dispatch => ({

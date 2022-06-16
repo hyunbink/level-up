@@ -8,14 +8,15 @@ class Footer extends React.Component {
         window.scrollTo(0,0);
     }
 
-    render() {
-
-        let bannedPages = ['signup', 'login', 'auth', 'upload'];
-
+    render() {  
+        let bannedPages = ['signup', 'login', 'auth', 'upload', 'edit'];
+        
         let display = true;
-    
+        
         bannedPages.forEach(page => {
-            if (this.props.location.pathname.includes(page)) {display = false}
+            if (this.props.location.pathname.includes(page)) {
+                display = false;
+            }
         })
     
         if (display === false) {return null}
@@ -29,7 +30,7 @@ class Footer extends React.Component {
                     <Link to="/" onClick={this.topOfPage}>Level-Up</Link>
                 </nav>
                 <nav id="black-footer">
-                    <p>levelup.com is a MERN stack project created by Andrew Yin, Edgar Chin, Matia Kim, and Sam Martins in June, 2022.</p>
+                    <p>shyche.com is a MERN stack project created by Andrew Yin, Edgar Chin, Matia Kim, and Sam Martins.</p>
                 </nav>
             </footer>
         )

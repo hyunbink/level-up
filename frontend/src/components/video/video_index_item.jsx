@@ -77,12 +77,11 @@ class VideoIndexItem extends React.Component {
     render() {
         
         // if (!this.props.user) {return null}
-        
         return (
             <>
             {this.props.formType ? this.userShow() : 
                 <Link to={`/video/${this.props.video._id}`} className="video-index-link" style={{textDecoration: 'none'}}>
-                        <li className="video-index-item">
+                        <li key={`video-item-${this.props.video._id}`} className="video-index-item">
                     <iframe width="560" height="315" src={this.props.video.url} title="YouTube video player"></iframe>
                     <div className="video-index-label">
                         <h1 className="vid-index-title">{this.props.video.title}</h1>
