@@ -33,7 +33,7 @@ import LiveChatContainer from './live-chat/live_chat_container';
 const App = () => (
     <div className='page'>
       <NavBarContainer />
-      <div className='body'>
+      <div className='body stretch' id="body">
         <SideBar />
         <Switch>
           <Route exac path="/search" component={ SearchResultsContainer }/>

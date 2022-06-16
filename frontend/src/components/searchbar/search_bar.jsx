@@ -13,9 +13,19 @@ class SearchBar extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let query = this.state.query;
-        this.props.clearVideos();
-        this.props.search(query);
-        this.props.history.push('/search');
+        
+        this.props.clearVideos()
+        
+        setTimeout(() => {
+            this.props.search(query)
+            .then(()=>{
+                if (!this.props.location.pathname.includes("search")) {
+                    this.props.history.push('/search')
+                }
+            }
+            )
+            .then(()=>this.forceUpdate());
+        }, 500);
     }
 
     update(field) {
