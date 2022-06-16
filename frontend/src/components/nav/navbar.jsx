@@ -24,6 +24,7 @@ class NavBar extends React.Component {
             <div className="nav-wrapper">
               <div className='nav-logo' onClick={()=>this.props.history.push("/home")} >
                 <img
+                  alt='shyche-logo'
                   src="shyche_logo.png" 
                   className='logo-image'
                 />
@@ -86,7 +87,7 @@ class NavBar extends React.Component {
 
   render() {
 
-    let bannedPages = ['signup', 'login', 'upload', 'auth'];
+    let bannedPages = ['signup', 'login', 'upload', 'auth', 'edit'];
 
     let display = true;
 

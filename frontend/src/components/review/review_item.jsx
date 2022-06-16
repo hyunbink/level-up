@@ -69,11 +69,10 @@ class ReviewItem extends React.Component {
             if (this.props.errors.length > 0) {
                 this.setState({editing: true});
                 let reviewEditErrors = document.getElementById("review-edit-errors") ;
-        reviewEditErrors.classList.remove("hidden");
-        
-        document.addEventListener("click", ()=> {
-            reviewEditErrors.classList.add("hidden");
-            document.removeEventListener("click", ()=> {});
+                reviewEditErrors.classList.remove("hidden");
+                document.addEventListener("click", ()=> {
+                reviewEditErrors.classList.add("hidden");
+                document.removeEventListener("click", ()=> {});
         });
             } else {
                 this.props.getReviews();
@@ -122,19 +121,18 @@ class ReviewItem extends React.Component {
                                 <textarea className="edit-rev-text" type="text" value={this.state.text} onChange={this.update("text")} />
                             <label> Stars: 
                             </label>
-                                <input className="edit-rev-stars" type="number" min="1" max="5" value={this.state.score} onChange={this.update("score")}/>
-                            {/* <div className="star-wrapper">
-                                <input onChange={this.update("score")} type="checkbox" className="star" id="oneLocation" value={5}/>
-                                <label htmlFor="oneLocation" className="fas fa-star s1"><FaStar/></label>
-                                <input onChange={this.update("score")} type="checkbox" className="star" id="twoLocation" value={4}/>
-                                <label htmlFor="twoLocation" className="fas fa-star s2"><FaStar/></label>
-                                <input onChange={this.update("score")} type="checkbox" className="star" id="threeLocation" value={3}/>
-                                <label htmlFor="threeLocation" className="fas fa-star s3"><FaStar/></label>
-                                <input onChange={this.update("score")} type="checkbox" className="star" id="fourLocation" value={2}/>
-                                <label htmlFor="fourLocation" className="fas fa-star s4"><FaStar/></label>
-                                <input onChange={this.update("score")} type="checkbox" className="star" id="fiveLocation" value={1}/>
-                                <label htmlFor="fiveLocation" className="fas fa-star s5"><FaStar/></label>
-                            </div> */}
+                            <div className="edit-star-wrapper">
+                                <input onChange={this.update("score")} type="checkbox" className="edit-star" id="oneLocation1" value={5}/>
+                                <label htmlFor="oneLocation1" className="fas fa-star s1"><FaStar/></label>
+                                <input onChange={this.update("score")} type="checkbox" className="edit-star" id="twoLocation2" value={4}/>
+                                <label htmlFor="twoLocation2" className="fas fa-star s2"><FaStar/></label>
+                                <input onChange={this.update("score")} type="checkbox" className="edit-star" id="threeLocation3" value={3}/>
+                                <label htmlFor="threeLocation3" className="fas fa-star s3"><FaStar/></label>
+                                <input onChange={this.update("score")} type="checkbox" className="edit-star" id="fourLocation4" value={2}/>
+                                <label htmlFor="fourLocation4" className="fas fa-star s4"><FaStar/></label>
+                                <input onChange={this.update("score")} type="checkbox" className="edit-star" id="fiveLocation5" value={1}/>
+                                <label htmlFor="fiveLocation5" className="fas fa-star s5"><FaStar/></label>
+                            </div>
                             <button className="user-show-large-buttons">Confirm Edit</button>
                         </div>
                     </form>

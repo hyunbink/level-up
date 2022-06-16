@@ -148,8 +148,8 @@ router.get("/user/:userId", (req, res) => {
 //     .catch(err => res.status(404).json({ novideosfound: "No videos found :(" }))
 // });
 
-router.get(`/topic/:topic`, (req, res)=> {
-    let query = req.params.topic;
+router.get(`/topic/:query`, (req, res)=> {
+    let query = req.params.query;
     // Video.find({topics: {'$regex' : req.params.topic, '$options' : 'i'}});
     // Video.find({topics: new RegExp(req.params.topic, 'i')});
     // Video.find({$or: [{topics: {$regex: req.params.topic}}, {description: {$regex: req.params.topic}}]})
@@ -164,7 +164,13 @@ router.get(`/topic/:topic`, (req, res)=> {
     //     )
     // Video.find({topics: new RegExp(query), description: new RegExp(query)})
 
-    Video.find({$or: [{topic: {$regex: req.params.topic}}, {description: {$regex: req.params.topic}}]})
+    Video.find({
+        $or: [
+            {topic: {$regex: req.params.query}},
+            {title: {$regex: req.params.query}},
+            {description: {$regex: req.params.query}}
+        ]
+    })
         .then(videos=> {
             let newVideos = {}
             videos.forEach(video => {

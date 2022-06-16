@@ -38,7 +38,7 @@ class LandingPage extends Component {
                 </div>
                 <div className="banner">
                     <div>
-                        <p className="sub-title">Let's <em>Level Up</em></p>
+                        <p className="sub-title">Share Your <em>Niche</em></p>
                         <h1 className="title">
                             Get that dopamine boost you've been <br /> looking for with 
                                 <ReactTextTransition
