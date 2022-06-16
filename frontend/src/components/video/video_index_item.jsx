@@ -42,21 +42,29 @@ class VideoIndexItem extends React.Component {
     linkToTopicOrUser() {
         let component;
         // Check if we are filtering by user or topic
-        if (this.props.prevPage === "topic") {
-            component = 
-                <Link to={`/topic/${this.props.video.topic}`} style={{ textDecoration: 'none' }}>
+
+        component = 
+                // <Link to={`/topic/${this.props.video.topic}`} style={{ textDecoration: 'none' }}>
                     <div className="video-topic">
                         {this.formatTopicName()}
                     </div>
-                </Link>
-        } else if (this.props.prevPage === "user") {
-            component = 
-                <Link to={`/users/${this.props.video.uploaderId}`}>
-                    {this.capitalize(this.state.user.firstName)} {this.capitalize(this.state.user.lastName)}
-                </Link>
-        } else {
-            return null; 
-        }
+                // </Link>
+
+        // if (this.props.prevPage === "topic") {
+        //     component = 
+        //         <Link to={`/topic/${this.props.video.topic}`} style={{ textDecoration: 'none' }}>
+        //             <div className="video-topic">
+        //                 {this.formatTopicName()}
+        //             </div>
+        //         </Link>
+        // } else if (this.props.prevPage === "user") {
+        //     component = 
+        //         <Link to={`/users/${this.props.video.uploaderId}`}>
+        //             {this.capitalize(this.state.user.firstName)} {this.capitalize(this.state.user.lastName)}
+        //         </Link>
+        // } else {
+        //     return null; 
+        // }
         return component;
     }
 
@@ -80,7 +88,7 @@ class VideoIndexItem extends React.Component {
                         <iframe width="560" height="315" src={this.props.video.url} title="YouTube video player"></iframe>
                         <Link to={`/video/${this.props.video._id}`} className="video-index-link" style={{textDecoration: 'none'}}>
                             <h1 className="vid-index-title">{this.props.video.title}</h1>
-                            <div className="uploader-or-topic-name"><div className="tags">Tags:</div>{this.linkToTopicOrUser()}</div>
+                            <div className="uploader-or-topic-name">{this.linkToTopicOrUser()}</div>
                         </Link> 
                     </li>
                 }
