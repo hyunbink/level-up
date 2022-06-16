@@ -1,5 +1,5 @@
 
-const videoDescriptions = {
+export const videoDescriptions = {
     "shrimp": [
         "Neocaridina davidi is a freshwater shrimp originating from eastern China and introduced in Taiwan, Japan, and Hawaii. In the wild, they are typically a greeish-brown color, but in captivity...",
         "Neos and Sulawesi are two radically different shrimps with wildly different sets of tank parameters. Keeping them together is typically a death sentence for on or both of the shrimps, but today I'm going to show you how I make it work.",
@@ -15,8 +15,8 @@ const videoDescriptions = {
         "Don't call the feds on me. I promise you everything I say in this video is legal. At most, they are a light shade of morally grey."
     ],
     "raccoons": [
-        "",
-        "",
+        "You probably see raccoons digging through your trash all the time. But that doesn't necessarily mean that they're pests. I'm going to share a few facts about raccoons that will hopefully change your perspective on them!",
+        "Aside from being absolutely adorable, raccoons make excellent pets! ",
         "",
         "",
         "",
@@ -42,8 +42,10 @@ const videoDescriptions = {
     "astrophysics": [
     ],
     "ufo-sightings": [
+        "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!"
     ],
     "telescopes": [
+        "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!"
     ],
     "otamatone": [
     ],
@@ -52,10 +54,15 @@ const videoDescriptions = {
     "recorder": [
     ],
     "kazoo": [
+        "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!",
+        "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! This is a particularly difficult track to follow, so if you need some help don't be afraid to book a session. I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!",
+        "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!"
     ],
     "sock-puppets": [
     ],
     "dungeons-and-dragons": [
+        "We hope you've enjoyed getting to know LARP and why we love our hobby! We have been documenting our experiences doing what we call 'Chapter Hopping' in the LARP network since the project's re-opening in 2021. It's been a wonderful year being able to travel and showcase chapters across the nation, and we hope to continue and show you more chapters, and what it's like to NPC and PC at each one! Any extra help thrown in this direction for this purpose is greatly appreciated!",
+        "I'm very excited to start sharing stories in person again. With this digital RPG table we will take role playing to the next level. Get your d20's ready, the adventure is about to begin!"
     ],
     "cosplay": [
     ],
@@ -80,7 +87,7 @@ const videoDescriptions = {
 };
 
 
-const videoTitles = {
+export const videoTitles = {
     "shrimp": [
         "Beginner's Guide to Neocaridina",
         "Neo and Sulawesi Tank Parameters",
@@ -93,7 +100,7 @@ const videoTitles = {
         "Differences between a hedgehog and a porcupine",
         "Please do NOT paint your hedgehog blue",
         "Are Hedgehogs the Right Pet for You?",
-        "How you can (possibly) raise a hedgehog in California",
+        "How you can (possibly) raise a hedgehog in California"
     ],
     "raccoons": [
         "Aren't raccoons pests?",
@@ -118,13 +125,15 @@ const videoTitles = {
         "No. For the last time, these are NOT Transformers",
         "How to panel line your first Gunpla",
         "Which grade is right for you",
-        "What to do if you break a piece of your kit",
+        "What to do if you break a piece of your kit"
     ],
     "astrophysics": [
     ],
     "ufo-sightings": [
+        "UFO spotted by the Pentagon!"
     ],
     "telescopes": [
+        "How to set up a telescope"
     ],
     "otamatone": [
     ],
@@ -133,10 +142,15 @@ const videoTitles = {
     "recorder": [
     ],
     "kazoo": [
+        "Passacaglia - Handel/Halvorsen (Piano Solo)",
+        "A. Piazzolla - Libertango (Piano Solo)",
+        "V. Monti - Czardas (Csárdás) (Arr. Kassia)"
     ],
     "sock-puppets": [
     ],
     "dungeons-and-dragons": [
+        "LARP session with spears!",
+        "Check out this new RPG table"
     ],
     "cosplay": [
     ],
@@ -160,9 +174,7 @@ const videoTitles = {
     ],
 };
 
-
-
-const videoURLS = {
+export const videoURLS = {
     "shrimp": [
         "https://shyche-pro.s3.us-west-1.amazonaws.com/Shrimp_1.mp4",
         "https://shyche-pro.s3.us-west-1.amazonaws.com/Shrimp_2.mp4",
@@ -219,7 +231,6 @@ const videoURLS = {
         "https://shyche-pro.s3.us-west-1.amazonaws.com/astrophysics3.mp4",
     ],
     "ufo-sightings": [
-        "https://shyche-pro.s3.us-west-1.amazonaws.com/astronomy-alien.mp4",
         "https://shyche-pro.s3.us-west-1.amazonaws.com/astronomy-ufo.mp4"
     ],
     "telescopes": [
@@ -291,3 +302,226 @@ const videoURLS = {
         "https://shyche-pro.s3.us-west-1.amazonaws.com/macro3.mp4",
     ],
 };
+
+export const profBios = {
+    "shrimp": [
+        "Shrimp breeder and aerospace engineer. Raise both freshwater and saltwater shrimps in my spare time. Typically available on weekdays after 7PM PST to chat!",
+    ],
+    "hedgehogs": [
+    ],
+    "raccoons": [
+    ],
+	"sugar-gliders": [
+    ],
+    "shoe-dyeing": [
+    ],
+    "felting": [
+    ],
+    "gundam": [
+    ],
+    "astrophysics": [
+    ],
+    "ufo-sightings": [
+    ],
+    "telescopes": [
+    ],
+    "otamatone": [
+    ],
+    "zither": [
+    ],
+    "recorder": [
+    ],
+    "kazoo": [
+    ],
+    "sock-puppets": [
+    ],
+    "dungeons-and-dragons": [
+    ],
+    "cosplay": [
+    ],
+    "speedrunning": [
+    ],
+    "modding": [
+    ],
+    "lore": [
+    ],
+    "buzkashi": [
+    ],
+    "speedwalking": [
+    ],
+    "ostrich-racing": [
+    ],
+    "smart-mirrors": [
+    ],
+    "computer-mice": [
+    ],
+    "macro-pad": [
+    ],
+};
+
+
+export const userBios = {
+    "shrimp": [
+    ],
+    "hedgehogs": [
+    ],
+    "raccoons": [
+    ],
+	"sugar-gliders": [
+    ],
+    "shoe-dyeing": [
+    ],
+    "felting": [
+    ],
+    "gundam": [
+    ],
+    "astrophysics": [
+    ],
+    "ufo-sightings": [
+    ],
+    "telescopes": [
+    ],
+    "otamatone": [
+    ],
+    "zither": [
+    ],
+    "recorder": [
+    ],
+    "kazoo": [
+    ],
+    "sock-puppets": [
+    ],
+    "dungeons-and-dragons": [
+    ],
+    "cosplay": [
+    ],
+    "speedrunning": [
+    ],
+    "modding": [
+    ],
+    "lore": [
+    ],
+    "buzkashi": [
+    ],
+    "speedwalking": [
+    ],
+    "ostrich-racing": [
+    ],
+    "smart-mirrors": [
+    ],
+    "computer-mice": [
+    ],
+    "macro-pad": [
+    ],
+};
+
+
+export const reviewDescriptions = [
+    "I saw one of these in Finland and I bought one.",
+    "this video is standard.",
+    "The box this comes in is 4 kilometer by 5 mile and weights 17 gram.",
+    "I tried to maul it but got onion all over it.",
+    "I saw one of these in Finland and I bought one.",
+    "My co-worker Matthew has one of these. He says it looks gigantic.",
+    "It only works when I'm Bolivia.",
+    "My co-worker Archer has one of these. He says it looks crooked.",
+    "talk about interest!!",
+    "I tried to attack it but got meatball all over it.",
+    "My co-worker Mohamed has one of these. He says it looks brown.",
+    "heard about this on Kansas City jazz radio, decided to give it a try.",
+    "The box this comes in is 3 centimeter by 5 kilometer and weights 13 ounce!!",
+    "This video works outstandingly well. It beautifully improves my basketball by a lot.",
+    "The box this comes in is 4 light-year by 5 inch and weights 11 megaton!!",
+    "i use it never when i'm in my hotel.",
+    "My baboon loves to play with it.",
+    "heard about this on timba radio, decided to give it a try.",
+    "The box this comes in is 3 meter by 6 yard and weights 12 pound.",
+    "one of my hobbies is cooking. and when i'm cooking this works great.",
+    "This video works excessively well. It mortally improves my golf by a lot.",
+    "I saw one of these in Algeria and I bought one.",
+    "My neighbor Allean has one of these. She works as a sky diver and she says it looks weedy.",
+    "The box this comes in is 4 yard by 5 inch and weights 12 pound!",
+    "This video works certainly well. It perfectly improves my tennis by a lot.",
+    "i use it never when i'm in my hotel.",
+    "this video is perplexed.",
+    "This video works certainly well. It energetically improves my golf by a lot.",
+    "My neighbor Albertina has one of these. She works as a gardener and she says it looks humongous.",
+    "This video works outstandingly well. It grudgingly improves my baseball by a lot.",
+    "heard about this on melodic death metal radio, decided to give it a try.",
+    "heard about this on timba radio, decided to give it a try.",
+    "talk about lust!!",
+    "I tried to shatter it but got potato all over it.",
+    "talk about hatred!!!",
+    "one of my hobbies is poetry. and when i'm writing poems this works great.",
+    "I saw one of these in Grenada and I bought one.",
+    "heard about this on jump-up radio, decided to give it a try.",
+    "one of my hobbies is mushroom cultivation. and when i'm cultivating mushrooms this works great.",
+    "This video works certainly well. It excitedly improves my football by a lot.",
+    "I tried to decapitate it but got coconut all over it.",
+    "this video is hyper.",
+    "heard about this on gypsy jazz radio, decided to give it a try.",
+    "It only works when I'm New Caledonia.",
+    "My goldfinch loves to play with it.",
+    "My neighbor Albertina has one of these. She works as a gardener and she says it looks humongous.",
+    "this video is standard.",
+    "My goldfinch loves to play with it.",
+    "My co-worker Merwin has one of these. He says it looks bubbly.",
+    "talk about pleasure.",
+]
+
+
+
+// export const  = {
+//     "shrimp": [
+//     ],
+//     "hedgehogs": [
+//     ],
+//     "raccoons": [
+//     ],
+// 	"sugar-gliders": [
+//     ],
+//     "shoe-dyeing": [
+//     ],
+//     "felting": [
+//     ],
+//     "gundam": [
+//     ],
+//     "astrophysics": [
+//     ],
+//     "ufo-sightings": [
+//     ],
+//     "telescopes": [
+//     ],
+//     "otamatone": [
+//     ],
+//     "zither": [
+//     ],
+//     "recorder": [
+//     ],
+//     "kazoo": [
+//     ],
+//     "sock-puppets": [
+//     ],
+//     "dungeons-and-dragons": [
+//     ],
+//     "cosplay": [
+//     ],
+//     "speedrunning": [
+//     ],
+//     "modding": [
+//     ],
+//     "lore": [
+//     ],
+//     "buzkashi": [
+//     ],
+//     "speedwalking": [
+//     ],
+//     "ostrich-racing": [
+//     ],
+//     "smart-mirrors": [
+//     ],
+//     "computer-mice": [
+//     ],
+//     "macro-pad": [
+//     ],
+// };
