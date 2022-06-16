@@ -50,7 +50,6 @@ export const videoDescriptions = {
     "zither": [
     ],
     "recorder": [
-        "ghjhj"
     ],
     "kazoo": [
     ],
@@ -160,8 +159,6 @@ export const videoTitles = {
     "macro-pad": [
     ],
 };
-
-
 
 export const videoURLS = {
     "shrimp": [
@@ -293,6 +290,119 @@ export const videoURLS = {
     ],
 };
 
+export const profBios = {
+    "shrimp": [
+        "Shrimp breeder and aerospace engineer. Raise both freshwater and saltwater shrimps in my spare time. Typically available on weekdays after 7PM PST to chat!"
+    ],
+    "hedgehogs": [
+    ],
+    "raccoons": [
+    ],
+	"sugar-gliders": [
+    ],
+    "shoe-dyeing": [
+    ],
+    "felting": [
+    ],
+    "gundam": [
+    ],
+    "astrophysics": [
+    ],
+    "ufo-sightings": [
+    ],
+    "telescopes": [
+    ],
+    "otamatone": [
+    ],
+    "zither": [
+    ],
+    "recorder": [
+    ],
+    "kazoo": [
+    ],
+    "sock-puppets": [
+    ],
+    "dungeons-and-dragons": [
+    ],
+    "cosplay": [
+    ],
+    "speedrunning": [
+    ],
+    "modding": [
+    ],
+    "lore": [
+    ],
+    "buzkashi": [
+    ],
+    "speedwalking": [
+    ],
+    "ostrich-racing": [
+    ],
+    "smart-mirrors": [
+    ],
+    "computer-mice": [
+    ],
+    "macro-pad": [
+    ],
+};
+
+
+export const userBios = {
+    "shrimp": [
+    ],
+    "hedgehogs": [
+    ],
+    "raccoons": [
+    ],
+	"sugar-gliders": [
+    ],
+    "shoe-dyeing": [
+    ],
+    "felting": [
+    ],
+    "gundam": [
+    ],
+    "astrophysics": [
+    ],
+    "ufo-sightings": [
+    ],
+    "telescopes": [
+    ],
+    "otamatone": [
+    ],
+    "zither": [
+    ],
+    "recorder": [
+    ],
+    "kazoo": [
+    ],
+    "sock-puppets": [
+    ],
+    "dungeons-and-dragons": [
+    ],
+    "cosplay": [
+    ],
+    "speedrunning": [
+    ],
+    "modding": [
+    ],
+    "lore": [
+    ],
+    "buzkashi": [
+    ],
+    "speedwalking": [
+    ],
+    "ostrich-racing": [
+    ],
+    "smart-mirrors": [
+    ],
+    "computer-mice": [
+    ],
+    "macro-pad": [
+    ],
+};
+
+
 export const reviewDescriptions = [
     "I saw one of these in Finland and I bought one.",
     "this video is standard.",
@@ -345,3 +455,60 @@ export const reviewDescriptions = [
     "My co-worker Merwin has one of these. He says it looks bubbly.",
     "talk about pleasure.",
 ]
+
+
+
+// export const  = {
+//     "shrimp": [
+//     ],
+//     "hedgehogs": [
+//     ],
+//     "raccoons": [
+//     ],
+// 	"sugar-gliders": [
+//     ],
+//     "shoe-dyeing": [
+//     ],
+//     "felting": [
+//     ],
+//     "gundam": [
+//     ],
+//     "astrophysics": [
+//     ],
+//     "ufo-sightings": [
+//     ],
+//     "telescopes": [
+//     ],
+//     "otamatone": [
+//     ],
+//     "zither": [
+//     ],
+//     "recorder": [
+//     ],
+//     "kazoo": [
+//     ],
+//     "sock-puppets": [
+//     ],
+//     "dungeons-and-dragons": [
+//     ],
+//     "cosplay": [
+//     ],
+//     "speedrunning": [
+//     ],
+//     "modding": [
+//     ],
+//     "lore": [
+//     ],
+//     "buzkashi": [
+//     ],
+//     "speedwalking": [
+//     ],
+//     "ostrich-racing": [
+//     ],
+//     "smart-mirrors": [
+//     ],
+//     "computer-mice": [
+//     ],
+//     "macro-pad": [
+//     ],
+// };

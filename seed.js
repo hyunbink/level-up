@@ -334,7 +334,7 @@ const seedDB = async() => {
                 firstName: faker.name.firstName(),
                 lastName: faker.name.lastName(),
                 email: faker.internet.email(),
-                password: '123456',
+                password: "$2a$10$YSmrZ011s3bOorO9SAz61Orm7184ox3FGpmO9NZegMq2ieWXU9Cf.",
                 professional: true,
                 topics: specialty,
                 interests: interest, // Uses underscore package method. Look up docs
