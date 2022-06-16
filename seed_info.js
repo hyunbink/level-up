@@ -159,3 +159,135 @@ const videoTitles = {
     "macro-pad": [
     ],
 };
+
+
+
+const videoURLS = {
+    "shrimp": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Shrimp_1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Shrimp_2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Shrimp_3.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Shrimp_4.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Shrimp_5.mp4",
+    ],
+    "hedgehogs": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Hedgehog+boat.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Hedgehog_1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Hedgehog_2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Hedgehog_3.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Hedgehog_4.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Hedgehog_5.mp4",
+    ],
+    "raccoons": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Raccoon_1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Raccoon_2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Raccoon_3.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Raccoon_4.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Raccoon_5.mp4",
+    ],
+	"sugar-gliders": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Sugar_1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Sugar_2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Sugar_3.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Sugar_4.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Sugar_5.mp4",
+    ],
+    "shoe-dyeing": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Shoe_1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Shoe_2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Shoe_3.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Shoe_4.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Shoe_5.mp4",
+    ],
+    "felting": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Felting/Felt_1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Felting/Felt_2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Felting/Felt_3.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Felting/Felt_4.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Felting/Felt_5.mp4"
+    ],
+    "gundam": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Gundam/Gundam_1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Gundam/Gundam_2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Gundam/Gundam_3.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Gundam/Gundam_4.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Gundam/Gundam_5.mp4",
+    ],
+    "astrophysics": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/astrophysics1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/astrophysics2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/astrophysics3.mp4",
+    ],
+    "ufo-sightings": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/astronomy-alien.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/astronomy-ufo.mp4"
+    ],
+    "telescopes": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/astronomy-telescope.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/telescope1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/telescope2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/telescope3.mp4",
+    ],
+    "otamatone": [
+    ],
+    "zither": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/zither1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/zither2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/zither3.mp4",
+    ],
+    "recorder": [
+    ],
+    "kazoo": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/music-piano.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/music-piano2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/music-piano3.mp4",
+    ],
+    "sock-puppets": [
+    ],
+    "dungeons-and-dragons": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/role-play-larp.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/role-play-rpg.mp4",
+        
+    ],
+    "cosplay": [
+    ],
+    "speedrunning": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/spd-run1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/spd-run2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/spd-run3.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/spd-run4.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/spd-run5.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/spd-run6.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/spd-run7.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/spd-run8.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/spd-run9.mp4",
+    ],
+    "modding": [
+    ],
+    "lore": [
+    ],
+    "buzkashi": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/buzkashi1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/buzkashi2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/buzkashi3.mp4",
+    ],
+    "speedwalking": [
+    ],
+    "ostrich-racing": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/ost-race1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/ost-race2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/ost-race3.mp4",
+    ],
+    "smart-mirrors": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/mirror1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/mirror2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/mirror3.mp4",
+    ],
+    "computer-mice": [
+    ],
+    "macro-pad": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/macro1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/macro2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/macro3.mp4",
+    ],
+};

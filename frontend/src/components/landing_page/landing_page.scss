@@ -113,7 +113,7 @@ footer#home {
 }
 
 .body#home {
-    display: flex;
+    display: flex !important; 
     height: fit-content;
     padding-bottom: 50px;
 }
