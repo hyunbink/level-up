@@ -4,10 +4,10 @@ import "./video_index.scss";
 
 
 class VideoIndex extends React.Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-    }
+    // }
 
     componentDidMount() {
         this.props.fetchAllVideos();
