@@ -37,9 +37,9 @@ class SideBar extends React.Component {
                 <ul>
                     <Link to={`/topic/animal-husbandry`}><li><span><GiShrimp /></span> Animal Husbandry</li></Link>
                     <Link to={`/topic/astronomy`}><li><span><GoTelescope /></span> Astronomy</li></Link>
-                    <Link to={`/topic/drawing`}><li><span><MdOutlineDraw /></span> Drawing</li></Link>
-                    <Link to={`/topic/games`}><li><span><MdSportsEsports /></span> Games</li></Link>
-                    <Link to={`/topic/handmade`}><li><span><GiSewingNeedle /></span> Handmade</li></Link>
+                    {/* <Link to={`/topic/drawing`}><li><span><MdOutlineDraw /></span> Drawing</li></Link> */}
+                    <Link to={`/topic/gaming`}><li><span><MdSportsEsports /></span> Gaming</li></Link>
+                    <Link to={`/topic/arts-and-crafts`}><li><span><GiSewingNeedle /></span> Arts and Crafts</li></Link>
                     <Link to={`/topic/music`}><li><span><BsMusicNoteBeamed /></span> Music</li></Link>
                     <Link to={`/topic/role-play`}><li><span><FaTheaterMasks /></span> Role Play</li></Link>
                     <Link to={`/topic/sports`}><li><span><MdSportsFootball /></span> Sports</li></Link>
