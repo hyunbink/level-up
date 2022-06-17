@@ -77,10 +77,21 @@ export const videoDescriptions = {
     "cosplay": [
     ],
     "speedrunning": [
+        "Check out how I attempt my Legend of Zelda: Breath of the Wild speed-run jumping over this field, already this far with less 3 minutes into the run!",
+        "Legend of Zelda: Breath of the Wild speed-run rocket jumping over many steps to shorten my time. Already here 5 minutes in 😎",
+        "Legend of Zelda: Breath of the Wild speed-run jumping through time with style ",
+        "Watch me skillfully skip multiple levels to get to the first Bowser level in only 8 seconds ",
+        "Easing through the first Bowser Level in Nintendo 64's Super Mario. Perfect execution",
+        "Mario Kart Wii Wario's Minefield Speed Run first lap perfect execution",
+        "Mario Kart 8 Rainbow Road Speed Run attempt early shortcut",
+        "Mario Kart 8 Retro Bowser Stage Short Cut for speed run attempt. Need to have a speed boost (mushroom) to attempt!",
+        "Mario Kart 8 Mushroom Boost Short-Cut. Need boost (mushroom) to attempt!",
     ],
     "modding": [
+        "My gamecube is at least 15 years old and with many years of wear and tear, I felt it needed a beauty makeover. So not only did I replace it with new parts that weren't dented and scratched, I decided to customize its appearance by adding some flare, using different colors and different sizes/shapes of these parts to give it a new look, while still maintaining its integrity of being a Game 'Cube' and its functionality of running games without any issues. Hope you enjoy!",
     ],
     "lore": [
+        "God of War is not only an amazing game to play, but the lore it derives from is fascinating as well. Kratos, the God of War, is currently in a region different from his home and the game itself doesn't explain exactly how or why he is involved with the Norse Mythology when he was originally in Greek Mythology. In God of War Kratos and his son travel through the 9 realms of the Norse Region and in this video I inspect hints and clues based off the video game and books about Kratos to satisfy my curiosity. Enjoy!",
     ],
     "buzkashi": [
         "What is buzkashi? A deep dive into the traditional sport of Central Asia and role in developing the region's culture.",
@@ -90,6 +101,9 @@ export const videoDescriptions = {
     "speedwalking": [
     ],
     "ostrich-racing": [
+        "Enjoy the experience of Ostrich Racing from the lens of a rider! My bird's name is Ozzy. Was a grueling training process as we were aiming for 1st place. Competition was great as Ozzy and I finished 3rd 🥉",
+        "Competitive Ostrich Racing starting from stables. Out of the 5, who will come out on top? Let's hope that the riders are able to hold tight and not get knocked off by their bird!",
+        "Two friends with a friendly duel to show who the better rider is. Look at how happy the riders and the birds are 😊",
     ],
     "smart-mirrors": [
         "What is a smart mirror? A smart mirror is a mirror that is also capable of displaying additional information like the weather or top news. ", 
@@ -185,10 +199,21 @@ export const videoTitles = {
     "cosplay": [
     ],
     "speedrunning": [
+        "Breath of the Wild Speed Run Field Jump",
+        "Breath of the Wild Speed Run Temple Jump",
+        "Breath of the Wild Speed Run",
+        "Super Mario Nintendo 64 Speed Run",
+        "Super Mario Nintendo 64 First Bowser Level Speed Run",
+        "Mario Kart Wii Wario's Minefield Speed Run",
+        "Mario Kart 8 Rainbow Road Short-Cut",
+        "Mario Kart 8 Retro Bowser Stage Short-Cut",
+        "Mario Kart 8 Mushroom Boost Short-Cut",
     ],
     "modding": [
+        "Modding GameCube Hardware",
     ],
     "lore": [
+        "God of War Lore",
     ],
     "buzkashi": [
         "Why are they throwing around a goat carcass?",
@@ -198,6 +223,9 @@ export const videoTitles = {
     "speedwalking": [
     ],
     "ostrich-racing": [
+        "Competitive Ostrich Racing POV",
+        "Competitive Ostrich Racing",
+        "Friendly Ostrich Racing Duel",
     ],
     "smart-mirrors": [
         "Elevate your life with smart mirrors",
@@ -389,10 +417,21 @@ export const profBios = {
     "cosplay": [
     ],
     "speedrunning": [
+        "With 21 years of experience in speed-running video games, I am a professional video-game Speed-Runner. Check out videos of me in action or schedule a booking with me for a one to one session regarding Speed-Running!",
+        "Lover of gaming, pioneer in video-game speed-running with 8 of years of experience. Schedule a booking with me to learn more about gaming Speed-Running!",
+        "I am a professional video-game speed-runner with 11+ years of experience. Check out videos of me in action or schedule a booking with me for a one to one session regarding video-game speed-running!",
+        "My parents admired gaming throughout my childhood and the older I got the stronger connection I built to speed-running video-games. I've been speed-running for almost my whole life and have the confidence to call myself an expert. If you want to learn from a prodigy like me, book an appointment to learn more about speed-running!",
+        "Forever a gamer, forever a speed-runner. Book an appointment with me !!",
+        "I love video games and want to play all the video games I can. As a professional speed-runner, I epitomize efficiency in speed-running through video games. If you want to learn from the best, shoot me a live chat or book an appointment to speed-run like a BOSS 🤴",
+        "Speed-running legend, just check my videos for proof 😏",
+        "What's up future speed-runners! As a professional and lover of gaming, you are going to love my content on speed-running video-games. Check out my videos for a quick glance at speed-running ;)",
+        "I don't cheat my speed-runs like most other gamers. As an authentic gamer and honest speed-runner, you'll learn how to speed-run video games and qualify for world records! Book an appointment to learn the speed-running fundamentals with me :^)",
     ],
     "modding": [
+        "I grew up with tech learning about both hardware and software. After years of building new things, and even breaking things, I obtained the skills and knowledge to be able to modify any gaming hardware while maintaining its ability of running the system, and looking cooler or prettier (however you want). Take a look at my videos to see the work I've done so far and schedule a booking with me to learn more about my process in modding hardware!",
     ],
     "lore": [
+        "I dive deep into video game Lore to appreciate not only gameplay but the stories involved within the gameplay. Understanding various Easter eggs and plots campaign stories is a passion of mine that I would love to share. I take this platform as a means of story telling to those who have the interest in video game campaigns. Book a session with me to share stories with stories and how I direct tiny details creators implement to a much bigger picture.",
     ],
     "buzkashi": [
         "Former Buzkashi referee here. I'm here to share with the masses the sport of our region: Buzkashi. I think it is a great sport with great physicality and skill. Learn more here with me!",
@@ -402,6 +441,9 @@ export const profBios = {
     "speedwalking": [
     ],
     "ostrich-racing": [
+        "Lover of birds, pioneer in Ostrich-Racing with 8 of years of experience. Schedule a booking with me to learn more about Ostrich-Racing!",
+        "My parents admired Ostrich-Riding throughout my childhood and the older I got the stronger connection I built to Ostrich-Racing. I've been an Ostrich-Rider for almost my whole life and have the confidence to call myself an expert with Ostrich-Racing. If you want to learn from a prodigy like me, book an appointment to learn more about Ostrich-Racing!",
+        "Here to share my knowledge in Ostrich-Racing. With a Veterinarian background, Ostrich-Racing has been a part of my life for most of my life. With both a professional background and passion in Ostrich-Riding, please shoot me a live chat or schedule a booking to learn from an expert like me!",
     ],
     "smart-mirrors": [
         "Long time hardware engineer here. I love personal projects and one of my favorites is the smart mirror because of the accessibility and practicality. Follow along with me as we build one out!",
