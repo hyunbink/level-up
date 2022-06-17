@@ -185,6 +185,7 @@
     max-height: 50em;
     padding-inline: .5em;
     box-sizing: border-box;
+    overflow-x: hidden;
 
 }
 
@@ -309,7 +310,7 @@
 .booking-show-title{
     margin-bottom: .4em;
     font-size: larger;
-    font-weight: bolder;
+    font-weight: 500;
 }
 
 .booking-show-date{
@@ -639,4 +640,10 @@
 .hidden {
     display: none !important;
     // opacity: 0;
+}
+
+.user-show-prof-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
