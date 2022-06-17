@@ -53,6 +53,7 @@ export const videoDescriptions = {
         "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!"
     ],
     "telescopes": [
+        "Excellent Quality Optics: This telescope is 600mm(f/6.7) focal length and 80mm aperture, 80mm aperture to capture more light picture and multi-fully high transmission coated all-optical lens enhance image brightness and clarity. Optimum Magnification: Our telescope for kids and adults is equipped with two replaceable excellent-quality eyepieces (25mm and 10mm) for 24X and 60X magnification. The 3x Barlow lens trebles the magnifying power of each eyepiece. Magnify the moon up to 72 or 180 times. Also with 5x24 finder scope makes locating objects easy.",
         "How do you even get started in telescopes? The great thing is that you don't need a whole lot. People think it is expensive when in actuality it is not! I'm here to help you find a telescope within your budget!",
         "Telescopes are great for understanding the cosmos. Too often we are focused on the ground and don't realize how large the universe is. I'm glad you got into telescopes and I'll be with you every step of the way!",
         "Telescopes are super advanced but also a diy project at home. I have guides as well to show how you can do that with mirror and cardboard."
@@ -359,7 +360,6 @@ export const videoURLS = {
     "dungeons-and-dragons": [
         "https://shyche-pro.s3.us-west-1.amazonaws.com/role-play-larp.mp4",
         "https://shyche-pro.s3.us-west-1.amazonaws.com/role-play-rpg.mp4",
-        
     ],
     "cosplay": [
         "https://shyche-pro.s3.us-west-1.amazonaws.com/Cosplay/cosplay_1.mp4",
@@ -466,9 +466,10 @@ export const profBios = {
         "'gods are freelo, for my spirit is unbreakable.' Hey all, I am the edgy explorer of the universe and I'd like to share with you what I've found. Follow me as I breakdown research papers, breakthroughs, and updates about space."
     ],
     "ufo-sightings": [
-
+        "Sci-fi writer obsessed with declassified NASA documentation. They'll tell you it's just a story until the aliens begin to abduct their cows."
     ],
     "telescopes": [
+        "Software engineer always fascinated with the stars. Astronomy compels the soul to look upwards and leads us from this world to another.",
         "James Webb Space Telescope Engineer. I've worked with telescopes my whole life and I want to make it more accessible to the average person. Let's get started. ",
         "Hubble Space Telescope Engineer and light expert. Hey all, I'm excited to share with you the world of telescopes and their power. I'll show you how you can travel to outerspace from your front lawn.",
         "NASA SETI team lead. Thanks for checking me out. I hope to share my experience with y'all about our use of telescopes in SETI and the impact it has had on our exploration of space."
@@ -485,6 +486,9 @@ export const profBios = {
         "Long time recorder player here. I fell in love with the simplicity of the recorder when I first picked it up in fourth grade. I enjoy making content to help other beginners of the recorder or people who are just starting their musical journey."
     ],
     "kazoo": [
+        "I've been a pianist since I was 6 years old. Music is my refuge. I can crawl into the space between the notes and curl my back to loneliness.",
+        "",
+        "",
     ],
     "sock-puppets": [
         "Fell in love with sock puppets when I was 8. Here to share more about them!",
@@ -492,6 +496,7 @@ export const profBios = {
         "Found easy ways to make sock puppets better than with glue. Now I have extra glue for dinner!"
     ],
     "dungeons-and-dragons": [
+        "Actor at work, game master afterwards. Dungeons and Dragons has given me many lives to live that are much more interesting than my own."
     ],
     "cosplay": [
         "Full-time weeb and D2 in Val. Offering costume and boosting services. Willing to give a bundle discount :)",
@@ -524,7 +529,7 @@ export const profBios = {
     ],
     "speedwalking": [
         "Professional speedwalker. I spent 24 years developing my solid walking skills and today I am confident that I can speedwalk without running.",
-        "Professional speedwalker. I spent 24 years developing my solid walking skills and today I am confident that I can speedwalk without running.",
+        "Retired Olympian. Hey all, I used to run marathons until my body couldn't handle it anymore. That's when I discovered speedwalking. Its the same competitive spirit while being easier on my body and I want to share it with you all. Whether you are competitive or just looking for a new way to exercise, I've got it all here!",
     ],
     "ostrich-racing": [
         "Lover of birds, pioneer in Ostrich-Racing with 8 of years of experience. Schedule a booking with me to learn more about Ostrich-Racing!",
