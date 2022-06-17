@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
   }
   return {
   loggedIn: state.session.isAuthenticated,
-  currentUser: curUser
+  currentUser: curUser,
 }};
 
 const mDTP = dispatch => ({

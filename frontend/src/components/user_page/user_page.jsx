@@ -117,9 +117,9 @@ class UserPage extends React.Component {
                                 <div className="line-breaks"></div>
                                 <p>{this.props.user.bio}</p>
                                 <br/>
-                                {this.props.user.interests ? <h1 className="user-show-ints">Interests: <ul className="user-show-interests-list">{this.props.user.interests.split(",").map((int, i)=>(
+                                {/* {this.props.user.interests ? <h1 className="user-show-ints">Interests: <ul className="user-show-interests-list">{this.props.user.interests.split(",").map((int, i)=>(
                                     <li key={`interest-${i}`} className="user-show-interest">{int}</li>
-                                ))}</ul></h1> : <div></div>}
+                                ))}</ul></h1> : <div></div>} */}
 
                                 {this.props.user.topics ? <h1 className="user-show-ints">Expert in Topics: <ul className="user-show-interests-list">{this.props.user.topics.split(",").map((int, i)=>(
                                     <li key={`cat-${i}`} className="user-show-interest">{int}</li>

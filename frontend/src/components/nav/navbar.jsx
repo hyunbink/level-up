@@ -40,7 +40,7 @@ class NavBar extends React.Component {
                   </div>
                   <div className='nav-drop'>
                       <div onClick={()=>this.props.history.push(`/auth/${this.props.currentUser.id}`)}>
-                        Apply to be a Professional!
+                        {this.props.currentUser.professional ? <p>Edit About and Topics</p> : <p>Apply to be a Professional!</p>}
                       </div>
                       <div onClick={()=>this.props.history.push(`/video/upload`)}>
                         Upload a video

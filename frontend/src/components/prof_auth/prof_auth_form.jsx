@@ -9,8 +9,8 @@ class ProfAuthForm extends React.Component {
         super(props);
         this.state = {
             ...this.props.currentUser,
-            bio:"",
-            topics:""
+            bio:this.props.currentUser.bio,
+            topics:this.props.currentUser.topics
         };
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
