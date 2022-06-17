@@ -5,8 +5,9 @@
 
 section {
     position: absolute;
-    width: 100%;
+    width: calc(100% + 10vw);
     height: 100vh;
+    left: -10vw;
     max-height: 1900px;
     background: #05445E;
     background: linear-gradient(90deg, #05445E  0%, #189AB4 100%);
@@ -24,7 +25,7 @@ section .row {
     flex-direction: row;
     padding: 10px 0;   
     white-space: nowrap;
-    font-size: 64px;
+    font-size: 600%;
     transform: rotate(-30deg);
 }
 
