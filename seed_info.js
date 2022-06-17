@@ -307,6 +307,7 @@ export const videoURLS = {
         "https://shyche-pro.s3.us-west-1.amazonaws.com/telescope3.mp4",
     ],
     "otamatone": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/otamatone1.mp4"
     ],
     "zither": [
         "https://shyche-pro.s3.us-west-1.amazonaws.com/zither1.mp4",
@@ -314,6 +315,7 @@ export const videoURLS = {
         "https://shyche-pro.s3.us-west-1.amazonaws.com/zither3.mp4",
     ],
     "recorder": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/recorder1.mp4",
     ],
     "kazoo": [
         "https://shyche-pro.s3.us-west-1.amazonaws.com/music-piano.mp4",
@@ -321,6 +323,11 @@ export const videoURLS = {
         "https://shyche-pro.s3.us-west-1.amazonaws.com/music-piano3.mp4",
     ],
     "sock-puppets": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Sock+Puppets/puppets_1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Sock+Puppets/puppets_2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Sock+Puppets/puppets_3.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Sock+Puppets/puppets_4.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Sock+Puppets/puppets_5.mp4",
     ],
     "dungeons-and-dragons": [
         "https://shyche-pro.s3.us-west-1.amazonaws.com/role-play-larp.mp4",
@@ -328,6 +335,11 @@ export const videoURLS = {
         
     ],
     "cosplay": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Cosplay/cosplay_1.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Cosplay/cosplay_2.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Cosplay/cosplay_3.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Cosplay/cosplay_4.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Cosplay/cosplay_5.mp4",
     ],
     "speedrunning": [
         "https://shyche-pro.s3.us-west-1.amazonaws.com/spd-run1.mp4",
@@ -341,8 +353,10 @@ export const videoURLS = {
         "https://shyche-pro.s3.us-west-1.amazonaws.com/spd-run9.mp4",
     ],
     "modding": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Others/modding.mp4",
     ],
     "lore": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Others/lore.mp4",
     ],
     "buzkashi": [
         "https://shyche-pro.s3.us-west-1.amazonaws.com/buzkashi1.mp4",
@@ -350,6 +364,8 @@ export const videoURLS = {
         "https://shyche-pro.s3.us-west-1.amazonaws.com/buzkashi3.mp4",
     ],
     "speedwalking": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Others/sports-speedwalking.mp4",
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Others/sports-speedwalking2.mp4",
     ],
     "ostrich-racing": [
         "https://shyche-pro.s3.us-west-1.amazonaws.com/ost-race1.mp4",
@@ -362,6 +378,7 @@ export const videoURLS = {
         "https://shyche-pro.s3.us-west-1.amazonaws.com/mirror3.mp4",
     ],
     "computer-mice": [
+        "https://shyche-pro.s3.us-west-1.amazonaws.com/Others/technology-computer-mice2.mp4",
     ],
     "macro-pad": [
         "https://shyche-pro.s3.us-west-1.amazonaws.com/macro1.mp4",
