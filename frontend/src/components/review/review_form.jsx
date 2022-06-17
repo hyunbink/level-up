@@ -2,6 +2,7 @@ import React from "react";
 import NavbarContainer from "../nav/navbar_container";
 import "./review.css";
 import { FaStar } from 'react-icons/fa'
+import { clearReviews } from "../../actions/review_actions";
 
 //receives current user and user profile user
 class CreateReviewForm extends React.Component {
@@ -69,7 +70,8 @@ class CreateReviewForm extends React.Component {
             .then(()=> this.successfulReview())
             .then(()=> document.querySelectorAll(".star").forEach(ele => {
                 ele.checked = false;
-            }));
+            }))
+            .then(()=> this.props.getReviews());
     }
 
 
