@@ -71,7 +71,7 @@ class VideoIndexItem extends React.Component {
     userShow() {
         return (
             <li className="video-index-item">
-                    <iframe  src={this.props.video.url} title="YouTube video player"></iframe>
+                    <iframe  src={this.props.video.url} title={this.props.video.title}></iframe>
                     <Link to={`/video/${this.props.video._id}`} className="video-index-link" style={{textDecoration: 'none'}}>
                         <h1 className="vid-index-title">{this.props.video.title}</h1>
                         <div className="uploader-or-topic-name"><div className="tags"></div>{this.linkToTopicOrUser()}</div>
@@ -85,7 +85,9 @@ class VideoIndexItem extends React.Component {
             <>
                 {this.props.formType ? this.userShow() : 
                     <li className="video-index-item">
-                        <iframe width="560" height="315" src={this.props.video.url} title="YouTube video player"></iframe>
+                        <video width="560" height="315" key={this.props.video.title} title={this.props.video.title} controls>
+                            <source type="video/mp4" src={this.props.video.url}></source>
+                        </video>
                         <Link to={`/video/${this.props.video._id}`} className="video-index-link" style={{textDecoration: 'none'}}>
                             <h1 className="vid-index-title">{this.props.video.title}</h1>
                             <div className="uploader-or-topic-name">{this.linkToTopicOrUser()}</div>
