@@ -4,7 +4,7 @@ const reviewsReducer = (state ={}, action) => {
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_REVIEWS:
-            return Object.assign({}, state, action.reviews.data.reverse());
+            return Object.assign({}, action.reviews.data.reverse());
         case RECEIVE_REVIEW:
             if (!action.review.data[0]) {
                 return Object.assign({}, state, {[action.review.data._id]: action.review.data});

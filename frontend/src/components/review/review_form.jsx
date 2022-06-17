@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarContainer from "../nav/navbar_container";
+// import NavbarContainer from "../nav/navbar_container";
 import "./review.css";
 import { FaStar } from 'react-icons/fa'
 
@@ -69,7 +69,8 @@ class CreateReviewForm extends React.Component {
             .then(()=> this.successfulReview())
             .then(()=> document.querySelectorAll(".star").forEach(ele => {
                 ele.checked = false;
-            }));
+            }))
+            .then(()=> this.props.getReviews());
     }
 
 
