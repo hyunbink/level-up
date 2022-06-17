@@ -74,12 +74,20 @@ export const videoDescriptions = {
         "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!"
     ],
     "sock-puppets": [
+        "We'll be going over some basic supplies that you'll need to grab from your local arts & crafts store before getting started with your first puppet. Stay tuned for more tutorials!",
+        "Glue is annoying and gets everywhere. If you hate it as much as me, you'll want to watch this video!",
+        "Let's give your next sock puppet some drip >:)"
     ],
     "dungeons-and-dragons": [
         "We hope you've enjoyed getting to know LARP and why we love our hobby! We have been documenting our experiences doing what we call 'Chapter Hopping' in the LARP network since the project's re-opening in 2021. It's been a wonderful year being able to travel and showcase chapters across the nation, and we hope to continue and show you more chapters, and what it's like to NPC and PC at each one! Any extra help thrown in this direction for this purpose is greatly appreciated!",
         "I'm very excited to start sharing stories in person again. With this digital RPG table we will take role playing to the next level. Get your d20's ready, the adventure is about to begin!"
     ],
     "cosplay": [
+        "Wigs tend to make or break the cosplay. It can even make an otherwise plain and boring cosplay into one that's authentic and unique! Wigs are a lot of fun, and I'm here to guide you on how to make the perfect one for your next cosplay",
+        "Trust me. It's a nightmare once you're at the convention center. You'll want to watch this ;)",
+        "I'm poor but like Hu Tao. I made this in under $40. A more in-depth guide will be coming soon",
+        "Gregorian chanting is based. You're gonna need it - and a badass suit of armor -to finish this fight",
+        "I need a weapon."
     ],
     "speedrunning": [
         "Check out how I attempt my Legend of Zelda: Breath of the Wild speed-run jumping over this field, already this far with less 3 minutes into the run!",
@@ -205,12 +213,20 @@ export const videoTitles = {
         "V. Monti - Czardas (Csárdás) (Arr. Kassia)"
     ],
     "sock-puppets": [
+        "What you need for your first sock puppet",
+        "Making a sock puppet without glue!",
+        "Advanced tips for making better sock puppets"
     ],
     "dungeons-and-dragons": [
         "LARP session with spears!",
         "Check out this new RPG table"
     ],
     "cosplay": [
+        "How to make a wig for your next cosplay",
+        "Making sure your wig stays perfect after wearing it",
+        "Making the Staff of Homa using basic supplies from Walmart!",
+        "Using foam to build MJOLNIR MKV Armor",
+        "Becoming the Chief"
     ],
     "speedrunning": [
         "Breath of the Wild Speed Run Field Jump",
@@ -450,6 +466,7 @@ export const profBios = {
         "'gods are freelo, for my spirit is unbreakable.' Hey all, I am the edgy explorer of the universe and I'd like to share with you what I've found. Follow me as I breakdown research papers, breakthroughs, and updates about space."
     ],
     "ufo-sightings": [
+
     ],
     "telescopes": [
         "James Webb Space Telescope Engineer. I've worked with telescopes my whole life and I want to make it more accessible to the average person. Let's get started. ",
