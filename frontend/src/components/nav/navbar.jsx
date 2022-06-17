@@ -45,7 +45,9 @@ class NavBar extends React.Component {
                       <div onClick={()=>this.props.history.push(`/video/upload`)}>
                         Upload a video
                       </div>
-                      <div onClick={()=>this.props.history.push(`/user/${this.props.currentUser.id}`)}>
+                      <div onClick={()=>{
+                        this.props.clearReviews();
+                        this.props.history.push(`/user/${this.props.currentUser.id}`)}}>
                         Profile
                       </div>
                       <div onClick={this.logoutUser} >
@@ -62,6 +64,7 @@ class NavBar extends React.Component {
             <div className="nav-wrapper">
               <div className='nav-logo' onClick={()=>this.props.history.push("/home")} >
                 <img
+                  alt='shyche-logo'
                   src="shyche_logo.png" 
                   className='nav-logo'
                 />
