@@ -116,12 +116,11 @@ class UserPage extends React.Component {
                                 <h2>About: </h2>
                                 <div className="line-breaks"></div>
                                 <p>{this.props.user.bio}</p>
-                                <div className="user-show-prof-btn-wrapper">
+                                {this.props.currentUserId === this.props.user._id ? <div className="user-show-prof-btn-wrapper">
                                     <button className="user-show-large-buttons" onClick={()=>this.props.history.push(`/auth/${this.props.user._id}`)} >
                                         {this.props.user.professional ? "Edit Profile" : "Apply to be a professional!"}
                                     </button>
-                                </div>
-                                <br/>
+                                </div> : <div></div>}
                                 {/* {this.props.user.interests ? <h1 className="user-show-ints">Interests: <ul className="user-show-interests-list">{this.props.user.interests.split(",").map((int, i)=>(
                                     <li key={`interest-${i}`} className="user-show-interest">{int}</li>
                                 ))}</ul></h1> : <div></div>} */}
