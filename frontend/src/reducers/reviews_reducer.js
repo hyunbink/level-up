@@ -1,4 +1,4 @@
-const { RECEIVE_REVIEWS, RECEIVE_REVIEW} = require("../actions/review_actions");
+const { RECEIVE_REVIEWS, RECEIVE_REVIEW, CLEAR_REVIEWS} = require("../actions/review_actions");
 
 const reviewsReducer = (state ={}, action) => {
     Object.freeze(state);
@@ -14,6 +14,8 @@ const reviewsReducer = (state ={}, action) => {
         //     let newState = Object.assign({}, state);
         //     delete newState[action.reviewId];
         //     return newState;
+        case CLEAR_REVIEWS:
+            return {};
         default:
             return state;
     }
