@@ -2,3 +2,5 @@
 .DS_Store
 keys_dev.js
 .env
+seed_info.js
+seed.js
