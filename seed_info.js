@@ -487,8 +487,8 @@ export const profBios = {
     ],
     "kazoo": [
         "I've been a pianist since I was 6 years old. Music is my refuge. I can crawl into the space between the notes and curl my back to loneliness.",
-        "",
-        "",
+        "Arts professor with a passion for music. I've played in the greatest venues of Europe with Andre Rieu's orchestra and now I'm willing to share my knowledge with you!",
+        "Professional tapdancer, street artist and jazz pianist on the weekends. The world is my oyster and the keys are the language of my soul. Shoot me a message, I love people!",
     ],
     "sock-puppets": [
         "Fell in love with sock puppets when I was 8. Here to share more about them!",
@@ -496,7 +496,8 @@ export const profBios = {
         "Found easy ways to make sock puppets better than with glue. Now I have extra glue for dinner!"
     ],
     "dungeons-and-dragons": [
-        "Actor at work, game master afterwards. Dungeons and Dragons has given me many lives to live that are much more interesting than my own."
+        "Actor at work, game master afterwards. Dungeons and Dragons has given me many lives to live that are much more interesting than my own.",
+        "Howdy! I am a Dungeon Master expert as I have 28 years of experience organizing dungeons and dragons lores. I love being the Dungeon Master as I get to narrate every character’s destiny within each realm and see them on their quest to greatness. I am fair in my approach and do a stellar job maintaining realism in every session to keep players more engaged and more likely to return to their quests. Check out my videos!"
     ],
     "cosplay": [
         "Full-time weeb and D2 in Val. Offering costume and boosting services. Willing to give a bundle discount :)",
@@ -543,7 +544,7 @@ export const profBios = {
     ],
     "computer-mice": [
         "Fashionista and tech lover. I can tear apart and rebuild any part of a computer, usually in a more stylish manner each time.",
-        "Fashionista and tech lover. I can tear apart and rebuild any part of a computer, usually in a more stylish manner each time.",
+        "Hey all, I am a professional esports player for the Cloud 9 csgo team. I have used hundreds of mice my whole life and began modding them when I couldn't find one I liked. I have experimented with all kinds of skates, switches, scroll wheels, shapes, and finishes and can't wait to share my experience with you.",
     ],
     "macro-pad": [
         "Pro gamer for Faze Clan. Managing my stream was always difficult until I snagged a macro pad. This handy thing simplifies so many functions and if you feel like you don't have enough keys, check me out I got you.", 
