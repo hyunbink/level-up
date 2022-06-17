@@ -379,6 +379,7 @@ export const profBios = {
         "Zither player for over 20 years. Man the zither get no appreciation these days but I will change that. Stay in touch with me to learn more about this wonderful instrument!"
     ],
     "recorder": [
+        "Long time recorder player here. I fell in love with the simplicity of the recorder when I first picked it up in fourth grade. I enjoy making content to help other beginners of the recorder or people who are just starting their musical journey."
     ],
     "kazoo": [
     ],
