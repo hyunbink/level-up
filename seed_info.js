@@ -40,6 +40,9 @@ export const videoDescriptions = {
         "If Morbius has a million fans, I am one of them. If Morbius has 5 fans, I am one of them. If Morbius has one fan, That one is me. If Morbius has no fans, I am no longer alive. If the world is against Morbius, I am against the world. Till my last breath, I'll love Morbius (2022)."
     ],
     "astrophysics": [
+        "Astrophysics is very math heavy. I won't lie to you. When you start studying the cosmos and pushing the understanding of the universe, you start grasping for things that are concrete, like math, to ground yourself. The formulas get more complicated and we try to justify everything with familiar numbers.",
+        "What was before the big bang? If it is the starting point of our universe, and we believe that everything comes from something, then so must have the origin. Can something come from nothing? Maybe God does exist and he initiated this sequence? Can he coexist with science?",
+        "String theory is for bozos who cannot exist in the gray. The idea that there must be a single unifying theory is bold, and they defend themselves with its untestability. The existence of strings that vibrate in and between higher dimensions to dictate the universe is untestable, but we are supposed to believe they govern everything? Give me a break. "
     ],
     "ufo-sightings": [
         "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!"
@@ -142,16 +145,23 @@ export const videoTitles = {
         "What to do if you break a piece of your kit"
     ],
     "astrophysics": [
+        ""
     ],
     "ufo-sightings": [
         "UFO spotted by the Pentagon!"
     ],
     "telescopes": [
-        "How to set up a telescope"
+        "How to set up a telescope",
+        "How to observe the cosmos from the comfort of your home",
+        "Good and bad skies for stargazing (hint: cities suck!)",
+        "Where is the Horsehead Nebula???"
     ],
     "otamatone": [
     ],
     "zither": [
+        "The zither for dummies",
+        "Why is the zither not popular?",
+        "Zither variations and differences"
     ],
     "recorder": [
     ],
@@ -175,16 +185,25 @@ export const videoTitles = {
     "lore": [
     ],
     "buzkashi": [
+        "Why are they throwing around a dead goat?",
+        "Physicality of Buzkashi: The Deceptive Danger of Dead Goats",
+        "Horses and Goats: the Sport of Central Asia"
     ],
     "speedwalking": [
     ],
     "ostrich-racing": [
     ],
     "smart-mirrors": [
+        "Elevate your life with smart mirrors",
+        "Cool new tech you can build: Smart mirrors",
+        "Projects for Beginners: The Smart Mirror"
     ],
     "computer-mice": [
     ],
     "macro-pad": [
+        "Macro-pads: the keyboard for your keyboard",
+        "New favorite macro pad!!",
+        "My thoughts on the new zealios with my macro pad"
     ],
 };
 
@@ -333,15 +352,24 @@ export const profBios = {
     ],
     "gundam": [
     ],
-    "astrophysics": [
+    "astrophysics": [ 
+        "Hey gang! I am a fan of all things nature. I worked at NASA's Deep Space division for 15 years and now I wrangle animals in the outback! I'm excited to share my knowledge and passion with y'all!",
+        "Greetings. I am a physics lecturer at Cambridge. Explore the cosmos with me and open your mind to the wonders of the universe. There's so much to see and learn and I'll break it down to you right here on this page.",
+        "'gods are freelo, for my spirit is unbreakable.' Hey all, I am the edgy explorer of the universe and I'd like to share with you what I've found. Follow me as I breakdown research papers, breakthroughs, and updates about space."
     ],
     "ufo-sightings": [
     ],
     "telescopes": [
+        "James Webb Space Telescope Engineer. I've worked with telescopes my whole life and I want to make it more accessible to the average person. Let's get started. ",
+        "Hubble Space Telescope Engineer and light expert. Hey all, I'm excited to share with you the world of telescopes and their power. I'll show you how you can travel to outerspace from your front lawn.",
+        "NASA SETI team lead. Thanks for checking me out. I hope to share my experience with y'all about our use of telescopes in SETI and the impact it has had on our exploration of space."
     ],
     "otamatone": [
     ],
     "zither": [
+        "Classically trained zither player. There aren't a lot of us out there but you best believe it is a great instrument. Check me out as I show you my favorite instrument of all time!",
+        "Ever wanted to learn about the zither? This is one of the most technically impressive instruments to play and I'm hoping that more people want to pick it up for how rewarding it is to play.",
+        "Zither player for over 20 years. Man the zither get no appreciation these days but I will change that. Stay in touch with me to learn more about this wonderful instrument!"
     ],
     "recorder": [
     ],
@@ -360,16 +388,25 @@ export const profBios = {
     "lore": [
     ],
     "buzkashi": [
+        "Former Buzkashi referee here. I'm here to share with the masses the sport of our region: Buzkashi. I think it is a great sport with great physicality and skill. Learn more here with me!",
+        "Azerbaijan Buzkashi national team member. I love Buzkashi and I think you will too! Let us connect!",
+        "Buzkashi aficionado for over 15 years. Guys I just need to share the sport of Buzkashi with you! I discovered it when I travelled to Tajikstan 15 years ago and I immediately fell in love. I know you will to after bearing witness!"
     ],
     "speedwalking": [
     ],
     "ostrich-racing": [
     ],
     "smart-mirrors": [
+        "Long time hardware engineer here. I love personal projects and one of my favorites is the smart mirror because of the accessibility and practicality. Follow along with me as we build one out!",
+        "Mechanical Engineering student here at Caltech. I've put together 4 of these great mirrors for friends and family and love teaching people about it. Wow your friends. ",
+        "Former CTO at The Raspberry Pi Foundation. One of the coolest projects I've seen built was the smart mirror and now I'm here to show you how to build this absolute unit of a mirror."
     ],
     "computer-mice": [
     ],
     "macro-pad": [
+        "Pro gamer for Faze Clan. Managing my stream was always difficult until I snagged a macro pad. This handy thing simplifies so many functions and if you feel like you don't have enough keys, check me out I got you.", 
+        "I have all of the Excel certifications. I mean all of them. I've found that many shortcuts can be shortened even more with the macro pad, so I will teach you aspiring spreadsheet makers how to level up your game with a macro pad.",
+        "Keyboard builder here. I've spent almost 15 years building keyboards. I believe that macro pads are absolute crucial to everyone's setup. Let me show you."
     ],
 };
 
