@@ -506,7 +506,7 @@ export const profBios = {
     ],
     "speedwalking": [
         "Professional speedwalker. I spent 24 years developing my solid walking skills and today I am confident that I can speedwalk without running.",
-
+        "Professional speedwalker. I spent 24 years developing my solid walking skills and today I am confident that I can speedwalk without running.",
     ],
     "ostrich-racing": [
         "Lover of birds, pioneer in Ostrich-Racing with 8 of years of experience. Schedule a booking with me to learn more about Ostrich-Racing!",
@@ -519,7 +519,8 @@ export const profBios = {
         "Former CTO at The Raspberry Pi Foundation. One of the coolest projects I've seen built was the smart mirror and now I'm here to show you how to build this absolute unit of a mirror."
     ],
     "computer-mice": [
-        "Fashionista and tech lover. I can tear apart and rebuild any part of a computer, usually in a more stylish manner each time."
+        "Fashionista and tech lover. I can tear apart and rebuild any part of a computer, usually in a more stylish manner each time.",
+        "Fashionista and tech lover. I can tear apart and rebuild any part of a computer, usually in a more stylish manner each time.",
     ],
     "macro-pad": [
         "Pro gamer for Faze Clan. Managing my stream was always difficult until I snagged a macro pad. This handy thing simplifies so many functions and if you feel like you don't have enough keys, check me out I got you.", 
@@ -580,58 +581,3 @@ export const reviewDescriptions = [
     "My co-worker Merwin has one of these. He says it looks bubbly.",
     "talk about pleasure.",
 ]
-
-// export const  = {
-//     "shrimp": [
-//     ],
-//     "hedgehogs": [
-//     ],
-//     "raccoons": [
-//     ],
-// 	"sugar-gliders": [
-//     ],
-//     "shoe-dyeing": [
-//     ],
-//     "felting": [
-//     ],
-//     "gundam": [
-//     ],
-//     "astrophysics": [
-//     ],
-//     "ufo-sightings": [
-//     ],
-//     "telescopes": [
-//     ],
-//     "otamatone": [
-//     ],
-//     "zither": [
-//     ],
-//     "recorder": [
-//     ],
-//     "kazoo": [
-//     ],
-//     "sock-puppets": [
-//     ],
-//     "dungeons-and-dragons": [
-//     ],
-//     "cosplay": [
-//     ],
-//     "speedrunning": [
-//     ],
-//     "modding": [
-//     ],
-//     "lore": [
-//     ],
-//     "buzkashi": [
-//     ],
-//     "speedwalking": [
-//     ],
-//     "ostrich-racing": [
-//     ],
-//     "smart-mirrors": [
-//     ],
-//     "computer-mice": [
-//     ],
-//     "macro-pad": [
-//     ],
-// };
