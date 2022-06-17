@@ -30,7 +30,7 @@ class BookingsShow extends React.Component{
             bookingProfId: this.props.booking.bookingProfId,
             title: this.props.booking.title,
             date: this.props.booking.date,
-            duration: this.props.booking.duration})
+            duration:""})
     }
 
     handleSubmit(e) {

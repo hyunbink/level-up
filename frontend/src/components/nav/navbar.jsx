@@ -39,9 +39,9 @@ class NavBar extends React.Component {
                   <GiHamburgerMenu id="nav-burger" />
                   </div>
                   <div className='nav-drop'>
-                      <div onClick={()=>this.props.history.push(`/auth/${this.props.currentUser.id}`)}>
+                      {/* <div onClick={()=>this.props.history.push(`/auth/${this.props.currentUser.id}`)}>
                         {this.props.currentUser.professional ? <p>Edit About and Topics</p> : <p>Apply to be a Professional!</p>}
-                      </div>
+                      </div> */}
                       <div onClick={()=>this.props.history.push(`/video/upload`)}>
                         Upload a video
                       </div>
