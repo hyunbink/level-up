@@ -42,7 +42,7 @@ export const videoDescriptions = {
     "astrophysics": [
         "Astrophysics is very math heavy. I won't lie to you. When you start studying the cosmos and pushing the understanding of the universe, you start grasping for things that are concrete, like math, to ground yourself. The formulas get more complicated and we try to justify everything with familiar numbers.",
         "What was before the big bang? If it is the starting point of our universe, and we believe that everything comes from something, then so must have the origin. Can something come from nothing? Maybe God does exist and he initiated this sequence? Can he coexist with science?",
-        "String theory is for bozos who cannot exist in the gray. The idea that there must be a single unifying theory is bold, and they defend themselves with its untestability. The existence of strings that vibrate in and between higher dimensions to dictate the universe is untestable, but we are supposed to believe they govern everything? Give me a break. "
+        "String theory is for bozos who cannot exist in the gray. The idea that there must be a single unifying theory is bold, and they defend themselves with its untestability. The existence of strings that vibrate in and between higher dimensions to dictate the universe is unsupported, but we are supposed to believe they govern everything? Give me a break. L + Ratio. "
     ],
     "ufo-sightings": [
         "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!"
@@ -53,6 +53,7 @@ export const videoDescriptions = {
         "Telescopes are super advanced but also a diy project at home. I have guides as well to show how you can do that with mirror and cardboard."
     ],
     "otamatone": [
+        "The otamatone is an electronic musical synthesizer shaped like the eighth note. It requires 2 hands to play: one to squeeze the head and the other to control the pitch of the tune by placing the finger on a ribbon controller on the stem. "
     ],
     "zither": [
         "The zither can have anywhere from 1 to 50 strings. The zither's body serves as a resonating chamber for the sound but unlike traditional string instruments, lacks a neck assembly. ",
@@ -60,6 +61,7 @@ export const videoDescriptions = {
         "Since the zither requires advanced technique to play anything more than simple tunes, the vast majority of the concert zithers sold never attained more than amateur or mostly ornamental use."
     ],
     "recorder": [
+        "You may remember the recorder from fourth grade where you were forced to play hot cross buns, but it is so much more than an introductory instrument. In this video I will show you the basics and some intermediate techniques as we play jingle bells. "
     ],
     "kazoo": [
         "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!",
@@ -145,7 +147,9 @@ export const videoTitles = {
         "What to do if you break a piece of your kit"
     ],
     "astrophysics": [
-        ""
+        "Astrophysics and You",
+        "Quantifying the infinity of the cosmos",
+        "What is String Theory?"
     ],
     "ufo-sightings": [
         "UFO spotted by the Pentagon!"
@@ -157,6 +161,7 @@ export const videoTitles = {
         "Where is the Horsehead Nebula???"
     ],
     "otamatone": [
+        "What the heck is this instrument? The otamatone basics"
     ],
     "zither": [
         "The zither for dummies",
@@ -164,6 +169,7 @@ export const videoTitles = {
         "Zither variations and differences"
     ],
     "recorder": [
+        "Revisiting an old friend: the recorder"
     ],
     "kazoo": [
         "Passacaglia - Handel/Halvorsen (Piano Solo)",
@@ -185,9 +191,9 @@ export const videoTitles = {
     "lore": [
     ],
     "buzkashi": [
-        "Why are they throwing around a dead goat?",
+        "Why are they throwing around a goat carcass?",
         "Physicality of Buzkashi: The Deceptive Danger of Dead Goats",
-        "Horses and Goats: the Sport of Central Asia"
+        "Horses and Goats: the sport that defines Central Asia"
     ],
     "speedwalking": [
     ],
@@ -365,6 +371,7 @@ export const profBios = {
         "NASA SETI team lead. Thanks for checking me out. I hope to share my experience with y'all about our use of telescopes in SETI and the impact it has had on our exploration of space."
     ],
     "otamatone": [
+        "Juilliard student turned youtuber. My love for unusual instruments led me to the otamatone, which has character like nothing else. I make music and covers with it and want to share it with you. "
     ],
     "zither": [
         "Classically trained zither player. There aren't a lot of us out there but you best believe it is a great instrument. Check me out as I show you my favorite instrument of all time!",
