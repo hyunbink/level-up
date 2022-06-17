@@ -42,10 +42,10 @@ export const videoDescriptions = {
     "astrophysics": [
     ],
     "ufo-sightings": [
-        "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!"
+        "The Pentagon on Monday formally released three unclassified videos taken by Navy pilots that have circulated for years showing interactions with 'unidentified aerial phenomena'. One of the videos shows an incident from 2004, and the other two were recorded in January 2015. The videos became public after unauthorized leaks in 2007 and 2017, and the Navy previously verified their authenticity."
     ],
     "telescopes": [
-        "Thanks for watching. I hope you enjoy my music :) Now follow the notes and unlock this masterpiece on your own! I'm going to show various piano music including classical pieces. I hope I can help you develop your ability to play the piano!"
+        "Excellent Quality Optics: This telescope is 600mm(f/6.7) focal length and 80mm aperture, 80mm aperture to capture more light picture and multi-fully high transmission coated all-optical lens enhance image brightness and clarity. Optimum Magnification: Our telescope for kids and adults is equipped with two replaceable excellent-quality eyepieces (25mm and 10mm) for 24X and 60X magnification. The 3x Barlow lens trebles the magnifying power of each eyepiece. Magnify the moon up to 72 or 180 times. Also with 5x24 finder scope makes locating objects easy."
     ],
     "otamatone": [
     ],
@@ -75,12 +75,16 @@ export const videoDescriptions = {
     "buzkashi": [
     ],
     "speedwalking": [
+        "Before you try to shame us walk a mile in our shoes. Speed walking has been around for as long as humankind itself, and everybody practices it when they are in a hurry to go to the restroom. If you want to join this long standing tradition be quick to schedule a conversation with us! We are available from 9 to 9 every day.",
+        "The Olympics is not the same without this crucial sport. Although a challenging activity for the Great Apes that invented it, speed walking is a no-brainer for any Homo sapiens today. Schedule a session if you want to learn more!"
     ],
     "ostrich-racing": [
     ],
     "smart-mirrors": [
     ],
     "computer-mice": [
+        "Nothing screams boring louder than a black computer mouse. If you're going to hold the world in your hands make sure you add some color to it. With these printable textures you too can take your clicking game to the next level. Don't be afraid to reach out to us via chat!",
+        "The world doesn't need any more plastic. Learn to make a mouse out of wood and feel proud for having tumbled down a tree to use less than 1% of its trunk in a petty DIY project. Let's save the environment one computer mouse at a time! Book a session to discuss more, but be warned that I never lose a debate on the internet."
     ],
     "macro-pad": [
     ],
@@ -163,12 +167,16 @@ export const videoTitles = {
     "buzkashi": [
     ],
     "speedwalking": [
+        "How to properly and elegantly speedwalk",
+        "Most exciting moment in the Speedwalking Olympics"
     ],
     "ostrich-racing": [
     ],
     "smart-mirrors": [
     ],
     "computer-mice": [
+        "Top 3 computer mouse textures",
+        "How to build a computer mouse made out of wood"
     ],
     "macro-pad": [
     ],
@@ -322,8 +330,10 @@ export const profBios = {
     "astrophysics": [
     ],
     "ufo-sightings": [
+        "Sci-fi writer obsessed with declassified NASA documentation. They'll tell you it's just a story until the aliens begin to abduct their cows."
     ],
     "telescopes": [
+        "Software engineer always fascinated with the stars. Astronomy compels the soul to look upwards and leads us from this world to another."
     ],
     "otamatone": [
     ],
@@ -332,10 +342,12 @@ export const profBios = {
     "recorder": [
     ],
     "kazoo": [
+        "I've been a pianist since I was 6 years old. Music is my refuge. I can crawl into the space between the notes and curl my back to loneliness."
     ],
     "sock-puppets": [
     ],
     "dungeons-and-dragons": [
+        "Actor at work, game master afterwards. Dungeons and Dragons has given me many lives to live that are much more interesting than my own."
     ],
     "cosplay": [
     ],
@@ -348,12 +360,14 @@ export const profBios = {
     "buzkashi": [
     ],
     "speedwalking": [
+        "Professional speedwalker. I spent 24 years developing my solid walking skills and today I am confident that I can speedwalk without running."
     ],
     "ostrich-racing": [
     ],
     "smart-mirrors": [
     ],
     "computer-mice": [
+        "Fashionista and tech lover. I can tear apart and rebuild any part of a computer, usually in a more stylish manner each time."
     ],
     "macro-pad": [
     ],
