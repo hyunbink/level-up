@@ -14,7 +14,7 @@
 
 ## Code Snippet
 
-Herre's a little preview of our code:
+Here's a little preview of our code:
 
 ```javaScript
 handleSubmit(e) {
@@ -48,51 +48,51 @@ handleSubmit(e) {
 
 - ### User Auth / Professional Auth
 
-![gif](https://github.com/hyubink/shyche/blob/assets/login.gif)
-![gif](https://github.com/hyubink/shyche/blob/assets/prof-auth.gif)
+![gif](https://github.com/hyunbink/shyche/blob/30797f704fefa9013c0794bd66e732b3d1157c6c/assets/login.gif)
+![gif](https://github.com/hyunbink/shyche/blob/30797f704fefa9013c0794bd66e732b3d1157c6c/assets/prof-auth.gif)
 
 Create and upgrade your own account on Shyche that allows you to browse through endless categories of uncommon activities and connect with the peculiar persons behind them.
 
 - ### Videos CRUD
 
-![gif](https://github.com/hyubink/shyche/blob/assets/video-upload.gif)
+![gif](https://github.com/hyunbink/shyche/blob/30797f704fefa9013c0794bd66e732b3d1157c6c/assets/video-upload.gif)
 
 Once signed in you can add, edit and delete videos to share your own unusual hobby on the platform.
 
 - ### Live Chat
 
-![gif](https://github.com/hyubink/shyche/blob/assets/live-chat.gif)
+![gif](https://github.com/hyunbink/shyche/blob/30797f704fefa9013c0794bd66e732b3d1157c6c/assets/live-chat.gif)
 
 Get to know the people behind each hobby and expand your horizons.
 
 - ### Bookings / Reviews CRUD
 
-![gif](https://github.com/hyubink/shyche/blob/assets/bookings.gif)
+![gif](https://github.com/hyunbink/shyche/blob/30797f704fefa9013c0794bd66e732b3d1157c6c/assets/bookings.gif)
 
 Book sessions with your favorite professionals to learn more about what they do and review their work.
 
 - ### Search Bar
 
-![gif](https://github.com/hyubink/shyche/blob/assets/search.gif)
+![gif](https://github.com/hyunbink/shyche/blob/30797f704fefa9013c0794bd66e732b3d1157c6c/assets/search.gif)
 
 Find specific videos quickly by searching them by name and category.
 
 - ### Splash Page
 
-![gif](https://github.com/hyubink/shyche/blob/assets/splash.gif)
+![gif](https://github.com/hyunbink/shyche/blob/30797f704fefa9013c0794bd66e732b3d1157c6c/assets/splash.gif)
 
 - ### Home Page
 
-![gif](https://github.com/hyubink/shyche/blob/assets/homepage.gif)
+![gif](https://github.com/hyunbink/shyche/blob/30797f704fefa9013c0794bd66e732b3d1157c6c/assets/homepage.gif)
 
 - ### User Page
 
-![gif](https://github.com/hyubink/shyche/blob/assets/userpage.gif)
+![gif](https://github.com/hyunbink/shyche/blob/30797f704fefa9013c0794bd66e732b3d1157c6c/assets/userpage.gif)
 
 - ### Categories Page
 
-![gif](https://github.com/hyubink/shyche/blob/assets/categories.gif)
+![gif](https://github.com/hyunbink/shyche/blob/30797f704fefa9013c0794bd66e732b3d1157c6c/assets/categories.gif)
 
 - ### Video Page
 
-![gif](https://github.com/hyubink/shyche/blob/assets/video-show.gif)
+![gif](https://github.com/hyunbink/shyche/blob/30797f704fefa9013c0794bd66e732b3d1157c6c/assets/video-show.gif)
