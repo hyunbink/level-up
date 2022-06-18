@@ -40,7 +40,8 @@ Herre's a little preview of our code:
             }))
             // displaying only what's necessary each time
             .then(()=> this.props.getReviews());
-    }```
+    }
+    ```
 
 ## Features
 
