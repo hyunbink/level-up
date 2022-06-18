@@ -16,7 +16,8 @@
 
 Herre's a little preview of our code:
 
-```handleSubmit(e) {
+```
+handleSubmit(e) {
         e.preventDefault();
         
         // we handle the errors within the forms
