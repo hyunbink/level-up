@@ -42,7 +42,7 @@ handleSubmit(e) {
             // displaying only what's necessary each time
             .then(()=> this.props.getReviews());
     }
-    ```
+```
 
 ## Features
 
