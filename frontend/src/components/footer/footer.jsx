@@ -39,26 +39,26 @@ class Footer extends React.Component {
                     <div className="blue-footer-dev-info">
                         <div className="dev-info">
                             <div className="dev-info-name">Andrew Yin</div>
-                            <a href="https://github.com/yin-andrew" className="dev-links"><FaGithubSquare/></a>
-                            <a href="https://www.linkedin.com/in/andrewyin16407/" className="dev-links"><FaLinkedin/></a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/yin-andrew" className="dev-links"><FaGithubSquare/></a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/andrewyin16407/" className="dev-links"><FaLinkedin/></a>
                         </div>
                         
                         <div className="dev-info">
                             <div className="dev-info-name">Edgar Chin</div>
-                            <a href="https://github.com/echin522" className="dev-links"><FaGithubSquare/></a>
-                            <a href="https://www.linkedin.com/in/edgarchin/" className="dev-links"><FaLinkedin/></a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/echin522" className="dev-links"><FaGithubSquare/></a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/edgarchin/" className="dev-links"><FaLinkedin/></a>
                         </div>
                         
                         <div className="dev-info">
                             <div className="dev-info-name">Matia Kim</div>
-                            <a href="https://github.com/hyunbink" className="dev-links"><FaGithubSquare/></a>
-                            <a href="https://www.linkedin.com/in/matia-kim/" className="dev-links"><FaLinkedin/></a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/hyunbink" className="dev-links"><FaGithubSquare/></a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/matia-kim/" className="dev-links"><FaLinkedin/></a>
                         </div>
                         
                         <div className="dev-info">
                             <div className="dev-info-name">Sam Martins</div>
-                            <a href="https://github.com/Samuel1337" className="dev-links"><FaGithubSquare/></a>
-                            <a href="https://www.linkedin.com/in/samuel-m-b3b9baa2/" className="dev-links"><FaLinkedin/></a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/Samuel1337" className="dev-links"><FaGithubSquare/></a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/samuel-m-b3b9baa2/" className="dev-links"><FaLinkedin/></a>
                         </div>
                         
                     </div>
